@@ -46,7 +46,6 @@
         }
 
             #gallery img {
-                width: 150px;
                 margin-bottom: 10px;
                 margin-right: 10px;
                 vertical-align: middle;
@@ -68,18 +67,25 @@
         #fileElem {
             display: none;
         }
+        .center {
+            padding: 10px;
+            display: table;
+            margin: auto;
+        }
+        .textCenter {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div id="drop-area">
         <form class="my-form">
-            <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
-            <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
-            <label class="button" for="fileElem">Select some files</label>
+            <p class="textCenter">Upload a file with the file dialog <br /> or by dragging and dropping logs onto the dashed region</p>
+            <input type="file" id="fileElem" multiple onchange="handleFiles(this.files)" class="center">
+            <label class="button center" for="fileElem">Select file</label>
         </form>
-        <progress id="progress-bar" max=100 value=0></progress>
+        <progress id="progress-bar" max=100 value=0 class="center"></progress>
         <div id="gallery" />
-    </div>
     </div>
     <script>
         // ************************ Drag and drop ***************** //
@@ -154,13 +160,13 @@
             reader.readAsDataURL(file)
             reader.onloadend = function () {
                 let img = document.createElement('img')
-                img.src = reader.result
+                img.src = 'log-file.png'
                 document.getElementById('gallery').appendChild(img)
             }
         }
 
         function uploadFile(file, i) {
-            var url = 'https://api.cloudinary.com/v1_1/joezimim007/image/upload'
+            var url = 'https://cfitems.azurewebsites.net/api/LogEater'
             var xhr = new XMLHttpRequest()
             var formData = new FormData()
             xhr.open('POST', url, true)
