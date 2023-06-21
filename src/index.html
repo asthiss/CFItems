@@ -7,6 +7,8 @@
     <style>
         body {
             font-family: sans-serif;
+            background-color: black;
+            color: white;
         }
 
         a {
@@ -67,6 +69,9 @@
         #fileElem {
             display: none;
         }
+        #fetchData{
+            display: none;
+        }
         .center {
             padding: 10px;
             display: table;
@@ -85,7 +90,11 @@
             <label class="button center" for="fileElem">Select file</label>
         </form>
         <progress id="progress-bar" max=100 value=0 class="center"></progress>
-        <div id="gallery" />
+        <div id="gallery"></div>
+    </div>
+    <div id="show-items">
+        <input type="button" id="fetchData" onclick="fetchData()" class="center">
+        <label class="button center" for="fetchData">Load all</label>
     </div>
     <script>
         // ************************ Drag and drop ***************** //
@@ -160,7 +169,7 @@
             reader.readAsDataURL(file)
             reader.onloadend = function () {
                 let img = document.createElement('img')
-                img.src = 'log-file.png'
+                img.src = 'log64.png'
                 document.getElementById('gallery').appendChild(img)
             }
         }
@@ -189,6 +198,23 @@
             formData.append('upload_preset', 'ujpu6gyk')
             formData.append('file', file)
             xhr.send(formData)
+        }
+        function fetchData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://localhost:7298/api/items/all");
+            xhr.send();
+            xhr.responseType = "json";
+            xhr.onload = () => {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.response);
+                } else {
+                    console.log(`Error: ${xhr.status}`);
+                }
+            };
+        }
+            
+        function takeData(val) {
+            return val.slice(1, 11);
         }
     </script>
 </body>
