@@ -4,13 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace CFItems
 {
     public interface ITableService
     {
         Task InsertItem(Item item);
-        Task<IEnumerable<Item>> GetAllItemsAsync();
+        IEnumerable<Item> GetAllItemsAsync();
 
     }
     public class TableService : ITableService
@@ -34,14 +35,15 @@ namespace CFItems
             await _tableClient.UpsertEntityAsync(order);
         }
 
-        public async Task<IEnumerable<Item>> GetAllItemsAsync()
+        public IEnumerable<Item> GetAllItemsAsync()
         {
             var result = new List<Item>();
-            var items = _tableClient.QueryAsync<Item>(filter: "", maxPerPage: 50);
-            await foreach (var item in items)
+            var items = _tableClient.Query<Item>();
+            foreach (var item in items)
             {
                 result.Add(item);
             }
+
             return result;
         }
     }
@@ -65,9 +67,9 @@ namespace CFItems
         public string Material { get; set; }
         [IgnoreDataMember]
         public List<string> Data { get; set; }
-        public string FullDataPiped { get { return string.Join('|', this.Data); } }
+        public string FullDataPiped { get; set; }
 
-        public string FullData { get { return string.Join(' ', this.Data); } }
+        public string FullData { get; set; }
         public string PartitionKey { get; set; }
         public string RowKey { get; set; }
         public DateTimeOffset? Timestamp { get; set; }
