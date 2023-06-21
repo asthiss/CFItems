@@ -1,9 +1,7 @@
-using Azure.Data.Tables;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -18,8 +16,8 @@ namespace CFItems
     {
         private static readonly string itemDelimiter = "----------------------------------------";
         private static readonly string itemDelimiterLineTwo = "can be referred to as";
-        private static readonly TableClient _tableClient = 
-            new TableClient(Environment.GetEnvironmentVariable("AzureWebJobsStorage"), "cfitems");
+        private static readonly TableService _tableService = 
+            new TableService(Environment.GetEnvironmentVariable("AzureWebJobsStorage"), "cfitems");
        
         [FunctionName(nameof(LogEater))]
         public static async Task<IActionResult> Run(
@@ -28,7 +26,6 @@ namespace CFItems
         {
             try
             {
-                _tableClient.CreateIfNotExists();
                 var lines = new List<string>();
                 var reader = new StreamReader(req.Body);
                 while (!reader.EndOfStream)
@@ -64,7 +61,7 @@ namespace CFItems
 
                 foreach(var itemToUpload in items)
                 {
-                    await _tableClient.UpsertEntityAsync(itemToUpload);
+                    await _tableService.InsertItem(itemToUpload);
                 }
 
                 return new OkObjectResult("Log ingested");
@@ -78,6 +75,8 @@ namespace CFItems
         private static Item ProcessItem(Item item, ILogger log)
         {
             var description = string.Join(' ', item.Data);
+            item.FullData = description;
+            item.FullDataPiped = string.Join('|', item.Data);
             try
             {
                 item.Name = ExtractItemName(item.Data.First());
