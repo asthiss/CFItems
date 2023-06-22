@@ -279,8 +279,8 @@
             <b>Level:</b> ${"Level"}<br>
             <b>Weight:</b> ${"Kg"}kg ${"Gram"}g<br>
             <b>Worth:</b> ${"Worth"} copper<br>
-            <b>Affects</b> <br>
-            ${"Affects"}`;
+            <b>Flags:</b> ${"Flags"}<br>
+            ${"Modifiers"}`;
 
             var weaponTemplate = template`
             <b>Name:</b> ${"Name"}<br>
@@ -302,7 +302,19 @@
                 var item = document.createElement('p')
                 item.className = 'item';
                 var currentItem = items[i];
-                currentItem.Affects = currentItem.AffectsPiped.split('|').join('<br>');
+                if(currentItem.AffectsPiped)
+                {    
+                    currentItem.Affects = currentItem.AffectsPiped.split('|').join('<br>');
+                }
+                if(currentItem.ModifiersPiped)
+                {
+                    currentItem.Modifiers = currentItem.ModifiersPiped.split('|').join('<br>');
+                }
+                if(currentItem.FlaggsPiped)
+                {   
+                    currentItem.Flags = currentItem.FlaggsPiped.split('|').join(' ');
+                }  
+                
                 item.innerHTML = itemTemplate(currentItem)
                 if(currentItem.IsWeapon)
                 {
