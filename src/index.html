@@ -119,7 +119,7 @@
         <label id="lbFetchData" class="button center" for="fetchData">Load all</label>
     </div>
     
-    <div id="itemList"></i></div>
+    <div id="itemList" class="center"></div>
 
     <template id="template">
         <div class="item_row">
@@ -277,13 +277,50 @@
             <b>Type:</b> ${"Group"} <br>
             <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"}<br>
-            <b>Weight:</b> ${"Weight"}<br>
-            <b>Worth: ${"Worth"}</b><br>`;
+            <b>Weight:</b> ${"Kg"}kg ${"Gram"}g<br>
+            <b>Worth:</b> ${"Worth"} copper<br>
+            <b>Flags:</b> ${"Flags"}<br>
+            ${"Modifiers"}`;
+
+            var weaponTemplate = template`
+            <b>Name:</b> ${"Name"}<br>
+            <b>Area:</b> <br>
+            <b>Item Type:</b> ${"Type"}<br>
+            <b>Wear:</b> ${"Type"}<br>
+            <b>Type:</b> ${"Group"} <br>
+            <b>Material:</b> ${"Material"}<br>	
+            <b>Level:</b> ${"Level"}<br>
+            <b>Damnoun:</b> ${"Damnoun"}<br>
+            <b>Avgerage:</b> ${"Avg"}<br>
+            <b>Weight:</b> ${"Kg"}kg ${"Gram"}g<br>
+            <b>Worth:</b> ${"Worth"} copper<br>
+            <b>Affects</b> <br>
+            ${"Affects"}`;
+
             var parent = document.getElementById("itemList");
             for (var i = 0; i < items.length; i++) {
                 var item = document.createElement('p')
                 item.className = 'item';
-                item.innerHTML = itemTemplate(items[i])
+                var currentItem = items[i];
+                if(currentItem.AffectsPiped)
+                {    
+                    currentItem.Affects = currentItem.AffectsPiped.split('|').join('<br>');
+                }
+                if(currentItem.ModifiersPiped)
+                {
+                    currentItem.Modifiers = currentItem.ModifiersPiped.split('|').join('<br>');
+                }
+                if(currentItem.FlaggsPiped)
+                {   
+                    currentItem.Flags = currentItem.FlaggsPiped.split('|').join(' ');
+                }  
+                
+                item.innerHTML = itemTemplate(currentItem)
+                if(currentItem.IsWeapon)
+                {
+                    item.innerHTML = weaponTemplate(currentItem)
+                }
+
                 parent.appendChild(item);
             }
         }

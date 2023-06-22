@@ -210,6 +210,11 @@ namespace CFItems
             {
                 item.FlaggsPiped = string.Join('|', item.Flaggs);
             }
+
+            if (item.Modifiers != null && item.Modifiers.Any())
+            {
+                item.ModifiersPiped = string.Join('|', item.Modifiers);
+            }
         }
 
         private static async Task<bool> FillModifier(string line, Item item)
