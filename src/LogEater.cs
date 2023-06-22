@@ -75,7 +75,6 @@ namespace CFItems
         private static Item ProcessItem(Item item, ILogger log)
         {
             var description = string.Join(' ', item.Data);
-            item.FullData = description;
             item.FullDataPiped = string.Join('|', item.Data);
             try
             {
@@ -122,8 +121,23 @@ namespace CFItems
                 log.LogError(ex, ex.Message + $"Item: {description}");
             }
 
+            try
+            {
+                FillAffects(item);
+            }
+            catch (Exception ex)
+            {
+                log.LogError(ex, ex.Message + $"Item: {description}");
+            }
 
             return item;
+        }
+
+        private static void FillAffects(Item item)
+        {
+            var madeOfIndex = item.Data.FindIndex(x => x.StartsWith("It is made of "));
+            item.Affects = item.Data.Skip(madeOfIndex).ToList();
+            item.AffectsPiped = string.Join('|', item.Affects);
         }
 
         private static void FillMaterialAndWeight(Item item)
@@ -131,7 +145,7 @@ namespace CFItems
             var input = item.Data.Where(x => x.StartsWith("It is made of ")).First();
             var parts = input.Split(' ');
             item.Material = parts[4];
-            item.Weight = parts[7] + parts[9];
+            item.Weight = $"{parts[7]},{parts[9]}";
 
             if (input.Contains("pounds"))
             {
