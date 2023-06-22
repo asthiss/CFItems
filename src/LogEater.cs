@@ -1,3 +1,4 @@
+using Azure.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -16,9 +17,10 @@ namespace CFItems
     {
         private static readonly string itemDelimiter = "----------------------------------------";
         private static readonly string itemDelimiterLineTwo = "can be referred to as";
+        private static string fileName = string.Empty;
         private static readonly TableService _tableService = 
             new TableService(Environment.GetEnvironmentVariable("AzureWebJobsStorage"), "cfitems");
-       
+
         [FunctionName(nameof(LogEater))]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
@@ -27,6 +29,10 @@ namespace CFItems
             try
             {
                 var lines = new List<string>();
+                if(req.Headers.TryGetValue("filename", out var filename))
+                {
+                    fileName = filename;
+                }
                 var reader = new StreamReader(req.Body);
                 while (!reader.EndOfStream)
                 {
@@ -49,7 +55,7 @@ namespace CFItems
                     if ((readingItem && lines[i].StartsWith(itemDelimiter)) ||
                         (readingItem && string.IsNullOrWhiteSpace(lines[i])))
                     {
-                        items.Add(ProcessItem(item, log));
+                        items.Add(await ProcessItem(item, log));
                         readingItem = false;
                         continue;
                     }
@@ -73,7 +79,7 @@ namespace CFItems
             }
         }
 
-        private static Item ProcessItem(Item item, ILogger log)
+        private static async Task<Item> ProcessItem(Item item, ILogger log)
         {
             var description = string.Join(' ', item.Data);
             item.FullDataPiped = string.Join('|', item.Data);
@@ -131,7 +137,51 @@ namespace CFItems
                 log.LogError(ex, ex.Message + $"Item: {description}");
             }
 
+            try
+            {
+                await FillFlags(item);
+            }
+            catch (Exception ex)
+            {
+                log.LogError(ex, ex.Message + $"Item: {description}");
+            }
+
             return item;
+        }
+
+        private static async Task FillFlags(Item item)
+        {
+            foreach(var line in item.Affects)
+            {
+                var flag = line switch
+                {
+                    var str when str.Contains("It radiates light.") => "glowing",
+                    var str when str.Contains("It emanates sound.") => "humming",
+                    var str when str.Contains("A magical aura surrounds it.") => "magic",
+                    var str when str.Contains("It can't be removed.") => "cursed",
+                    var str when str.Contains("It can't be dropped with ease.") => "no_drop",
+                    var str when str.Contains("It is unusable for those of a pure soul.") => "anti_good",
+                    var str when str.Contains("Those with a balanced soul cannot use it.") => "anti_neutral",
+                    var str when str.Contains("People of a dark heart cannot use it.") => "anti_evil",
+                    var str when str.Contains("It is easily concealed.") => "hidden",
+                    var str when str.Contains("It has been imbued with a blessing.") => "bless",
+                    var str when str.Contains("It has a chilling aura of evil.") => "evil",
+                    var str when str.Contains("It shines with a pure, goodly aura.") => "good",
+                    var str when str.Contains("It seems to be dark and cloaked in shadows.") => "dark",
+                    var str when str.Contains("A thief, no one else, could use it.") => "thief_only",
+                    var str when str.Contains("Only a dwarf could possibly use it.") => "dwarf_only",
+                    var str when str.Contains("It is meant for a woman.") => "female_only",
+                    var str when str.Contains("Only those of chaotic nature could use it.") => "chaotic_only",
+                    _ => string.Empty
+                };
+
+                if(string.IsNullOrEmpty(flag))
+                {
+                    await _tableService.MissingMapping(line, "FillFlags", fileName);
+                }
+            }
+
+            item.FlaggsPiped = string.Join('|', item.Flaggs);
         }
 
         private static void FillAffects(Item item)
