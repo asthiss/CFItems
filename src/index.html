@@ -15,6 +15,10 @@
             color: #369;
         }
 
+        ul {
+            margin: 0;
+        }
+
         .note {
             width: 500px;
             margin: 50px auto;
@@ -279,7 +283,7 @@
             <b>Level:</b> ${"Level"}<br>
             <b>Weight:</b> ${"Kg"}kg ${"Gram"}g<br>
             <b>Worth:</b> ${"Worth"} copper<br>
-            <b>Flags:</b> ${"Flags"}<br>
+            <b>Flags:</b> ${"Flags"}
             ${"Modifiers"}`;
 
             var weaponTemplate = template`
@@ -294,8 +298,8 @@
             <b>Avgerage:</b> ${"Avg"}<br>
             <b>Weight:</b> ${"Kg"}kg ${"Gram"}g<br>
             <b>Worth:</b> ${"Worth"} copper<br>
-            <b>Affects</b> <br>
-            ${"Affects"}`;
+            <b>Flags:</b> ${"Flags"}
+            ${"Modifiers"}`;
 
             var parent = document.getElementById("itemList");
             for (var i = 0; i < items.length; i++) {
@@ -308,7 +312,11 @@
                 }
                 if(currentItem.ModifiersPiped)
                 {
-                    currentItem.Modifiers = currentItem.ModifiersPiped.split('|').join('<br>');
+                    currentItem.Modifiers += '<ul>';
+                    currentItem.ModifiersPiped.split('|').forEach((modifier) => {
+                        currentItem.Modifiers += '<li>' + modifier + '</li>';
+                    });
+                    currentItem.Modifiers += '</ul>';
                 }
                 if(currentItem.FlaggsPiped)
                 {   

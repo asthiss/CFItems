@@ -2,6 +2,7 @@
 using Azure.Data.Tables;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
@@ -84,6 +85,7 @@ namespace CFItems
             PartitionKey = DateTime.Now.ToString("yyyy-MM");
             Data = new List<string>();
             Affects = new List<string>();
+            MagicAffects = new List<string>();
             Flaggs = new List<string>();
             Modifiers = new List<string>();
         }
@@ -108,8 +110,12 @@ namespace CFItems
         [IgnoreDataMember]
         public List<string> Affects { get; internal set; }
         public string AffectsPiped { get; set; }
+        [IgnoreDataMember]
+        public List<string> MagicAffects { get; internal set; }
+        public string MagicAffectsPiped { get; set; }
         public string Avg { get; set; }
-        public bool IsWeapon =>  this.Group == "weapon";
+        public bool IsWeapon => this.Group == "weapon";
+        public bool IsMagic => new string[] { "pill", "potion", "wand", "talisman", "scroll" }.Contains(this.Group);
         [IgnoreDataMember]
         public List<string> Flaggs { get; set; }
         public string FlaggsPiped { get; set; }
@@ -137,5 +143,7 @@ namespace CFItems
         public string Slash { get; set; }
         public string Magic { get; set; }
         public string Element { get; set; }
+        public string Spell { get; set; }
+        public string SpellLevel { get; set; }
     }
 }
