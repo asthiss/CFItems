@@ -135,7 +135,12 @@ namespace CFItems
 
         private static void FillAffects(Item item)
         {
-            var madeOfIndex = item.Data.FindIndex(x => x.StartsWith("It is made of "));
+            var madeOfIndex = item.Data.FindIndex(x => x.StartsWith("It is made of ")) + 1;
+            if(item.IsWeapon)
+            {
+                madeOfIndex = madeOfIndex + 1;
+            }
+
             item.Affects = item.Data.Skip(madeOfIndex).ToList();
             item.AffectsPiped = string.Join('|', item.Affects);
         }
@@ -153,6 +158,9 @@ namespace CFItems
                 var kg = Math.Abs(pounds * 0.45359237).ToString();
                 item.Weight = kg.Substring(0, kg.IndexOf(",") + 4);
             }
+
+            item.Kg = item.Weight.Split(',').First();
+            item.Gram = item.Weight.Split(',').Last();
         }
 
         private static void FillGroupAndType(Item item)
@@ -170,9 +178,18 @@ namespace CFItems
 
             item.Group = groupAndType.Item1;
             item.Type = groupAndType.Item2;
-            if (item.Group == "weapon")
+            if (item.IsWeapon)
             {
-                item.Damnoun = item.Data.ElementAt(madeOfIndex - 1).Split(" ").Last().TrimEnd('.');
+                var damnounStringParts = item.Data.ElementAt(madeOfIndex - 1).Split(" ");
+                var damnoun = damnounStringParts.Last().TrimEnd('.');
+                if (damnounStringParts[damnounStringParts.Length-2] != "of")
+                {
+                    damnoun = $"{damnounStringParts[damnounStringParts.Length - 2]} {damnoun}";
+                }
+                
+                item.Damnoun = damnoun;
+                var averageString = item.Data.Where(x => x.StartsWith("It can cause ")).First();
+                item.Avg = averageString.Split(" ").Last().TrimEnd('.');
             }
         }
 
