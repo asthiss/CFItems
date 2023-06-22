@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
-using System.Xml;
 
 namespace CFItems
 {
     public interface ITableService
     {
+        Task MissingMapping(string value, string function, string fileName);
         Task InsertItem(Item item);
         IEnumerable<Item> GetAllItemsAsync();
 
@@ -30,9 +30,18 @@ namespace CFItems
             _tableClient.CreateIfNotExistsAsync();
         }
 
-        public async Task InsertItem(Item order)
+        public async Task InsertItem(Item item)
         {
-            await _tableClient.UpsertEntityAsync(order);
+            await _tableClient.UpsertEntityAsync(item);
+        }
+        public async Task MissingMapping(string value, string function, string fileName)
+        {
+            await _tableClient.AddEntityAsync(new MissingMapping
+            {
+                Value = value,
+                Function = function,
+                FileName = fileName
+            });
         }
 
         public IEnumerable<Item> GetAllItemsAsync()
@@ -48,6 +57,21 @@ namespace CFItems
         }
     }
 
+    public class MissingMapping : ITableEntity
+    {
+        public MissingMapping()
+        {
+            PartitionKey = DateTime.Now.ToString("yyyy-MM");
+            RowKey = Guid.NewGuid().ToString();
+        }
+        public string PartitionKey { get; set; }
+        public string RowKey { get; set; }
+        public DateTimeOffset? Timestamp { get; set; }
+        public ETag ETag { get; set; }
+        public string Function { get; set; }
+        public string Value { get; set; }
+        public string FileName { get; set; }
+    }
 
 
     public class Item : ITableEntity
@@ -80,5 +104,8 @@ namespace CFItems
         public string AffectsPiped { get; set; }
         public string Avg { get; set; }
         public bool IsWeapon =>  this.Group == "weapon";
+        [IgnoreDataMember]
+        public List<string> Flaggs { get; set; }
+        public string FlaggsPiped { get; set; }
     }
 }
