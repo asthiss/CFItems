@@ -192,6 +192,10 @@ namespace CFItems
                     var str when str.Contains("It is meant for a woman.") => "female_only",
                     var str when str.Contains("Only those of chaotic nature could use it.") => "chaotic_only",
                     var str when str.Contains("Upon death, it will crumble.") => "rot_death",
+                    var str when str.Contains("It is invisible to the plain eye.") => "hideden",
+                    var str when str.Contains("Only a ranger could utilize it.") => "ranger_only",
+                    var str when str.Contains("Only a student of the arcane arts could use it.") => "conjurer_only",
+                    var str when str.Contains("Only an elf could put it to use.") => "elf_only",
                     _ => string.Empty
                 };
 
