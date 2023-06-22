@@ -38,7 +38,8 @@ namespace CFItems
                 for (var i = 0; i < lines.Count; i++)
                 {
                     if (lines[i].StartsWith(itemDelimiter) &&
-                        lines[i + 1].Contains(itemDelimiterLineTwo))
+                        lines[i + 1].Contains(itemDelimiterLineTwo) &&
+                        !lines[i - 1].Contains("lore")) //remove lores
                     {
                         readingItem = true;
                         item = new Item();
