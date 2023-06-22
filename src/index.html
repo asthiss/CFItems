@@ -80,6 +80,28 @@
         .textCenter {
             text-align: center;
         }
+        #busy
+        {
+            animation: spin 1s infinite linear;
+            display:inline-block;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 35px;
+            font-style:normal;
+            color:#555;
+            display: none;
+        }
+
+        #busy::before
+        {
+            content:"\25E0";
+        }
+
+        @keyframes spin
+        {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(359deg);}
+        }
     </style>
 </head>
 <body>
@@ -94,8 +116,25 @@
     </div>
     <div id="show-items">
         <input type="button" id="fetchData" onclick="fetchData()" class="center">
-        <label class="button center" for="fetchData">Load all</label>
+        <label id="lbFetchData" class="button center" for="fetchData">Load all</label>
     </div>
+    
+    <div id="itemList"></i></div>
+
+    <template id="template">
+        <div class="item_row">
+            <b>Name:</b> a pearlescent bridal gown  <b>Area:</b> The Oryx Steppes<br>
+            <b>Item Type:</b> clothing <b>Wear:</b> body <b>Material:</b> silk<br>
+            <b>Level:</b> 51<b>Weight:</b> 3 lb 12 oz<br>
+            <b>Flags:</b> glowing magic noremove female_only<br>
+            <ul style="margin: 0; ">
+                <li>Modifies <span class="affect_name">dexterity</span> by -1<br></li>
+                <li>Modifies <span class="affect_name">hp</span> by 10<br></li>
+                <li>Modifies <span class="affect_name">moves</span> by -20<br></li>
+            </ul>
+        </div>
+    </template>
+
     <script>
         // ************************ Drag and drop ***************** //
         let dropArea = document.getElementById("drop-area")
@@ -200,21 +239,53 @@
             xhr.send(formData)
         }
         function fetchData() {
+            var label = document.getElementById('lbFetchData');
+            label.innerHTML = '<i id="busy"></i>';
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://localhost:7298/api/items/all");
+            xhr.open("GET", "https://cfitems.azurewebsites.net/api/items/all");
             xhr.send();
             xhr.responseType = "json";
             xhr.onload = () => {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     console.log(xhr.response);
+                    createElements(xhr.response);
+                    label.innerHTML = 'Load all';
                 } else {
                     console.log(`Error: ${xhr.status}`);
                 }
             };
         }
+
+        function template(strings, ...keys) {
+            return (...values) => {
+                const dict = values[values.length - 1] || {};
+                const result = [strings[0]];
+                keys.forEach((key, i) => {
+                    const value = Number.isInteger(key) ? values[key] : dict[key];
+                    result.push(value, strings[i + 1]);
+                });
+                return result.join("");
+            };
+        }
             
-        function takeData(val) {
-            return val.slice(1, 11);
+        function createElements(items) {
+            var itemTemplate = template`
+            <b>Name:</b> ${"Name"}<br>
+            <b>Area:</b> <br>
+            <b>Item Type:</b> ${"Type"}<br>
+            <b>Wear:</b> ${"Type"}<br>
+            <b>Type:</b> ${"Group"} <br>
+            <b>Material:</b> ${"Material"}<br>	
+            <b>Level:</b> ${"Level"}<br>
+            <b>Weight:</b> ${"Weight"}<br>
+            <b>Worth: ${"Worth"}</b><br>`;
+            var parent = document.getElementById("itemList");
+            for (var i = 0; i < items.length; i++) {
+                var item = document.createElement('p')
+                item.className = 'item';
+                item.innerHTML = itemTemplate(items[i])
+                parent.appendChild(item);
+            }
         }
     </script>
 </body>
