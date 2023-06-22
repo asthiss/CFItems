@@ -14,11 +14,14 @@ namespace CFItems
 {
     public static class LogEater
     {
+        private static readonly Regex modifierRegex = new Regex("your \\b(\\w*\\b ?\\w*\\b ?\\w*)\\b ?\\b\\w*\\b by (-?\\d*) point");
+        private static readonly Regex acRegex = new Regex("When worn, it protects you against piercing for (\\d*), bashing for (\\d*),  slashing for (\\d*), magic for (\\d*), and the elements for (\\d*) points each");
         private static readonly string itemDelimiter = "----------------------------------------";
         private static readonly string itemDelimiterLineTwo = "can be referred to as";
-        private static readonly TableService _tableService = 
+        private static string fileName = string.Empty;
+        private static readonly TableService _tableService =
             new TableService(Environment.GetEnvironmentVariable("AzureWebJobsStorage"), "cfitems");
-       
+
         [FunctionName(nameof(LogEater))]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
@@ -27,6 +30,10 @@ namespace CFItems
             try
             {
                 var lines = new List<string>();
+                if (req.Headers.TryGetValue("filename", out var filename))
+                {
+                    fileName = filename;
+                }
                 var reader = new StreamReader(req.Body);
                 while (!reader.EndOfStream)
                 {
@@ -38,8 +45,7 @@ namespace CFItems
                 for (var i = 0; i < lines.Count; i++)
                 {
                     if (lines[i].StartsWith(itemDelimiter) &&
-                        lines[i + 1].Contains(itemDelimiterLineTwo) &&
-                        !lines[i - 1].Contains("lore")) //remove lores
+                        lines[i + 1].Contains(itemDelimiterLineTwo)) //remove lores
                     {
                         readingItem = true;
                         item = new Item();
@@ -49,7 +55,7 @@ namespace CFItems
                     if ((readingItem && lines[i].StartsWith(itemDelimiter)) ||
                         (readingItem && string.IsNullOrWhiteSpace(lines[i])))
                     {
-                        items.Add(ProcessItem(item, log));
+                        items.Add(await ProcessItem(item, log));
                         readingItem = false;
                         continue;
                     }
@@ -60,7 +66,7 @@ namespace CFItems
                     }
                 }
 
-                foreach(var itemToUpload in items)
+                foreach (var itemToUpload in items)
                 {
                     await _tableService.InsertItem(itemToUpload);
                 }
@@ -73,7 +79,7 @@ namespace CFItems
             }
         }
 
-        private static Item ProcessItem(Item item, ILogger log)
+        private static async Task<Item> ProcessItem(Item item, ILogger log)
         {
             var description = string.Join(' ', item.Data);
             item.FullDataPiped = string.Join('|', item.Data);
@@ -86,7 +92,7 @@ namespace CFItems
             {
                 log.LogError(ex, ex.Message + $"Item: {description}");
             }
-            
+
             try
             {
                 item.Level = ExtractLevel(description);
@@ -95,7 +101,7 @@ namespace CFItems
             {
                 log.LogError(ex, ex.Message + $"Item: {description}");
             }
-            
+
             try
             {
                 item.Worth = ExtractWorth(description);
@@ -104,7 +110,7 @@ namespace CFItems
             {
                 log.LogError(ex, ex.Message + $"Item: {description}");
             }
-            
+
             try
             {
                 FillGroupAndType(item);
@@ -113,12 +119,13 @@ namespace CFItems
             {
                 log.LogError(ex, ex.Message + $"Item: {description}");
             }
-            
+
             try
             {
                 FillMaterialAndWeight(item);
             }
-            catch(Exception ex) {
+            catch (Exception ex)
+            {
                 log.LogError(ex, ex.Message + $"Item: {description}");
             }
 
@@ -131,13 +138,154 @@ namespace CFItems
                 log.LogError(ex, ex.Message + $"Item: {description}");
             }
 
+            try
+            {
+                await FillFlagsAndModifiers(item);
+            }
+            catch (Exception ex)
+            {
+                log.LogError(ex, ex.Message + $"Item: {description}");
+            }
+
             return item;
+        }
+
+        private static async Task FillFlagsAndModifiers(Item item)
+        {
+            for (var i = 0; i < item.Affects.Count; i++)
+            {
+                var line = item.Affects[i];
+                if (line.StartsWith("When worn, it protects you against"))
+                {
+                    i++;
+                    var armorLine = line + item.Affects[i];
+                    var match = acRegex.Match(armorLine);
+                    if (match.Success)
+                    {
+                        item.Pierce = match.Groups[1].Value;
+                        item.Bash = match.Groups[2].Value;
+                        item.Slash = match.Groups[3].Value;
+                        item.Magic = match.Groups[4].Value;
+                        item.Element = match.Groups[5].Value;
+                        continue;
+                    }
+                }
+
+                var flag = line switch
+                {
+                    var str when str.Contains("It radiates light.") => "glowing",
+                    var str when str.Contains("It emanates sound.") => "humming",
+                    var str when str.Contains("A magical aura surrounds it.") => "magic",
+                    var str when str.Contains("It can't be removed.") => "cursed",
+                    var str when str.Contains("It can't be dropped with ease.") => "no_drop",
+                    var str when str.Contains("It is unusable for those of a pure soul.") => "anti_good",
+                    var str when str.Contains("Those with a balanced soul cannot use it.") => "anti_neutral",
+                    var str when str.Contains("People of a dark heart cannot use it.") => "anti_evil",
+                    var str when str.Contains("It is easily concealed.") => "hidden",
+                    var str when str.Contains("It has been imbued with a blessing.") => "bless",
+                    var str when str.Contains("It has a chilling aura of evil.") => "evil",
+                    var str when str.Contains("It shines with a pure, goodly aura.") => "good",
+                    var str when str.Contains("It seems to be dark and cloaked in shadows.") => "dark",
+                    var str when str.Contains("A thief, no one else, could use it.") => "thief_only",
+                    var str when str.Contains("Only a dwarf could possibly use it.") => "dwarf_only",
+                    var str when str.Contains("It is meant for a woman.") => "female_only",
+                    var str when str.Contains("Only those of chaotic nature could use it.") => "chaotic_only",
+                    _ => string.Empty
+                };
+
+                if (string.IsNullOrEmpty(flag))
+                {
+                    if (!await FillModifier(line, item))
+                    {
+                        await _tableService.MissingMapping(line, "FillFlags", fileName);
+                    }
+                }
+                else
+                {
+                    item.Flaggs.Add(flag);
+                }
+            }
+
+            if (item.Flaggs != null && item.Flaggs.Any())
+            {
+                item.FlaggsPiped = string.Join('|', item.Flaggs);
+            }
+        }
+
+        private static async Task<bool> FillModifier(string line, Item item)
+        {
+            var matches = modifierRegex.Matches(line);
+            foreach (Match match in matches)
+            {
+                if (match.Success)
+                {
+                    var type = match.Groups[1];
+                    var value = match.Groups[2];
+                    item.Modifiers.Add($"Modifies {type} by {value}");
+                    switch (type.Value)
+                    {
+                        case "hit roll":
+                            item.Hit = value.Value;
+                            break;
+                        case "damage roll":
+                            item.Dam = value.Value;
+                            break;
+                        case "hp":
+                            item.Hp = value.Value;
+                            break;
+                        case "mana":
+                            item.Mana = value.Value;
+                            break;
+                        case "moves":
+                            item.Moves = value.Value;
+                            break;
+                        case "strength":
+                            item.Str = value.Value;
+                            break;
+                        case "intelligence":
+                            item.Int = value.Value;
+                            break;
+                        case "wisdom":
+                            item.Wis = value.Value;
+                            break;
+                        case "dexterity":
+                            item.Dex = value.Value;
+                            break;
+                        case "constitution":
+                            item.Con = value.Value;
+                            break;
+                        case "charisma":
+                            item.Chr = value.Value;
+                            break;
+                        case "save vs spell":
+                            item.Svs = value.Value;
+                            break;
+                        case "save vs paralysis":
+                            item.Svp = value.Value;
+                            break;
+                        case "save vs breath":
+                            item.Svb = value.Value;
+                            break;
+                        case "save vs mental":
+                            item.Svm = value.Value;
+                            break;
+                        case "armor class":
+                            item.Ac = value.Value;
+                            break;
+                        default:
+                            await _tableService.MissingMapping(line, "FillModifier", fileName);
+                            break;
+                    }
+                }
+            }
+
+            return matches.Any();
         }
 
         private static void FillAffects(Item item)
         {
             var madeOfIndex = item.Data.FindIndex(x => x.StartsWith("It is made of ")) + 1;
-            if(item.IsWeapon)
+            if (item.IsWeapon)
             {
                 madeOfIndex = madeOfIndex + 1;
             }
@@ -183,11 +331,11 @@ namespace CFItems
             {
                 var damnounStringParts = item.Data.ElementAt(madeOfIndex - 1).Split(" ");
                 var damnoun = damnounStringParts.Last().TrimEnd('.');
-                if (damnounStringParts[damnounStringParts.Length-2] != "of")
+                if (damnounStringParts[damnounStringParts.Length - 2] != "of")
                 {
                     damnoun = $"{damnounStringParts[damnounStringParts.Length - 2]} {damnoun}";
                 }
-                
+
                 item.Damnoun = damnoun;
                 var averageString = item.Data.Where(x => x.StartsWith("It can cause ")).First();
                 item.Avg = averageString.Split(" ").Last().TrimEnd('.');
