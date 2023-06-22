@@ -17,11 +17,14 @@ namespace CFItems
     public class TableService : ITableService
     {
         private readonly TableClient _tableClient;
-       
+        private readonly TableClient _tableClientMissingData;
+
         public TableService(string connectionString, string tableName)
         {
             _tableClient = new TableClient(connectionString, tableName);
             _tableClient.CreateIfNotExistsAsync();
+            _tableClientMissingData = new TableClient(connectionString, "missingdata");
+            _tableClientMissingData.CreateIfNotExistsAsync();
         }
 
         public TableService(Uri endpoint)
@@ -36,7 +39,7 @@ namespace CFItems
         }
         public async Task MissingMapping(string value, string function, string fileName)
         {
-            await _tableClient.AddEntityAsync(new MissingMapping
+            await _tableClientMissingData.AddEntityAsync(new MissingMapping
             {
                 Value = value,
                 Function = function,
@@ -80,6 +83,9 @@ namespace CFItems
         {
             PartitionKey = DateTime.Now.ToString("yyyy-MM");
             Data = new List<string>();
+            Affects = new List<string>();
+            Flaggs = new List<string>();
+            Modifiers = new List<string>();
         }
         public string Name { get; set; }
         public string Level { get; set; }
@@ -107,5 +113,29 @@ namespace CFItems
         [IgnoreDataMember]
         public List<string> Flaggs { get; set; }
         public string FlaggsPiped { get; set; }
+        [IgnoreDataMember]
+        public List<string> Modifiers { get; set; }
+        public string ModifiersPiped { get; set; }
+        public string Hit { get; set; }
+        public string Dam { get; set; }
+        public string Hp { get; set; }
+        public string Mana { get; set; }
+        public string Moves { get; set; }
+        public string Str { get; set; }
+        public string Int { get; set; }
+        public string Wis { get; set; }
+        public string Dex { get; set; }
+        public string Con { get; set; }
+        public string Chr { get; set; }
+        public string Svs { get; set; }
+        public string Svp { get; set; }
+        public string Svb { get; set; }
+        public string Svm { get; set; }
+        public string Ac { get; set; }
+        public string Pierce { get; set; }
+        public string Bash { get; set; }
+        public string Slash { get; set; }
+        public string Magic { get; set; }
+        public string Element { get; set; }
     }
 }
