@@ -75,7 +75,6 @@ namespace CFItems
         private static Item ProcessItem(Item item, ILogger log)
         {
             var description = string.Join(' ', item.Data);
-            item.FullData = description;
             item.FullDataPiped = string.Join('|', item.Data);
             try
             {
@@ -122,8 +121,28 @@ namespace CFItems
                 log.LogError(ex, ex.Message + $"Item: {description}");
             }
 
+            try
+            {
+                FillAffects(item);
+            }
+            catch (Exception ex)
+            {
+                log.LogError(ex, ex.Message + $"Item: {description}");
+            }
 
             return item;
+        }
+
+        private static void FillAffects(Item item)
+        {
+            var madeOfIndex = item.Data.FindIndex(x => x.StartsWith("It is made of ")) + 1;
+            if(item.IsWeapon)
+            {
+                madeOfIndex = madeOfIndex + 1;
+            }
+
+            item.Affects = item.Data.Skip(madeOfIndex).ToList();
+            item.AffectsPiped = string.Join('|', item.Affects);
         }
 
         private static void FillMaterialAndWeight(Item item)
@@ -131,7 +150,7 @@ namespace CFItems
             var input = item.Data.Where(x => x.StartsWith("It is made of ")).First();
             var parts = input.Split(' ');
             item.Material = parts[4];
-            item.Weight = parts[7] + parts[9];
+            item.Weight = $"{parts[7]},{parts[9]}";
 
             if (input.Contains("pounds"))
             {
@@ -139,6 +158,9 @@ namespace CFItems
                 var kg = Math.Abs(pounds * 0.45359237).ToString();
                 item.Weight = kg.Substring(0, kg.IndexOf(",") + 4);
             }
+
+            item.Kg = item.Weight.Split(',').First();
+            item.Gram = item.Weight.Split(',').Last();
         }
 
         private static void FillGroupAndType(Item item)
@@ -156,9 +178,18 @@ namespace CFItems
 
             item.Group = groupAndType.Item1;
             item.Type = groupAndType.Item2;
-            if (item.Group == "weapon")
+            if (item.IsWeapon)
             {
-                item.Damnoun = item.Data.ElementAt(madeOfIndex - 1).Split(" ").Last().TrimEnd('.');
+                var damnounStringParts = item.Data.ElementAt(madeOfIndex - 1).Split(" ");
+                var damnoun = damnounStringParts.Last().TrimEnd('.');
+                if (damnounStringParts[damnounStringParts.Length-2] != "of")
+                {
+                    damnoun = $"{damnounStringParts[damnounStringParts.Length - 2]} {damnoun}";
+                }
+                
+                item.Damnoun = damnoun;
+                var averageString = item.Data.Where(x => x.StartsWith("It can cause ")).First();
+                item.Avg = averageString.Split(" ").Last().TrimEnd('.');
             }
         }
 
