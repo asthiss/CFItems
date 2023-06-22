@@ -64,16 +64,21 @@ namespace CFItems
         public string Group { get; set; }
         public string Damnoun { get; set; }
         public string Weight { get; set; }
+        public string Kg { get; set; }
+        public string Gram { get; set; }
         public string Material { get; set; }
         [IgnoreDataMember]
         public List<string> Data { get; set; }
         public string FullDataPiped { get; set; }
 
-        public string FullData { get; set; }
         public string PartitionKey { get; set; }
         public string RowKey { get; set; }
         public DateTimeOffset? Timestamp { get; set; }
         public ETag ETag { get; set; }
-
+        [IgnoreDataMember]
+        public List<string> Affects { get; internal set; }
+        public string AffectsPiped { get; set; }
+        public string Avg { get; set; }
+        public bool IsWeapon =>  this.Group == "weapon";
     }
 }
