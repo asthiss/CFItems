@@ -14,6 +14,7 @@ namespace CFItems
 {
     public static class LogEater
     {
+        private static readonly Regex wandRegex = new Regex("It contains the spell '(.*)' of the (\\d*).. level");
         private static readonly Regex modifierRegex = new Regex("your \\b(\\w*\\b ?\\w*\\b ?\\w*)\\b ?\\b\\w*\\b by (-?\\d*) point");
         private static readonly Regex acRegex = new Regex("When worn, it protects you against piercing for (\\d*), bashing for (\\d*),  slashing for (\\d*), magic for (\\d*), and the elements for (\\d*) points each");
         private static readonly string itemDelimiter = "----------------------------------------";
@@ -152,13 +153,13 @@ namespace CFItems
 
         private static async Task FillFlagsAndModifiers(Item item)
         {
-            for (var i = 0; i < item.Affects.Count; i++)
+            for (var index = 0; index < item.Affects.Count; index++)
             {
-                var line = item.Affects[i];
+                var line = item.Affects[index];
                 if (line.StartsWith("When worn, it protects you against"))
                 {
-                    i++;
-                    var armorLine = line + item.Affects[i];
+                    index++;
+                    var armorLine = line + item.Affects[index];
                     var match = acRegex.Match(armorLine);
                     if (match.Success)
                     {
@@ -190,11 +191,38 @@ namespace CFItems
                     var str when str.Contains("Only a dwarf could possibly use it.") => "dwarf_only",
                     var str when str.Contains("It is meant for a woman.") => "female_only",
                     var str when str.Contains("Only those of chaotic nature could use it.") => "chaotic_only",
+                    var str when str.Contains("Upon death, it will crumble.") => "rot_death",
                     _ => string.Empty
                 };
 
                 if (string.IsNullOrEmpty(flag))
                 {
+                    if(item.IsMagic)
+                    {
+                        if(line.StartsWith("Within it are contained level ") || line.StartsWith("Within it is contained level "))
+                        {
+                            index++;
+                            var holeLine = line + item.Affects[index];
+                            item.Spell = item.Affects[index];
+                            item.SpellLevel = line.Split(' ')[5];
+                            item.MagicAffects.Add(holeLine);
+                            continue;
+                        }
+                        if(line.StartsWith("It can be used a maximum of"))
+                        {
+                            item.MagicAffects.Add(line.Split('.').First());
+                            continue;
+                        }
+                        var match = wandRegex.Match(line);
+                        if (match.Success)
+                        {
+                            item.Spell = match.Groups[1].Value;
+                            item.SpellLevel = match.Groups[2].Value;
+                            item.MagicAffects.Add(line);
+                            continue;
+                        }
+
+                    }
                     if (!await FillModifier(line, item))
                     {
                         await _tableService.MissingMapping(line, "FillFlags", fileName);
@@ -214,6 +242,11 @@ namespace CFItems
             if (item.Modifiers != null && item.Modifiers.Any())
             {
                 item.ModifiersPiped = string.Join('|', item.Modifiers);
+            }
+
+            if (item.MagicAffects != null && item.MagicAffects.Any())
+            {
+                item.MagicAffectsPiped = string.Join('|', item.MagicAffects);
             }
         }
 
