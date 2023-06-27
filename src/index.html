@@ -9,6 +9,7 @@
             font-family: sans-serif;
             background-color: black;
             color: white;
+            font-size: 18px;
         }
 
         a {
@@ -346,6 +347,19 @@
                         <option value="Level">Level</option>
                         <option value="Avg">Weapon Avg</option>
                         <option value="Weight">Weight</option>
+                        <option value="Worth">Worth</option>
+                        <option value="Hit">Hit</option>
+                        <option value="Dam">Dam</option>
+                        <option value="Str">Strength</option>
+                        <option value="Int">Intelligence</option>
+                        <option value="Wis">Wisdom</option>
+                        <option value="Dex">Dexterity</option>
+                        <option value="Con">Constitution</option>
+                        <option value="Chr">Charisma</option>
+                        <option value="Svb">Save vs breath</option>
+                        <option value="Svm">Save vs mental</option>
+                        <option value="Svp">Save vs paralysis</option>
+                        <option value="Svs">Save vs spell</option>
                     </select>
         
                     <select name="so" id="sortOrder">
@@ -538,20 +552,20 @@
             
         function createElements(items) {
             var itemTemplate = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b>${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
+            <b>Name:</b> ${"Name"} <b>Area:</b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             <b>Flags:</b> ${"Flags"}
             ${"Modifiers"}`;
 
             var itemTemplateWithOutFlags = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b>${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
+            <b>Name:</b> ${"Name"} <b>Area:</b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             ${"Modifiers"}`;
 
             var weaponTemplate = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b>${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
+            <b>Name:</b> ${"Name"} <b>Area:</b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             <b>Flags:</b> ${"Flags"}<br>
@@ -560,7 +574,7 @@
             ${"Modifiers"}`;
 
             var weaponTemplateWithOutFlags = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b>${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
+            <b>Name:</b> ${"Name"} <b>Area:</b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             <b>Damnoun:</b> ${"Damnoun"}<br>
@@ -568,7 +582,7 @@
             ${"Modifiers"}`;
 
             var magicTemplate = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b>${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
+            <b>Name:</b> ${"Name"} <b>Area:</b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             <b>Flags:</b> ${"Flags"}<br>
@@ -576,7 +590,7 @@
             ${"Modifiers"}`;
 
             var magicTemplateWithOutFlags = template`
-            <b>Name:</b> ${"Name"} <b>Area: </b>${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
+            <b>Name:</b> ${"Name"} <b>Area: </b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             ${"MagicAffects"}
