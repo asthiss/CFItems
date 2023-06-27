@@ -18,7 +18,9 @@
         ul {
             margin: 0;
         }
-
+        .odd {
+            background-color: #111;
+        }
         .note {
             width: 500px;
             margin: 50px auto;
@@ -118,28 +120,339 @@
         <progress id="progress-bar" max=100 value=0 class="center"></progress>
         <div id="gallery"></div>
     </div>
-    <div id="show-items">
-        <input type="button" id="fetchData" onclick="fetchData()" class="center">
-        <label id="lbFetchData" class="button center" for="fetchData">Load all</label>
-    </div>
+    <form id="searchForm">
+        <fieldset>
+            <legend>Filtering Options</legend>
+    
+            <p>
+                Item Type: <select name="item_type" id="item_type">
+                                <option value="any">any</option>
+                                <option value="potion">potion</option>
+                                <option value="wand">wand</option>
+                                <option value="talisman">talisman </option>
+                                <option value="pill">food</option>
+                                <option value="food">pill</option>
+                                <option value="instrument">instrument</option>
+                                <option value="treasure">treasure</option>
+                                <option value="armor">armor</option>
+                                <option value="clothing">clothing</option>
+                                <option value="weapon">weapon</option>
+                            </select>
+    
+                Slot: <select name="slot" id="slot">
+                        <option value="any">any</option>
+                            <option value="about">about</option>
+                            <option value="arms">arms</option>
+                            <option value="back">back</option>
+                            <option value="body">body</option>
+                            <option value="claws">claws</option>
+                            <option value="ears">ears</option>
+                            <option value="face">face</option>
+                            <option value="feet">feet</option>
+                            <option value="feet hindpaws claws">feet hindpaws claws</option>
+                            <option value="finger">finger</option>
+                            <option value="foreclaws">foreclaws</option>
+                            <option value="forepaws">forepaws</option>
+                            <option value="hands">hands</option>
+                            <option value="head">head</option>
+                            <option value="hindpaws">hindpaws</option>
+                            <option value="hold">hold</option>
+                            <option value="hooves">hooves</option>
+                            <option value="horns">horns</option>
+                            <option value="legs">legs</option>
+                            <option value="neck">neck</option>
+                            <option value="shield">shield</option>
+                            <option value="tail">tail</option>
+                            <option value="waist">waist</option>
+                            <option value="wield">wield</option>
+                            <option value="wings">wings</option>
+                            <option value="wrist">wrist</option>
+                        </select>
+    
+                Material: <select name="material" id="material">
+                            <option value="any">any</option>
+                            <option value="adamantite">adamantite</option>
+                            <option value="agate">agate</option>
+                            <option value="amber">amber</option>
+                            <option value="amethyst">amethyst</option>
+                            <option value="aquamarine">aquamarine</option>
+                            <option value="azurite">azurite</option>
+                            <option value="bloodstone">bloodstone</option>
+                            <option value="bone">bone</option>
+                            <option value="brass">brass</option>
+                            <option value="bronze">bronze</option>
+                            <option value="burlap">burlap</option>
+                            <option value="canvas">canvas</option>
+                            <option value="carrion">carrion</option>
+                            <option value="clay">clay</option>
+                            <option value="cloth">cloth</option>
+                            <option value="copper">copper</option>
+                            <option value="coral">coral</option>
+                            <option value="crystal">crystal</option>
+                            <option value="diamond">diamond</option>
+                            <option value="dragonbone">dragonbone</option>
+                            <option value="dragonscale">dragonscale</option>
+                            <option value="emerald">emerald</option>
+                            <option value="energy">energy</option>
+                            <option value="feathers">feathers</option>
+                            <option value="fire">fire</option>
+                            <option value="flesh">flesh</option>
+                            <option value="fur">fur</option>
+                            <option value="garnet">garnet</option>
+                            <option value="gem">gem</option>
+                            <option value="glass">glass</option>
+                            <option value="gold">gold</option>
+                            <option value="heartstone">heartstone</option>
+                            <option value="hide">hide</option>
+                            <option value="ice">ice</option>
+                            <option value="iron">iron</option>
+                            <option value="ivory">ivory</option>
+                            <option value="jade">jade</option>
+                            <option value="lapis">lapis</option>
+                            <option value="lead">lead</option>
+                            <option value="leather">leather</option>
+                            <option value="lightning">lightning</option>
+                            <option value="marble">marble</option>
+                            <option value="metal">metal</option>
+                            <option value="mithril">mithril</option>
+                            <option value="moonstone">moonstone</option>
+                            <option value="obsidian">obsidian</option>
+                            <option value="onyx">onyx</option>
+                            <option value="opal">opal</option>
+                            <option value="pearl">pearl</option>
+                            <option value="peridot">peridot</option>
+                            <option value="plant">plant</option>
+                            <option value="platinum">platinum</option>
+                            <option value="quartz">quartz</option>
+                            <option value="rope">rope</option>
+                            <option value="ruby">ruby</option>
+                            <option value="sapphire">sapphire</option>
+                            <option value="seashell">seashell</option>
+                            <option value="seaweed">seaweed</option>
+                            <option value="silk">silk</option>
+                            <option value="silver">silver</option>
+                            <option value="skin">skin</option>
+                            <option value="spidersilk">spidersilk</option>
+                            <option value="steel">steel</option>
+                            <option value="stone">stone</option>
+                            <option value="straw">straw</option>
+                            <option value="tin">tin</option>
+                            <option value="titanium">titanium</option>
+                            <option value="topaz">topaz</option>
+                            <option value="turquoise">turquoise</option>
+                            <option value="water">water</option>
+                            <option value="whitesteel">whitesteel</option>
+                            <option value="wood">wood</option>
+                    </select>
+            </p>
+    
+            <p>
+                Weapon Class: <select name="weapon" id="weapon">
+                                <option value="any">any</option>
+                                <option value="axe">axe</option>
+                                <option value="bow">bow</option>
+                                <option value="dagger">dagger</option>
+                                <option value="exotic">exotic</option>
+                                <option value="flail">flail</option>
+                                <option value="mace">mace</option>
+                                <option value="polearm">polearm</option>
+                                <option value="spear">spear</option>
+                                <option value="staff">staff</option>
+                                <option value="sword">sword</option>
+                                <option value="whip">whip</option>
+                            </select>
+
+                Damage Type: <select name="damtype" id="damtype">
+                                <option value="any">any</option>
+                                <option value="acid">acid</option>
+                                <option value="bash">bash</option>
+                                <option value="cold">cold</option>
+                                <option value="disease">disease</option>
+                                <option value="drowning">drowning</option>
+                                <option value="energy">energy</option>
+                                <option value="fire">fire</option>
+                                <option value="holy">holy</option>
+                                <option value="light">light</option>
+                                <option value="lightning">lightning</option>
+                                <option value="mental">mental</option>
+                                <option value="negative">negative</option>
+                                <option value="pierce">pierce</option>
+                                <option value="poison">poison</option>
+                                <option value="slash">slash</option>
+                        </select>
+    
+                Min Avg: <input type="number" size="2" min="1" max="99" name="min_avg">
+            </p>
+    
+            <p>
+                Keywords: <input type="text" name="keywords" size="30" id="keywords" placeholder="item name contains" value="">
+                Area: <input type="text" name="area" size="30" id="area" placeholder="area name contains" value="">
+            </p>
+    
+            <p>
+                Affects: <select name="affect" id="affect">
+                        <option value="any">any</option>
+                        <option value="acid resistance">acid resistance</option>
+                        <option value="age">age</option>
+                        <option value="armor class">armor class</option>
+                        <option value="bash resistance">bash resistance</option>
+                        <option value="charisma">charisma</option>
+                        <option value="cold resistance">cold resistance</option>
+                        <option value="constitution">constitution</option>
+                        <option value="damage roll">damage roll</option>
+                        <option value="dexterity">dexterity</option>
+                        <option value="disease resistance">disease resistance</option>
+                        <option value="drowning resistance">drowning resistance</option>
+                        <option value="energy resistance">energy resistance</option>
+                        <option value="fire resistance">fire resistance</option>
+                        <option value="hit roll">hit roll</option>
+                        <option value="holy resistance">holy resistance</option>
+                        <option value="hp">hp</option>
+                        <option value="hp regeneration">hp regeneration</option>
+                        <option value="intelligence">intelligence</option>
+                        <option value="light resistance">light resistance</option>
+                        <option value="lightning resistance">lightning resistance</option>
+                        <option value="mana">mana</option>
+                        <option value="mana regeneration">mana regeneration</option>
+                        <option value="mental resistance">mental resistance</option>
+                        <option value="morale">morale</option>
+                        <option value="movement regeneration">movement regeneration</option>
+                        <option value="moves">moves</option>
+                        <option value="negative resistance">negative resistance</option>
+                        <option value="pierce resistance">pierce resistance</option>
+                        <option value="poison resistance">poison resistance</option>
+                        <option value="save vs breath">save vs breath</option>
+                        <option value="save vs mental">save vs mental</option>
+                        <option value="save vs paralysis">save vs paralysis</option>
+                        <option value="save vs spell">save vs spell</option>
+                        <option value="slash resistance">slash resistance</option>
+                        <option value="strength">strength</option>
+                        <option value="wisdom">wisdom</option>
+                </select>
+    
+                Flags: <input type="text" name="flags" size="30" id="flags" placeholder="e.g., glowing thief_only" value="">
+            </p>
+    
+            <p>
+                Sorting: <select name="sb" id="sortBy">
+                    <option value="Level">Level</option>
+                    <option value="Avg">Weapon Avg</option>
+                    <option value="Weight">Weight</option>
+                </select>
+    
+                <select name="so" id="sortOrder">
+                    <option value="desc">Descending</option>
+                    <option value="asc">Ascending</option>
+                </select>
+            </p>
+    
+            <p>
+                <button type="submit" style="font-weight: bold;">Submit</button>
+                <button type="reset" onclick="reset_fields();">Reset</button>
+            </p>
+        </fieldset>
+    </form>
     
     <div id="itemList" class="center"></div>
 
-    <template id="template">
-        <div class="item_row">
-            <b>Name:</b> a pearlescent bridal gown  <b>Area:</b> The Oryx Steppes<br>
-            <b>Item Type:</b> clothing <b>Wear:</b> body <b>Material:</b> silk<br>
-            <b>Level:</b> 51<b>Weight:</b> 3 lb 12 oz<br>
-            <b>Flags:</b> glowing magic noremove female_only<br>
-            <ul style="margin: 0; ">
-                <li>Modifies <span class="affect_name">dexterity</span> by -1<br></li>
-                <li>Modifies <span class="affect_name">hp</span> by 10<br></li>
-                <li>Modifies <span class="affect_name">moves</span> by -20<br></li>
-            </ul>
-        </div>
-    </template>
-
     <script>
+        const sortArrayOfObjects = (arr, propertyName, order = 'asc') => {
+            const sortedArr = arr.sort((a, b) => {
+                if (a[propertyName] < b[propertyName]) {
+                return -1;
+                }
+                if (a[propertyName] > b[propertyName]) {
+                return 1;
+                }
+                return 0;
+            });
+
+            if (order === 'desc') {
+                return sortedArr.reverse();
+            }
+
+            return sortedArr;
+        };
+        var items;
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchData();
+        });
+        let searchForm = document.getElementById("searchForm");
+
+        searchForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            var itemsToSort =  [...items];
+
+            let type = document.getElementById("item_type").value;
+            console.log("type:" + type);
+            if(type !== "any")
+            {
+                itemsToSort = itemsToSort.filter(item => item.Group === type);
+            }
+
+            let slot = document.getElementById("slot").value;
+            console.log("slot:" + slot);
+            if(slot !== "any")
+            {
+                itemsToSort = itemsToSort.filter(item => item.Type === slot);
+            }
+
+            let material = document.getElementById("material").value;
+            console.log("material:" + material);
+            if(material !== "any")
+            {
+                itemsToSort = itemsToSort.filter(item => item.Material === material);
+            }
+
+            let weapon = document.getElementById("weapon").value;
+            console.log("weapon:" + weapon);
+            if(weapon !== "any")
+            {
+                itemsToSort = itemsToSort.filter(item => item.Type === weapon);
+            }
+
+            let damtype = document.getElementById("damtype").value;
+            console.log("damtype:" + damtype);
+            if(damtype !== "any")
+            {
+                itemsToSort = itemsToSort.filter(item => item.Damnoun === damtype);
+            }
+
+            let keywords = document.getElementById("keywords").value;
+            console.log("keywords:" + keywords);
+            if(keywords)
+            {
+                itemsToSort = itemsToSort.filter(item => item.FullDataPiped?.indexOf(keywords) !== -1);
+            }
+            
+            let area = document.getElementById("area").value;
+            console.log("area:" + area);
+            if(area)
+            {
+                itemsToSort = itemsToSort.filter(item => item.Damnoun === damtype);
+            }
+
+            let affect = document.getElementById("affect").value;
+            console.log("affect:" + affect);
+            if(damtype !== "any")
+            {
+                itemsToSort = itemsToSort.filter(item => item.Damnoun === damtype);
+            }
+            
+            let flags = document.getElementById("flags").value;
+            console.log("flags:" + flags);
+            if(flags !== "any")
+            {
+                itemsToSort = itemsToSort.filter(item => item.FlaggsPiped?.indexOf(flags) !== -1);
+            }
+            
+            let sortBy = document.getElementById("sortBy").value;
+            console.log("sortBy:" + sortBy);
+            let sortOrder = document.getElementById("sortOrder").value;
+            console.log("sortOrder:" + sortOrder);
+           
+            createElements(sortArrayOfObjects(itemsToSort, sortBy, sortOrder));
+        });
         // ************************ Drag and drop ***************** //
         let dropArea = document.getElementById("drop-area")
 
@@ -243,8 +556,6 @@
             xhr.send(formData)
         }
         function fetchData() {
-            var label = document.getElementById('lbFetchData');
-            label.innerHTML = '<i id="busy"></i>';
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "https://cfitems.azurewebsites.net/api/items/all");
             xhr.send();
@@ -252,8 +563,8 @@
             xhr.onload = () => {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     console.log(xhr.response);
-                    createElements(xhr.response);
-                    label.innerHTML = 'Load all';
+                    items=xhr.response;
+                    createElements(sortArrayOfObjects(xhr.response, "Level", "desc"));
                 } else {
                     console.log(`Error: ${xhr.status}`);
                 }
@@ -274,43 +585,62 @@
             
         function createElements(items) {
             var itemTemplate = template`
-            <b>Name:</b> ${"Name"}<br>
-            <b>Area:</b> <br>
-            <b>Item Type:</b> ${"Type"}<br>
-            <b>Wear:</b> ${"Type"}<br>
-            <b>Type:</b> ${"Group"} <br>
-            <b>Material:</b> ${"Material"}<br>	
-            <b>Level:</b> ${"Level"}<br>
-            <b>Weight:</b> ${"Kg"}kg ${"Gram"}g<br>
-            <b>Worth:</b> ${"Worth"} copper<br>
+            <b>Name:</b> ${"Name"} <b>Area:</b> <br>
+            <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
+            <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             <b>Flags:</b> ${"Flags"}
+            ${"Modifiers"}`;
+
+            var itemTemplateWithOutFlags = template`
+            <b>Name:</b> ${"Name"} <b>Area:</b> <br>
+            <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
+            <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             ${"Modifiers"}`;
 
             var weaponTemplate = template`
-            <b>Name:</b> ${"Name"}<br>
-            <b>Area:</b> <br>
-            <b>Item Type:</b> ${"Type"}<br>
-            <b>Wear:</b> ${"Type"}<br>
-            <b>Type:</b> ${"Group"} <br>
-            <b>Material:</b> ${"Material"}<br>	
-            <b>Level:</b> ${"Level"}<br>
+            <b>Name:</b> ${"Name"} <b>Area:</b> <br>
+            <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
+            <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
+            <b>Flags:</b> ${"Flags"}<br>
             <b>Damnoun:</b> ${"Damnoun"}<br>
             <b>Avgerage:</b> ${"Avg"}<br>
-            <b>Weight:</b> ${"Kg"}kg ${"Gram"}g<br>
-            <b>Worth:</b> ${"Worth"} copper<br>
-            <b>Flags:</b> ${"Flags"}
+            ${"Modifiers"}`;
+
+            var weaponTemplateWithOutFlags = template`
+            <b>Name:</b> ${"Name"} <b>Area:</b> <br>
+            <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
+            <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
+            <b>Damnoun:</b> ${"Damnoun"}<br>
+            <b>Avgerage:</b> ${"Avg"}<br>
+            ${"Modifiers"}`;
+
+            var magicTemplate = template`
+            <b>Name:</b> ${"Name"} <b>Area:</b> <br>
+            <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
+            <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
+            <b>Flags:</b> ${"Flags"}<br>
+            ${"MagicAffects"}
+            ${"Modifiers"}`;
+
+            var magicTemplateWithOutFlags = template`
+            <b>Name:</b> ${"Name"} <b>Area:</b> <br>
+            <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
+            <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
+            ${"MagicAffects"}
             ${"Modifiers"}`;
 
             var parent = document.getElementById("itemList");
+            parent.innerHTML = "";
             for (var i = 0; i < items.length; i++) {
                 var item = document.createElement('p')
-                item.className = 'item';
+                item.className = 'item ';
+                item.className += i%2 == 0 ? 'even' : 'odd';
                 var currentItem = items[i];
-                if(currentItem.AffectsPiped)
+                if(currentItem.AffectsPiped && !currentItem.Affects.length)
                 {    
                     currentItem.Affects = currentItem.AffectsPiped.split('|').join('<br>');
                 }
-                if(currentItem.ModifiersPiped)
+                if(currentItem.ModifiersPiped && !currentItem.Modifiers.length)
                 {
                     currentItem.Modifiers += '<ul>';
                     currentItem.ModifiersPiped.split('|').forEach((modifier) => {
@@ -318,15 +648,40 @@
                     });
                     currentItem.Modifiers += '</ul>';
                 }
+                if(currentItem.MagicAffectsPiped && !currentItem.MagicAffects.length)
+                {
+                    currentItem.MagicAffectsPiped.split('|').forEach((magicAffect) => {
+                        currentItem.MagicAffects += magicAffect + '<br>';
+                    });
+                }
                 if(currentItem.FlaggsPiped)
                 {   
                     currentItem.Flags = currentItem.FlaggsPiped.split('|').join(' ');
                 }  
                 
-                item.innerHTML = itemTemplate(currentItem)
-                if(currentItem.IsWeapon)
+                if(currentItem.Flags)
                 {
-                    item.innerHTML = weaponTemplate(currentItem)
+                    item.innerHTML = itemTemplate(currentItem);
+                    if(currentItem.IsWeapon)
+                    {
+                        item.innerHTML = weaponTemplate(currentItem);
+                    }
+                    if(currentItem.IsMagic)
+                    {
+                        item.innerHTML = magicTemplate(currentItem);
+                    }
+                }
+                else
+                {
+                    item.innerHTML = itemTemplateWithOutFlags(currentItem);
+                    if(currentItem.IsWeapon)
+                    {
+                        item.innerHTML = weaponTemplateWithOutFlags(currentItem);
+                    }
+                    if(currentItem.IsMagic)
+                    {
+                        item.innerHTML = magicTemplateWithOutFlags(currentItem);
+                    }
                 }
 
                 parent.appendChild(item);
