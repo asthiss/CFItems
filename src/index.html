@@ -11,19 +11,30 @@
             color: white;
             font-size: 18px;
         }
-
+        fieldset{
+            border-color: #dfbe6f;
+        }
         a {
             color: #369;
         }
-
         ul {
             margin: 0;
         }
         .odd {
-            background-color: slategray;
+            /* background-image: url("bgnew.jpg"); */
+        }
+        .even {
         }
         .edit{
             float: right;
+        }
+        .item:after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 60%;
+            margin: 10px;
+            background: #dfbe6f;
         }
         .note {
             width: 500px;
@@ -34,10 +45,10 @@
         }
 
         #drop-area {
-            border: 2px dashed #ccc;
+            border: 2px dashed #dfbe6f;
             border-radius: 20px;
-            margin: 10px auto;
-            padding: 55px 0px 54px 0px;
+            margin: 10px 5px;
+            padding: 55px 0px 70px 0px;
             float: right;
         }
 
@@ -738,7 +749,8 @@
             var formData = new FormData()
             xhr.open('POST', url, true)
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
-
+            xhr.setRequestHeader('filename', file.name);
+            
             // Update progress (can be used to show progress indicator)
             xhr.upload.addEventListener("progress", function (e) {
                 updateProgress(i, (e.loaded * 100.0 / e.total) || 100)

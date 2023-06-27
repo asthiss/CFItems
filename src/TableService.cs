@@ -146,5 +146,7 @@ namespace CFItems
         public string Element { get; set; }
         public string Spell { get; set; }
         public string SpellLevel { get; set; }
+        public string Age { get; set; }
+        public string Morale { get; set; }
     }
 }

@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -15,7 +17,7 @@ namespace CFItems
     public static class LogEater
     {
         private static readonly Regex wandRegex = new Regex("It contains the spell '(.*)' of the (\\d*).. level");
-        private static readonly Regex modifierRegex = new Regex("your \\b(\\w*\\b ?\\w*\\b ?\\w*)\\b ?\\b\\w*\\b by (-?\\d*) point");
+        private static readonly Regex modifierRegex = new Regex("your \\b(\\w*\\b ?\\w*\\b ?\\w*)\\b ?\\b\\w*\\b by (-?\\d*%?)");
         private static readonly Regex acRegex = new Regex("When worn, it protects you against piercing for (\\d*), bashing for (\\d*),  slashing for (\\d*), magic for (\\d*), and the elements for (\\d*) points each");
         private static readonly string itemDelimiter = "----------------------------------------";
         private static readonly string itemDelimiterLineTwo = "can be referred to as";
@@ -177,6 +179,9 @@ namespace CFItems
                     var str when str.Contains("It radiates light.") => "glowing",
                     var str when str.Contains("It emanates sound.") => "humming",
                     var str when str.Contains("A magical aura surrounds it.") => "magic",
+                    var str when str.Contains("An orderly aura surrounds it.") => "orderly",
+                    var str when str.Contains("A chaotic, uneven aura surrounds it.") => "chaotic",
+                    var str when str.Contains("It is transparent.") => "transparant",
                     var str when str.Contains("It can't be removed.") => "cursed",
                     var str when str.Contains("It can't be dropped with ease.") => "no_drop",
                     var str when str.Contains("It is unusable for those of a pure soul.") => "anti_good",
@@ -196,6 +201,23 @@ namespace CFItems
                     var str when str.Contains("Only a ranger could utilize it.") => "ranger_only",
                     var str when str.Contains("Only a student of the arcane arts could use it.") => "conjurer_only",
                     var str when str.Contains("Only an elf could put it to use.") => "elf_only",
+                    var str when str.Contains("Only a conjurer could use it.") => "conjurer_only",
+                    var str when str.Contains("It seems to be made for a gnome to use.") => "gnome_only",
+                    var str when str.Contains("Only a half-elf could use it.") => "halfelf_only",
+                    var str when str.Contains("It is clearly meant for a giant.") => "giant_only",
+                    var str when str.Contains("It obviously is meant for an arial.") => "arial_only",
+                    var str when str.Contains("It appears to be made for those of small stature.") => "small_only",
+                    var str when str.Contains("It appears to be made for a felar.") => "felar_only",
+                    var str when str.Contains("It appears to be made for a holy priest.") => "shaman_only",
+                    var str when str.Contains("It is meant for a shaman.") => "shaman_only",
+                    var str when str.Contains("It is usable only by the Blood Tribunals.") => "trib_only",
+                    var str when str.Contains("It seems to be made for a transmuter.") => "transmuter_only",
+                    var str when str.Contains("It seems to be made for an orc.") => "orc_only",
+                    var str when str.Contains("It seems to require the skills of a Herald to be used.") => "herald_only",
+                    var str when str.Contains("Only a human could make use of it.") => "human_only",
+                    var str when str.Contains("Only an archer could utilize it.") => "archer_only",
+                    var str when str.Contains("Only an Imperial Citizen could put it to use.") => "empire_only",
+                    var str when str.Contains("Only those of orderly nature could use it.") => "orderly_only",
                     _ => string.Empty
                 };
 
@@ -314,9 +336,25 @@ namespace CFItems
                         case "armor class":
                             item.Ac = value.Value;
                             break;
-                        default:
-                            await _tableService.MissingMapping(line, "FillModifier", fileName);
+                        case "age":
+                            item.Age = value.Value;
                             break;
+                        case "morale":
+                            item.Morale = value.Value;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    if(line.StartsWith("Your divination reveals that"))
+                    {
+                        item.Modifiers.Add(line);
+                    }
+                    else
+                    {
+                        await _tableService.MissingMapping(line, "FillModifier", fileName);
                     }
                 }
             }
