@@ -113,6 +113,7 @@ namespace CFItems
         [IgnoreDataMember]
         public List<string> MagicAffects { get; internal set; }
         public string MagicAffectsPiped { get; set; }
+        public string Area { get; set; }
         public string Avg { get; set; }
         public bool IsWeapon => this.Group == "weapon";
         public bool IsMagic => new string[] { "pill", "potion", "wand", "talisman", "scroll" }.Contains(this.Group);
