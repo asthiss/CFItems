@@ -355,7 +355,7 @@
                 </p>
         
                 <p>
-                    <button type="submit" style="font-weight: bold;">Submit</button>
+                    <button type="submit" id="submit" style="font-weight: bold;">Submit</button>
                     <button type="reset" onclick="reset_fields();">Reset</button>
                 </p>
             </fieldset>
@@ -413,6 +413,7 @@
             toggleDisplay(input);
             toggleDisplay(document.getElementById("save"+itemId));
             toggleDisplay(document.getElementById("edit"+itemId));
+            document.getElementById("submit").click();
         }
 
         // ************************ Data filter ***************** //
@@ -511,10 +512,10 @@
 
         function saveInAzure(item) {
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "http://localhost:7298/api/items");
+            xhr.open("POST", "https://cfitems.azurewebsites.net/api/items");
             xhr.setRequestHeader("Accept", "application/json");
             xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(item);
+            xhr.send(JSON.stringify(item));
             xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
                 console.log(xhr.status);
@@ -537,20 +538,20 @@
             
         function createElements(items) {
             var itemTemplate = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b><input type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
+            <b>Name:</b> ${"Name"} <b>Area:</b>${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             <b>Flags:</b> ${"Flags"}
             ${"Modifiers"}`;
 
             var itemTemplateWithOutFlags = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b><button class="edit">edit</button> <br>
+            <b>Name:</b> ${"Name"} <b>Area:</b>${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             ${"Modifiers"}`;
 
             var weaponTemplate = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b><button class="edit">edit</button> <br>
+            <b>Name:</b> ${"Name"} <b>Area:</b>${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             <b>Flags:</b> ${"Flags"}<br>
@@ -559,7 +560,7 @@
             ${"Modifiers"}`;
 
             var weaponTemplateWithOutFlags = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b><button class="edit">edit</button> <br>
+            <b>Name:</b> ${"Name"} <b>Area:</b>${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             <b>Damnoun:</b> ${"Damnoun"}<br>
@@ -567,7 +568,7 @@
             ${"Modifiers"}`;
 
             var magicTemplate = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b><button class="edit">edit</button> <br>
+            <b>Name:</b> ${"Name"} <b>Area:</b>${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             <b>Flags:</b> ${"Flags"}<br>
@@ -575,7 +576,7 @@
             ${"Modifiers"}`;
 
             var magicTemplateWithOutFlags = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b><button class="edit">edit</button> <br>
+            <b>Name:</b> ${"Name"} <b>Area: </b>${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
             ${"MagicAffects"}
