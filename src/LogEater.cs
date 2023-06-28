@@ -20,7 +20,7 @@ namespace CFItems
 {
     public static class LogEater
     {
-        private static readonly Regex wandRegex = new Regex("It contains the spell '(.*)' of the (\\d*).. level");
+        private static readonly Regex wandRegex = new Regex("contains the spell '(.*)' of the (\\d*).. level");
         private static readonly Regex modifierRegex = new Regex("your \\b(\\w*\\b ?\\w*\\b ?\\w*)\\b ?\\b\\w*\\b by (-?\\d*%?)");
         private static readonly Regex acRegex = new Regex("for (\\d*)");
         private static readonly string itemDelimiter = "----------------------------------------";
@@ -285,32 +285,39 @@ namespace CFItems
 
                 if (string.IsNullOrEmpty(flag))
                 {
-                    if(item.IsMagic)
+                    if(line.StartsWith("Within it are contained level ") || line.StartsWith("Within it is contained level "))
                     {
-                        if(line.StartsWith("Within it are contained level ") || line.StartsWith("Within it is contained level "))
-                        {
-                            index++;
-                            var holeLine = line + item.Affects[index];
-                            item.Spell = item.Affects[index];
-                            item.SpellLevel = line.Split(' ')[5];
-                            item.MagicAffects.Add(holeLine);
-                            continue;
-                        }
-                        if(line.StartsWith("It can be used a maximum of"))
-                        {
-                            item.MagicAffects.Add(line.Split('.').First());
-                            continue;
-                        }
-                        var match = wandRegex.Match(line);
-                        if (match.Success)
-                        {
-                            item.Spell = match.Groups[1].Value;
-                            item.SpellLevel = match.Groups[2].Value;
-                            item.MagicAffects.Add(line);
-                            continue;
-                        }
-
+                        index++;
+                        var holeLine = line + item.Affects[index];
+                        item.Spell = item.Affects[index];
+                        item.SpellLevel = line.Split(' ')[5];
+                        item.MagicAffects.Add(holeLine);
+                        continue;
                     }
+                    if(line.StartsWith("It can be used"))
+                    {
+                        item.MagicAffects.Add(line.Split('.').First());
+                        if(line.Contains("and contains the spell"))
+                        {
+                            var matched = wandRegex.Match(line);
+                            if (matched.Success)
+                            {
+                                item.Spell = matched.Groups[1].Value;
+                                item.SpellLevel = matched.Groups[2].Value;
+                            }
+                        }
+                        continue;
+                    }
+
+                    var match = wandRegex.Match(line);
+                    if (match.Success)
+                    {
+                        item.Spell = match.Groups[1].Value;
+                        item.SpellLevel = match.Groups[2].Value;
+                        item.MagicAffects.Add(line);
+                        continue;
+                    }
+
                     if (!await FillModifier(line, item))
                     {
                         await _tableService.MissingMapping(line, "FillFlags", fileName);
