@@ -456,7 +456,11 @@ namespace CFItems
             var groupAndType = item.Data.ElementAt(madeOfIndex - 1) switch
             {
                 "It is a talisman" => ("talisman", "talisman"),
+                var str when str.StartsWith("It is armor worn on the body.") => ("armor", "body"),
+                var str when str.StartsWith("It is armor worn about the body.") => ("armor", "about"),
                 var str when str.StartsWith("It is armor") => ("armor", str.Split(" ").Last().TrimEnd('.')),
+                var str when str.StartsWith("It is clothing worn on the body.") => ("clothing", "body"),
+                var str when str.StartsWith("It is clothing worn about the body.") => ("clothing", "about"),
                 var str when str.StartsWith("It is clothing") => ("clothing", str.Split(" ").Last().TrimEnd('.')),
                 var str when str.Contains("with an attack type") => ("weapon", str.Split(" ")[3].TrimEnd('.')),
                 var str when str.StartsWith("It is a") || str.StartsWith("It is an") => (str.Split(" ").Last().TrimEnd('.'), str.Split(" ").Last().TrimEnd('.')),
