@@ -54,7 +54,8 @@ namespace CFItems
                 for (var i = 0; i < lines.Count; i++)
                 {
                     if (lines[i].StartsWith(itemDelimiter) &&
-                        lines[i + 1].Contains(itemDelimiterLineTwo)) //remove lores
+                        lines[i + 1].Contains(itemDelimiterLineTwo) &&
+                        !lines[i - 1].Contains("lore")) //remove lores
                     {
                         readingItem = true;
                         item = new Item();
@@ -191,6 +192,9 @@ namespace CFItems
             for (var index = 0; index < item.Affects.Count; index++)
             {
                 var line = item.Affects[index];
+                if (line == "You find no hidden power within this object.")
+                    continue;
+
                 if (line.StartsWith("When worn, it protects you against"))
                 {
                     index++;
@@ -406,7 +410,30 @@ namespace CFItems
                 }
                 else
                 {
-                    if(line.StartsWith("Your divination reveals that"))
+                    if (line.Contains("your ability to land accurate blows"))
+                    {
+                        // When worn, it affects your ability to land accurate blows by 5 points.
+                        //your ability to land accurate blows by 1 points.
+                        var value = line.Replace(" points.", "").Split(' ').Last();
+                        if(!string.IsNullOrEmpty(value))
+                        {
+                            item.Hit = value;
+                        }
+
+                        item.Modifiers.Add(line);
+                    }
+                    else if (line.StartsWith("your ability to resist breath spells"))
+                    {
+                        //your ability to resist breath spells by -10 points.
+                        var value = line.Replace("your ability to resist breath spells by ", "").Split(' ')[0];
+                        if (!string.IsNullOrEmpty(value))
+                        {
+                            item.Svb = value;
+                        }
+
+                        item.Modifiers.Add(line);
+                    }
+                    else if(line.StartsWith("Your divination reveals that"))
                     {
                         item.Modifiers.Add(line);
                     }
@@ -466,6 +493,19 @@ namespace CFItems
                 var str when str.StartsWith("It is a") || str.StartsWith("It is an") => (str.Split(" ").Last().TrimEnd('.'), str.Split(" ").Last().TrimEnd('.')),
                 _ => ("unknow", "unknow")
             };
+
+            if(groupAndType.Item1 == "unknow") // get group from title
+            {
+                var description = string.Join(' ', item.Data);
+                string[] parts = description.Split(" can be referred to as ", StringSplitOptions.RemoveEmptyEntries);
+                var name = parts[0];
+                if (name.Contains(", "))
+                {
+                    name = name.Split(',')[0].Split(' ')[1];
+                }
+
+                groupAndType.Item1 = name;
+            }
 
             item.Group = groupAndType.Item1;
             item.Type = groupAndType.Item2;
