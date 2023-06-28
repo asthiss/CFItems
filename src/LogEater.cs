@@ -9,8 +9,12 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Azure.Storage.Blobs;
+using System.Text.Json;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CFItems
 {
@@ -37,6 +41,8 @@ namespace CFItems
                 {
                     fileName = filename;
                 }
+                await UploadFileToBlobStorage(filename, "orginal", req.Body);
+                req.Body.Position = 0;
                 var reader = new StreamReader(req.Body);
                 while (!reader.EndOfStream)
                 {
@@ -69,16 +75,43 @@ namespace CFItems
                     }
                 }
 
+                var justItemLines = new List<string>();
                 foreach (var itemToUpload in items)
                 {
                     await _tableService.InsertItem(itemToUpload);
+                    justItemLines.AddRange(itemToUpload.Data);
+                    justItemLines.Add("------");
                 }
+
+                var writer = new StreamWriter(new MemoryStream())
+                {
+                    AutoFlush = true
+                };
+                foreach (var line in  justItemLines)
+                {
+                    writer.WriteLine(line);
+                }
+                writer.Flush();
+                await UploadFileToBlobStorage("parsed" + filename, "parsed", writer.BaseStream);
 
                 return new OkObjectResult("Log ingested");
             }
             catch (Exception ex)
             {
                 return new BadRequestObjectResult(ex);
+            }
+        }
+
+        private static async Task UploadFileToBlobStorage(string filename, string containerName, Stream file)
+        {
+            file.Position = 0;
+            string Connection = Environment.GetEnvironmentVariable("AzureWebJobsStorage");
+            var blobClient = new BlobContainerClient(Connection, containerName);
+            await blobClient.CreateIfNotExistsAsync();
+            var blob = blobClient.GetBlobClient(filename);
+            if (!await blob.ExistsAsync())
+            {
+                await blob.UploadAsync(file);
             }
         }
 

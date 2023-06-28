@@ -147,6 +147,7 @@
                 <p>
                     Item Type: <select name="item_type" id="item_type">
                                     <option value="any">any</option>
+                                    <option value="scroll">scroll</option>
                                     <option value="potion">potion</option>
                                     <option value="wand">wand</option>
                                     <option value="talisman">talisman </option>
@@ -394,10 +395,10 @@
     <script>
         const sortArrayOfObjects = (arr, propertyName, order = 'asc') => {
             const sortedArr = arr.sort((a, b) => {
-                if (a[propertyName] < b[propertyName]) {
+                if (+a[propertyName] < +b[propertyName]) {
                 return -1;
                 }
-                if (a[propertyName] > b[propertyName]) {
+                if (+a[propertyName] > +b[propertyName]) {
                 return 1;
                 }
                 return 0;
