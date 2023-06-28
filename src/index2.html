@@ -578,51 +578,6 @@
         }
             
         function createElements(items) {
-            var itemTemplate = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
-            <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
-            <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
-            <b>Flags:</b> ${"Flags"}
-            ${"Modifiers"}`;
-
-            var itemTemplateWithOutFlags = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
-            <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
-            <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
-            ${"Modifiers"}`;
-
-            var weaponTemplate = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
-            <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
-            <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
-            <b>Flags:</b> ${"Flags"}<br>
-            <b>Damnoun:</b> ${"Damnoun"}<br>
-            <b>Avgerage:</b> ${"Avg"}<br>
-            ${"Modifiers"}`;
-
-            var weaponTemplateWithOutFlags = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
-            <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
-            <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
-            <b>Damnoun:</b> ${"Damnoun"}<br>
-            <b>Avgerage:</b> ${"Avg"}<br>
-            ${"Modifiers"}`;
-
-            var magicTemplate = template`
-            <b>Name:</b> ${"Name"} <b>Area:</b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
-            <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
-            <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
-            <b>Flags:</b> ${"Flags"}<br>
-            ${"MagicAffects"}
-            ${"Modifiers"}`;
-
-            var magicTemplateWithOutFlags = template`
-            <b>Name:</b> ${"Name"} <b>Area: </b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
-            <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
-            <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
-            ${"MagicAffects"}
-            ${"Modifiers"}`;
-
             var parent = document.getElementById("itemList");
             parent.innerHTML = "";
             for (var i = 0; i < items.length; i++) {
@@ -630,53 +585,11 @@
                 item.className = 'item ';
                 item.className += i%2 == 0 ? 'even' : 'odd';
                 var currentItem = items[i];
-                if(currentItem.AffectsPiped && !currentItem.Affects.length)
-                {    
-                    currentItem.Affects = currentItem.AffectsPiped.split('|').join('<br>');
-                }
-                if(currentItem.ModifiersPiped && !currentItem.Modifiers.length)
+                var fullData = currentItem.FullDataPiped.split('|')
+                for(var j = 0; j < fullData.length; j++)
                 {
-                    currentItem.Modifiers += '<ul>';
-                    currentItem.ModifiersPiped.split('|').forEach((modifier) => {
-                        currentItem.Modifiers += '<li>' + modifier + '</li>';
-                    });
-                    currentItem.Modifiers += '</ul>';
-                }
-                if(currentItem.MagicAffectsPiped && !currentItem.MagicAffects.length)
-                {
-                    currentItem.MagicAffectsPiped.split('|').forEach((magicAffect) => {
-                        currentItem.MagicAffects += magicAffect + '<br>';
-                    });
-                }
-                if(currentItem.FlaggsPiped)
-                {   
-                    currentItem.Flags = currentItem.FlaggsPiped.split('|').join(' ');
-                }  
-                
-                if(currentItem.Flags)
-                {
-                    item.innerHTML = itemTemplate(currentItem);
-                    if(currentItem.IsWeapon)
-                    {
-                        item.innerHTML = weaponTemplate(currentItem);
-                    }
-                    if(currentItem.IsMagic)
-                    {
-                        item.innerHTML = magicTemplate(currentItem);
-                    }
-                }
-                else
-                {
-                    item.innerHTML = itemTemplateWithOutFlags(currentItem);
-                    if(currentItem.IsWeapon)
-                    {
-                        item.innerHTML = weaponTemplateWithOutFlags(currentItem);
-                    }
-                    if(currentItem.IsMagic)
-                    {
-                        item.innerHTML = magicTemplateWithOutFlags(currentItem);
-                    }
-                }
+                    item.innerHTML += fullData[j] + '<br>';
+                } 
 
                 parent.appendChild(item);
             }
