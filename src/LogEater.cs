@@ -22,7 +22,7 @@ namespace CFItems
     {
         private static readonly Regex wandRegex = new Regex("It contains the spell '(.*)' of the (\\d*).. level");
         private static readonly Regex modifierRegex = new Regex("your \\b(\\w*\\b ?\\w*\\b ?\\w*)\\b ?\\b\\w*\\b by (-?\\d*%?)");
-        private static readonly Regex acRegex = new Regex("When worn, it protects you against piercing for (\\d*), bashing for (\\d*),  slashing for (\\d*), magic for (\\d*), and the elements for (\\d*) points each");
+        private static readonly Regex acRegex = new Regex("for (\\d*)");
         private static readonly string itemDelimiter = "----------------------------------------";
         private static readonly string itemDelimiterLineTwo = "can be referred to as";
         private static string fileName = string.Empty;
@@ -121,7 +121,7 @@ namespace CFItems
             item.FullDataPiped = string.Join('|', item.Data);
             try
             {
-                item.Name = ExtractItemName(item.Data.First());
+                item.Name = ExtractItemName(item.Data.First()).Replace("This object, ", "");
                 item.RowKey = item.Name;
             }
             catch (Exception ex)
@@ -195,6 +195,11 @@ namespace CFItems
                 {
                     index++;
                     var armorLine = line + item.Affects[index];
+                    if(armorLine.EndsWith(','))
+                    {
+                        index++;
+                        armorLine += item.Affects[index];
+                    }
                     var match = acRegex.Match(armorLine);
                     if (match.Success)
                     {
