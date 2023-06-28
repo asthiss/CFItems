@@ -121,7 +121,7 @@ namespace CFItems
             item.FullDataPiped = string.Join('|', item.Data);
             try
             {
-                item.Name = ExtractItemName(item.Data.First()).Replace("This object, ", "");
+                item.Name = ExtractItemName(item.Data.First());
                 item.RowKey = item.Name;
             }
             catch (Exception ex)
@@ -483,7 +483,13 @@ namespace CFItems
         private static string ExtractItemName(string description)
         {
             string[] parts = description.Split(" can be referred to as ", StringSplitOptions.RemoveEmptyEntries);
-            return parts[0];
+            var name = parts[0];
+            if(name.Contains(", "))
+            {
+                name = name.Split(',')[1].Trim();
+            }
+
+            return name;
         }
 
         private static string ExtractLevel(string description)
