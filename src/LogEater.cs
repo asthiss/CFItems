@@ -516,6 +516,14 @@ namespace CFItems
 
             item.Group = groupAndType.Item1;
             item.Type = groupAndType.Item2;
+
+            //weapon extra info
+            var averageString = item.Data.Where(x => x.StartsWith("It can cause ")).First();
+            if(string.IsNullOrEmpty(averageString))
+            {
+                item.Avg = averageString.Split(" ").Last().TrimEnd('.');
+            }
+
             if (item.IsWeapon)
             {
                 var damnounStringParts = item.Data.ElementAt(madeOfIndex - 1).Split(" ");
@@ -526,8 +534,6 @@ namespace CFItems
                 }
 
                 item.Damnoun = damnoun;
-                var averageString = item.Data.Where(x => x.StartsWith("It can cause ")).First();
-                item.Avg = averageString.Split(" ").Last().TrimEnd('.');
             }
         }
 
