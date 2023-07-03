@@ -21,8 +21,9 @@ namespace CFItems
     public static class LogEater
     {
         private static readonly Regex wandRegex = new Regex("contains the spell '(.*)' of the (\\d*).. level");
+        private static readonly Regex spellsRegex = new Regex("'(\\w* ?\\w*?)'");
         private static readonly Regex modifierRegex = new Regex("your \\b(\\w*\\b ?\\w*\\b ?\\w*)\\b ?\\b\\w*\\b by (-?\\d*%?)");
-        private static readonly Regex acRegex = new Regex("for (\\d*)");
+        private static readonly Regex numRegex = new Regex("(\\d+)");
         private static readonly string itemDelimiter = "----------------------------------------";
         private static readonly string itemDelimiterLineTwo = "can be referred to as";
         private static string fileName = string.Empty;
@@ -88,7 +89,7 @@ namespace CFItems
                 {
                     AutoFlush = true
                 };
-                foreach (var line in  justItemLines)
+                foreach (var line in justItemLines)
                 {
                     writer.WriteLine(line);
                 }
@@ -204,7 +205,7 @@ namespace CFItems
                         index++;
                         armorLine += item.Affects[index];
                     }
-                    var match = acRegex.Match(armorLine);
+                    var match = numRegex.Match(armorLine);
                     if (match.Success)
                     {
                         item.Pierce = match.Groups[1].Value;
@@ -285,12 +286,23 @@ namespace CFItems
 
                 if (string.IsNullOrEmpty(flag))
                 {
-                    if(line.StartsWith("Within it are contained level ") || line.StartsWith("Within it is contained level "))
+                    // Magic information
+                    if(line.StartsWith("Within it are contained ") || line.StartsWith("Within it is contained "))
                     {
-                        index++;
-                        var holeLine = line + item.Affects[index];
-                        item.Spell = item.Affects[index];
-                        item.SpellLevel = line.Split(' ')[5];
+                        var holeLine = line;
+                        if (!line.EndsWith('.'))
+                        {
+                            index++;
+                            holeLine = line + item.Affects[index];
+                        }
+
+                        var matches = spellsRegex.Matches(holeLine);
+                        if (matches.Any())
+                        {
+                            item.Spell = string.Join(',', matches.Select(x => x.Groups[0].Value));
+                        }
+
+                        item.SpellLevel = numRegex.Match(holeLine).Value;
                         item.MagicAffects.Add(holeLine);
                         continue;
                     }
@@ -468,38 +480,52 @@ namespace CFItems
 
         private static void FillMaterialAndWeight(Item item)
         {
-            var input = item.Data.Where(x => x.StartsWith("It is made of ")).First();
-            var parts = input.Split(' ');
-            item.Material = parts[4];
-            item.Weight = $"{parts[7]},{parts[9]}";
-
-            if (input.Contains("pounds"))
+            var input = item.Data.Where(x => x.Contains("It is made of ")).FirstOrDefault();
+            if (input != null)
             {
-                var pounds = double.Parse(parts[7]);
-                var kg = Math.Abs(pounds * 0.45359237).ToString();
-                item.Weight = kg.Substring(0, kg.IndexOf(",") + 4);
-            }
+                var parts = input.Split(' ');
+                item.Material = parts[4];
+                item.Weight = $"{parts[7]},{parts[9]}";
 
-            item.Kg = item.Weight.Split(',').First();
-            item.Gram = item.Weight.Split(',').Last();
+                if (input.Contains("pounds"))
+                {
+                    var pounds = double.Parse(parts[7]);
+                    if (pounds != 0)
+                    {
+                        var kg = Math.Abs(pounds * 0.45359237).ToString();
+                        item.Weight = kg.Substring(0, kg.IndexOf(",") + 4);
+                    }
+                    else
+                    {
+                        item.Weight = "0";
+                    }
+                }
+
+                item.Kg = item.Weight.Split(',').First();
+                item.Gram = item.Weight.Split(',').Last();
+            }
         }
 
         private static void FillGroupAndType(Item item)
         {
             var madeOfIndex = item.Data.FindIndex(x => x.StartsWith("It is made of "));
-            var groupAndType = item.Data.ElementAt(madeOfIndex - 1) switch
+            var groupAndType = ("unknow", "unknow");
+            if (madeOfIndex != -1)
             {
-                "It is a talisman" => ("talisman", "talisman"),
-                var str when str.StartsWith("It is armor worn on the body.") => ("armor", "body"),
-                var str when str.StartsWith("It is armor worn about the body.") => ("armor", "about"),
-                var str when str.StartsWith("It is armor") => ("armor", str.Split(" ").Last().TrimEnd('.')),
-                var str when str.StartsWith("It is clothing worn on the body.") => ("clothing", "body"),
-                var str when str.StartsWith("It is clothing worn about the body.") => ("clothing", "about"),
-                var str when str.StartsWith("It is clothing") => ("clothing", str.Split(" ").Last().TrimEnd('.')),
-                var str when str.Contains("with an attack type") => ("weapon", str.Split(" ")[3].TrimEnd('.')),
-                var str when str.StartsWith("It is a") || str.StartsWith("It is an") => (str.Split(" ").Last().TrimEnd('.'), str.Split(" ").Last().TrimEnd('.')),
-                _ => ("unknow", "unknow")
-            };
+                groupAndType = item.Data.ElementAt(madeOfIndex - 1) switch
+                {
+                    "It is a talisman" => ("talisman", "talisman"),
+                    var str when str.StartsWith("It is armor worn on the body.") => ("armor", "body"),
+                    var str when str.StartsWith("It is armor worn about the body.") => ("armor", "about"),
+                    var str when str.StartsWith("It is armor") => ("armor", str.Split(" ").Last().TrimEnd('.')),
+                    var str when str.StartsWith("It is clothing worn on the body.") => ("clothing", "body"),
+                    var str when str.StartsWith("It is clothing worn about the body.") => ("clothing", "about"),
+                    var str when str.StartsWith("It is clothing") => ("clothing", str.Split(" ").Last().TrimEnd('.')),
+                    var str when str.Contains("with an attack type") => ("weapon", str.Split(" ")[3].TrimEnd('.')),
+                    var str when str.StartsWith("It is a") || str.StartsWith("It is an") => (str.Split(" ").Last().TrimEnd('.'), str.Split(" ").Last().TrimEnd('.')),
+                    _ => ("unknow", "unknow")
+                };
+            }
 
             if(groupAndType.Item1 == "unknow") // get group from title
             {
@@ -511,20 +537,34 @@ namespace CFItems
                     name = name.Split(',')[0].Split(' ')[1];
                 }
 
+                if(name == "object" && item.FullDataPiped.Contains("average"))
+                {
+                    name = "weapon";
+                }
+
                 groupAndType.Item1 = name;
             }
 
             item.Group = groupAndType.Item1;
+
+            if(groupAndType.Item2 == "unknow")
+            {
+                var firstKeyword = groupAndType.Item2;
+                var description = string.Join(' ', item.Data);
+                firstKeyword = description.Split(" can be referred to as '", StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
+                groupAndType.Item2 = firstKeyword;
+            }
+
             item.Type = groupAndType.Item2;
 
             //weapon extra info
-            var averageString = item.Data.Where(x => x.StartsWith("It can cause ")).First();
-            if(string.IsNullOrEmpty(averageString))
+            var averageString = item.Data.Where(x => x.StartsWith("It can cause ")).FirstOrDefault();
+            if(!string.IsNullOrEmpty(averageString))
             {
                 item.Avg = averageString.Split(" ").Last().TrimEnd('.');
             }
 
-            if (item.IsWeapon)
+            if (item.IsWeapon && madeOfIndex != -1)
             {
                 var damnounStringParts = item.Data.ElementAt(madeOfIndex - 1).Split(" ");
                 var damnoun = damnounStringParts.Last().TrimEnd('.');
@@ -560,7 +600,11 @@ namespace CFItems
         {
             string worthPattern = @"worth (\d+) copper";
             Match match = Regex.Match(description, worthPattern, RegexOptions.IgnoreCase);
-            string worthString = match.Groups[1].Value;
+            var worthString = "0";
+            if(match.Success)
+            {
+                worthString = match.Groups[1].Value;
+            }
             return int.Parse(worthString);
         }
 
