@@ -205,6 +205,7 @@ namespace CFItems
                         index++;
                         armorLine += item.Affects[index];
                     }
+
                     var match = numRegex.Match(armorLine);
                     if (match.Success)
                     {
@@ -213,8 +214,10 @@ namespace CFItems
                         item.Slash = match.Groups[3].Value;
                         item.Magic = match.Groups[4].Value;
                         item.Element = match.Groups[5].Value;
+                        item.ArmorLine = armorLine;
                         continue;
                     }
+
                 }
 
                 var flag = line switch
