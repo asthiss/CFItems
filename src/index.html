@@ -582,13 +582,15 @@
             <b>Name:</b> ${"Name"} <b>Area:</b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
-            <b>Flags:</b> ${"Flags"}
+            <b>Flags:</b> ${"Flags"}<br>
+            ${"ArmorLine"}
             ${"Modifiers"}`;
 
             var itemTemplateWithOutFlags = template`
             <b>Name:</b> ${"Name"} <b>Area:</b> ${"Area"}<input placeholder="Add text for area field here" class="edit" type="text" id="${"Name"}" style="display:none"/><button class="edit" onclick="edit('${"Name"}')" id="edit${"Name"}">edit</button><button style="display:none" class="edit" id="save${"Name"}" onclick="save('${"Name"}')" >save</button> <br>
             <b>Item Type:</b> ${"Group"} <b>Wear:</b> ${"Type"} <b>Material:</b> ${"Material"}<br>	
             <b>Level:</b> ${"Level"} <b>Weight:</b> ${"Kg"}kg ${"Gram"}g <b>Worth:</b> ${"Worth"} copper<br>
+            ${"ArmorLine"}
             ${"Modifiers"}`;
 
             var weaponTemplate = template`
