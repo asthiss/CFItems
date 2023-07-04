@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using Azure.Storage.Blobs;
 using System.Text.Json;
 using static System.Net.Mime.MediaTypeNames;
+using System.Globalization;
 
 namespace CFItems
 {
@@ -498,7 +499,7 @@ namespace CFItems
                     var pounds = double.Parse(parts[7]);
                     if (pounds != 0)
                     {
-                        var kg = Math.Abs(pounds * 0.45359237).ToString();
+                        var kg = Math.Abs(pounds * 0.45359237).ToString(CultureInfo.CreateSpecificCulture("sv-SE"));
                         item.Weight = kg.Substring(0, kg.IndexOf(",") + 4);
                     }
                     else
