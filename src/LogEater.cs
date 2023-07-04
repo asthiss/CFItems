@@ -332,7 +332,14 @@ namespace CFItems
 
                     if (!await FillModifier(line, item))
                     {
-                        await _tableService.MissingMapping(line, "FillFlags", fileName);
+                        if (line.StartsWith("Your divination reveals that"))
+                        {
+                            item.Modifiers.Add(line);
+                        }
+                        else
+                        {
+                            await _tableService.MissingMapping(line, "FillFlags", fileName);
+                        }
                     }
                 }
                 else
@@ -450,10 +457,6 @@ namespace CFItems
                             item.Svb = value;
                         }
 
-                        item.Modifiers.Add(line);
-                    }
-                    else if(line.StartsWith("Your divination reveals that"))
-                    {
                         item.Modifiers.Add(line);
                     }
                     else
