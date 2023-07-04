@@ -82,7 +82,7 @@ namespace CFItems
     {
         public Item()
         {
-            PartitionKey = DateTime.Now.ToString("yyyy-MM");
+            PartitionKey = "CFItems";
             Data = new List<string>();
             Affects = new List<string>();
             MagicAffects = new List<string>();
