@@ -21,11 +21,6 @@
         ul {
             margin: 0;
         }
-        .odd {
-            /* background-image: url("bgnew.jpg"); */
-        }
-        .even {
-        }
         .edit{
             float: right;
         }
@@ -314,42 +309,42 @@
                 <p>
                     Affects: <select name="affect" id="affect">
                             <option value="any">any</option>
-                            <option value="acid resistance">acid resistance</option>
-                            <option value="age">age</option>
-                            <option value="armor class">armor class</option>
-                            <option value="bash resistance">bash resistance</option>
-                            <option value="charisma">charisma</option>
-                            <option value="cold resistance">cold resistance</option>
-                            <option value="constitution">constitution</option>
-                            <option value="damage roll">damage roll</option>
-                            <option value="dexterity">dexterity</option>
-                            <option value="disease resistance">disease resistance</option>
-                            <option value="drowning resistance">drowning resistance</option>
-                            <option value="energy resistance">energy resistance</option>
-                            <option value="fire resistance">fire resistance</option>
-                            <option value="hit roll">hit roll</option>
-                            <option value="holy resistance">holy resistance</option>
-                            <option value="hp">hp</option>
-                            <option value="hp regeneration">hp regeneration</option>
-                            <option value="intelligence">intelligence</option>
-                            <option value="light resistance">light resistance</option>
-                            <option value="lightning resistance">lightning resistance</option>
-                            <option value="mana">mana</option>
-                            <option value="mana regeneration">mana regeneration</option>
-                            <option value="mental resistance">mental resistance</option>
-                            <option value="morale">morale</option>
-                            <option value="movement regeneration">movement regeneration</option>
-                            <option value="moves">moves</option>
-                            <option value="negative resistance">negative resistance</option>
-                            <option value="pierce resistance">pierce resistance</option>
-                            <option value="poison resistance">poison resistance</option>
-                            <option value="save vs breath">save vs breath</option>
-                            <option value="save vs mental">save vs mental</option>
-                            <option value="save vs paralysis">save vs paralysis</option>
-                            <option value="save vs spell">save vs spell</option>
-                            <option value="slash resistance">slash resistance</option>
-                            <option value="strength">strength</option>
-                            <option value="wisdom">wisdom</option>
+                            <!-- <option value="acid resistance">acid resistance</option> -->
+                            <option value="Age">age</option>
+                            <option value="Ac">armor class</option>
+                            <!-- <option value="bash resistance">bash resistance</option> -->
+                            <option value="Chr">charisma</option>
+                            <!-- <option value="cold resistance">cold resistance</option> -->
+                            <option value="Con">constitution</option>
+                            <option value="Dam">damage roll</option>
+                            <option value="Dex">dexterity</option>
+                            <!-- <option value="disease resistance">disease resistance</option> -->
+                            <!-- <option value="drowning resistance">drowning resistance</option> -->
+                            <!-- <option value="energy resistance">energy resistance</option> -->
+                            <!-- <option value="fire resistance">fire resistance</option> -->
+                            <option value="Hit">hit roll</option>
+                            <!-- <option value="holy resistance">holy resistance</option> -->
+                            <option value="Hp">hp</option>
+                            <!-- <option value="hp regeneration">hp regeneration</option> -->
+                            <option value="Int">intelligence</option>
+                            <!-- <option value="light resistance">light resistance</option> -->
+                            <!-- <option value="lightning resistance">lightning resistance</option> -->
+                            <option value="Mana">mana</option>
+                            <!-- <option value="mana regeneration">mana regeneration</option> -->
+                            <!-- <option value="mental resistance">mental resistance</option> -->
+                            <option value="Morale">morale</option>
+                            <!-- <option value="movement regeneration">movement regeneration</option> -->
+                            <option value="Moves">moves</option>
+                            <!-- <option value="negative resistance">negative resistance</option> -->
+                            <!-- <option value="pierce resistance">pierce resistance</option> -->
+                            <!-- <option value="poison resistance">poison resistance</option> -->
+                            <option value="Svb">save vs breath</option>
+                            <option value="Svm">save vs mental</option>
+                            <option value="Svp">save vs paralysis</option>
+                            <option value="Svs">save vs spell</option>
+                            <!-- <option value="slash resistance">slash resistance</option> -->
+                            <option value="Str">strength</option>
+                            <option value="Wis">wisdom</option>
                     </select>
         
                     Flags: <input type="text" name="flags" size="30" id="flags" placeholder="e.g., glowing thief_only" value="">
@@ -509,21 +504,21 @@
             console.log("area:" + area);
             if(area)
             {
-                itemsToSort = itemsToSort.filter(item => item.Damnoun === damtype);
+                itemsToSort = itemsToSort.filter(item => item.Area === area);
             }
 
             let affect = document.getElementById("affect").value;
             console.log("affect:" + affect);
-            if(damtype !== "any")
+            if(affect !== "any")
             {
-                itemsToSort = itemsToSort.filter(item => item.Damnoun === damtype);
+                itemsToSort = itemsToSort.filter(item => item[affect] !== null);
             }
             
             let flags = document.getElementById("flags").value;
             console.log("flags:" + flags);
             if(flags !== "any")
             {
-                itemsToSort = itemsToSort.filter(item => item.FlaggsPiped?.indexOf(flags) !== -1);
+                itemsToSort = itemsToSort.filter(item => item.FlaggsPiped !== null && item.FlaggsPiped.indexOf(flags) !== -1);
             }
             
             let sortBy = document.getElementById("sortBy").value;
