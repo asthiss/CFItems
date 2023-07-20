@@ -186,6 +186,11 @@ namespace CFItems
                 log.LogError(ex, ex.Message + $"Item: {description}");
             }
 
+            if (item.Weight == null)
+            {
+                item.Weight = "0";
+            }
+
             return item;
         }
 
