@@ -605,7 +605,7 @@ namespace CFItems
                 case "stinging lash":
                 case "crushing force":
                 case "charge":
-                    return "Bash";
+                    return "bash";
                 case "stab":
                 case "bite":
                 case "pierce":
@@ -615,7 +615,7 @@ namespace CFItems
                 case "chomp":
                 case "gore":
                 case "thrust":
-                    return "Pierce";
+                    return "pierce";
                 case "slice":
                 case "slash":
                 case "whip":
@@ -629,26 +629,26 @@ namespace CFItems
                 case "rend":
                 case "rake":
                 case "tear":
-                    return "Slash";
+                    return "slash";
                 case "magic":
                 case "chaotic blast":
                 case "asphyxiation":
                 case "burst of energy":
-                    return "Energy";
+                    return "energy";
                 case "searing light":
                 case "brilliant radiance":
                 case "blinding slash":
                 case "blast of light":
                 case "piercing ray":
                 case "searing beam":
-                    return "Light";
+                    return "light";
                 case "wrath":
                 case "divine power":
                 case "heavenly cut":
                 case "crushing wrath":
                 case "righteous wrath":
                 case "holy assault":
-                    return "Holy";
+                    return "holy";
                 case "defilement":
                 case "infernal power":
                 case "black light":
@@ -656,16 +656,16 @@ namespace CFItems
                 case "malefic attack":
                 case "defiling smash":
                 case "piercing evil":
-                    return "Negative";
+                    return "negative";
                 case "poisonous bite":
                 case "venomous slash":
                 case "venomous cloud":
                 case "blast of poison":
                 case "noxious force":
                 case "piercing venoms":
-                    return "Poison";
+                    return "poison";
                 case "mental assault":
-                    return "Mental";
+                    return "mental";
                 case "acidic bite":
                 case "caustic slime":
                 case "corrosive slice":
@@ -674,10 +674,10 @@ namespace CFItems
                 case "acrid stab":
                 case "penetrating acid":
                 case "digestion":
-                    return "Acid";
+                    return "acid";
                 case "shocking bite":
                 case "electrical discharge":
-                    return "Lightning";
+                    return "lightning";
                 case "flaming bite":
                 case "searing cut":
                 case "burn":
@@ -690,7 +690,7 @@ namespace CFItems
                 case "raging flames":
                 case "whirling flames":
                 case "molten smash":
-                    return "Fire";
+                    return "fire";
                 case "icy grip":
                 case "frigid chop":
                 case "freezing cut":
@@ -699,7 +699,7 @@ namespace CFItems
                 case "frigid smash":
                 case "blast of ice":
                 case "biting cold":
-                    return "Cold";
+                    return "cold";
                 case "drowning":
                 case "surge of water":
                 case "slashing wave":
@@ -707,7 +707,7 @@ namespace CFItems
                 case "blast of water":
                 case "jet of water":
                 case "wave of water":
-                    return "Water";
+                    return "water";
                 default:
                     return "unknown";
             }
