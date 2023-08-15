@@ -585,7 +585,131 @@ namespace CFItems
                     damnoun = $"{damnounStringParts[damnounStringParts.Length - 2]} {damnoun}";
                 }
 
+                item.BaseDamnoun = GetBaseDamnoun(damnoun);
                 item.Damnoun = damnoun;
+            }
+        }
+
+        private static string GetBaseDamnoun(string damnoun)
+        {
+            switch(damnoun.ToLower())
+            {
+                case "blast":
+                case "pound":
+                case "crush":
+                case "suction":
+                case "beating":
+                case "slap":
+                case "punch":
+                case "smash":
+                case "stinging lash":
+                case "crushing force":
+                case "charge":
+                    return "Bash";
+                case "stab":
+                case "bite":
+                case "pierce":
+                case "scratch":
+                case "peck":
+                case "sting":
+                case "chomp":
+                case "gore":
+                case "thrust":
+                    return "Pierce";
+                case "slice":
+                case "slash":
+                case "whip":
+                case "claw":
+                case "cleave":
+                case "chop":
+                case "cut":
+                case "rending gale":
+                case "flogging":
+                case "hack":
+                case "rend":
+                case "rake":
+                case "tear":
+                    return "Slash";
+                case "magic":
+                case "chaotic blast":
+                case "asphyxiation":
+                case "burst of energy":
+                    return "Energy";
+                case "searing light":
+                case "brilliant radiance":
+                case "blinding slash":
+                case "blast of light":
+                case "piercing ray":
+                case "searing beam":
+                    return "Light";
+                case "wrath":
+                case "divine power":
+                case "heavenly cut":
+                case "crushing wrath":
+                case "righteous wrath":
+                case "holy assault":
+                    return "Holy";
+                case "defilement":
+                case "infernal power":
+                case "black light":
+                case "unholy cut":
+                case "malefic attack":
+                case "defiling smash":
+                case "piercing evil":
+                    return "Negative";
+                case "poisonous bite":
+                case "venomous slash":
+                case "venomous cloud":
+                case "blast of poison":
+                case "noxious force":
+                case "piercing venoms":
+                    return "Poison";
+                case "mental assault":
+                    return "Mental";
+                case "acidic bite":
+                case "caustic slime":
+                case "corrosive slice":
+                case "wave of acid":
+                case "caustic smash":
+                case "acrid stab":
+                case "penetrating acid":
+                case "digestion":
+                    return "Acid";
+                case "shocking bite":
+                case "electrical discharge":
+                    return "Lightning";
+                case "flaming bite":
+                case "searing cut":
+                case "burn":
+                case "blazing slash":
+                case "fiery blast":
+                case "burning thrust":
+                case "arcing flames":
+                case "piercing fire":
+                case "oppressive heat":
+                case "raging flames":
+                case "whirling flames":
+                case "molten smash":
+                    return "Fire";
+                case "icy grip":
+                case "frigid chop":
+                case "freezing cut":
+                case "icy blast":
+                case "piercing cold":
+                case "frigid smash":
+                case "blast of ice":
+                case "biting cold":
+                    return "Cold";
+                case "drowning":
+                case "surge of water":
+                case "slashing wave":
+                case "crashing wave":
+                case "blast of water":
+                case "jet of water":
+                case "wave of water":
+                    return "Water";
+                default:
+                    return "unknown";
             }
         }
 
