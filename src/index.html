@@ -392,7 +392,9 @@
         const sortArrayOfObjects = (arr, propertyName, order = 'asc') => {
             const sortedArr = arr.sort((a, b) => {
                 let aProp = a[propertyName];
+                aProp = aProp ?? '0';
                 let bProp = b[propertyName];
+                bProp = bProp ?? '0';
                 if(propertyName == 'Weight') {
                     aProp = aProp.replace(',', '');
                     bProp = bProp.replace(',', '');

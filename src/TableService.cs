@@ -149,5 +149,6 @@ namespace CFItems
         public string Age { get; set; }
         public string Morale { get; set; }
         public string ArmorLine { get; set; }
+        public string BaseDamnoun { get; set; }
     }
 }
