@@ -358,6 +358,7 @@
                         <option value="Worth">Worth</option>
                         <option value="Hit">Hit</option>
                         <option value="Dam">Dam</option>
+                        <option value="Hp">Hp</option>
                         <option value="Str">Strength</option>
                         <option value="Int">Intelligence</option>
                         <option value="Wis">Wisdom</option>
@@ -492,14 +493,14 @@
             console.log("damtype:" + damtype);
             if(damtype !== "any")
             {
-                itemsToSort = itemsToSort.filter(item => item.Damnoun === damtype);
+                itemsToSort = itemsToSort.filter(item => item.BaseDamnoun === damtype);
             }
 
             let keywords = document.getElementById("keywords").value;
             console.log("keywords:" + keywords);
             if(keywords)
             {
-                itemsToSort = itemsToSort.filter(item => item.FullDataPiped?.indexOf(keywords) !== -1);
+                itemsToSort = itemsToSort.filter(item => item.FullDataPiped.toLowerCase()?.indexOf(keywords.toLowerCase()) !== -1);
             }
             
             let area = document.getElementById("area").value;
