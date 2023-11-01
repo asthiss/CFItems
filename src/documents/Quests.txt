@@ -1,0 +1,182 @@
+Quests
+
+Fine leather, Acadamy
+Simon, Academy
+Graveyard, Galadon
+Lumberjard, Galadon
+Giblings, Inn in Galadon
+Pen quest Galadon
+Gralan, Aldevari 4000xp x2?
+Wolf killing, Sutton Aldevari
+Goodie/Neutral only level like 10-15: Visit Jolinar in Voralia (Up and North from recall spot). Kill demons in Loch. Starts a series of quests.
+Talk to Keiiah potion merchant in Hamsah, get paw from rabbit in coastal plains, finish quest and talk to innkeeper in Hamsah, get rat trap from rat guy in west square of hamsah (ask if he has a rat trap, you need to give him 65 	copper for it), get cheese from a merchant in tir talaths merchant square.
+AP only: Hamsah. If you first pass by Keiiah, then go to guild, nod to the guildmaster and get sent to another part of the guildhall, fight a quasit (easy at level 15), receive 1k EXP + some coins.
+Invoker only: talk with guildmaster in Seantryn Modan
+Rune quest Emerald forest 4000xp
+Go to class Moudrilar's Monastery 2000xp
+Meditation Moudrilar's Monastery 500xp
+Keep of the rightness (max level 25). För goodie: tror det är butchern som är skurk.
+Shield quest Tirtalath
+Regear quest Crossroads Feanwyyn Weald - 1000 EXP and some gold in the bank
+Goody - Telenius, start at ambush. Give note to diana. Search for the chest by heading north from sommers crossroad an keep looking east
+
+Necro quest udgaard, find hindpaws, heart, and two more bodyparts, get one and return it, and go find another, get better golem.
+Cabal quest, Trainer Arkhamn, 1000 exp
+AP quest Udgaard (wand from ap outside HToS, wand from shop in Seantryn, scroll from shop in Udgaard - reward: 2 copper bracelets engraved with flames - gives resist cold, 1500 EXP)
+Slay somthing Udgaard north gate
+Saldria the outfitter in Udgaard: Fetch horseshoes in Hamsah. Reward 500 exp and skill learning in your main weapon? “Saldria teaches you a few tricks about sword.”
+HTS membership quest // no exp reward 
+HTS detect artifact quest level 37
+Warcry quest Emeral forest. 500xp
+Ktengs lab totally 10000xp
+Loch Terradian
+Get item for cook Loch Grynmear
+BIG Loch Grynmear quest about Zurcon
+Dwarven engineer quest (Dwarven brigade on the path south in pass of GolGalath)
+Kill dwarf quest? (Speak with ranger near the dwarven brigade south of GolGalath)
+Helm of freedom quest in slave mines of Sitran (Say Remeber our bondage.  and you ge
+Give t -14 save vs paralyze while wearing, goodie only.) - To do it, in Udgaard kill slavemaster? Or slave auctioneer? And give the head to the wandering paladin in Udgaard. He will give you chains. Put them in inventory or they will break in fights. Go to Sitran all the way down to the bottom, bring out the chains after you have killed the Jaettes there, the storm giants will not attack you and you can go and request the prayer beads. I think.
+
+Red/black dragon quest inn on the way to fortress (North and west from shepherds row when heading there.) Get a +2hit +2dam +1 str helmet VERY heavy. 1000xp
+Give 3 gold coins to the bard on the poarch in Dagdan and get anthem for five(?) hours the owlbear egg to the draenitty chief to be able to buy in the shops and use the healer there.
+
+Khardrath: fixa portalerna.
+You need the tracer or stamp for air and fire.  You use them on the runes at each portal.  Then you go get the hammer and the tube.  You use the tube north of the earth portal and the hammer at device on water tube.
+
+Nya Silverwood: Söder om Rymagar (hemlig väg) startar quest som ger exp och Extinguish skill (släcka bränder i naturlig terräng).
+
+(level 25) One-heart plains: one-heart chief i sunny temple startar quest där man skall besöka mystics.
+1)	En mystic alla söder och lite väst där det brinner, är mystic of Fire
+2)	En mystic från honom lite syd och öst och mer syd in i hemlig gång in i grotta. Är mystic of water. A OneHeart mystic says to you 'She cannot be grasped but in our minds.  Slippery and formless, no man can claim Her for his own.  Tell me truly child, what nature of Her this be?'
+3)	En mystic i skogen till öster. Är mystic of Air. A OneHeart mystic says to you 'Answer my question then, dear child. What element is She within, that I can always feel but never see?'
+4)	En mystic till i skogen till öster i A dead clearing. Spirit: A OneHeart mystic says to you ''Oh?  Is that so?  I ask you then, young child, what element is She when She guards our dreams, and strengthens the will of Her children?'
+
+--------------------------------------------------------------------------------------------------------[2013-06-04 22:07:21] moggeman: Questen för att få essence of smoke grejen där öster om udgaard
+
+
+[Exits: north east south west]
+A hunk of misshapen metal with a humanoid shape is standing here.
+(Invis) A gnomish alchemist named Gifflin is here.
+Elemental energy swirls around a beautiful half-elven woman named Jenrica.
+(Translucent) A wise-looking elf named Pascimius is directing the lab from the platform.
+Pascimius says 'A dear friend of mine has gone missing, but I must oversee the completion of the planar transport device.  Will you find him for me?'
+A bone golem has arrived.
+A zombie of Aster has arrived.
+
+100%/100% 99%/100% 48%/100% 2512 6 PM civilized say yes
+You say 'yes'
+Pascimius says 'Thank you.  Please return when you have found Malikoth.'
+
+grotta utanför vid en south-east path, gå norrut.
+
+
+99%/100% 100%/100% 63%/100% 2512 3 AM civilized sayto pascimius He is dead
+You say to Pascimius 'He is dead'
+Pascimius says to you 'It is indeed my fear that Malikoth is dead, however, I will not give up hope for his safe return until am given some proof of his demise.'
+
+
+
+100%/100% 100%/100% 73%/100% 2512 4 AM civilized give wand pascimius
+You give Malikoth's wand to Pascimius.
+Pascimius says 'Then it is as I feared, my dear friend Malikoth has been slain.'
+Pascimius says 'I thank you for your help, but I am in further need of your assistance.'
+Pascimius says 'I would be forever grateful if you would help me to find out who killed him, so that I may deal with his murder myself.'
+(You receive 2000 experience points.)
+
+västra sidan vid en bookshelf
+
+
+100%/100% 99%/100% 100%/100% 502 12 PM civilized use book hole
+Holding a book on the mating rituals of the long-toed jaette close to the odd hole, you work the wedge device into it.
+With a twist, the bookshelf swings open, revealing a small room carved from the rock behind it.
+
+
+
+100%/100% 99%/100% 99%/100% 502 12 PM civilized read journal
+Third Age, Year 3285, Month of Futility, 3rd day of the Sun
+
+Pascimius and Malikoth came to Hamsah today to get the horde of mages who
+have willingly left their lives to fulfill a small part of Khardrath's
+legacy.  It took me years to learn the illusion magic necessary to cover
+up my drow ancestry and my ruined face.  I had to master the illusion
+magic before I could begin to gain the trust of all of these fools with my
+new identity.  I will never allow that wretch Khardrath to have success,
+even in death.  Untold power could have been mine.  I would have had
+control of a mighty army, along with the unimaginable power of his lab.
+Instead, that self-sacrificing fool chose to cause an explosion that
+destroyed both his lab and my army.  Instead of a life of power and
+dominance, I became a powerless deformed freak.  Even if it takes my death,
+I will never allow his vision to succeed.
+
+After this journal entry there is a second one.
+
+
+100%/100% 100%/100% 100%/100% 502 4 PM civilized read second
+Third Age, Year 3285, Month of the Heat, 2nd day of the Sun
+
+These pitiful fools are near to elation, thinking that they will soon
+complete their precious apparatus, though they could not be further from
+the truth.  I have managed to damage the flow of energy to all four of the
+tubes.  I must say that poisoning Maelinius was enjoyable, though I only
+did it so I could ruin the portal without him catching me.  His death will
+be slow and painful, unless someone is able to find a sprig of ashwagandha
+to use on him.
+
+Below this journal entry, there is a third one.
+
+
+100%/100% 100%/100% 100%/100% 502 4 PM civilized read third
+Third Age, Year 3285, Month of the Heat, 4th day of the Great Gods
+
+I was forced to slay Malikoth today.  Though I took great pleasure in
+doing so, it was unfortunate because it may bring attention and
+investigation. That he was able to discover my true identity only shows
+that I must be more careful, even though the magic of my illusions keep my
+identity safe.  The only way that I could possibly be discovered would
+be from the three merchants that I have dealt with that know my true
+identity.  I will just have to hope that no one tracks the black dust used
+to poison Maelinius back to Sthridii, or he may tell them where to find a
+sprig of ashwagandha.  
+Other than that, my identity could only be revealed
+by asking Vhalen about the maelingian acid that I used to burn a hole in
+the tube filled with earth energy 
+or asking Ssriel Llibani about the
+magical device I purchased to siphon energy from the tube of water.
+
+Sthridii- udgaard, alchemical reagents 
+
+100%/100% 82%/100% 100%/100% 488 7 AM civilized sayto sthridii So i was informed that you sold black dust?
+You say to Sthridii the Alchemist 'So i was informed that you sold black dust?'
+Sthridii the Alchemist says 'Yes, a robed adventurer did purchase some black dust from me a while back.'
+Sthridii the Alchemist says 'Amongst other things, it can be used to make a deadly poison.'
+Sthridii the Alchemist says 'Ashwagandha root is the only known antidote for that form of poison.'
+
+
+You say to Sthridii the Alchemist 'Where can i find this ashwagandha root?'
+Sthridii the Alchemist says 'Ashwagandha root is very rare, even in my circles.'
+Sthridii the Alchemist says 'I know of only one place where it is grown and where it can be found.'
+Sthridii the Alchemist says 'Fentnor's farm is in the mountains between here and Tir-Talath.'
+Sthridii the Alchemist says 'If you look in a cellar beneath a trapdoor, you will find it hidden there.'
+
+
+
+ssriel llibani- consortium, mitten där man bland annat kan gå up och down, w,s,w,n. Så står han där
+You say 'magical device'
+Ssriel Llibani says 'You wish to know who purchased the device from me, but I see no reason why I should help you.  Are you willing to do me a service in exchange for this information?'
+
+You say 'yes'
+Ssriel Llibani says 'I am in need of a reagent that can only be distilled from one source.'
+Ssriel Llibani says 'Bring me a dazzling shard of jasper that is grown in Upper Cragstone.'
+fanns i ett hole, var inte där när jag kollade innan (bitter), i crystal farm gången.
+
+
+100%/100% 97%/100% 63%/100% 478 7 PM civilized You give a dazzling shard of jasper to Ssriel Llibani.
+Ssriel Llibani says 'Arzuula is the name of the person you seek.  You may know her as Malzoth.'
+
+
+vhalen
+udgaard, consortium, seantryn modan
+[2013-06-04 22:07:10] moggeman: -----------------------------------------------------------------------------------------------
+
+
+

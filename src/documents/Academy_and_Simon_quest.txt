@@ -1,0 +1,42 @@
+Run Academy
+
+Part 1: 
+l 2.;n;exa sign;n;exa sign;op w;w;exa sign;w;s;n;exa sign;op d;d;l templar;exa key;unl w;op w;drop key;w;exa one;exa two;exa three;exa four;n;exa fountain;drink;n;exa guildmaster;l scroll
+
+<Stop. Look at class-specific extras like banner, etc. Practice and train with your guildmaster...I think doing this is what makes it so you can walk back into the caverns without re-walking through the whole academy>
+
+Part 2: 
+n;exa mural;n;exa sign;n;exa pool;n;exa sign;d;exa sign;s;l plaque;l scroll;.nw;exa codex;exa text;.2e;exa plaque;.wnw;exa crest;exa plaque;e;exa sign;e;exa plaque;exa wad;.wnw;exa plaque;exa letters;exa grimoire;e;exa sign;
+
+n;exa sign;w;exa tapestry;.2e;exa tome;.wn;exa sign;color all;n;exa statue;n;exa sign;n;exa veteran;outfit;barter statue for belt;drop all.map;.nw;l pap;.2e;l 2.;wear buckler;w;exa notice;.2n
+
+.2ws;exa woman;exa sign;.nw;exa chest;exa 2.chest;get all 2.chest;.e2nw;exa sign;exa brick;op brick;get all brick;.e2nw;exa sign;exa lever;use lever;.2en;exa box;get all box;exa sign;.s3en;exa corpse;get all corpse;
+exa sign;.se;exa sign;crawl e;get hat;crawl w;.wse;l 2.;l 3.;l 4.;buy sleeves;exa sign;.ws2w
+
+.3d4n;wear torch;exa panel;exa sign;op panel;d;exa chest;op chest;get all chest;.ue;get fungus;.w4s3ue2sw2sw;give fungus pap;#loop 10 wear fine;wield sword;.e2ne2nw2d
+
+Run the Simon Quest
+
+say yes;l simon;.2u3n;op n;.ndnw;fill jug;.esd4s2d;give jug simon;
+
+.2u3n;op n;.ndwn3w3se;say Simon sent me;l wilhelm;l note;give note wilhelm;say yes;
+
+.w4s2enw;give scrap Nicholas;l nicholas;l raft;
+
+.es2w3n5e;op e;.51es7es4es11en;.2e2s9e2n6en5e;op s;s;
+
+l dasi;l jeril;give bundle jeril;n;n;get all purse;exa purse;drop purse;.6e;op n;n;say I'm here for the delivery;
+
+s;s;.13w;s;.27w;n;fill pot;.3nw;l abdul;give strawberry abdul;.e2s4w
+
+.15wn4wn7wn15w18n10w3nw;give cake dorothy;say yes;
+
+.en36w18n8w4n2wn;l fred;say I need the special tin for Dorothy
+
+.s2e4se;.7e15s5e;.31e;.sw;give tin dorothy;
+
+.en21w;.6s;l olin;l case;give case olin;l beer;empty beer;.5ne;fill tankard;w;n
+
+.10w;.14n;l wagon;get all wagon;l key;l compartment;op compartment;get all compartment;l corpse;get all corpse;.12s;l bush;l chest;unlock chest;op chest;l chest;get all chest;drop shin-guards
+
+.13n;.4e2s4e5n2w4n;l diana;give candy diana;l candy;give note diana;.4s;.2e;.3n;.usw;l nyles;give will nyles

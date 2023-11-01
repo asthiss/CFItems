@@ -1,0 +1,14 @@
+*** Starts one north of the area (on the road outside).
+*** Need lll as an alias to look 1.;look 2.;look 3.;look 4.
+
+.2s;l cart;.2s;l sign;l pockets;w;l pockets;w;l pockets;w;l pockets;l cart;s;l pockets;s;l pockets;d;l symbol;n;l crack;l vein;drink;n;l vein;n;l vein;w;l vein;w;l vein;s;lll;l vein;s;lll;l crystal;
+l devices;s;l sign;e;lll;l veins;l cracks;get all cracks;l ruby;e;l veins;l holes;get all holes;l diamond;e;lll;l veins;l crevices;get all crevices;l emerald;n;lll;l veins;l holes;l cracks;l crevices;
+get all holes;get all cracks;get all crevices;l diamond;l jasper;l gemstone;s;.3w
+
+s;l veins;l holes;l devices;l sign;w;l sign;lll;e;s;l veins;l hole;s;lll;l veins;s;l veins;l stone;e;l veins;l stone;lll;e;l veins;l stone;lll;e;lll;l sign;w;s;l veins;l stone;lll;s;l fresco;l veins;
+l stone;lll;e;lll;l veins;l sign;e;l leak;lll;e;l vein;l sign;n;lll;l sign;.2s;l sign;lll;.n3ws;lll;l veins;l stone;s;lll;l veins;l stone;e;lll;l sign;.2w;l veins;l stone;lll;w;l fresco;l veins;l stone;
+s;l mushrooms;lll;s;l sign;l water;lll;drink;s;l sign;e;lll;
+
+e;l sign;l 2.;l 3.;l 4.;l 5.;l 6.;l 7.;l 8.;l 9.;l;n;lll;e;lll;l sign;.w2s;lll;.n2w2nw;lll;l sign;n;l veins;l stone;w;l veins;l stone;lll;n;l veins;l stone;l sign;w;lll;l statuette;w;lll;l statue;w;lll;
+l statue;s;l lion;l claw;s;lll;e;l stone;l spring;drink;lll;.2w;lll;l alcove;w;l flame;w;l statue;s;lll;l carving;s;lll;l 4.;l crack;drink;.2n3e2n3en;l veins;l stone;lll;n;l veins;l stone;w;lll;l veins;
+w;lll;l veins;n;lll;.s2w;l veins;lll;n;lll;.2s;lll;.nw;lll;

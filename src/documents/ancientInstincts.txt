@@ -1,0 +1,746 @@
+FÅ SKILLEN:
+
+GÅ TILL: A Clearing in the Spiderhaunt 
+ 
+
+ANVÄNDA TOTEM FÖR ATT FÖRFLYTTA SIG:
+
+Invoke ancients fungerar iallafall på totem of Venom. Transporteras till smugglers cove.
+
+STÄLLEN ATT FÅ UPP SKILLEN 
+
+A Darkened Inlet from the Open Sea (Smugglers Cove - genväg till början på Prosimy)
+ 
+[Exits: north west]
+
+Standing Amidst the Fog (På väg upp till Monks i Moundilars - verkar vara Totem of the Winds)
+
+[Exits: south down]
+
+The Eerie Shallows of a Dark Swamp (Alla south i Glauruks - ger någon prep)
+Spell: 'accuracy' modifies hit roll by 5 for 11 hours.
+
+[Exits: north]
+
+On a Mud Flat (North east i Glauruks - verkar vara Totem of the Predator)
+
+[Exits: west]
+
+An Obscure Clearing (Forbidden forest i Past - ger någon prep)
+
+[Exits: north south west]
+
+A Sullen Grave (Forbidden forest i Past - genväg till Battlefield)
+
+[Exits: north]
+
+A Clearing in the Center of the Ironwood Trees (Arendyl vid head elder elf - verkar vara Totem of the Sun)
+
+[Exits: north east south west]
+
+The Fields of Dawn (I början i Organia - ger någon prep)
+
+[Exits: north east south west]
+
+Thick Wilderness (Precis söder om High Lords keep - verkar vara genväg)
+
+[Exits: north south west]
+
+A Bend in a Path Through the Prosimy (På väg mot tree från Arkham - genväg till village prosimy)
+
+[Exits: north south west]
+
+The Azreth Forest (syd östra hörnet)
+
+[Exits: north east]
+
+Small vally (feayn weald)
+
+Nord östra hörnet i bandit stronghold -> evermoon hollow
+
+A Trail Within the Forest (på vägen från feanwyn weald stigen up till azreth forest förbi dairiern - genväg till ashes)
+
+[Exits: east south]
+
+At the Bottom of a Rock Face (från udgaard plains gå north så snart du kan hela vägen - fetish of the moon)
+
+[Exits: south up]
+ 	A raven-headed relief has been carved around a giant moon in the rock face.
+
+A Narrow Gully (från udgaard plains pressa söderut öster om rivern - stig som leder till dead end)
+
+[Exits: north west]
+
+A Harvested Mountain Grove (på vägen genom gol’galath, ta söderut till stället med dvärgarna) gå alla south och east - gav mig en prep blomma med stoneskin)
+
+[Exits: west]
+ A Narrow Mountain Ledge (village of Lallenyha top west. Goes to jade mountains)
+ 
+[Exits: east]
+
+A Small Waterfall (Village of Lallenyha, North west of Village -  Gets you preps)
+ 
+[Exits: north south]
+
+Among the Thick Trees (Seantryn Swamps - south east corner then mess around about :) - gives prep)
+
+[Exits: north west]
+
+Deep in the Dranettie Wood (North west corner - genväg till Halflings skogen)
+
+[Exits: south east]
+
+Within the Jungle (East side of the jungle goes to ysigrath) 
+ 
+[Exits: north east]
+
+In the Heart of Whistlewood Swamp (prep)
+ 
+[Exits: north east south west]
+
+Standing Before the Sands of Sorrow (genväg till ugruks)
+ 
+[Exits: east west]
+
+The Dark Forest  (Barovia. Genväg till outlying village)
+ 
+[Exits: north east]
+A huge black wolf searches for his next meal.
+A murder of ravens flies south above the dense forest, suggesting something of interest beyond.
+
+
+
+—-------------------------------------------
+
+Finns 6 stycken 
+
+Totem of the Predator -> Glauruk
+Totem of the Venoms -> Spiderhaunt woods, 
+Totem of the Winds -> Moudrilar's Monastery, Neutral chaotic
+Totem of the Sun -> Arendyl
+Totem of the Storm -> Sea of Despair
+
+
+
+Morgan från ancient instincts questen vid monastery totem of wind:
+
+[Exits: south]
+A small black squirrel is here foraging for food.
+A small black squirrel is here foraging for food.
+You hear something overhead. Fearing that it might be an avalanche you look up just in time to have a shower of dirt and debris smack you in the face!
+You are blinded by the dirt in your eyes!
+
+wilderness  outdoor  638/638 463/463 655/693 15273 10 AM  u
+You can't see a thing!
+
+A roaring and chaotic cacophony of voices suddenly enters your mind from
+The leaning tree.
+
+'Your time has come, Outlander, to learn of the Ancient Ways! Your spirit
+Has now grown to be as unfettered as the wind, and the unseen secrets that
+Flow across the land will now make themselves known to you, should you
+Choose to look.'
+
+'Remember this quest is one you must embark upon alone! The wind goes as
+The wind wills, and does not follow another.'
+
+'Be as the zephyrs that roar through the land, wandering where your spirit
+Wills, unshackled and free. Spread the will of the Ancients across the
+Land, liberating Thar-Eris from those who would defile it. These are the
+Wishes of the Ancients that patron you.'
+
+'You may begin your journey by invoking the Ancients at this, the Totem of
+The Winds.'
+
+The strange and chaotic voices fade away as swiftly as they came, and
+A strange feeling enters your spirit as you feel forgotten instincts
+Awaken in your depths.'
+
+Your instincts sharpen.
+(You receive 5 experience points.)
+Something welcomes you as a kindred spirit.
+
+
+invoke ancients —->> Barovia
+You call upon the Ancients and invoke the power of the Totem of the Winds.
+The wind suddenly increases in intensity, carrying you to a faraway place.
+Standing Before a Wall of Mist
+ 
+[Exits: north south]
+
+—--------------------
+
+(Genväg från vladimirs cove till en bit in i forest of prosimity, timer på att använda?)
+	
+water outdoor  656/656 461/463 681/693 15558 12 PM  An Inlet from the Open Sea
+ 
+[Exits: north west]
+A feral howl alerts you to the presence of a wolf standing in an obscured crevice in the eastern limestone wall.
+
+water outdoor  656/656 461/463 680/693 15558 12 PM  l
+An Inlet from the Open Sea
+  The currents flow into a small inlet from the open sea.  The 
+waves are less turbulent, allowing you a glimpse into the 
+tranquil waters below.  It appears fairly shallow, allowing only 
+the smallest of watercraft access. Tall looming walls of limestone
+close in from the south and east, the waves slapping the 
+surface with a small tattoo.  A small piece of driftwood 
+with a black smear floats along.
+ 
+[Exits: north west]
+
+water outdoor  656/656 461/463 680/693 15558 12 PM  l wolf
+You do not see that here.
+
+water outdoor  656/656 461/463 680/693 15558 12 PM  l cre
+You do not see that here.
+
+water outdoor  656/656 461/463 680/693 15558 12 PM  e
+You step into the dark crevice, following the howling wolf as he runs through a tight passageway. Eventually, it emerges in the hollow of a large tree.
+Your instincts sharpen.
+(You receive 10 experience points.)
+On a Small Forest Trail
+ 
+[Exits: north south]
+A rabbit is on the side of the trail eating grass.
+
+—----------------------------------
+Genväg för att komma förbi sandstorm, ugruks—red sand
+
+wilderness  outdoor  656/656 463/463 667/693 15548 11 PM  A Narrow Pass Through the Red Cliffs
+ 
+[Exits: east west]
+A cloaked desert nomad peeks out from an obscured tunnel in the northern cliff.  Wordlessly, he beckons you to follow him through the passage.
+
+wilderness  outdoor  656/656 463/463 666/693 15548 11 PM  n
+You enter the passage and follow the nomad, a howling subterranean wind roaring past you. Silently, he leads you through the darkness against the wind until you finally reach the other side.
+Your instincts sharpen.
+(You receive 15 experience points.)
+Standing Before the Sands of Sorrow
+ 
+[Exits: east west]
+A howling desert wind bellows, making you aware of an obscured tunnel in the northern cliff face.
+
+wilderness  outdoor  656/656 463/463 665/693 15533 11 PM  call 'chameleon'
+You fade away as you blend in with your surroundings.
+
+wilderness  outdoor  656/656 462/463 693/693 15533 12 AM  n
+As you approach the tunnel, you are suddenly swept through a dark passageway by the howling wind. After spiraling through the darkness for what seems like an eternity, you eventually emerge on the other side.
+You step out from your cover.
+A Narrow Pass Through the Red Cliffs
+ 
+[Exits: east west]
+A cloaked desert nomad peeks out from an obscured tunnel in the northern cliff.  Wordlessly, he beckons you to follow him through the passage.
+
+wilderness  outdoor  656/656 462/463 692/693 15533 12 AM  n
+You enter the passage and follow the nomad, a howling subterranean wind roaring past you. Silently, he leads you through the darkness against the wind until you finally reach the other side.
+Standing Before the Sands of Sorrow
+ 
+[Exits: east west]
+A howling desert wind bellows, making you aware of an obscured tunnel in the northern cliff face.
+
+
+
+
+—--------------------------------------------
+A Hallowed Place
+ 
+[Exits: north west]
+(Camouflaged) A carnivorous vine slumbers, woven into this structure by the K'sra.
+(Camouflaged) A carnivorous vine slumbers, woven into this structure by the K'sra.
+From beyond the south wall of the dwelling, the strange grunt of a rhinoceros can be heard.
+
+Ysigrath -> Strangel Island
+Och tillbaka
+
+—----------------------------------------------
+
+Får insight exp av att skaffa black moss i Ysigrath
+
+—---------------------------------------------------
+
+wilderness  outdoor  656/656 463/463 681/693 14083 3 AM  
+Vhriha leaves east.
+You follow Vhriha east.
+Thick Wilderness
+ 
+[Exits: north south west]
+Vhriha is here.
+A bluejay flutters around a bush, revealing a narrow gap between the trees to the east.
+
+wilderness  outdoor  656/656 463/463 680/693 14083 3 AM  
+Vhriha follows a bluejay through a narrow gap between the trees.
+Vhriha leaves east.
+You follow Vhriha east.
+Taking your blue-winged companion's lead, you trek through a dense forest path.
+Your instincts sharpen.
+(You receive 55 experience points.)
+A Forest Path
+
+
+—---------------------------------------------------------------
+
+A sea bass is meandering along looking for fingerlings to eat.
+
+water outdoor  656/656 440/463 684/693 14028 3 AM  Log is on: vhriha.TXT
+
+Vhriha swims down.
+You follow Vhriha down.
+A Rock Grotto
+ 
+[Exits: north up]
+(Red Aura) Vhriha is here.
+A blue fish with yellow borders drifts near you.
+
+water indoor  656/656 440/463 683/693 14028 3 AM  
+Vhriha swims north.
+You follow Vhriha north.
+A Rock Grotto
+ 
+[Exits: south]
+     Some dark green seaweed floats here in the water.
+(Red Aura) Vhriha is here.
+A blue eel is curled up, and looking at you.
+Your instincts guide your eyes to a piece of dark green seaweed.
+Your instincts sharpen.
+(You receive 60 experience points.)
+
+water indoor  656/656 463/463 693/693 13968 4 AM  nod
+
+Vhriha gets a piece of dark green seaweed.
+With great confidence and skill, Vhriha carefully harvests a piece of dark green seaweed.
+
+water indoor  656/656 463/463 693/693 13968 4 AM  You nod.
+
+water indoor  656/656 463/463 693/693 13968 4 AM  get seaweed
+You get a piece of dark green seaweed.
+You use your ancient knowledge to carefully harvest a piece of dark green seaweed.
+
+water indoor  656/656 463/463 693/693 13968 4 AM  
+Vhriha says 'also resist mental'
+
+water indoor  656/656 463/463 693/693 13968 4 AM  
+Vhriha puts a piece of dark green seaweed in the girdle of endless space.
+
+water indoor  656/656 463/463 693/693 13968 4 AM  
+Vhriha cheers and sings... she is just BURSTING with joy!
+
+
+—--------------------------------------
+
+
+
+
+water outdoor  656/656 463/463 692/693 13968 5 AM  
+Vhriha leaves west.
+You follow Vhriha west.
+Sea of Despair
+ 
+[Exits: north east south west down]
+(Red Aura) Vhriha is here.
+
+water outdoor  656/656 463/463 691/693 13968 5 AM  
+Vhriha leaves north.
+You follow Vhriha north.
+Sea of Despair
+ 
+[Exits: east south west down]
+(Red Aura) Vhriha is here.
+
+water outdoor  656/656 463/463 690/693 13968 5 AM  
+Vhriha leaves west.
+You follow Vhriha west.
+Sea of Despair
+ 
+[Exits: east south down]
+     An ancient barnacle-encrusted boulder protrudes from the hoary sea.
+(Red Aura) Vhriha is here.
+Your instincts sharpen.
+(You receive 65 experience points.)
+You sense something vaguely familiar and primal from the Totem of the Storms.
+
+water outdoor  656/656 463/463 689/693 13903 5 AM  nod
+You nod.
+
+water outdoor  656/656 463/463 689/693 13903 5 AM  invoke ancients
+You approach the Totem of the Storms with thoughts of the Refuge, but nothing seems to happen.
+
+water outdoor  656/656 463/463 689/693 13903 5 AM  
+Vhriha leaves east.
+You follow Vhriha east.
+Sea of Despair
+ 
+[Exits: east south west down]
+(Red Aura) Vhriha is here.
+
+
+—-----------------------------------------------------
+
+bandit encampment
+
+(Red Aura) Vhriha is here.
+
+wilderness  outdoor  656/656 463/463 602/693 13758 7 PM  
+Vhriha says 'but not always'
+
+wilderness  outdoor  656/656 463/463 602/693 13758 7 PM  
+Vhriha leaves east.
+You follow Vhriha east.
+A Turn in the Trail
+ 
+[Exits: south west]
+(Red Aura) Vhriha is here.
+The wild yellow eyes of a wood-elven scout discreetly peer above the fallen logs to the north.  He swiftly disappears into the wilderness again, indicating a hidden path beyond.
+
+wilderness  outdoor  656/656 463/463 601/693 13758 7 PM  where
+People near you:
+(PK) Keir                         A Turn in the Trail
+  Vhriha                       A Turn in the Trail
+
+wilderness  outdoor  656/656 463/463 601/693 13758 7 PM  
+Vhriha leaves south.
+
+
+—--------------------------------
+
+
+
+wilderness  outdoor  656/656 463/463 609/693 13758 1 AM  where
+l
+People near you:
+(PK) Keir                         Before the Fortified Gates of Delar-Tol
+  Vhriha                       Before the Fortified Gates of Delar-Tol
+
+wilderness  outdoor  656/656 463/463 609/693 13758 1 AM  Before the Fortified Gates of Delar-Tol
+  A massive, battered gate juts out of the mountainside here to the west.
+Its solid iron doors are now rusted and dented through time and sieges.  
+What once appears to have been a finely engraved seal that sat in the 
+center of the gates is now worn, chipped, and rusted.  Along the top 
+rim of the huge gates rise dozens of sharp iron spikes, each adorned 
+with the rotting skull of a fallen dwarf.  Their once proud beards are
+now stained, tattered, torn, and flowing limply in the breeze that courses 
+through the mountain.  The soil at the base of the gate is littered with
+countless corpses, some human, some dwarvish, and many, many orcs and
+goblins.  Broken spears, their rotting shafts jutting out of the muck, 
+lie scattered about.  Nearby are shattered swords, their blades once 
+proud but now glinting dully in the light.  Arrows, fired from high above 
+cover the ground, as if they were the blades of some demonic grass.  All
+about this place the mud, muck, and putrid rotting flesh continues.
+ 
+[Exits: north east south]
+( 2) A pile of copper coins.
+     A single silver coin.
+( 2) A crude copper axe lies here.
+     A pile of silver coins.
+Vhriha is here.
+
+wilderness  outdoor  656/656 463/463 609/693 13758 1 AM  
+Vhriha leaves south.
+Vhriha yells 'Help! I'm being attacked by an orc grunt!'
+You follow Vhriha south.
+The Muddy Pass
+ 
+[Exits: north east]
+( 4) A crude copper axe lies here.
+( 3) A pile of copper coins.
+( 3) A pile of silver coins.
+( 2) (Iron) A jagged iron sword lies here.
+Vhriha is here, fighting an orc grunt.
+
+The distinct scent of bat guano emanates from the west, indicating a hidden tunnel in that direction.
+
+wilderness  outdoor  656/656 463/463 597/693 13758 1 AM  
+Vhriha disappears into the shadows of the cavern.
+Vhriha leaves west.
+You follow Vhriha west.
+You follow the scent of the guano through a narrow tunnel, squeezing through the cramped darkness until you finally emerge in another cavern.
+Your instincts sharpen.
+(You receive 80 experience points.)
+A Dark Place in the Depths
+ 
+[Exits: west]
+Vhriha is here.
+A man sifts through some loose stone and dirt.
+Armed with a pry bar this old man excavates loosened stone.
+
+wilderness  indoor  656/656 463/463 590/693 13678 1 AM  smile
+You smile happily.
+Vhriha scans west.
+
+wilderness  indoor  656/656 463/463 590/693 13678 1 AM  nod
+
+—--------------------------------------------------
+
+Forest of nowhere i Past, längst upp till höger.
+
+This area is razed and covered in ash.
+
+This area is filled with thick smoke.
+ 
+[Exits: south]
+A huge redwood stands here, nearly blocking the way.
+There is a very mean looking gnoll here.
+A tiny forest guardian rustles in the foliage to the east, revealing a small game trail.
+
+wilderness  outdoor  416/656 463/463 687/697 12891 5 AM  Alas, you cannot go that way.
+
+wilderness  outdoor  416/656 463/463 687/697 12891 5 AM  e
+You step after the forest guardian, following the faint trail through the woods until you reach a break in the trees and ascend a steep hill.
+Your instincts sharpen.
+(You receive 95 experience points.)
+A Wide Hillock
+ 
+[Exits: east]
+(Translucent) Minninottin, Priestess of the Woods stands here chanting to the trees.
+You notice a small green snake slithering through the underbrush, revealing a game trail beyond the crest of the hill to the west.
+
+wilderness  outdoor  416/656 463/463 686/697 12796 5 AM  where
+People near you:
+(PK) Keir                         A Wide Hillock
+
+
+—--------------------------------------------------
+
+Genväg aturi timberlands —-> Snowy peaks jade mountains östra delen och upp
+—---------------------------------------------------------------
+
+PREPS:
+
+Glauruk area (Västra delen, alla söder från crumbling):
+
+a sparse brown stem with dull green leaves.
+You finish eating a sparse brown stem with dull green leaves.
+You quickly prepare a sparse brown stem with dull green leaves for proper consumption as you place it in your mouth.
+You start to feel full.
+Your hands feel sure and confident, and your eyes sparkle with precision.
+Spell: 'accuracy' modifies hit roll by 5 for 10 hours.
+
+an ornamental plant with large white flowers
+You finish eating an ornamental plant with large white flowers.
+You quickly prepare an ornamental plant with large white flowers for proper consumption as you place it in your mouth.
+You still feel slightly hungry.
+Hatred almost touches your soul as your eyes attune themselves to reading wicked auras.
+You become resistant to negative attacks.
+Spell: 'resist negative' modifies negative resistance by 38 for 7 hours.
+Spell: 'detect evil' for 41 hours.
+
+----------------------------------------------------
+Gol'Galath area (Öster om stället med dvärgar/orcer) :
+Pathing:
+Nordöst om Tir-Talath - Öster om "A Bend in the Northern Tir-Talath Road"
+GolgIn
+E 
+
+GolgUt
+.w2ne4n4wds2wnu2w3nu4wds5w2s
+
+a bunch of silvery green leaves. x3 Refresh
+You get a bunch of silvery green leaves.
+You finish eating a bunch of silvery green leaves.
+You quickly prepare a bunch of silvery green leaves for proper consumption as you place it in your mouth.
+You start to feel full.
+Your body shudders, and you feel fully refreshed!
+Your body shudders, and you feel fully refreshed!
+Your body shudders, and you feel fully refreshed!
+
+a gnarled olive-green weed.
+You finish eating a gnarled olive-green weed.
+You quickly prepare a gnarled olive-green weed for proper consumption as you place it in your mouth.
+You start to feel full.
+Your muscles surge with heightened power!
+Your flesh feels weathered and tough.
+Spell: 'giant strength' modifies strength by 4 for 40 hours.
+Spell: 'toughened skin' modifies pierce resistance by 20 for 7 hours.
+Spell: 'toughened skin' modifies slash resistance by 20 for 7 hours.
+Spell: 'toughened skin' modifies bash resistance by 20 for 7 hours.
+Spell: 'toughened skin' modifies armor class by -20 for 7 hours.
+
+--------------------------------------------------------------------
+Past Troll forest (precis utanför graven som ligger på östra sidan):
+
+Pathing:
+miniMaze är alltså där i skogen innan maze där man bara kan gå österut och söderut
+-------
+Western Woodlands
+ 
+[Exits: east south]
+-------
+
+IN:
+shadowGrove (A Clearing in the Woods) --->>> A wide hillock (hidden path to ashes)
+.5w2n2w2nw8n4w2nws3w2sw
+
+Ashes —>>>>miniMaze
+.2sw3s4e3s2w5s2enen
+
+Go through maze to grave
+
+
+pastUt:
+miniMaze to AshesPath
+.sws2w5n2e3n4w4nen
+
+From Hillock —>>> shadowGrove (A Clearing in the Woods)
+.e2n3ene2s4e8se2s2e2s5e
+
+a shred of dark-brown bark.
+You finish eating a shred of dark-brown bark.
+You quickly prepare a shred of dark-brown bark for proper consumption as you place it in your mouth.
+You still feel slightly hungry.
+A layer of tough, flexible scales erupts from your skin!
+Spell: 'scaly hide' modifies armor class by -25 for 20 hours.
+
+a tiny sprig with small white berries.( RETURN PILL )
+You finish eating a tiny sprig with small white berries.
+You quickly prepare a tiny sprig with small white berries for proper consumption as you place it in your mouth.
+You are definitely still hungry.
+You are not cursed.
+You are not cursed.
+
+a stem of bright green leaves.
+You finish eating a stem of bright green leaves.
+You quickly prepare a stem of bright green leaves for proper consumption as you place it in your mouth.
+You no longer feel hungry.
+Your vision blurs for a moment before refocusing with greater clarity.
+Your eyes tingle as they begin to see raw magic.
+You attune your eyes to the presence of the divine.
+Spell: 'detect consecration' for 40 hours.
+Spell: 'detect magic' for 40 hours.
+Spell: 'ocular enhancement' for 26 hours.
+Spell: 'ocular enhancement' for 26 hours.
+
+----------------------------------------------------------------------
+Utanför north east gate of Voralia (norr om signpost) - A Grove of Shady Trees
+
+Note: Vill hitta bättre väg till detta prep
+
+voraliaIn
+.6e2nen3es4e2sue
+
+voraliaUt
+.wd2n4wn3wsw2s6w
+
+a shred of dark-brown bark.
+You finish eating a shred of dark-brown bark.
+You quickly prepare a shred of dark-brown bark for proper consumption as you place it in your mouth.
+You start to feel full.
+A layer of tough, flexible scales erupts from your skin!
+Spell: 'scaly hide' modifies armor class by -25 for 20 hours.
+
+a pale green lichen. (HEAL?)
+You finish eating a pale green lichen.
+You quickly prepare a pale green lichen for proper consumption as you place it in your mouth.
+You feel full.
+A warm feeling fills your body.
+
+
+---------------------------------------------------------------------
+Village of Lallenyha - waterfall
+
+Pathing:
+At the Edge of Wooded Valley(DAY)/At the Edge of a Dark Valley(NIGHT) (First step into area from Jade Mountains)
+
+jadeIn
+.2en5e2s2e3s2eu2es3eneseswu2e3nwn
+
+jadeOut
+A Small Waterfall
+.se3s2wdenwnws3wn2wd2w3n2w2n5ws2w
+
+a gnarled olive-green weed.
+You finish eating a gnarled olive-green weed.
+You quickly prepare a gnarled olive-green weed for proper consumption as you place it in your mouth.
+You still feel slightly hungry.
+Your muscles surge with heightened power!
+Your flesh feels weathered and tough.
+Spell: 'giant strength' modifies strength by 4 for 40 hours.
+Spell: 'toughened skin' modifies pierce resistance by 20 for 7 hours.
+Spell: 'toughened skin' modifies slash resistance by 20 for 7 hours.
+Spell: 'toughened skin' modifies bash resistance by 20 for 7 hours.
+Spell: 'toughened skin' modifies armor class by -20 for 7 hours.
+
+
+a single bluish-gray flower.
+You finish eating a single bluish-gray flower.
+You quickly prepare a single bluish-gray flower for proper consumption as you place it in your mouth.
+You start to feel full.
+Your skin turns to stone.
+Spell: 'stone skin' modifies armor class by -40 for 7 hours.
+
+a bunch of silvery green leaves x3 Refresh
+You finish eating a bunch of silvery green leaves.
+You quickly prepare a bunch of silvery green leaves for proper consumption as you place it in your mouth.
+You no longer feel hungry.
+Your body shudders, and you feel fully refreshed!
+Your body shudders, and you feel fully refreshed!
+Your body shudders, and you feel fully refreshed!
+
+-------------------------------------------------------------------
+
+Xvart Lair - PT på kartan
+
+xVartIn
+A Small Cave (X på kartan).
+.dnwdwn2w2nd4w2ned2e
+
+xVartUt
+A vast, Underground Cavern
+.2wuw2s4eu2s2eseuesu
+
+a pale green lichen.
+You finish eating a pale green lichen.
+You quickly prepare a pale green lichen for proper consumption as you place it in your mouth.
+You are definitely still hungry.
+A warm feeling fills your body.
+Spell: 'bless' modifies save vs spell by -6 for 12 hours.
+Spell: 'bless' modifies hit roll by 3 for 12 hours.
+
+a brown, broad-headed mushroom
+You finish eating a brown, broad-headed mushroom.
+You quickly prepare a brown, broad-headed mushroom for proper consumption as you place it in your mouth.
+You still feel slightly hungry.
+The world and everything around seem to grow smaller.
+Your muscles surge with heightened power!
+Spell: 'giant strength' modifies strength by 4 for 39 hours.
+Spell: 'enlarge' modifies size by 1 for 6 hours.
+Spell: 'enlarge' modifies damage roll by 1 for 6 hours.
+Spell: 'enlarge' modifies constitution by 1 for 6 hours.
+Spell: 'enlarge' modifies dexterity by -2 for 6 hours.
+Spell: 'enlarge' modifies strength by 2 for 6 hours.
+
+
+
+-------------------------------------------------------------------------
+
+Seantryn Swamps - (random maze på natten, typ 8AM-8PM inte säker)
+
+ (Från Coastal plains längst upp till vänster - In Some Trees Near an Ocean)
+SeantrynSwampIn
+.nw2s2w2n6w3sw3s
+
+SeantrynSwampUt
+.3ne3n6es2enes
+
+a sparse brown stem with dull green leaves.
+You finish eating a sparse brown stem with dull green leaves.
+You quickly prepare a sparse brown stem with dull green leaves for proper consumption as you place it in your mouth.
+You are definitely still hungry.
+Your hands feel sure and confident, and your eyes sparkle with precision.
+Spell: 'accuracy' modifies hit roll by 5 for 10 hours.
+
+an ornamental plant with large white flowers.
+You finish eating an ornamental plant with large white flowers.
+You quickly prepare an ornamental plant with large white flowers for proper consumption as you place it in your mouth.
+You still feel slightly hungry.
+Hatred almost touches your soul as your eyes attune themselves to reading wicked auras.
+You become resistant to negative attacks.
+Spell: 'detect evil' for 41 hours.
+Spell: 'resist negative' modifies negative resistance by 38 for 7 hours.
+
+
+------------------------------------------------------------------------------
+
+The Coral Head 
+[Exits: north east south west] 
+A Your instincts guide your eyes to a piece of dark green seaweed (clarity, resist mental). 
+Your instincts sharpen. (You receive 80 experience points.)

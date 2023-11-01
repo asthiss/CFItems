@@ -1,0 +1,162 @@
+M	The Virgin Maid	every morning, right around nine.
+Captain Colie Goodwife is using:
+<worn about body>   a cloak of rich autumn leaves
+
+N	Vampire's Bane - Daylight Marauder	every forty eight hours, around high noon. (SWORD)
+Captain Kares Winterbane is using:
+<worn about waist>  a belt of silver ingots
+<mainhand wielded>  a silver longsword with an iron horseshoe pommel
+
+N	Carli's Shrimp Boat	every day when the sun starts to set
+
+S	Hammarley	Day of the Moon, 6am (CHEST/SLEEVES)
+Captain Haiji Bismritri is using:
+<worn on body>      a lightweight suit of gold chainmail
+<worn on head>      a white turban with a sharp ruby pin
+<worn on arms>      golden bracers with ornate engravings
+
+S	The Buzzing Hornet	Day of the Moon, 7am (AXE)
+Imperial First Captain Peregene Sakari is using:
+<mainhand wielded>  a polished adamantite axe named 'Chaos Bane'
+
+N	Redd Iaage - Valguarnera's Judgment	Day of the Moon, 11am (MACE)
+a filthy drunk is using:
+<mainhand wielded>  a leather-handled knife
+You get a rare yellow pearl.
+
+N	Jade Kiss	Day of the Moon, 2pm. (POLEARM)
+Captain Jyris Kyloyrin is using:
+<worn on head>      a jade velvet headband
+<mainhand wielded>  a jade polearm filled with green liquid
+
+S	Dancing Renna	Day of the Moon, 11pm
+the ship's captain is using:
+<mainhand wielded>  a fish net studded with sharp hooks
+
+S	Grurk's Rising	Day of the Bull, 7am
+Captain Syge Ravenhart is using:
+<mainhand wielded>  oily black cat-o-nine tails with sharp silver tips
+
+M	Horizon's Seeker	Day of the Bull, 1pm.
+Captain Pinkatros Toutsani is using:
+<worn on head>      a stylish white captain's hat
+
+S	Grey Monk	Day of the Bull, 2pm
+<worn about body>   heavy gray cowled robes
+<worn around wrist> a stone bracelet of divinity
+
+N	Delving shark	Day of the Bull, early afternoon
+an elderly fisherman is using:
+<mainhand wielded>  a fish net studded with sharp hooks
+
+H	Yellow Abishai	Day of the Bull, 11pm (SHIELD/NECK for Conjurer)
+the female captain is using:
+<worn around neck>  (Humming) a choker of black light
+<worn as shield>    a shield of solid water
+
+SEEN
+23rd of the Month of the Winter Wolf in the year 487 (6th Age). Didn't show up
+S	Bloody Heart	Day of Deception, 2am - Not all day of deception
+the arch-necromancer Maleavia Redwyne is using:
+<worn on body>      a torn and bloodied wedding dress
+<mainhand wielded>  a bloody silver scimitar named 'Last Caress'
+
+M	Crimson Fire	Day of Deception, 4am (Mace)
+Captain Craydullagh Inerfstriach is using:
+<worn around neck>  a spiked leather gorget
+<worn on body>      a black leather vest embroidered with flames
+<mainhand wielded>  a wicked dragonbone mace with blackfire spikes
+
+NOT SEEN
+23rd of the Month of the Winter Wolf in the year 487 (6th Age). Did not show up
+2nd of the Month of Winter in the year 487 (6th Age). - Did not show up
+N	The Thirsty Bear	Day of Deception, 4pm
+Vyktrin the Alerunner is using:
+<mainhand wielded>  a mithril longsword named 'Whiskey Sour'
+
+S	The Rapacious Reaver	Day of Deception, 6pm
+the ship's captain is using:
+<worn around neck>  a spiked leather gorget
+You get a blister pearl from the corpse of the ship's captain.
+
+H	Onyx Dream	Day of Thunder, 1am, Month of Long Shadows/Month of Great Evil
+a crazed alchemist is using:
+<mainhand wielded>  a golden-handled cutlass
+
+Not SEEN
+N	Midya's Revenge	Day of Thunder, 2am (sapphire polearm) - 1 AM day of Freedom
+Captain Rivinya Morgraar is using:
+<mainhand wielded>  a sapphire polearm filled with water
+
+3rd of the Month of Winter in the year 487 (6th Age). - Did not show up
+
+N	Aarn's Holy Aler	Day of Thunder, 6am. (EXOTIC)
+Captain Grigriss Alebeard is using:
+<mainhand wielded>  (Humming) a massive wood and iron tankard
+
+N	The Laughing Lord	Day of Thunder, 4pm
+Blythlynn Syriviere is using:
+<worn about waist>  a rope of coiled lightning
+
+S	Dark Shemshamae	Day of Thunder, 11pm (only certain months) - Did not show up
+3rd of the Month of Winter in the year 487 (6th Age).
+
+N	The Sapphire Wave	twice a month, third and fifth day of Freedom, 6am (ARIAL)
+
+S	The Aquavia Montage	Day of Freedom, 9am
+Captain Farrist Dynscer is using:
+<mainhand wielded>  a titanium scimitar named 'Laughing Girl'
+
+M	The Golden Pearl	Day of Freedom at 10pm, or early morning Great Gods
+Anxchizrepp, the crystal titan is using:
+<mainhand wielded>  a whip of living, writhing crystal
+
+M	Golden Whorl	Day of the Great Gods, 11am (WHIP)
+Captain Gylis Goldleaf is using:
+<worn on finger>    a red coral ring set with a black pearl
+
+Captain Gylis Goldleaf, a lean wood-elf, sits at a desk making marks on a map.
+Captain Gylis Goldleaf tells you 'You bring me the pearls I want?  Making a nice pearl necklace for my lady back home.'
+"MAYBE PEARLS FROM OTHER CAPTAINS"
+You give a blister pearl to Captain Gylis Goldleaf.
+Captain Gylis Goldleaf inspects a blister pearl with a careful eye.
+Captain Gylis Goldleaf says 'Fair enough. This ought to do just fine.'
+Captain Gylis Goldleaf locks opens his drawer and places a blister pearl in a treasure chest, locking it up with a little key.
+Captain Gylis Goldleaf gives you 7 silver coins, 2 copper coins.
+
+S	The Kraken's Caress	Day of the Great Gods, 2pm (WHIP)
+a kneeling missionary is using:
+<held in hand>      a curling blackwood staff
+a half-drow missionary is using:
+<mainhand wielded>  a black whip named 'Penitence'
+
+H	Muse's Throne	Day of the Great Gods, 8pm - Also at It is 8 o'clock PM, Day of the Sun
+day of the sun: not on 13th month of the winter wolf
+
+Cantydine La Sinc is using:
+<worn on face>      a white porcelain half-mask
+<held in hand>      a slim white porcelain rod
+
+a wicked ice devil is using: (Transmuter)
+<worn around wrist> a bracelet of blue coldfire
+
+N	The Thieving Lily	Day of the Sun, 4am (FLAIL)
+Captain Lilian Misgiverin is using:
+<mainhand wielded>  a flail of five lilies
+<held in hand>      a bag of Arailian scorpions
+
+M	Incardine Spray	Day of the Sun, 1pm
+Captain Evynaline Whitespear is using:
+<mainhand wielded>  (Glowing) (Humming) a white dragonbone mace named 'Purity'
+<worn as shield>    (Glowing) a holy shield emblazoned with a rising phoenix
+
+S	Bloody Sheshani	Day of the Sun, 11am
+a crazed madman is using:
+<worn around neck>  a necklace made of dried blood and seashells
+
+M	The Sirine's Dirge	Day of the Sun, 4pm
+Captain Slyxia Slavarine is using:
+<mainhand wielded>  a fish net studded with sharp hooks
+
+S	Coeur Rouge	Day of the Great gods/Sun, 8pm/4pm
+Jaundite Graygrass is in perfect health.

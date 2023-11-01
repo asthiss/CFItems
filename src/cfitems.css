@@ -1,0 +1,156 @@
+body {
+    font-family: sans-serif;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+}
+
+fieldset {
+    border-color: #dfbe6f;
+}
+
+ul {
+    margin: 0;
+}
+
+.edit {
+    float: right;
+}
+
+.item:after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 60%;
+    margin: 10px;
+    background: #dfbe6f;
+}
+
+.note {
+    width: 500px;
+    margin: 50px auto;
+    font-size: 1.1em;
+    color: #333;
+    text-align: justify;
+}
+
+#drop-area {
+    border: 2px dashed #dfbe6f;
+    border-radius: 20px;
+    margin: 10px 5px;
+    padding: 55px 0px 70px 0px;
+    float: right;
+}
+
+#drop-area.highlight {
+    border-color: purple;
+}
+
+p {
+    margin-top: 0;
+}
+
+.my-form {
+    margin-bottom: 10px;
+}
+
+#gallery {
+    margin-top: 10px;
+}
+
+#gallery img {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+    .button:hover {
+        background: #ddd;
+    }
+
+#fileElem {
+    display: none;
+}
+
+#fetchData {
+    display: none;
+}
+
+.center {
+    padding: 10px;
+    display: table;
+    margin: auto;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+#busy {
+    animation: spin 1s infinite linear;
+    display: inline-block;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    color: #555;
+    display: none;
+}
+
+#busy::before {
+    content: "\25E0";
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+.fiftyfifty {
+    width: 50%;
+}
+
+.preview {
+    width: 80%;
+    height: 900px;
+}
+
+a {
+    color: #dfbe6f;
+    text-decoration: none;
+    margin: 0 0.3em;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+#subNav {
+    float: left;
+    padding: 0;
+}
+#subNav a {
+    font-size: 16px;
+}
+iframe {
+    font-family: sans-serif;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+}
+h3 {
+    color: #dfbe6f;
+}

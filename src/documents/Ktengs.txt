@@ -1,0 +1,76 @@
+
+Get the right stone for you class from the golems on the first floor. See Phase2
+
+KEYS:
+första nyckeln i en torch
+andra nyckeln på lead golem
+tredje nyckeln i ett hemligt rum österut i ett skelett
+
+********************************************************************************************************************
+-flaskan finns alla öster om K:et på kartan-
+
+Phase PREP: Altar - GET FLASK HANDS (In the hands of the statue is a flask, that's the flask you'll be HOLDING)
+ 
+Phase 1: Crystallisation - Elemental chambers - Ice (The Frozen Chamber)
+Sidenote Bob says: “inte i rummet längst väster”
+**********************************************************************************************************************
+invoke sah dokeelek tingrada ang talkress
+
+Phase 2: Investiture - Chamber of Meditations
+**********************************************************************************************************************
+use <%Stone that fits your class here %> flask
+ 
+Ruby: Warrior + ?
+Diamond: Shaman, conjurer, bard
+Moonstone: Healer, Paladin
+Hematite: Invoker, Transmuter, Druid?
+Aquamarine: Assassin, thief, ranger
+Opal: Anti-paladin, Necromancer
+ 
+
+Phase 3: Dissolution - Elemental chambers - Fire (The Crucible)
+**********************************************************************************************************************
+invoke anyanahi ang nihti bosemu ang obu
+
+Phase 4: Digestion - Acid room out in the main lab
+**********************************************************************************************************************
+use flask pool
+
+Phase 5: Distillation - South of Southwestern Laboratory (Distillation Chamber) - Valve & Still
+**********************************************************************************************************************
+use valve
+use flask still
+
+Phase 6: Congelation - Elemental chambers - Water (An Underground Pool)
+**********************************************************************************************************************
+invoke tiwbih ang hintehansis at wani ang digdaig
+
+Phase 7: Sublimation - Elemental chambers - Lightning (The Maelstrom)
+**********************************************************************************************************************
+invoke tiwbih ang bigtu sah oblo nang inhang
+
+Phase 8: Liquifaction - Elemental chambers - Fire (The Forge)
+**********************************************************************************************************************
+Invoke ahmul sah ang hintehansis tangrada ang bigtu
+*** DEN HÄR VAR FEL - ovan är korrekt //Oskar 2023-09-24
+
+Phase 9: Separation - The Northwest Laboratory - Funnel
+**********************************************************************************************************************
+use flask funnel
+
+Phase 10: Filtration - Northeast Laboratory - Flask on table
+**********************************************************************************************************************
+use elixir flask
+
+Phase 11: Fixation - Chapel
+**********************************************************************************************************************
+New word is:
+invoke inasal hatla nitengu ang aytun
+
+Phase 12: Projection - Altar room
+**********************************************************************************************************************
+invoke ako obu nong ang logbi at ahnlita kay <yourNameHere>
+
+Stuff in the herbary:
+Calamus root
+Mullein

@@ -1,0 +1,108 @@
+---------------------------------------------------
+EQ TO LOOK For
+---
+Finger: a bloodstone ring 									L52,  4  5  6  4, dam 3, sspell -15, hp 25, dex 1, str 2, onyx, w5, warrior_only, Green Dragon, Feanwyyn Weald
+		a golden lion's wrath ring 
+		the ring of regeneration
+		ring set with a shard of blue crystal     			L50,  -  -  -  -, dam -1, hp 40, silver, w0.14, Tower of Trothon
+		a coral ring                            		-E  L50,  7  6  7  7, hit 2, dam 3, dex 2, arm -5, sspell -2, stone, w1, Triton grand bishop, Coral Palace
+		a ring of stamina
+        a strange black opal
+		a ring set with a shard of green crystal
+		a fiery ring                                		L50, 12 12 12  4, hp 25, mana 8, dam 1, hit 1, steel, w4 Several of the big mobs, Kiadana-rah
+		a silver ring set with a single malachite   		L35, -- -- -- --, dam 1, hp 20, mana 20, silver, w1, Rashal, Kuo-Toa lair
+		
+Neck: 	an etched dragonscale pendant 		            -GN L50, 10 10 10 0, sbreath -14, str 4, bone, w11, Special: Heal, Tiamat, Dragon Tower
+		a necklace of prayer beads              	    -E  L60, 1 1 1 12, hp 15, mana 15, silver, w1, special: dispel evil, Darinal the Rebel Leader, Slave mines of Sitran
+		a fine stole of white ermine
+		a mantle of fire									L46, 10 10 10 10, hp 10, mana 10, dam 3, sspell -5, glowing, energy, w5, [[ElementalTemple]]
+		a silver pendant inlaid with diamond
+		an ivory amulet shaped like a troll					L50, 4 4 4 15, ivory, w4, special: regain 2-3 times as fast, become vulnerable to acid and fire, stone skin
+		the Amulet of War
+        the amulet of dragonkind                    		L50, 20 20 20 20, arm -25, sbreath -50, energy, w10, Special: Burns equipment, 8 Headed Hydra, Chessmaster Tower
+		a cloak of molten gold
+		a forest colored cloak            					L50, 5 4 3 2, hp 25, dam 3, cloth, w5, dranettie
+		a wooden hummingbird pendant            	  -EN L45, 10 10 10 15, sspell -15, arm -4, dam 3, hit 3, ivory, w1, Special: Random heals, Paladin Commander (Versiloth?), NW Of Udgaard
+		a blazing orange cloak
+		a medallion of reddish-gold
+		
+Body:	hide armor from a yeti				  		  +E-GN L50, 14 12 12 0, dam 3, hp 30, sbreath -15, spar -8, fur, w40, giant_only, special: resistant to frost
+		the hide of the Ancient Red Dragon
+		armor of blood stained fur and ice
+		a set of golden plate armor
+		a breastplate of lobster plates             		L45, 9 9 8 0, dam 4, hit 1, hp 30, str 1, dex -2, bone, w15, Giant lobster, Ruins of Tcar
+		the Scales of the Crimson Dragon            		L50, 15 15 15 20, dam 5, hit 1, hp 55, arm -12, steel, w26
+		an acid etched suit of black titanium chainmail
+		the mantle of the shark								L50, 12 11 12 15, hp 20, arm -10, dam 3, skin, w10, Triton grand bishop, Coral Palace
+		five-color dragonscale mail							L50, 20 20 20 10, sbreath -5, hit 1, dam 1, hp 50, bone, w22, Special: Resistant to blunt, Tiamat, Dragon Tower
+		the chitinous shell of a rainbow runner
+		
+Head:	the flaming crown of giants           		  +E-GN L50, 13 13 13 13, dam 3, hit 3, con 3, str 3, hp 30, iron, w18, giant_only, Lord Kiadan-Rah, Mount Kiadana-Rah, EQ-BURNER
+		the helm of brilliance
+		the Seantryn Battle Helm				    		L48, 12 10 11 6, dam 3, hp 40, str 2, steel, w14, Lord Marshal-General, Seantryn Palace
+		a mithril helm with a black jade inlay
+		an ornate steel great helm			    		-NE L40, 9 9 9 9, spell -3, dam 2, steel, w6
+		
+Face:	the Mask of Sekhtan-Rah					    		L60, gold, w10, Mummy, Pyramids of Azhen
+		spiked mask of darkened bronze						L18, 0 0 0 0 0, str 2, mana 5, svspar -2, w2, bronze, Bramblefield merchants
+		a primitive fertility mask							+2 str, swamp near weald
+		
+Legs:	some spider-skin leggings							L55, 8 8 12 11, spar -10, move -25, dam 2, arm -5, hp 30, leather, w10
+		a pair of black breeches
+		a pair of gleaming diamond leg guards
+		a pair of spiked leggings
+		a pair of black breeches
+		some worn studded leather leggings					L39, 7 7 9 6, dam 2 hp 10, leather, w5
+		
+Feet:	a pair of spike-toed boots							L38, 9 9 10 0, hit -1, dam 3, w15, Bodyguard, Manor, special: damage multiplied on kicks and cheap shots.
+		a pair of steel lined dragonscale boots				L50, 20 20 20 5, move 50, hp 25, dex -1, spar -4, con 2, dam 2, steel, w11, Ancient Blue Dragon, Dragon Tower	
+		a pair of steel-toed boots							L45, 14 14 14 3 9, dam 3, hit 2, ac -5, con 2, dex -2, w8, steel, Whitecloaks
+		a pair of black suede boots							L47, 6 6 6 0, hit 5, arm -8, dex 2, steel, w8, Blademaster, Seantryn Modan
+		boots of speed
+		boots of the quaking earth
+		slime-covered boots made of charcoal dragonscales 	L48, 13 14 13 14 13, dam 2, hit 2, svspell -3, w3, dragonscale, Enpolad's Game Garden
+		a pair of knee-high boots of red hematite
+		
+Hands:	a pair of swordmaster's gauntlets
+		the blademaster's gloves
+		a pair of black enameled gauntlets					L45, 8 8 8 12, dam 2, hit 1, sspell -2, hp 5, steel, w5, Vanion, Basilica
+		gauntlets of ogre power								L23, 6 7 8 0, arm 10, dam 3, str 4, w13, Barbarian, Frigid Wastelands
+		a pair of detailed silk gloves
+		a pair of darkened mithril gauntlets studded with small spikes
+		gloves of earthen power and rage
+		a pair of oversized whitesteel gauntlets
+		
+Arms:	a pair of strange bracers							L51, 5 5 5 5, spar -15, arm -13, hit 6, dex 4, adamantite, w1, Weaponmaster, [[TethAzeleth]], Special: Haste
+		a plain phylactery									L50, 2 2 2 2, hp 20, sspell -12, spar -12, con 4, energy, special: resist poison
+		a phylactery of potence								L52, 4 2 4 10, sspell +7, dam 3, hit 3, dex -1, str 3, cloth, w3
+		a pair of jagged arm guards						 +E L48, 12 10 9 4, dam 3, hit 1, dex -1, w10
+		some darkened mithril sleeves set with large spikes
+		some embossed bracers								L52, 13 15 14 1, str 1, dam 3, hp 38, steel, w16
+		vambraces of dragonscales
+		
+About:	a cloak of displacement
+		a heavily embroidered coronation mantle of purest gold
+		a tattered, color shifting cloak				-E  L49, dam 2, hit 2, hp 10, dex 2, str 1, sspell -5, spet -5, spar -8, silk
+		black robes slashed with bone-white
+		the cape of living flames							L47, 12 12 12 12, sbreath -4, sspell -15, dam 3, energy, w5,
+		the Cloak of the Wolf-kin
+		
+Waist:	the belt of strength								L37, 12 13 11 12, spar -12, dam 1, str 3, w6.15, leather, Rig, Battle Field
+		a girth of lobster plates							L53, 9 9 8 1, dam 4, hit 1, hp 15, dex -1, str 1, bone, w15, Giant lobster, Ruins of Tcar
+		the blademaster's sash								L46, 3 3 3 3, hp 10, dam 2, hit 3, int 1, cloth, w2, Blademaster, Seantryn Modan
+		a forest-green, woven belt                       -E L49, 5 5 5 8, dam 2, hit 2, dex 3, sspell -5, silk, w6
+		a girdle of giant strength							L50, 8 7 6 3, dam 2, str 3, leather, w13, Oromous the Strong, Mortorn, Summonable
+		the elvish sash							        -NE L50, 12 12 12 12, hp 40, hit 2, dam 2, wis 2, dex 2, silk, w5, Lich, Lost Elven Vaults
+		a belt with a fine platinum buckle	             -E L40, 6 6 6 6, dam 2, platinum, w4
+
+Wrist:	a wide copper bracelet								L45, 10 10 10 10, dam 5, w1, Cleric Guildmaster/Warrior Guildmaster, Arboria
+		a thick leather bracer							 -E L40, 4 4 4 4, dam 3, hp 5, leather, w3, Kuo-Toa Lair
+		a glass eye bracelet
+		a malachite bracelet								L45, dam 3, con 3, chr 1, w2, Flistinack, Weald
+		flawless bracelet of pure sapphire
+		a thin silver bracelet
+		a glittering bracelet of solid sapphire				L50 3 3 3 6 dam +3, hit +3, dex +2, str +2
+		the Bracelet of Bifrost								L50, 15 15 15 15, mana 15, hp 15, arm -5, dam 3, w6, Ysbaddaden, Battle Field
+		a bracelet of woven gold						-EN L53, dam 2, hit 1, arm -15, hp 30, gold, w6, ?, Tower of Trothon
+		a bracer of dragonscale
+		the Bracelet of Charms								L51, cha 1, dam 4, str -1, gold, w15, container, King Schnicktick, Blingdenstone
