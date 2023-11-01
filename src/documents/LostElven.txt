@@ -1,0 +1,207 @@
+
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                      T                                       
+                                                                      |                                       
+                                               +---N---O---+---g      -                                                      
+                                               |               |      |                                       
+                                               M               g---Oz-C                                                
+                                               |                      |                                       
+                                               +                      -                                       
+                                               |                      |                                       
+                                               p                      U                                       
+                                               |                                                                   
+                                               K                                                                   
+                                               |                                                                   
+                                               b---+                                                               
+                                                   |
+                                                   a                                                               
+                                                   |                                                               
+                                                   -                                                               
+                                                   |                                                               
+                                                   L                                                               
+                                                   | 
+                                               +---1---+                                                               
+                                                   |                                                               
+                                                   2                                                               
+                                                                                                                    
+                                                                                                                  
+2 - Back up to entrance
+L - the elven lieutenant
+		     a plain key
+		     a two-handed mithril sword with jade etchings
+     		     a light coat of mithril chain
+K - the elven lieutenant
+		     a long-handled whip		
+		     a light coat of mithril chain		
+M - the elven lieutenant
+		     a mithril glaive with jade etchings
+		     a light coat of mithril chain
+N - the jade elf assassin 	(Strangles on entrance)
+		     a light coat of mithril chain
+O - the jade elf transmuter   (freezes you on entrance, lasts at least 2 hour)
+         	     a light coat of mithril chain
+C - the captain of the guard
+		     a jagged short sword
+     		     a multi-alloy key
+		     The helm of brilliance
+T - A Treasure Vault
+		     A gold chest sits here.
+     		     A wooden chest sits here.
+		     A bronze chest sits here.
+				the staff of storms
+		     A silver chest sits here.
+U - A Treasure Vault
+
+Oz - Gray ooze + sleeping gas
+
+		
+a - Room that sprays acid on everyone
+b - Room that shoots arrow at you
+p - a small pedestal
+g - Room that spreads sleeping gas	(6 hours)
+
+
+
+
+
+                                                                                                                   
+                                                                                                                   
+                                                                   +                                               
+                                                                   |\                                               
+                                                                   + 1                                              
+                                                                   |
+                                                                   -                                               
+                                                                   |                                               
+                                                       B---+---+---+                                                          
+                                                       |                                                           
+                                                       +                                                           
+                                                       |
+                                                       +                                                            
+                                                       |                                                           
+                                                       E                                                            
+                                                                                                                   
+                                
+B - The bronze dragon 			(a Jade Key)
+                                                                                   
+
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+
+                                                                                                                   
+Item ID:s
+
+-------------------------------------------------------------------------------
+a light coat of mithril chain can be referred to as 'coat chainmail mithril'.
+It is worth 2720 copper, and is of the 30th level of power.
+It is armor worn on the body.
+It is made of mithril and weighs 4 kg 462 g.
+When worn, it protects you against piercing for 6, bashing for 11,
+  slashing for 13, magic for 9, and the elements for 7 points each.
+When worn, it affects your armor class by -3 points and 
+  your dexterity by 2 points.
+It has been imbued with a blessing.
+People of a dark heart cannot use it.
+-------------------------------------------------------------------------------
+a long-handled whip can be referred to as 'long-handled whip'.
+It is worth 968 copper, and is of the 30th level of power.
+It is a whip with an attack type of slice.
+It is made of leather and weighs 3 kg 629 g.
+It can cause 5d8 points of damage, at average 22.
+When worn, it affects your damage roll by 1 point and 
+  your hit roll by 4 points.
+It has been imbued with a blessing.
+People of a dark heart cannot use it.
+-------------------------------------------------------------------------------
+a two-handed mithril sword with jade etchings can be referred to as 
+  'two sword mithril jade etchings'.
+It is worth 5981 copper, and is of the 30th level of power.
+It is a two-handed sword with an attack type of slice.
+It is made of mithril and weighs 3 kg 629 g.
+It can cause 11d3 points of damage, at average 22.
+When worn, it affects your damage roll by 3 points and 
+  your hit roll by 2 points.
+It has been imbued with a blessing.
+People of a dark heart cannot use it.
+-------------------------------------------------------------------------------
+a mithril glaive with jade etchings can be referred to as 
+  'glaive mithril jade etchings'.
+It is worth 4940 copper, and is of the 30th level of power.
+It is a polearm with an attack type of slice.
+It is made of mithril and weighs 3 kg 629 g.
+It can cause 5d8 points of damage, at average 22.
+When worn, it affects your damage roll by 2 points and 
+  your hit roll by 3 points.
+It has been imbued with a blessing.
+People of a dark heart cannot use it.
+-------------------------------------------------------------------------------
+a jagged short sword can be referred to as 'sword jagged shortsword'.
+It is worth 9319 copper, and is of the 40th level of power.
+It is a sword with an attack type of slice.
+It is made of adamantite and weighs 2 kg 268 g.
+It can cause 6d7 points of damage, at average 24.
+When worn, it affects your damage roll by 6 points.
+It seems to be dark and cloaked in shadows.
+It has been imbued with a blessing.
+-------------------------------------------------------------------------------
+the staff of storms can be referred to as 'staff storms'.
+It is worth 0 copper, and is of the 35th level of power.
+It is a wand.
+It is made of lightning and weighs 4 kg 536 g.
+It can be used a maximum of 10 times.  It can still be used 10 times.
+It contains the spell 'chain lightning' of the 50th level.
+When worn, it affects your armor class by -25 points, 
+  your save vs spell by -8 points, your intelligence by 2 points and 
+  your mana by 30 points.
+It emanates sound.
+It is invisible to the plain eye.
+A magical aura surrounds it.
+-------------------------------------------------------------------------------
+a staff of conjuration can be referred to as 'staff conjuration'.
+It is worth 0 copper, and is of the 25th level of power.
+It is a talisman.
+It is made of wood and weighs 2 kg 268 g.
+It can be used a maximum of 5 times.  It can still be used 5 times.
+It contains the spell 'conjure animal' of the 25th level.
+A magical aura surrounds it.
+-------------------------------------------------------------------------------
+
+
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   

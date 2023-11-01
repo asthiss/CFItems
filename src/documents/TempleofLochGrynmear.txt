@@ -1,0 +1,36 @@
+l boat;get boat;n;w;w;l corpse;get bottle corpse;l bottle;e;e;n;n;n;l boat;u;u;lll;open n;n;l path;l steps;
+l marble;open n;n;l carpet;l window;l niche;n;l 2.;l carpet;l altar;l pews;n;l 2.;l altar;l dome;l dais;
+l carpet;w;l window;l inscription;l pews;l altar;l carpet;l tapestry;e;e;l window;l inscription;l pews;
+l altar;l carpet;l tapestry;w;n;l window;l inscription;l chairs;l altar;l carpet;l tapestry;s;w;open w;w;
+l window; inscription;l path;s;l 2.;l path;l building;e;l path;l building;s;l path;l building;open w;w;
+
+
+l 2.;s;l order;l principles;l calatius;l calatius2;l calatius3;l calatius4;l initiate;l novice;l here acolyte;
+l disciple;l apostle;l here prelate;n;open e;e;s;l path;l building;e;e;l path;e;l 2.;l shrine;get flowers shrine;
+l flowers;drop flowers;l bed;l bushes;l flowers;n;l path;l here stone;w;l path;l statue;n;l statue;l inscription;
+l shrubs;e;n;l path;l window;l inscription;n;l path;l fountain;w;l 2.;l fountain;l water;get all water;l crystal;
+l grass;l marble;l benches;n;l path;l fountain;l shrine;n;l shrine;l grass;e;l shrine;l grass;n;w;l 2.;l stones;
+l benches;e;.4s;open e;e;l pedestal;l vines;open s;s;l table;l drawer;open drawer;get all drawer;l note;
+drop note;l candle;s;l candles;open s;s;l bed;l dresser;l chair;l carpet;l mat;l bag;l papers;l notes;
+
+l page1;l page2;n;e;open n;n;l bed;l wardrobe;l chair;l footprints;l top;get all top;l bundle;get all bundle;
+l book;l zurcon1;l zurcon2;l zurcon3;drop book;drop bundle;l tables;s;open s;s;l 2.;l chest;l bed;l desk;
+l candle;l carpet;say what is the note?;l paper;drop paper;n;e;open n;n;l 2.l bucket;l bed;l desk;get all desk;
+l parchment;l chest;l armoire;l bookshelf;l lamps;s;open s;s;l bed;l mirror;l desk;l chairs;l table;l dresser;
+l shelves;l tree;l bookcase;l candles;n;e;open n;n;l 2.;l chest;l 2.chest;l 3.chest;l bed;l shelves;l figures;
+l lamp;l washbasin;l books;l fishbowl;l castle;get all castle;l key;s;open s;s;l chain;l tank;l bench;
+l flowers;l rack;get all rack;l book;drop book;.n3wn;open n;n;open e;e;l candles;e;
+l table;l books;l beds;open chest;open 2.chest;l chest;l 2.chest;get ring chest;l gold;drop 1.;e;
+
+
+
+l table;l books;l beds;open chest;open 2.chest;l chest;l 2.chest;l 2.;get poem chest;get model 2.chest;l poem;l model;drop poem;drop model;n
+l table;l books;l beds;open chest;open 2.chest;l chest;l 2.chest;get statue chest;get flute 2.chest;l statue;l flute;drop statue;drop flute;w
+l table;l books;l beds;open chest;open 2.chest;l chest;l 2.chest;get hat 2.chest;l hat;drop hat;.s2w;open n;n;
+l 2.;l table;l chandelier;l tapestry;e;l table;l chandelier;l tapestry;n;l table;l chandelier;l tapestry;w;
+
+l table;l chandelier;l tapestry;open n;n;l 2.;l table;l fireplace;l portrait;l inscription;.se;open n;n;
+lll;l tables;l pots;l cabinet;l fireplace;open trapdoor;d;l lantern;l ladder;l casks;l racks;l center;
+l star;use bottle star;drop bottle;u;open e;e;e;l 2.;l barrel;s;w;l 2.;.nwsws;open s;.swnwnwn;l bed;
+l chair;l privy;l screen;l footrest;l shelf;s;w;l bushes;l flowers;s;l 2.;l sculpture;l flowers;
+l bushes;w;l 2.;l bushes;l flowers;w;l 2.;e;n;l 2.;l bushes;l flowers;n;l flowers;l trees;e;l trees;l bushes;.2sw2se2se;open s;.swe4s

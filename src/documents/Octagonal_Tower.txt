@@ -1,0 +1,69 @@
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+              		Main Floor
+                                            +---G---M                                                                       
+                                            |   |   |                                                                  
+                                        +---+   -   +---+                                                                 
+                                        |       |       |                                                              
+                                    +---+       V       +----+                                                                 
+                                    |                        |                                                          
+                                    +-|-                  -|-+                                                             
+                                    |                        |                                                          
+                                    +---+ 3     O       +---+                                                          
+                                        |/      |       |/4                                                             
+                                        +---+   -   +---+                                                                       
+                                       /    |   |   |  /                                                                    
+                                      1     +---B---+ 2                                                                         
+                                                |                                                                           
+                                                +                                                                           
+                                                |                                                                           
+                                                E                                                                           
+                                                                                                                       
+                        Basement          +   +   C                                                                              
+                                          |   |   |                                                                     
+                                        PI-   -   -                                                                      
+                                          |   |   |                                                                     
+                                      +---+---+---+---+                                                                               
+                                      |           |   |                                                                
+                                  +-|-+   +---a---+   +-|-+                                                                     
+                                      |   |   |   |   |                                                                 
+                                  +-|-+   +---@---+   +-|-A                                                                  
+                                      |   |   |   |   |                   Second Floor               Third Floor                       
+                                  H-|-+   L---+---+   +-|-+                   /                                              
+                                      |               |              +---+---5---+---+                                  
+                                  +-|-1-|-+---+---+-|-2-|-+          |   |       |   |                                        
+                                               \                     +---#       #---+               +---5---+               
+                                                +                    |               |                  /|               
+                                                 \                   +---#       #---+                   +                  
+                                                  +                  |               |                   |              
+                                                                     L---#   #   #---+                   - 6           
+                                                                     |   |   |/  |   |                   |/             
+                                                                     3---+---+---+---+                   F                  
+                                                                                                         |             
+                                                                                                         +             
+# - Falls down to inner basement grounds                                                                 |                                                     
+@ - Fall to death                                                                                    +---+---+                                                                                                                                                   
+                                                                                                        /              
+E - Entrance from the forest                                                                                                                       
+B - the ghost of a butler 				(BS - black stone key)
+H - the ghost of a huntsman 			(PI - plain iron key)
+C - the ghost of a cook  
+A - the ghost of an alchemist			(BS - black stone key)   
+L - the ghost of a librarian  			(BS - black stone key)   
+G - the ghost of a gardener				(BS - black stone key)
+a - the ghost of an astronomer      		(BS - black stone key)  
+M - the ghost of a maid				(BS - black stone key)
+O - the ghost of an outlander	(Dangerous place)
+	Mahogany bureau
+	comfortable armchair
+	embroidered quilt
+	tall wooden stool
+V - 8 vines, underwater, entwines, immune crush, disarms
+F - 		the heart of the flame
+    		the torso of the flame
+    (2)	a leg of the flame	
+    (2)	an eye of the flame
+    (2)	a hand of the flame

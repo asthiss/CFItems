@@ -1,0 +1,674 @@
+
+
+
+Hell Notes:
+
+----------------------------------Dark Forest--------------------------------------------------
+
+In a crude hand is carved:
+
+"Inferno" (c) 1995 by Andy Smith
+Inspired by Dante and the art of
+Tom Phillips.
+
+
+            D     D--D
+            |     |  |
+            D--D->D  D
+               |  |
+            D--D  D--D--1--2--3--H-- AnteHell
+            |  |     |
+         D--D  D--D  D
+            |     |  |
+            D  D  D  D--4
+               |  |
+      D--D     D--D  D--D
+      |  |     |  |  |
+      D--D--D--D  D--D  D--D    Trap
+      |        |        |  |     ^
+   S--D     D--D     D--D  D--?--D     D--D
+            |           |     |  |     |  |
+         D--?--D--D  D--D  D--D  D     D  D--E
+         |     |  |  |  |  |              |
+         D--P  D--D--D  D  D     D--D     D
+         |     |           |        |     |
+         D--D--D        D--D--D--D  D--D--D--E
+                        |        |           |
+                     D--D        D--D--D     D--E-- KhalidRiver
+                     |           |  |  |     |      
+                    @C@       D--D  D  D--D--E
+                              |  |
+                              D--D
+
+To entrance from NT recall spot: 3s4e5sd13w2n2unw
+
+? - Randomizers
+C - DEATH TRAP (you lose your life and gear if you go here)
+D - The Dark Wood
+E - Edge of the Dark Wood
+H - Atop a dark hill?
+I - The Infernal Gateway (not in forest gateway, can wait for repop)
+P - Stagnant pond
+S - Sunken barrow mound, wight (blessed obulus for Charon)
+1 - Base of a steep hill, agile leopard
+2 - The steep hillside, ravenous lion
+3 -  , wolf
+4 - clearing in the Dark Wood, nomad
+
+
+
+----------------------------------Ante Hell----------------------------------------------------
+
+
+
+    |  |  |
+ i--I--A--a--N
+    |     |
+
+i- Infernal Gateway (from previous, is in this area)
+I- Inside the Infernal Gateway 
+    (Translucent) A faceless soul, streaming blood, races after the swirling flag.
+    --not aggro (fairly weak?, can't see invis?)
+    (White Aura) A humming swarm of wasps and hornets surges about, striking the condemned.
+    --aggro (fairly weak.  can't see invis.  bites (poison), sting (physical) attack)
+    A mass of worms bubbles here, their tiny mouths slurping hungrily.
+    --not aggro (fairly weak?  can't see invis?)
+A- Among the Faceless
+    More:
+    (White Aura) A humming swarm of wasps and hornets surges about, striking the condemned.
+    (Translucent) A faceless soul, streaming blood, races after the swirling flag.
+    A mass of worms bubbles here, their tiny mouths slurping hungrily.
+a- Among the Dead
+    More:
+    (Translucent) A faceless soul, streaming blood, races after the swirling flag.
+    I believe all these wander.
+N- The Near Shor of Acheron
+    (White Aura) Demonic Charon, with eyes like embers, herds the condemned into his foul craft.
+    His eyes ringed with wheels of fire, the aged pilot of the river Acheron curses
+    and snorts before you.  Tossing his head about in disgust, his wooly white
+    beard swaying this way and that, his contempt for you is matched only by his
+    impatience.  The gnarled and calloused fingers on his heavy hands clutch have
+    ferried countless spirits across these murky waters to the Inferno beyond; he
+    bids you to not waste his time...
+    Charon is in perfect health.
+
+    Charon is using:
+    <mainhand wielded>  Charon's Oar    
+    --give obulus charon to cross
+    You give a blessed obulus to Charon.
+    Accepting your gift, Charon impatiently swats you onto his raft.
+    With blinding speed he ferries you across the Acheron and pushes you off onto the far bank.
+    You stand up, turn, and find him gone.
+
+
+----------------------------------First Circle-------------------------------------------------
+
+
+
+
+                                                                         H--H--H--H--H
+                                                                         |     |     |
+                      N--N--N                                        NW--H  G--G--G  H--NE
+    |  |  |  |    [|] |     |   |     |      |     |       |      |      |  |  |  |  |
+    E->C--C--e--R--1--2--   N[-]O--T  3------4-----5-------6------7---U--H--G--g--G--H
+    |  |  |  |    [|] |     |   |     |      |     |       |      |      |  |  |  |  |
+                      N--N--N                                        SW--H  G--G--G  H--SE
+                                                                         |     |     |
+                                                                         H--H--H--H--H
+
+
+
+*Each gate circles around like 2, but without the castle.  Not shown to keep map simple.
+
+
+
+
+                                                                
+         /            /              /               /
+   r[-]NW--H     [-]SW--H       H--NE[-]        H--SE[-]
+   |
+   p---P
+      /
+     X
+
+          
+E- Entrance to the First Circle of Hell
+C- The Crowded Wood of Souls
+e- At the Edge of the Wood of Souls
+R- On the Sweet River
+1- Entrance to the Castle of Limbo
+2- Narrow Street Between High Walls 
+   You find yourself between the first and second gates of the fortress.
+N- Narrow Street Between High Walls
+3- Third Gate in the Castle of Limbo 
+4- Fourth Gate in the Castle of Limbo
+5- Fifth Gate in the Castle of Limbo 
+6- Sixth Gate in the Castle of Limbo 
+7- Seventh Gate of the Castle of Limbo
+U- Under the Seventh Gate of the Castle of Limbo
+H- Embracing the Hall of Fame
+G- Illuminated in the Grassy Expanse
+g- Illuminated in the Grassy Expanse
+    (Translucent) (White Aura) Master of poetry and prose, Lupakan stands here with a fierce vigilance.
+    (Translucent) (White Aura) Umeo, the exiled poet, sits here, dreaming of his homeland.
+    (Translucent) (White Aura) Semnotes, greatest of lyric poets, regards you with serene interest.
+    (Translucent) (White Aura) Hapax, the consummate poet, stands here with a quiet nobility.
+    --One of these has the ring of vitality  50hp, 3 con or so.
+
+NW-Base of the Tower
+   --NorthWest Tower
+r- Reading Room
+p- Lupakan's Private Chambers
+    (desk)
+P- Lupakan's Private Chambers
+    Little odds and ends sit inside the cup, a note from Paristot at the
+    bottom of the cup reads: 'Take the seeds... my studies keep getting 
+    interrupted.'
+    When you look inside, you see it is fairly empty.
+    A small cup contains:
+         a handful of green thistlewood seeds
+    --Take seeds for stench bull.  Entrance to Second Level
+X- ?
+    --To exit boat from First Circle (get out without dying.  Needs nails)
+    --Southeast tower, third floor, desk.
+
+SW-Tower Entryway
+   --SouthWest Tower
+   --A narrow key lies here.
+
+NE-?
+   --NorthEast Tower
+
+SE-?
+   --SouthEast Tower
+
+
+O- Outside the East Gate of the Castle of Limbo
+T- Threshold to the Lower Circles
+    As sinners confess to him, Minos wraps his tail around himself to determine what level of Hell they should be banished to.
+    A horrendous stench bull grunts and gasps foul breath upon the dusty ground.
+    --Takes seeds and sends to second level.    
+    You give a handful of green thistlewood seeds to a stench bull.
+    The stench bull devours your offering and gets a mad look in his eye!
+    Having enticed the beast you grapple with it in a carnal embrace.
+    Your passions lull your senses and as you draw away from your conquest you are startled as a serpentine tail wraps around  you, hurling you over the cliff's edge to the circle below!
+
+
+
+----------------------------------Second Circle------------------------------------------------
+
+
+
+
+
+                                 (fly)E----R
+                                      |    |
+                                 (fly)a----a----a
+                                     (f)   |    |
+                                       fly)a----a----a
+                                                |    |
+                                                a----a----a
+                                                     |    |
+                                                     a----a----a
+                                                     |    |    |
+                                                     a----a----a
+                                                     |    |    |
+                                                     a----a----a
+                                                    /     |        
+                                                 C c      S
+                                                 |/       |
+                                                 c     V--A--V
+                                                       |     |
+                                                     --T     T--
+                                                       |     |
+                                                    P--T--F--T--
+                                                          |
+                                                        --?--
+                                                          |
+                                                          B
+
+
+
+E- Entrance to the Second Circle of Hell
+    (Translucent) A smoke mephit soars through the darkness belching 
+    --blinds with smoke is like a stackable dirt kick.  
+    --Can make blind for *VERY* long time.  
+    --Use blindfold from Hamsah to avoid. (Scarab fixed)
+    --Only affects tank.
+    --Otherwise fairly weak attack, high(ish) hp.
+    --bash, trip, cheap shot
+R- Amidst the Raging Storm 
+    (Translucent) A smoke mephit soars through the darkness belching 
+    (Translucent) Bound everlasting to one another for their carnality, a pair of shades is forced to couple in excruciating pain.
+    --Not aggro.
+a- Amidst the Storm
+    --More of the same
+S- Steps Rising to the Unholy Oratorium
+A- Archway of the Unholy Oratorium
+V- Window of Virgin Blood
+T- Torch-lit Hall
+P- Shadowed Alcove     
+    A bearded devil scans the shadows for intruders.
+    --vuln wrath
+    --polearm (distance), shield (shield block)
+    a packet of a poisonous sedative from a lacquered box.
+    --To reach next level
+c- Clinging to the Wind-swept Cliffs
+C- Promontory of Cerberus (Can quit here according to attune)
+    
+    The guardian hound Cerberus tosses its three heads about, howling.
+
+    Rising up, Cerberus' triple-throated roar strikes you with such thunder 
+    that you must cover your battered ears.  Slobbering into his greasy 
+    beards he bares his huge grinning teeth and his red eyes look you over 
+    with voratious hunger.  His flabby belly pants with anticipation and his 
+    talons, used to flay and rend the shades below him, scratch the ground 
+    in preparation for tearing you to pieces.   
+    Cerberus is in perfect health.
+
+    Your best guess is that he is a devil.
+    An ominous, hooded figure waits patiently nearby.
+    Cerberus is much larger than you.
+    He grins evilly with you
+
+    A huge brass bowl lies here dented and covered with bloody slobber.
+    Eight feet across and four feet deep is this bowl of Cerberus.
+    When you look inside, you see it is empty.
+    A huge brass bowl contains:
+         Nothing.
+
+    *LEADER* gives a packet of a poisonous sedative to Cerberus.
+    *LEADER* tosses a packet of a poisonous sedative at Cerberus, who catches it in one of his mouths!
+    Cerberus devours a packet of a poisonous sedative hungrily!
+    Cerberus's eyes glaze as the sedative takes affect...
+    While the beast is distracted, you quickly follow *LEADER* and scramble down it's tail to the cliffsides below
+
+
+B- Bahopmet
+    You look on in horror at the repulsive devil before you.  Long sharp 
+    horns sprout from its shaggy goat-like head and a fiery inverted 
+    pentagram burns like an unholy coal upon its forehead.  Its full firm 
+    breasts ooze a thick and unnatural milk down to its scaly abdomen.  
+    Its black-feathered wings flex in and out in anticipation.  From the 
+    thick fur between its goat-like legs a spiky erection intended for you 
+    strikes a cold terror in your heart.
+    Baphomet is in perfect health.
+    
+    Baphomet is using:
+    <worn on head>      (Invis) (Magical) (Glowing) the Fiery Crown of Baphomet
+    <worn about waist>  the silk-skirted Belt of Baphomet
+    <held in hand>      (Humming) the Unholy Icon of Baphomet
+
+    -Vuln wrath (or silver), Casts blind, acid blast, vamp touch.
+    -Summons blue abashi devils to aid (spear, poison, chill touch).
+
+----------------------------------Third Circle-------------------------------------------------
+
+*Area affect of this circle: 
+The driving hail's battering wounds you.
+
+                           Su-Su
+                           | 
+                           L  B
+                           | /
+                        Nw V Ne
+                        |  |  |
+                        Sw-D-Se
+                           |
+                           L  N                 P
+                           |  |                 |
+                           a--C                 M--W
+                           |  |                    |
+                           O--d--A           D--D--T
+                              |              |  |
+                              D--D--I  S--t--R--C
+                                 |     |     |
+                                 D--D--D--D--G
+                                    |  |  |
+                                    E--D--D
+
+
+
+E- Entrance to the Third Circle of Hell 
+    (Translucent) A corpulent blotchy-faced shade rolls here, clutching at you.
+    --wimpy aggro, assist
+D- Drenched in the Filthy Rain 
+    More:
+    (Translucent) A corpulent blotchy-faced shade rolls here, clutching at you.
+G- Grim Pond of Mud and Slush
+    --need fly (or boat)
+R- Shivering in the Icy Rain
+C- Where Sea and Rock Collide
+T- Against the Turbulent Cliffside 
+t- Trudging Through the Icy Filth
+S- Staggering in the Undertow
+I- At the Inner Edge
+d- Driving Sheets of Icy Rain
+A- Awash in the Sea of Gluttony 
+N- The Dark Niche (no area affect)
+C- Clinging to the Low Stone Wall
+a- Approaching the Dark Structure
+L- Low Broad Steps
+D- Standing in the Dark Shrine (no area affect)
+Sw-Southwest Corner of the Broken Shrine
+Se-Southeast Corner of the Broken Shrine
+Ne-Northeast Corner of the Broken Shrine
+    *aggro*    
+    (Hide) (White Aura) Lurking in the shadows, a black abishai guards the unholy shrine.
+    This black abishai devil keeps its wings folded and crouches in the 
+    shadows, ready to slay and devour intruders to its master's realm.  
+    Its reptilian eyes, cold and emotionless, peer unblinking through 
+    slitted lids.  Its black scales certainly aid it in stalking the 
+    shadows...
+    A black abishai devil is writhing in agony.
+
+    a black abishai devil is using:
+    <mainhand wielded>  a diabolic halberd
+    --Halberd is nodrop&noremove  Uknown vulns.
+    --Immune vital/stun
+    --Bash + Cheap Shot
+Su-The Submerged Shades
+V-  Standing Upon the Great Seal
+    (Hide) (White Aura) Lurking in the shadows, a black abishai guards the unholy shrine.
+    (Hide) (White Aura) Lurking in the shadows, a black abishai guards the unholy shrine.
+    --no polearms
+    --down exit
+?- Down from V:
+    A diabolical hound snarls and barks at you, smoke curling from its lips.
+    (Hide) (White Aura) Its heavy reptilian head swaying side to side, a black abishai stands guard.
+    (Hide) (White Aura) Its heavy reptilian head swaying side to side, a black abishai stands guard.
+
+
+W- Wading Through Lost Souls
+M- On the Muddy Hill
+P- The End of the Path (no area affect)
+    (White Aura) Plutus, enemy of mankind, snarls and sputters here, guarding the path to the Fourth Circle of Hell.
+    A pile of gold, gems and jewels lies here, behind a sign.
+    --Weighs 100 pounds.  Have to be able to pick that much up to continue.
+    You get a pile of priceless treasures.
+    Your body is racked with unholy pain!
+    From the darkness rise a cluster of shadowy figures. Ashamed of your foolish greed you stumble to escape their grasp.  
+    Taking hold of your arms, they drag you into the darkness, ushering you to...
+    You can't see a thing!
+    Skill: 'plague' modifies strength by -5 for 51 hours.
+    Skill: 'poison' modifies strength by -5 for 51 hours.
+    Skill: 'blindness' modifies hit roll by -4 for 11 hours.
+
+
+----------------------------------Fourth Circle------------------------------------------------
+
+
+ 
+
+
+
+               B
+              [|]              |
+               C[-]        V[-]R
+               |               |
+               L--L[-] A [-]P--D
+               |      [|][/]   |
+               ?   [-] M [-]   F
+                      [|]*     |
+                       N       F
+                       |       | 
+                       S   K[-]J
+                      [|]*    [|]
+                       B       Q
+Stronhold above:       |
+                     --G--D
+                       |  |
+                        --H
+                          |
+                        --H--E
+                          |
+                          H
+                       |  |
+                   HC--H--H
+                       |
+                    |  |                    
+  w--v--e--      b--H--H
+  |              |  |    
+  W--H--H--g--H--H--
+        |     |
+
+
+* CAN pass door through
+? Death Trap?
+
+E- Entrance to the Fourth Circle
+    (Translucent) A covetous shade rolls his mighty stone crying out, "WHY SPEND?"
+    (Translucent) A prodigal shade grunts under the weight of his stone shouting, "WHY SAVE?"    
+    --wimpy aggro (aggro to sleepers)
+H- Amidst the Rolling Chorus 
+    More:
+    (Translucent) A prodigal shade grunts under the weight of his stone shouting, "WHY SAVE?"
+    (Translucent) A covetous shade rolls his mighty stone crying out, "WHY SPEND?"
+    (White Aura) A massive crouched devil strokes its spiky beard and sniffs the air.
+b- Blood-soaked Cliffs
+    More:
+    (Translucent) A prodigal shade grunts under the weight of his stone shouting, "WHY SAVE?"
+    (Translucent) A covetous shade rolls his mighty stone crying out, "WHY SPEND?"
+    (White Aura) A massive crouched devil strokes its spiky beard and sniffs the air.
+HC-Harpy Compund
+    (Translucent) A covetous shade rolls his mighty stone crying out, "WHY SPEND?"
+    (White Aura) The radiant eyes of the bearded devil scan for intruders.
+    (White Aura) The radiant eyes of the bearded devil scan for intruders.
+    (White Aura) The radiant eyes of the bearded devil scan for intruders.
+    (White Aura) The radiant eyes of the bearded devil scan for intruders.
+    (White Aura) Leashed to a heavy post, a giant scaly bird claws at the ground.
+    (White Aura) Leashed to a heavy post, a giant scaly bird claws at the ground.
+W- Where the Banner of Belial Hangs
+w- Winding Path of Shadow
+    (White Aura) A many-horned atrocity staggers here amongst the dead, lashing out with blind rage.    
+
+    This fearsome devil coughs and slobbers as it stumbles amongst the shades 
+    of the Inferno, the horns projecting from its arms, tail and face impaling 
+    those it comes across without consideration.  Steamy vapors sizzle from its 
+    empty eye-sockets, its sweaty snout, and from between its mis-shapen teeth.  
+    You fumble to stay out of its path.
+
+    -Aggro, attack all.  Pirce attack.
+    -Immune wrath, vuln cold?
+v- Winding Down the Slope
+e- Entrance to the Fifth Circle of Hell
+D- At the Edge of the Ditch 
+    Brandabar the Dark Wizard stares icily at you, murmuring quietly to himself.
+
+    A mortal wizard having sought out the depths of the Hell, Brandabar 
+    finds himself trapped in the Fourth Circle, half-starved and mad.  In 
+    hiding from the devils that sought to dine on his living flesh he waits 
+    here for a sign from his Dark God that he might leave this place.
+    Brandabar the Dark Wizard is in perfect health.
+
+    Brandabar the Dark Wizard is using:
+    <worn around neck>  a domed skull brooch
+    <worn on body>      a ceremonial necromancer's robe
+    <worn on legs>      some embroidered burgundy knee pants
+    <worn about waist>  a leather belt pouch
+    <mainhand wielded>  a bone handled main gauche
+
+    Your best guess is that it is a dark-elf.
+    A few lucky blows would kill it.
+    Brandabar the Dark Wizard is smaller than you.
+    It grins evilly with you.
+    --Low hp.
+    --Brooch necro only (probably)
+g- Guard Outpost
+    (Translucent) A prodigal shade grunts under the weight of his stone shouting, "WHY SAVE?"
+    (White Aura) The radiant eyes of the bearded devil scan for intruders.
+    (White Aura) The radiant eyes of the bearded devil scan for intruders.
+    (White Aura) Leashed to a heavy post, a giant scaly bird claws at the ground.
+    (White Aura) Leashed to a heavy post, a giant scaly bird claws at the ground.
+G- Gazing Up at the Stronghold 
+B- The Bridge Before the Threshold
+    (White Aura) The radiant eyes of the bearded devil scan for intruders.
+
+    Bald-headed and with umber scaly skin this bearded devil reminds you 
+    of some hideous troll-devil crossbreed.  Its feet and hands end in long 
+    grey claws and its thick scaly tail ends in a massive grey spike.  The 
+    only sound that comes from it is its labored breathing.
+    A greater bearded devil is in perfect health.
+
+    a greater bearded devil is using:
+    <mainhand wielded>  a razor-edged pilum
+    <worn as shield>    a large battered targe
+
+    --pilum is spear (defensive spin) shield (shield block)
+    --can be blinded/distorted
+
+S- Southern Half of the Grand Foyer (more devils possible) 
+N- Northern Half of the Grand Foyer (more devils possible)
+    --scratched key (possibly from devil, possibly just in room
+M- Misty Courtyard 
+A- Antechamber of the Arch-angel
+    --Safe(ish)
+P- The Minister of Pain's Antechamber
+    (Invis) (Translucent) A wizard in sky blue robes paces impatiently here.
+    (White Aura) An elven squire stands watch for his master.
+    (White Aura) An elven paladin stands here waiting to do his lord's bidding.
+    Wearing the white and blue colors of his elven king, this paladin has been 
+    swayed from his cause by the dominating will of a powerful devil who has 
+    bound him into his dark service.  His mind numbed, his service is now to 
+    his diabolical master.
+    The elven paladin is covered with bleeding wounds.
+    
+    the elven paladin is using:
+    <worn on finger>    (Glowing) the ring of courage
+    <worn on finger>    (Invis) ring of regeneration
+    <worn about body>   an elven lord's cloak
+    -- Wizard does forked lightning, colour spray, stoneshatter
+    -- Elves, vuln iron, immune wrath, 
+    -- Paladin casts stoneshatter(?)/fumble/wrath/flamestrike, can be blinded/distorted/spinebroke
+    -- Squire carries nothing
+    -- Wizard carries rod of healing (wand?) and is human
+L- Well-stocked Library
+C- Chamber of Contracts
+    (White Aura) Borunbrue the Callous is here, picking rotten meat from his fangs.
+
+    -- bites (poison), can be blinded/distorted/etc.
+    -- A long metal lightning rod lies here. (rot-death, limit 1, shocking bite weapon, high avg, duals wields them)
+    -- Attacks all that are fighting it, vuln negative
+    -- Fulminator gauntlets
+B- Personal Chambers 
+    (White Aura) Belial's Chief Navigator chatters incoherently to himself. (Chinazzi)
+    Dressed in elaborately patterned silks and high, hard boots, Chinazzi appears 
+    as a large dark-skinned man with strapping arms and long black hair.  Two 
+    pairs of slitted eyes are stacked upon his long wart-strewn face, each buried 
+    beneath a furrowed brow. 
+    Chinazzi, Navigator of the Hells has a few scratches.
+
+    Chinazzi, Navigator of the Hells is using:
+    <worn on feet>      the wayfarer's boots
+    <held in hand>      (Glowing) the navigator's compass
+
+    --casts fireball/iceball/chain lightning/earthquake/nova 
+    --hand spec, evasion (hand spec global feint), crushing blow, vital, pummel, attack all, punches, 
+    --can be blinded, etc.
+    --wayfarer's boots (refresh?)
+    --compass (say something and it tells you where you are)
+D- Preparation Chamber 
+F- Narrow Hall
+J- Gallery
+K- Conservatory
+    A sturdy display case is pressed up against the north wall.
+    --wailing fiddle?  Can be picked?
+    A delicate liquor cabinet sits here.
+    A delicate liquor cabinet sits here.
+    When you look inside, you see it is fairly empty.
+    A liquor cabinet contains:
+         a decanter of Vide Supra
+         a vintage bottle of Yoni White
+         a vintage bottle of Adonai Red
+Q- Summoning Chamber
+R- Transformation Chamber 
+V- Personal Chambers
+    (Invis) (White Aura) In the darkness, Anazu, Belial's Minister of Pain, awaits you.
+
+    From beneath the cowl of the dark minister jut corrugated tusks a full two 
+    feet in length and stained a dingy yellow- brown.  Anazu's mantis-like claws 
+    twitch with eager anticipation upon your arrival.  From the darkness of his 
+    black hood comes a low slurping sound mixed with gravely growl.  With a start, 
+    Anazu pounces upon you, mandibles flashing!
+    Anazu the Minister of Pain has a few scratches.
+    
+    Anazu the Minister of Pain is using:
+    <worn on face>      the copper mask of Anazu (detect hidden)
+    <worn about body>   the robes of Anazu
+    <mainhand wielded>  (Glowing) the star-shaped blade of Anazu (exotic, stab)
+
+    Your best guess is that it is a devil.
+    Anazu the Minister of Pain shows you its razor-sharp teeth.
+    Anazu the Minister of Pain is about the same size you are.
+    It grins evilly with you.
+
+    --pwk and hold person(?) on first enter, attacks all
+    --cast power word pain (Suffer!), acid blast, fear (makes flee), chain lightning, deaf, 
+    --immune fulminator gauntlets lightning? (magic?), wrath, 
+
+----------------------------------Fifth Circle-------------------------------------------------
+
+
+                               --H--
+                                 |       |
+                               --T-------F---------R--
+                      |  |   |   |      [:]        |
+                    --M--Sh--Sh--Sh    --eT--L     Rl
+                  |   |                      |
+                --SB--Sh                   --Gh
+                  |                  |       |
+           B--  --Sh                 Hc--Dh--Br
+           |  |   |
+           B--Sh--M
+           |  |
+           B--Sh
+           |
+        W--T
+        |
+      --E
+
+
+
+H: Shadowed by the Cliffs, Hidden by the Trees
+    (White Aura) A lion-headed warrior prowls for offerings to his diabolical master.
+    *LEADER* gets a steel key.
+Dh:Dining Hall 
+    The scroll reads:
+
+    "May the heavens condemn you to the cold stone of dirges
+    and the curse of curses prostrate you in sorrow!"
+R: Rugged Land and Twisted Trees 
+    (White Aura) Mad-eyed Hutijin draws razor-sharp claws across his chest.
+    Hutijin, Champion of Mephistopheles, Duke of Hell, approaches you
+    with wild, staring eyes, large as saucers.  An oily-haired top knot
+    from between his stubby horns splashes back and forth with the
+    constant bobbing of his oversized head.  Steamy spittle hangs in
+    poisonous strings from between his pointy teeth, sticking to his graying
+    beard and the sweaty mass of hair on his chest.  Although this twitching
+    devil rends his own flesh and grins maniacally he still commands a 
+    sense of power and authority.
+    Hutijin has a few scratches.
+    
+    Hutijin is using:
+    <worn on body>      (Invis) robes of the fallen seraphim
+    <held in hand>      (Glowing) the Scepter of Domination    
+    Beautifully crafted, this artifact of the Inferno is crafted from a solid
+    piece of garnet and worked with silver.  The head of the scepter is carved
+    in the shape of a serpent vomiting forth a gout of tormented souls, crushed
+    together into an orb of twisted pain.
+
+    The scepter of domination is a light, made of stone, and weighs 18 pounds 1 ounces.
+    --Hutijin's the Scepter of Domination glows a mottled yellow!
+        soften, slow?, poison?, unholy word?
+    --Immune Unholy, Holy, Vuld Cold?     
+Rl:The Rock-strewn Landing
+
+
+---------------------------------Sixth Circle-------------------------------------------------
+
+
+
+                  --Ss--
+                    |
+
+

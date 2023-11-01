@@ -1,0 +1,57 @@
+                                2
+                               /
+                  6--DL-+--a--13-DP-+--a
+                  |  |  |  |  |  |  |  |        Observation Deck
+                  a--DP-a--+--K--+--a-16
+                  |  |  |  |  |  |  |  |            9--u
+                  +--XQ-+--11-u--a--+--a            |  |
+                  |  |  |  |  |  |  |  |            u--u <--- Chessmaster and his Entourage
+                  a--P--a--u--u--+--7--+
+                  |  |  |  |  |  |  |  |
+            C--B--+--10-+--a--+--a--+--a--B--S                     +
+               |  |  |  |  |  |  |  |  |  |                        |
+               +  a--+--a--+--DL-+--a--+  +                        +
+               |  |  |  |  |  |  |  |  |  |                        |
+               F  +--a--+--Q--+--a--+--a  +                        +
+               |  |  |  |  |  |  |  |  |  |                        | Exhibition Halls
+               5  a--+--P--+--D--8--a--+  +                        +
+               |               \          |                        |
+               |                1 (up)    |                        |
+               |                          |                        |
+               +--+--+--+--+--12-+--+--L-15                      d +
+                        |         \                               \|
+                        |          d                               +
+             StrangeIsland					   |
+								   3-4
+
+
+1  :Cell guarded by Storm giant
+2  :Cell guarded by Fire giant
+u  :
+a  :
+DL :Dreadlord
+DP :Duergar Priest
+K  :Knight
+Q  :Queen
+XQ :Xvart Queen
+P  :Priest
+D  :Dragon (Silver south, Crimson north. Both guard chests)
+B  :Board (Both doors require keys)
+S  :Flying Ship (To HamsahMutaz)
+C  :Flying Chariot (To VoralianCity)
+F  :Fountain
+L  :Lemon Tree
+3  :Cell
+4  :Prisoner, starts the quest
+5  :White Rook i hole
+6  :Black Pawn i clump of grass
+7  :Black Knight i Bird nest. Knight of Thera stands here.
+8  :Black King from Hollow (also amber rod location)
+9  :White Queen from orb
+10 :White Knight from patch
+11 :Black Rook from beehive
+12 :White Pawn from birdbath
+13 :AGGRO DRAGON with cutoff: Black queen from space
+14 :White King from crack
+15 :White Bishop from depression
+16 :Black Bishop from tulip

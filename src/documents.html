@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CF log eater</title>
+    <link rel="stylesheet" type="text/css" href="cfitems.css">
+</head>
+<body>
+    <div id="topNav">
+        <a href="index.html">Items</a>
+        <a href="documents.html">Documents</a>
+    </div>
+    <hr/>
+    <div id="subNav" class="center">
+        <a id="Academy" href="#Academy" onclick="previewDocument(this, 'Academy_and_Simon_quest.txt')">Academy/Simon</a><br/>
+        <a id="AncientInstincts" href="#AncientInstincts" onclick="previewDocument(this, 'ancientInstincts.txt')">Ancient Instincts</a><br/>
+        <a id="AranGirid" href="#AranGirid" onclick="previewDocument(this, 'Aran_girid_map.png')">Aran girid</a><br/>
+        <a id="BoatsGear" href="#BoatsGear" onclick="previewDocument(this, 'BoatsGear.txt')">Boats Gear</a><br/>
+        <a id="Enpolad" href="#Enpolad" onclick="previewDocument(this, 'ChessmasterQuest.txt')">Enpolad quest</a><br/>
+        <a id="EqGoodieWarrior" href="#EqGoodieWarrior" onclick="previewDocument(this, 'EqToLookForGoodieWarrior.txt')">Eq for goodie Warrior</a><br/>
+        <a id="Hell" href="#Hell" onclick="previewDocument(this, 'Hellmap.txt')">Hell</a><br/>
+        <a id="Ktengs" href="#Ktengs" onclick="previewDocument(this, 'Ktengs.txt')">Ktengs</a><br/>
+        <a id="LostElven" href="#LostElven" onclick="previewDocument(this, 'LostElven.txt')">Lost Elven Vaults</a><br/>
+        <a id="OctagonalTower" href="#OctagonalTower" onclick="previewDocument(this, 'Octagonal_Tower.txt')">Octagonal Tower</a><br/>
+        <a id="Organia" href="#Organia" onclick="previewDocument(this, 'Organia.txt')">Organia</a><br/>
+        <a id="Quests" href="#Quests" onclick="previewDocument(this, 'Quests.txt')">Quests</a><br/>
+        <a id="StaffOfWonders" href="#StaffOfWonders" onclick="previewDocument(this, 'StaffofWonders.txt')">Staff of Wonders</a><br/>
+        <a id="LochGrynmear" href="#LochGrynmear" onclick="previewDocument(this, 'TempleofLochGrynmear.txt')">Loch Grynmear</a><br/>
+        <a id="Trothorn" href="#Trothorn" onclick="previewDocument(this, 'Trothorn_riddles.txt')">Trothorn riddles</a><br/>
+        <a id="UpperCragstone" href="#UpperCragstone" onclick="previewDocument(this, 'UpperCragstone.txt')">Upper Cragstone</a><br/>
+    </div>
+    <div id="docArea"></div>
+    <script>
+        function previewDocument(element, doc) {
+            var id = element.text;
+            document.getElementById('docArea').innerHTML = `
+            <h3 class="center">${id}</h3>
+            <iframe id="organia" class="preview center" src="https://cfitems.blob.core.windows.net/cfitems/documents/${doc}"></iframe>`;
+        }
+        function getAnchor() {
+            var currentUrl = document.URL,
+            urlParts   = currentUrl.split('#');
+                
+            return (urlParts.length > 1) ? urlParts[1] : null;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            if(getAnchor())
+            {
+                document.getElementById(getAnchor()).click();
+            }
+        }, false);
+    </script>
+</body>
+</html>
