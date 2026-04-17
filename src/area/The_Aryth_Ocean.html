@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Aryth Ocean - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>The Aryth Ocean</h2>
+<div class="area-nav">Level: 10 - 35 | Builder: Jullias/Nalasul | </div>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+    ~: On the Aryth Ocean            i: In the Aryth Ocean          D/d: Deep in the Aryth Ocean               
+    B: Beginning of the Aryth        R: In the Reef                   O: On the Ocean Floor  
+                                                                      X: Keep going down at X to 
+                                                                         reach Kuo Toa Lair
+           ~~~<a href="The_Dragon_Sea.html" style="color:#dfbe6f">DragonSea</a>~~             <a href="The_Coral_Head.html" style="color:#dfbe6f">CoralHead</a>                                        
+            (On the Reef)             |                                                       
+             | | | | | |              |                                                         
+           &gt;-B-B-B-B-B-B-&lt;            R-R-R-R-R                                                                
+             | | | | | |              | | | | |            
+           &gt;-~-~-~-~-~-~-&lt;            i-i-i-i-i      -D-D-
+             | | | | | |              | | | | |       | |                                                  
+           &gt;-~-~-~-~-~-~-&lt;            i-i-i-i-i      -D-D- -D-D-         -d-d-         -O-                
+             | | | | | |              | | | | |       | |   | |           | |           |
+           &gt;-~-~-X-~-~-~-&lt;            i-i-X-i-i      -D-X- -D-             -X-d-       -X-       
+             | | | | | |              | | | | |       | | | |             | | |         |\____
+           &gt;-~-~-~-~-~-~-&lt;            i-i-i-i-i      -D-D-D-D-           -d- -d-       -O-    \          
+             | | | | | |              | | | | |       | | | | | |         |   |         | |    <a href="Kuo-Toa_Lair.html" style="color:#dfbe6f">KuoToaLair</a>             
+           &gt;-~-~-~-~-~-~-&lt;            i-i-i-i-i     &gt;-D-D-D-D-D-D-&lt;          -d-       -O-O  
+             | | | | | |              | | | | |       | | | | | |             |         | |     |
+           &gt;-~-~-~-~-~-~-&lt;            i-i-i-i-i     &gt;-D-D-D-D-D-D-&lt;          -d-       -O-O=Sh  O-           
+             | | | | | |              | | | | |       | | | | | |             |         | |     |                
+           &gt;-~-~-~-~-~-~-&lt;            i-i-i-i-i     &gt;-D-D-D-D-D-D-&lt;          -d-       -O-O--Y--O-
+             | | | | | |                              | | | | | |             |
+           &gt;-~-~-~-~-~-~-&lt;                          &gt;-D-D-D-D-D-D-&lt;          -d-       Sh: Ship (map below)
+              \| | | |/                               | | | | | |           | | | |     Y: Yasina (serpent ring)
+             &gt;-~-~-~-~-&lt;                            &gt;-D-D-D-D-D-D-&lt;        -F-X-F-F-
+               | | | |                                | | | | | |
+             &gt;-~-~-~-~-&lt;                             -D-
+               | | | |        
+             &gt;-~-~-~-~-&lt;                        
+               | v | |                W: <a href="Whirlpool.html" style="color:#dfbe6f">Whirlpool</a> (a.k.a. <a href="Waters_of_the_Deep.html" style="color:#dfbe6f">WotDeep</a>)                
+             &gt;-~&gt;W&lt;~-~-&lt;                 (Will suck you in if water-breathing or ghost)
+               | ^ | |                   
+             &gt;-~-~-~-a-&lt;              a: South to b
+               | | |                  b: North to a, South to c                              
+ W   --b-------~-~-~-&lt;                c: North to b
+ e A   ^       | | |                  d: South to e                         
+ s r --d-----&gt;-~-~-~-c-&lt;              e: North to d
+ t y   ^      /| | | |                g: North (one-way) to f
+ e t --f-P &gt;-~-~-~-~-~-e-&lt;            h: North (one-way) to f (All Down, then South to <a href="The_Xvart_Lair.html" style="color:#dfbe6f">XvartLair</a>)
+ r h   |    /| | | | | |              P: <a href="Prison_of_Glymarach.html" style="color:#dfbe6f">Prison of Glymarach</a>
+ n   --~---~-~-~-~-~-~-~-g-h-&lt;                                             
+       |   | | | | | | | | |
+      SH   Coastal Plains         SH: <a href="Seantryn_Harbor.html" style="color:#dfbe6f">Seantryn Harbor</a>
+
+                      Forward
+                    + Cabin 
+        Captain's   =
+            Cabin +=+  
+                    |   Sunken
+Deep in the Aryth   |     
+                 \  |   Ship
+                  +-+ 
+        On the      |
+      Ocean Floor=+-+
+             
+Notes
+
+Not a logical map. Going west from a (&gt;-~) will put you on the opposite side of the map (~-&lt;), and vice versa.
+If you don't want to think about it, then from the mouth of river by <a href="Hamsah_Mutazz.html" style="color:#dfbe6f">Hamsah</a>, go 2e, 19s, and you're at the Coastal Plains.
+The bottom half of the map gets weird, so use the letters as a guide.
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="Kuo-Toa_Lair.html">KuoToaLair</a> &bull; <a href="The_Dragon_Sea.html">DragonSea</a> &bull; <a href="The_Coral_Head.html">CoralHead</a> &bull; <a href="Waters_of_the_Deep.html">WotDeep</a> &bull; <a href="Western_Aryth_Ocean.html">WesternAryth</a> &bull; <a href="Prison_of_Glymarach.html">Prison_of_Glymarach</a> &bull; <a href="The_Xvart_Lair.html">XvartLair</a> &bull; <a href="Seantryn_Harbor.html">SeantrynHarbor</a> &bull; <a href="The_Coastal_Plains.html">CoastalPlains</a> &bull; </div>
+<h3>Items Found Here (6)</h3>
+<div class="item-detail" id="item-a-long-titanium-spear"><b>a long titanium spear</b> <span class="meta">L30 weapon / titanium / titanium</span><br><span class="path">Path from Crossroads:</span> <code>e;w;2u;3n;e;3w;s;w;e;n;w;3n;w;n</code><br><span class="meta">Weapon:</span> power (avg 21)<br><span class="meta">Flags:</span> bless<br><span class="meta">Modifiers:</span> Modifies damage roll by 2, Modifies hit roll by 2</div>
+<div class="item-detail" id="item-a-pair-of-steel-lined-dragonscale-boots"><b>a pair of steel lined dragonscale boots</b> <span class="meta">L50 armor / feet / dragonscale</span><br><span style="color:#8a8;">Container:</span> the donation pit<br><span class="path">Path from Crossroads:</span> <code>e;w;2u;3n;e;3w;s;w;e;n;w;3n;w;n</code><br><span class="meta">Modifiers:</span> Modifies save vs breath by -5, Modifies moves by 50, Modifies hp by 25, Modifies dexterity by -1, Modifies save vs paralysis by -4, Modifies constitution by 2, Modifies damage roll by 2<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 17, bashing for 12,  slashing for 17, magic for 3, and the elements for 0 points each.</div>
+<div class="item-detail" id="item-a-sea-turtle-shell"><b>a sea turtle shell</b> <span class="meta">L30 armor / shield / bone</span><br><span class="path">Path from Crossroads:</span> <code>e;w;2u;3n;e;3w;s;w;e;n;w;3n;w;n</code><br><span class="meta">Modifiers:</span> Modifies hp by 10<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 9, bashing for 9,  slashing for 9, magic for 9, and the elements for 9 points each.</div>
+<div class="item-detail" id="item-a-set-of-polished-mithril-legplates"><b>a set of polished mithril legplates</b> <span class="meta">L45 armor / legs / mithril</span><br><span class="mob">Mob:</span> Keier<br><span style="color:#8a8;">Container:</span> the donation pit<br><span class="path">Path from Crossroads:</span> <code>e;w;2u;3n;e;3w;s;w;e;n;w;3n;w;n</code><br><span class="meta">Modifiers:</span> Modifies armor class by -10, Modifies hp by 20, Modifies damage roll by 2<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 18, bashing for 19,  slashing for 22, magic for 6, and the elements for 10 points each.</div>
+<div class="item-detail" id="item-an-adamantite-tipped-long-spear"><b>an adamantite-tipped long spear</b> <span class="meta">L40 weapon / spear / adamantite</span><br><span class="room">Room:</span> Eaststride Road<br><span class="mob">Mob:</span> The lady<br><span class="meta">Weapon:</span> power (avg 24)<br><span class="meta">Modifiers:</span> Modifies damage roll by 17, Modifies hit roll by 17, Modifies hp by 170, Modifies mana by 170</div>
+<div class="item-detail" id="item-the-crest-of-a-poisonous-jellyfish"><b>the crest of a poisonous jellyfish</b> <span class="meta">L25 ingredient / ingredient / carrion</span><br><span class="path">Path from Crossroads:</span> <code>e;w;2u;3n;e;3w;s;w;e;n;w;3n;w;n</code></div>
+</body></html>

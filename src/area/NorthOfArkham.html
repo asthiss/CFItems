@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NorthOfArkham - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>NorthOfArkham</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+
+
+                        [[<a href="Forest_of_Prosimy.html" style="color:#dfbe6f">ForestofProsemy</a>]]
+                                |
+                     [[<a href="DraMelkhur.html" style="color:#dfbe6f">Dra'Melkhur</a>]]--+-+-+--[[<a href="The_Basilica.html" style="color:#dfbe6f">Basilica</a>]]
+                                |
+                                +
+                                |
+                                + The Outskirts of the Village
+                                |
+                              +-+-+ 
+                                |
+                              +-+-+                 ??
+                                |      Laboratory   =
+               A Ruined Village +            +      +     
+                                |           /       ^                                 
+            Farm House +        +     +    +   +  &gt; +                            
+                       |        |     |    |   ^                      
+            Front Yard +        +--+--+----+-|&gt;+(here you are already trapped)                                    
+                       |        |          |                                     
+                       +--+     +          +-+---+ A Trail
+                       |  |     |            |   |
+                       +--+     +          +-+   +--[[<a href="The_Village_of_Barovia.html" style="color:#dfbe6f">BaroviaForest</a>]]
+                       |  |     |          |    
+          A Corn Field +--+--+--+          N  
+                                |
+                  [[<a href="VDramirs_Cove.html" style="color:#dfbe6f">VDramirsCove</a>]]--+
+                                |
+                              [[<a href="Arkham.html" style="color:#dfbe6f">Arkham</a>]]
+
+</pre></div>
+<h3>Items Found Here (4)</h3>
+<div class="item-detail" id="item-a-rolled-bright-yellow-scroll"><b>a rolled bright yellow scroll</b> <span class="meta">L15 scroll / scroll / vellum</span><br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-a-salamander-talon"><b>a salamander talon</b> <span class="meta">L45 weapon / dagger / dragonbone</span><br><span class="room">Room:</span> A Cavern of Magma<br><span class="mob">Mob:</span> A huge magma para-elemental<br><span class="meta">Weapon:</span> slice (avg 81)<br><span class="meta">Flags:</span> magic, no_drop<br><span class="meta">Modifiers:</span> Modifies damage roll by 4, Modifies hit roll by 4</div>
+<div class="item-detail" id="item-a-scroll-marked-with-a-starburst"><b>a scroll marked with a starburst</b> <span class="meta">L15 scroll / scroll / paper</span><br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-a-triangular-shard-of-red-crystal"><b>a triangular shard of red crystal</b> <span class="meta">L50 wand / wand / crystal</span><br><span class="room">Room:</span> The Bar of the Eternal Star<br><span style="color:#8a8;">Container:</span> a floating chest<br><span class="path">Path from Crossroads:</span> <code>n;w;s;2n;nw;s;d;s;d;5e;s;w;2s</code><br><span class="meta">Flags:</span> glowing, humming, magic<br><span class="meta">Modifiers:</span> Modifies strength by 4</div>
+</body></html>

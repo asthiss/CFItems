@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mace - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Mace</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+
+Name                            Lvl  Damage    Damage Type Affects                  Material   Weight  Flags/Special                Location
+Acid-etched flanged hammer      L30   ?  (15)  Caustic     dam 3, hp 30             Wood       9lb                                  Arial City
+Arm-bone of a giant             L25   ?  (15)  Smash       dam 2                    Bone       18lb                                 Talshidar Caves
+Ball-peen hammer                L26   ?  (16)  Pound       hit 3                    Steel      8lb                                  <a href="Coven_of_Dralkar_Wood.html" style="color:#dfbe6f">Coven of Dralkar Wood</a>
+Black-steel mace        +E -G   L50  8d4 (20)  Blast       dam 2, hit 2             Steel      16lb                                 Slave Mines of Sitran  
+Black adamantite morningstar    L31  9d4 (22)              dam 4, hit 4,svspell -6  Adamantite 15lb   magical, glow, blessed,       <a href="Dhumlar.html" style="color:#dfbe6f">Dhumlar</a> Ko
+Blacksmith's forge hammer       L20  4d8 (18)              dam 4, str 1             Iron       15lb                                 Blacksmith, <a href="Balator.html" style="color:#dfbe6f">Balator</a>
+Blacksmith's hammer             L25  4d8 (18)              str 1                    Steel      10lb
+Bloody spiked club      -G      L60  6d8 (27)              dam 6                    Steel      16lb                                 Sitran, Slave mines of Sitran
+Boar-headed mace                L27   ?  (17)  Pound       dam 1, hit 1             Steel      16lb                                 <a href="Keep_of_the_Fhalaugash.html" style="color:#dfbe6f">Keep of the Fhalaugash</a>
+Bound books             -E      L16  10d2(15)              dam 4, hit 2, dex -1     Parchment  18lb                                 Tree House, <a href="Emerald.html" style="color:#dfbe6f">Emerald</a> Forest
+Clawed club of skull-bone +E-G  L38  5d9 (25)              dam 4, hit 3             Bone       18lb                                 Tremblefist, Grinning Skulls Village
+Copper hammer                   L16   ?  (13)                                       Copper     12lb
+Dwarf Ruin              +E      L40  4d10(22)  Poison      dam 2, hit 2             Crystal    12lb    Orc only                     Nhergul the Mad, Rocky Paths
+Dwarven Throwing Hammer -E      L42  11d3(22)                                       Steel      25lb 
+Double spiked war-hammer +E -G  L30   ?  (19)  Crush       dam 3, hit 2             Steel      16lb                                 <a href="Grinning_Skull_Village.html" style="color:#dfbe6f">Grinning Skull Village</a>
+Engraved Steel Warhammer        L26   ?  (17)  Smash       dam 3                    Steel      12lb                                 <a href="Udgaard.html" style="color:#dfbe6f">Udgaard</a>
+Fine mace                       L10   ?  (9)               hit 1                               11lb
+<a href="Flail.html" style="color:#dfbe6f">Flail</a> studded with onyx -G      L18  9d3 (18)              dam 2, hit 2, mana 50    Iron       10lb
+Flaming sceptre of chaos +E     L40  6d7 (24)  Wrath       dam 1, hit 4, mana 10,   Steel      8lb     -Order                       Dark Priest, <a href="Mausoleum.html" style="color:#dfbe6f">Mausoleum</a> 
+                                                           hp 20, dex 1 
+Fluted mace                     L20  7d3 (14)              dam 2, hit -1            Steel      16lb
+Fordurn the Hammer of Creation  L48  8d6 (28)  Divine      dam 3, hit 4, str 1      Mithril    12lb                                 Brulgar, <a href="Mortorn.html" style="color:#dfbe6f">Mortorn</a>
+Golden <a href="Mace.html" style="color:#dfbe6f">Mace</a>             -EN     L30   ?  (20)  Crush       dam 2, hit 4             Steel      8lb     glow, bless                  <a href="The_Battlefield.html" style="color:#dfbe6f">The <a href="The_Battlefield.html" style="color:#dfbe6f">Battlefield</a></a>      
+Gold and silver mace    -EN     L25  5d5 (15)              dam 3, hit 3             Gold       8lb                                  Tristain, Forest of Barovia
+Hammer                          L5   5d2 (7)               hit -1                   Copper     5lb
+Hammer named 'Discovery'        L40  6d8 (27)              dam 6, hit 6             Steel      14lb
+Hammer of Muspellsheim  +E      L47  8d6 (28)              dam 4, hit 4,int 3,con 3            34lb                                 Thormgrimr, Battlefield
+Hammer of red stone             L20  5d5 (15)              dam 3                    Stone      20lb                                 Temple South of <a href="Hamsah_Mutazz.html" style="color:#dfbe6f">Hamsah</a>
+Heavy club              +E      L23   ?  (14)                                                  10lb
+Heavy iron mace                 L15  2d4 (5)               dam 1                    Iron       10lb
+Heavy mace                      L25  5d6 (17)  Crush                                Steel      15lb    2HD                          Eastern Road
+Heavy sack of ore               L33   ?  (16)  Crush       dam 2, hit 1             Burlap     22lb                                 <a href="Enpolads_Game_Garden.html" style="color:#dfbe6f">Enpolad's Game Garden</a>
+Hefty Brass Forge Hammer        L30   ?  (20)  Crush       Dam 4, hit -2            Brass      20lb                                 <a href="Ktengs_Laboratory.html" style="color:#dfbe6f">Kteng's Laboratory</a> 
+House soldier's mace    +E-GN   L35, 8d4 (20)  Crush       dam 4, hit 4, dex 1      Adamantite 10lb    D-elf only                   House Soldier, <a href="Teth_Azeleth.html" style="color:#dfbe6f">Teth Azeleth</a>
+                                                           svspell -4
+Huge mithril mace               L30   ?  (18)              dam 2, hit 2             Mithril    13lb                                 Travelling Bard, Frigid Wasteland
+Huge morningstar                L28   ?  (16)              dam 3, hit 3                        20lb
+Huge spiked club                L16   ?  (11)                                                  29lb
+Huge steel sledged hammer       L50  8d4 (20)  Crush       dam 3                    Steel      19lb     2H                          Storm giant slave, Slave mines of Sitran
+Huge tree club                  L13  2d9 (10)              hit -2                   Wood       25lb
+Huge wooden maul                L33   ?  (17)              dam 5, hit 5                        22lb
+Icy baton               -NE     L45  11d4(27)                                       Mithril    2lb                                  Alyssya, Kuo-tao lair
+Iron hammer                     L29  4d7 (16)  Crush       dam 1, hit 1             Iron       18lb                                 <a href="Outlying_Villages.html" style="color:#dfbe6f">Outlying Villages</a>
+Iron mace                       L30  8d3 (17)  Pound       dam 2, hit 1             Iron       14lb                                 Orc <a href="Warrior.html" style="color:#dfbe6f">Warrior</a>, Ruined Keep
+Judge's mallet                  L30  7d4 (17)              dam 2, hit 2, wis 2      Wood       4lb                                  Judge, Udgaard
+Large bone maul         -NE     L16  6d5 (18)              dam 4, hit, 2 breath -3, Dragonbone 19.15lb                              <a href="Ysigrath.html" style="color:#dfbe6f">Ysigrath</a>
+Large forge hammer              L28  4d7 (16)              hit 4                    Adamantite 14lb                                 Talshidar Caves
+Large iron hammer               L25  4d7 (16)              dam 2, hit 2             Iron       14.5lb                               Dwarf, Bandit Encampment
+Large Leg bone                  L29   ?  (18)  Beating                              Bone       16lb                                 <a href="Forgotten_Crypts.html" style="color:#dfbe6f">Forgotten Crypts</a>
+Large mace with a triangular head
+                         +E     L27   ?  (17)  Crush       dam 1, hit 2             Steel      9lb     AP only                      <a href="Galadon.html" style="color:#dfbe6f">Galadon</a>
+Large spiked club               L26  7d4 (17)                                                  18lb
+Large steel mace                L30   ?  (17)  Cleave                               Steel      15lb                                 Galadon
+Large Wooden ladle              L30   ?  (16)  Smash       hit 2                    Wood       1lb                                  Tower of Sorcery
+Large Whitesteel hammer  +G -E  L27   ?  (18)  Crush       dam 1, hit 1             Whitesteel 18lb     2HD                         <a href="Voralian_City.html" style="color:#dfbe6f">Voralian City</a>
+Limb of an oak tree             L26   ?  (17)  Crush                                Wood       35lb     2HD                         Dhumlar-Ko
+Long-handled mace        +G     L30   ?  (19)  Crush       dam 2, hit 1             Steel      15lb     Paladin Only, bless         Galadon       
+Long-handled spoon              L10  3d8 (13)              dam 1, hit 1             Wood       2lb
+Mace of air                     L45  12d3(24)                                       Air        11.15lb  glowing, norem              Arch-Bishop Aeristoma, <a href="Elemental_Temple.html" style="color:#dfbe6f">Elemental Temple</a>
+Mace of holy empowerment -E     L51  8d6 (31)  Divine      dam 4, hit 3, sspell -5  Energy     18lb                                 Paladin Champion, <a href="Mount_Kiadana-Rah.html" style="color:#dfbe6f">Mount Kiadana-Rah</a>
+                                                           mana 25 
+Mace with the head of a screaming demon
+                         +E-GN  L50  8d6 (28)              dam 5, hit 5, mana -20   Adamantite 8lb      cast deafen                 Annias, <a href="The_Basilica.html" style="color:#dfbe6f">Basilica</a>
+                                                           int -5, wis -5       
+Massive club                    L22   ?  (15)                                       Wood       19lb
+Massive Ivory club              L30   ?  (18)  Smash       dam 2, hit 2             Ivory      29lb     2HD                         <a href="Ruins_of_Delar-Tol.html" style="color:#dfbe6f">Ruins of <a href="Delar-Tol.html" style="color:#dfbe6f">Delar-Tol</a></a>
+Massive lucern hammer   -EN     L40  10d4(25)              dam 6, hit 3,sbreath -10 Dragonbone          nodrop
+Massive maul of bone    +E-GN   L35  11d3(22)              dam 2, hit 3,            Bone       23lb     norem                       Ogre, Grinning Skulls Village
+Massive spiked mithril hammer-E L40  4d11(24)              dam 5, hit 1             Mithril    19lb     bless, glow                 Efaena, <a href="Valley_of_Veran.html" style="color:#dfbe6f">Valley of <a href="Valley_of_Veran.html" style="color:#dfbe6f">Veran</a></a>
+Massive truncheon               L20  8d3 (16)              dam 4                    Wood       7lb                                  <a href="The_Galadon_Sewers.html" style="color:#dfbe6f">Sewers</a> of Galadon
+Massive two-handed forge hammer L25   ?  (16)  Crush       dam 7, hit -2            Iron       44lb     2HD, Giant only             <a href="Loch_Terradian.html" style="color:#dfbe6f">Loch Terradian</a>
+Mattock of twisted evergreen    L27   ?  (18)  Crush       dam 2, hit 2             Wood       12lb                                 <a href="TheGrovePast.html" style="color:#dfbe6f">The Past Grove</a>
+Mining pick                     L12   ?  (10)                                       Steel      1lb
+Mithril hammer                  L15   ?  (9)               hit 2, str 1                        19lb
+Mithril Morningstar             L30   ?  (17)  Crush       hit 2, mana 10           Mithril    15lb     bless                       <a href="Keep_of_the_Righteous.html" style="color:#dfbe6f">Keep of the Righteous</a>
+Morning-Star named &quot;VainGlory&quot;  L38, 12d3(24)  Wrath       dam 3, hit 3, wis -5     Steel      10lb     norem, nodrop               Aude, Emerald Forest
+                                                           str 2   
+Oar                             L25   ?  (18)  Pound                                Wood       10lb                                 Sea of Despair
+Oak Mallet                      L30   ?  (17)  Pound       dam 2, hit 2             Wood       4lb      glow, magic                 Udgaard
+Perfectly crafted mace          L40  5d9 (25)              dam -2, hit 8            Steel      8lb
+Pirate cudgel           +E-G    L40  4d9 (20)  Beating     dam 3, hit 3             Wood       5lb                                  <a href="The_Sea_of_Despair.html" style="color:#dfbe6f">The Sea of Despair</a>
+Polished mithril warhammer      L45   ?  (26)              dam 3, hit 4             Mithril                                         Commander of the watchman South darein settlement
+Practice mace                   L5   4d5 (12)                                       Wood       3lb                                  Inside a Closet, Balator
+Rake                            L3    ?  (6)                                                   3lb
+Rod of might                    L14   ?  (10)              hit 2, str 1             Mithril    13lb
+<a href="Rune.html" style="color:#dfbe6f">Rune</a>-covered mace               L30  4d7 (16)  Blast       dam 2, hit 3, str 1      Steel      8lb    glow, magic                   Village of Azuremain 
+Rune-etched dragon femur    -G  L30  3d11(18)  Black Light dam 5, hit -2 dex -2     Dragonbone 50lb   magic, glowing                Strange Island
+                                                           svbreath -5 str 4
+Scepter of the Fhalaugash       L28  7d4 (17)              dam 2, hit 2                        11lb   norem, glow, hum, (orc-only)  Fhalaugash
+Scorched lucerne hammer         L51  6d8 (27)              dam 6, hit 3, move -15   Iron       19lb
+Scorched oak staff              L44  6d7 (24)              dam 2, hit 2             Wood       21lb   nodrop, norem                 Dyghaur the Fire Ogre, Mount Kiadana-Rah
+shaman's mace                   L8   4d5 (12)              dam 2, hit 2             Steel      5lb                                  Shaman, <a href="The_Goblin_Village.html" style="color:#dfbe6f">Goblin Village</a>
+Short steel mace                L35   ?  (20)  Crush       dam 1, hit 3             Steel      12lb                                 Delar-Tol
+Shovel                          L3    ?  (5)                                                   8lb
+Shimmering ornate silver scepterL25  3d10(16)              dam 4, hit 2, mana 15    Silver                                          Drocktol, Stone's Embrace
+Shining Crystal Hammer          L34   ?  (18)  Pound                                Crystal    9lb                                  <a href="Crystal_Island.html" style="color:#dfbe6f">Crystal Island</a>
+Shining Crystal Mace            L36   ?  (17)  Pound       hit 1, int -1            Crystal    9lb                                  Crystal Island
+Shining Dwarven Foehammer -E    L27   ?  (16)  Crush       dam 3                    Mithril    21lb  dwarf only,Paladin only, bless <a href="Akan.html" style="color:#dfbe6f">Akan</a>
+Silver scepter                  L20  7d3 (14)              dam 2, hit 1
+Silver-shod mallet marked with an angel
+                       -EN      L24  8d3 (16)              dam 2, hit -2, mana 20   Silver     14lb   blessed                       Voralian city
+Small steel hammer              L45  5d8 (22)              dam 2, hit 2             Steel      10lb   norem, gnome_only
+Some bound books        -E      L15  10d2(15)              dam 3, hit 1, dex -1                18lb
+Spiked Mace                     L30   ?  (18)  Crush       Dam 1, hit 2             Steel      9lb    Paladin only, bless           Galadon
+Spiked warhammer                L40  6d5 (18)  Smash       dam 2, hit 2, str 1      Steel      18lb   2HD                           Felar encampment
+Steel-capped Baton              L30   ?  (15)  Smash       dam 1, hit 1             Steel      10lb                                 Galadon
+Steel-capped wooden baton       L30   ?  (19)  Beating     dam 1, hit 3             Wood       8lb                                  Northern Mountains
+Stone Artisans Mallet           L30   ?  (12)  Pound                                Stone      22lb                                 <a href="Abandoned_Siege_Encampment.html" style="color:#dfbe6f">Abandoned Siege Encampment</a>
+Stone Baton                     L32   ?  (18)  Pound       dam 3, hit -1            Stone      8lb                                  <a href="Targeths_Manor.html" style="color:#dfbe6f">Targeth's <a href="Manor.html" style="color:#dfbe6f">Manor</a></a>
+Stone club                      L25  4d7 (16)              dam 3, hit 2             Stone      17lb                                 Stone Giant, Forest of Barovia
+Strokers mallet         +E-G    L51  9d5 (27)              cha -2, str -1           Wood       15lb
+Sturdy bronze mace              L20  4d6 (14)              dam3, hit 2                         13lb                                 Kentner Stonefist, <a href="<a href="GolGalath.html" style="color:#dfbe6f">GolGalath</a>.html" style="color:#dfbe6f">Gol'Galath</a>
+Sturdy mithril mace             L30   ?  (17)  Pound       dam 4, hit 1             Mithril    15lb                                 <a href="The_Northern_Mountains.html" style="color:#dfbe6f">The Northern Mountains</a>
+Two-handed Steel mace           L40   ?  (19)  Crush       dam 1, hit 1             Steel      15lb   2HD, bless                    The Northern Mountains
+Two-handed Warhammer            L32   ?  (18)  Crush                                Steel      19lb   2HD                           <a href="Evermoon_Hollow.html" style="color:#dfbe6f">Evermoon Hollow</a>
+Weighty cudgel                  L35  3d14(22)              dam 3, hit 2, str 1      Wood       21lb   2HD                           Moss trolls, Forbidden Forest
+Wicked war-hammer named 'Oppression'
+                       -GN      L40  4d12(26)              dam 4, hit 4             Iron       21lb   norem, nodrop                 Grinning Skulls Village
+Worn goo-covered bone club      L42   ?  (17)  Poison      dam 2, hit -3            Bone       16lb                                 <a href="Underdark.html" style="color:#dfbe6f">Underdark</a>
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="CarrItems.html">CarrItems</a> &bull; <a href="Syntax.html">Syntax</a> &bull; </div>
+</body></html>

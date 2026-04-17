@@ -4,6 +4,12 @@
     <AzureFunctionsVersion>v4</AzureFunctionsVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="CFItems.DataPipeline\**" />
+    <Content Remove="CFItems.DataPipeline\**" />
+    <EmbeddedResource Remove="CFItems.DataPipeline\**" />
+    <None Remove="CFItems.DataPipeline\**" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Azure.Data.Tables" Version="12.8.0" />
     <PackageReference Include="Azure.Storage.Blobs" Version="12.16.0" />
     <PackageReference Include="Microsoft.Azure.Search.Data" Version="10.1.0" />

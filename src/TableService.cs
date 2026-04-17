@@ -150,5 +150,8 @@ namespace CFItems
         public string Morale { get; set; }
         public string ArmorLine { get; set; }
         public string BaseDamnoun { get; set; }
+        public string MobSource { get; set; }
+        public string ContainerSource { get; set; }
+        public string PathFromCrossroads { get; set; }
     }
 }

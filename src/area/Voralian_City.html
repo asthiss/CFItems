@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voralian City - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Voralian City</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+                   V  o  r  a  l  i  a  '  s  T  e  a  r  s   
+                     | |              Iv              | |
+                     | |              /               | |
+       Northharbor   +-+-------------+----------------+-+=+   Northharbor
+          Docks      | |             |                | |     Shipping Office
+                     + + 3         1-+-2           4  + +
+                         |  Knight   |    Street   |          
+                     5---+----------DR-------------+----6 
+                         |         R |             |      
+                     7   8   9     e |   B    10  11   12      
+                     |       | C   d |   a  C |         |    
+Shepherds --NW--WC--SF-------+ h   e +   +----+--------KR---EC--NE-- Silverpine    
+  Row                |       | a   m |   n  h |         |               Road
+                     | R     | r   p |   k  a |         |           
+                13---+---14  | i   t |      r | + + +=--+--=+   Beneath                
+                     | e     | t   i |      i |  \|     |   |                
+                15---+---16  | y   o |      t |   + +---+---He  the Cathedral
+             Butcher | t     |     n |      y |    \|   | F                               
+                     | r     +--+----+----+---+    *H*  | a     Buttresses                    
+                     | i     |  Tranquility   |     |   | i                    
+                     | b     +  +---------+   +  Sh-+---+---+                        
+                     | u     |  |         |   |         | t   
+E. Sumner ---W--WF--CL-------+--+ Gardens +-+ +--------HB---EF---E-- Eaststride    
+  Road               | t     |  |         |   |         | h             Road
+                17---+---18  +  +---------+   +    Cj---+---Ss     
+                     | i     |  Tranquility   |         |  
+                19---+ o     +--+----+----+---+    Tr---+--=+    *H* = Healer &amp;
+                     | n             |                  |                Pit
+                20---+---Th          | T            +=--+---Wa
+                     | A        21=--+---=22            | A
+                     | v  T      =   | e   =            | v
+                     | e  |      |   | m   |  Hope      | e    
+N.Suther- --SW--WH--KC----+------+--GP-----+--------+--UB---EH--SE-- Bramblefield    
+spring Rd            |    |      |   | p        Ave     |               Road
+                     |    | Ba  Pa   | e              F |                 
+                     |    |/         | r              a |               (to 
+                23---+---24     25---+---26           i +                  
+                     |    =          | a              t |              Eastern
+                     |    +     27---+---28           h +                       
+                     |               | n                |               Road)
+                29---+---30          | c                + A                 
+                     | General       | e                | v                 
+                     |  Store        |    As            | e
+                     |               |     |            | 
+       Southharbor   +----+----+-----+-----+-----+----+=+   Southharbor
+          Docks      |    |    |     |     |     |    |     Shipping Office
+                     |    |    |     |     |     |    |
+                  V  o  r  a  l  i  a  '  s  T  e  a  r  s
+
+Plazas &amp; Squares				Gates
+-----					-----
+CL Square of the Clarion			WC West Charity Gate
+DR Plaza of the Darkened Rose		EC East Charity Gate
+GP Great Square of the Pheonix		WF West Fortitude Gate
+HB Plaza of the Hummingbird			EF East Fortitude Gate
+KC Plaza of the Kara Chal			WH Western Gate of Hope
+KR Square of the Ki-Rin			EH Eastern Gate of Hope
+SF Plaza of the Shining Fount
+UB Square of the Unbreakable Blade		
+
+Shops 					Guilds
+-----					-----
+1  The Holy Rest				As Assassins Guild
+2  The Heavenly Wench			Ba Bard Guild
+3  The Good Maiden				Cj Conjie Guild
+4  The Jolly Good Sir			He Healers Guild 
+5  Keiiahs Apothecary and Charms		Iv Invokers Guild
+6  The Long Voyage				Pa Paladins Guild
+7  Master Finigans Toys			Sh Shamans Guild
+8  The Sailors Fathom			Ss <a href="Shifter.html" style="color:#dfbe6f">Shifter</a> Guild
+9  The Divine				Th Thieves Guild 
+10 The Lonely Saint			Tr Transmuter Guild
+11 The Elvenhome				Wa <a href="Warrior.html" style="color:#dfbe6f">Warrior</a> Guild
+12 North Harbor Imports (exotics)
+13 Guldencratz and Sons (jeweler)              T Blood Tribunal
+14 Lord Vindar's Timepieces (Clockmaker)
+15 River City Butchery 
+16 Lady Voralia's Clergy Shop
+17 The Noble Harvest 
+18 Roral's Blessed Market 
+19 Stronghammer's (armory/weapons)
+20 The Knights Table
+21 Peacekeeper Headquarters
+22 Guiding Light Cartography (maps)
+23 The Phoenix's Blessing
+24 Knight's Crest
+25 Dragon's Tooth 
+26 Gundards Woodworking Shop
+27 Azure Vineyard (wine)
+28 Wind's Harness (boats)
+29 Crows Nest
+30 The Light Supplies
+*H* Healer &amp; Pit
+</pre></div>
+<h3>Rooms (8)</h3>
+<div class="legend-grid">
+<div class="legend-entry"><span class="num">5</span><span class="room-name">--+----------DR-------------+----6</span></div>
+<div class="legend-entry"><span class="num">13</span><span class="room-name">--+---14  | i   t |      r | + + +=--+--=+   Beneath</span></div>
+<div class="legend-entry"><span class="num">15</span><span class="room-name">--+---16  | y   o |      t |   + +---+---He  the Cathedral</span></div>
+<div class="legend-entry"><span class="num">17</span><span class="room-name">--+---18  +  +---------+   +    Cj---+---Ss</span></div>
+<div class="legend-entry"><span class="num">19</span><span class="room-name">--+ o     +--+----+----+---+    Tr---+--=+    *H* = Healer &amp;</span></div>
+<div class="legend-entry"><span class="num">20</span><span class="room-name">--+---Th          | T            +=--+---Wa</span></div>
+<div class="legend-entry"><span class="num">23</span><span class="room-name">--+---24     25---+---26           i +</span></div>
+<div class="legend-entry"><span class="num">29</span><span class="room-name">--+---30          | c                + A</span></div>
+</div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="The_Lower_Voralias_Tears.html">Voralia'sTears</a> &bull; <a href="The_Open_Plains.html">NorthernRoads</a> &bull; <a href="Silverpine_Road.html">SilverpineRoad</a> &bull; <a href="Eaststride_Road.html">EaststrideRoad</a> &bull; <a href="Bramblefield_Road.html">BramblefieldRoad</a> &bull; </div>
+<h3>Items Found Here (2)</h3>
+<div class="item-detail" id="item-a-fine-steel-morning-star"><b>a fine steel morning star</b> <span class="meta">L25 weapon / flail / steel</span><br><span class="path">Path from Crossroads:</span> <code>3s;w;n;2e;s;e;s;3e;n;s;3w;s;d;2w;2s;e;n;e</code><br><span class="meta">Weapon:</span> crush (avg 16)<br><span class="meta">Flags:</span> bless, good, anti_neutral, anti_evil<br><span class="meta">Modifiers:</span> Modifies damage roll by 2</div>
+<div class="item-detail" id="item-a-sleek-black-rod"><b>a sleek black rod</b> <span class="meta">L35 wand / wand / obsidian</span><br><span class="room">Room:</span> The Underdark<br><span class="mob">Mob:</span> Festpath the Archmage<br><span style="color:#8a8;">Container:</span> a workbench<br><span class="path">Path from Crossroads:</span> <code>e;s;e;n;w;n;s;2e;w;s;2w;s;3n</code><br><span class="meta">Flags:</span> magic</div>
+</body></html>

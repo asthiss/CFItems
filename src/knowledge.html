@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CF Knowledge Base</title>
+    <link rel="stylesheet" type="text/css" href="cfitems.css">
+    <style>
+        .tabs { display: flex; gap: 0; margin: 10px 0; border-bottom: 2px solid #dfbe6f; }
+        .tab { padding: 8px 20px; cursor: pointer; color: #aaa; border: 1px solid transparent; border-bottom: none; }
+        .tab:hover { color: #dfbe6f; }
+        .tab.active { color: #dfbe6f; background: #1a1a1a; border-color: #dfbe6f; border-radius: 4px 4px 0 0; }
+        .tab-content { display: none; padding: 10px 0; }
+        .tab-content.active { display: block; }
+        .search-box { padding: 8px 12px; width: 300px; background: #1a1a1a; color: white; border: 1px solid #dfbe6f; margin: 10px 0; }
+        .area-card { border-left: 3px solid #444; padding: 8px 12px; margin: 8px 0; background: #111; position: relative; cursor: pointer; }
+        .area-card:hover { background: #1a1a1a; }
+        .area-card h4 { color: #aaa; margin: 0 0 4px 0; }
+        .area-card .level { color: #888; font-size: 14px; }
+        .area-card .category { color: #7a9; font-size: 13px; text-transform: uppercase; }
+        .area-card .items { color: #dfbe6f; font-size: 14px; margin-top: 4px; font-weight: bold; }
+        .area-card .restricted { color: #c44; font-size: 12px; }
+        /* Highlight areas with known items */
+        .area-card.has-items { border-left-color: #dfbe6f; background: #1a1610; }
+        .area-card.has-items h4 { color: #dfbe6f; }
+        .area-card.has-items::after {
+            content: "\2605"; /* star */
+            position: absolute; top: 6px; right: 10px;
+            color: #dfbe6f; font-size: 18px;
+        }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 8px; }
+        .detail-panel { position: fixed; right: 0; top: 0; width: 40%; height: 100%; background: #0a0a0a; border-left: 2px solid #dfbe6f; padding: 20px; overflow-y: auto; display: none; z-index: 100; }
+        .detail-panel.open { display: block; }
+        .close-btn { float: right; cursor: pointer; color: #dfbe6f; font-size: 24px; }
+        .item-link { color: #dfbe6f; cursor: pointer; text-decoration: underline; }
+        #locationStats { color: #888; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div id="topNav">
+        <a href="index.html">Items</a>
+        <a href="knowledge.html">Knowledge</a>
+        <a href="map.html">Map</a>
+        <a href="areas.html">Areas</a>
+        <a href="documents.html">Documents</a>
+    </div>
+    <hr/>
+
+    <h2 style="color:#dfbe6f">Carrion Fields Knowledge Base</h2>
+
+    <div class="tabs">
+        <div class="tab active" data-tab="areas">Areas</div>
+        <div class="tab" data-tab="items-by-area">Items by Area</div>
+        <div class="tab" data-tab="stats">Database Stats</div>
+    </div>
+
+    <div id="areas" class="tab-content active">
+        <input type="text" class="search-box" id="areaSearch" placeholder="Search areas...">
+        <div id="areaFilter" style="margin: 5px 0;">
+            Filter: <select id="areaCategoryFilter">
+                <option value="all">All Categories</option>
+            </select>
+            <select id="areaLevelFilter">
+                <option value="all">All Levels</option>
+                <option value="1-10">1-10</option>
+                <option value="10-20">10-20</option>
+                <option value="20-30">20-30</option>
+                <option value="30-40">30-40</option>
+                <option value="40-51">40-51</option>
+            </select>
+            <label style="margin-left:10px;color:#dfbe6f;cursor:pointer;">
+                <input type="checkbox" id="withItemsOnly" style="vertical-align:middle;"> &#9733; With items only
+            </label>
+        </div>
+        <div id="areaList" class="stat-grid"></div>
+    </div>
+
+    <div id="items-by-area" class="tab-content">
+        <input type="text" class="search-box" id="itemAreaSearch" placeholder="Search items or areas...">
+        <div id="locationStats"></div>
+        <div id="itemAreaList"></div>
+    </div>
+
+    <div id="stats" class="tab-content">
+        <div id="statsContent"></div>
+    </div>
+
+    <div id="detailPanel" class="detail-panel">
+        <span class="close-btn" onclick="closeDetail()">&times;</span>
+        <div id="detailContent"></div>
+    </div>
+
+    <script>
+    let areas = [];
+    let items = [];
+    let itemLocations = {};
+    let wikiAreas = {};
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        // Load data
+        const areaUrls = [
+            'https://cfitems.blob.core.windows.net/cfitems/documents/areas.json',
+            'https://cfitems.blob.core.windows.net/cfknowledge/areas.json?sv=2025-11-05&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2030-04-15T16:21:07Z&st=2026-04-16T08:06:07Z&spr=https&sig=REDACTED_SAS_SIG%3D'
+        ];
+        for (const areaUrl of areaUrls) {
+            try {
+                const areasResp = await fetch(areaUrl);
+                if (areasResp.ok) { areas = await areasResp.json(); break; }
+            } catch(e) {}
+        }
+
+        // Load items from existing API
+        try {
+            const itemsResp = await fetch('https://cfitems.azurewebsites.net/api/items/all');
+            if (itemsResp.ok) items = await itemsResp.json();
+        } catch(e) { console.error('Failed to load items:', e); }
+
+        // Try to load item locations
+        const locUrls = [
+            'https://cfitems.blob.core.windows.net/cfitems/documents/item-locations.json',
+            'https://cfitems.blob.core.windows.net/cfknowledge/item-locations.json?sv=2025-11-05&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2030-04-15T16:21:07Z&st=2026-04-16T08:06:07Z&spr=https&sig=REDACTED_SAS_SIG%3D'
+        ];
+        for (const locUrl of locUrls) {
+            try {
+                const locResp = await fetch(locUrl);
+                if (locResp.ok) { itemLocations = await locResp.json(); break; }
+            } catch(e) {}
+        }
+
+        // Load wiki area data (ASCII maps, room legends, links).
+        // Prefer the complete scrape (758 pages) over the curated subset (139).
+        const wikiUrls = [
+            'https://cfitems.blob.core.windows.net/cfitems/documents/qhcf-wiki-all.json',
+            'https://cfitems.blob.core.windows.net/cfitems/documents/qhcf-wiki-areas.json'
+        ];
+        for (const u of wikiUrls) {
+            try {
+                const wikiResp = await fetch(u);
+                if (wikiResp.ok) { wikiAreas = await wikiResp.json(); break; }
+            } catch(e) {}
+        }
+
+        // If no blob areas, build from items data
+        if (!areas.length && items.length) {
+            const areaSet = new Set();
+            items.forEach(i => { if (i.Area) areaSet.add(i.Area); });
+            areas = Array.from(areaSet).map(a => ({ Name: a }));
+        }
+
+        populateFilters();
+        renderAreas();
+        renderItemsByArea();
+        renderStats();
+
+        // Handle ?area= query string from map links
+        const params = new URLSearchParams(window.location.search);
+        const areaParam = params.get('area');
+        if (areaParam) {
+            showAreaDetail(areaParam);
+        }
+    });
+
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    function populateFilters() {
+        const cats = new Set();
+        areas.forEach(a => { if (a.Category) cats.add(a.Category); });
+        const select = document.getElementById('areaCategoryFilter');
+        cats.forEach(c => {
+            const opt = document.createElement('option');
+            opt.value = c; opt.textContent = c;
+            select.appendChild(opt);
+        });
+    }
+
+    function renderAreas() {
+        const search = (document.getElementById('areaSearch').value || '').toLowerCase();
+        const catFilter = document.getElementById('areaCategoryFilter').value;
+        const levelFilter = document.getElementById('areaLevelFilter').value;
+        const withItemsOnly = document.getElementById('withItemsOnly')?.checked || false;
+
+        // Compute item counts once
+        const withCounts = areas.map(a => ({ area: a, count: countItemsForArea(a.Name) }));
+
+        let filtered = withCounts.filter(({ area: a, count }) => {
+            // Hide Circles of Hell (files were removed)
+            if (/Circle of Hell/i.test(a.Name)) return false;
+            if (search && !a.Name.toLowerCase().includes(search)) return false;
+            if (catFilter !== 'all' && a.Category !== catFilter) return false;
+            if (withItemsOnly && count === 0) return false;
+            if (levelFilter !== 'all') {
+                const [min, max] = levelFilter.split('-').map(Number);
+                const range = a.LevelRange || '';
+                const rangeMatch = range.match(/(\d+)\s*-\s*(\d+)/);
+                if (rangeMatch) {
+                    const aMin = parseInt(rangeMatch[1]), aMax = parseInt(rangeMatch[2]);
+                    if (aMax < min || aMin > max) return false;
+                } else if (range !== 'All') return false;
+            }
+            return true;
+        });
+
+        // Sort: areas with items first (by count desc), then alphabetical
+        filtered.sort((a, b) => {
+            if ((a.count > 0) !== (b.count > 0)) return b.count - a.count;
+            if (a.count !== b.count) return b.count - a.count;
+            return a.area.Name.localeCompare(b.area.Name);
+        });
+
+        const total = filtered.length;
+        const withItems = filtered.filter(f => f.count > 0).length;
+        const container = document.getElementById('areaList');
+        container.innerHTML = filtered.map(({ area: a, count: itemCount }) => {
+            const hasItems = itemCount > 0;
+            return `<div class="area-card${hasItems ? ' has-items' : ''}" onclick="showAreaDetail('${a.Name.replace(/'/g, "\\'")}')">
+                <h4>${a.Name}</h4>
+                ${a.LevelRange ? `<span class="level">Level: ${a.LevelRange}</span>` : ''}
+                ${a.Category ? `<span class="category"> ${a.Category}</span>` : ''}
+                ${a.Builder ? `<br><span class="level">Builder: ${a.Builder}</span>` : ''}
+                ${a.IsRestricted ? '<br><span class="restricted">RESTRICTED - No Map Sharing</span>' : ''}
+                ${hasItems ? `<div class="items">${itemCount} known item${itemCount === 1 ? '' : 's'}</div>` : ''}
+            </div>`;
+        }).join('');
+
+        // Show count summary
+        let summary = document.getElementById('areaCountSummary');
+        if (!summary) {
+            summary = document.createElement('div');
+            summary.id = 'areaCountSummary';
+            summary.style.cssText = 'color:#888;font-size:13px;margin:6px 0;';
+            container.parentElement.insertBefore(summary, container);
+        }
+        summary.textContent = `Showing ${total} area${total === 1 ? '' : 's'} (${withItems} with items)`;
+    }
+
+    // Count items attributed to an area, matching on Area field or BestGuessArea
+    // in itemLocations. Uses loose matching (spaces stripped) to handle variants.
+    function countItemsForArea(areaName) {
+        if (!areaName) return 0;
+        const norm = areaName.toLowerCase().replace(/\s+/g, '').replace(/['"`]/g, '');
+        const matches = new Set();
+
+        // Match from items (Azure Table Area field)
+        items.forEach(i => {
+            if (!i.Area) return;
+            const ia = i.Area.toLowerCase().replace(/\s+/g, '').replace(/['"`]/g, '');
+            if (ia === norm || ia.includes(norm) || norm.includes(ia)) {
+                matches.add(i.Name);
+            }
+        });
+
+        // Match from itemLocations (from log extraction)
+        Object.entries(itemLocations).forEach(([name, loc]) => {
+            if (!loc.BestGuessArea) return;
+            const la = loc.BestGuessArea.toLowerCase().replace(/\s+/g, '').replace(/['"`]/g, '');
+            if (la === norm || la.includes(norm) || norm.includes(la)) {
+                matches.add(name);
+            }
+        });
+
+        return matches.size;
+    }
+
+    function renderItemsByArea() {
+        const search = (document.getElementById('itemAreaSearch')?.value || '').toLowerCase();
+
+        // Group items by area
+        const byArea = {};
+        items.forEach(i => {
+            const area = i.Area || 'Unknown Area';
+            if (!byArea[area]) byArea[area] = [];
+            byArea[area].push(i);
+        });
+
+        // Also add location data
+        Object.entries(itemLocations).forEach(([name, loc]) => {
+            if (loc.BestGuessArea && !items.find(i => i.Name === name && i.Area === loc.BestGuessArea)) {
+                const area = loc.BestGuessArea;
+                if (!byArea[area]) byArea[area] = [];
+                // Don't duplicate
+                if (!byArea[area].find(i => i.Name === name)) {
+                    byArea[area].push({ Name: name, Area: area, _fromLocations: true });
+                }
+            }
+        });
+
+        const withArea = items.filter(i => i.Area).length;
+        const locCount = Object.keys(itemLocations).length;
+        document.getElementById('locationStats').innerHTML =
+            `Items with Area in database: ${withArea}/${items.length} | Location data available for: ${locCount} items`;
+
+        const container = document.getElementById('itemAreaList');
+        const sortedAreas = Object.keys(byArea).sort((a, b) => a === 'Unknown Area' ? 1 : b === 'Unknown Area' ? -1 : a.localeCompare(b));
+
+        container.innerHTML = sortedAreas
+            .filter(area => !search || area.toLowerCase().includes(search) ||
+                byArea[area].some(i => i.Name?.toLowerCase().includes(search)))
+            .map(area => {
+                const areaItems = byArea[area]
+                    .filter(i => !search || i.Name?.toLowerCase().includes(search) || area.toLowerCase().includes(search))
+                    .sort((a, b) => (a.Name || '').localeCompare(b.Name || ''));
+
+                return `<div class="area-card">
+                    <h4>${area} (${areaItems.length} items)</h4>
+                    ${areaItems.slice(0, 50).map(i =>
+                        `<span class="item-link" onclick="showItemDetail('${(i.Name||'').replace(/'/g, "\\'")}')">${i.Name}</span>`
+                    ).join(', ')}
+                    ${areaItems.length > 50 ? `<br><em>... and ${areaItems.length - 50} more</em>` : ''}
+                </div>`;
+            }).join('');
+    }
+
+    function renderStats() {
+        const container = document.getElementById('statsContent');
+        const groups = {};
+        items.forEach(i => { groups[i.Group] = (groups[i.Group] || 0) + 1; });
+        const withArea = items.filter(i => i.Area).length;
+
+        container.innerHTML = `
+            <div class="area-card">
+                <h4>Database Overview</h4>
+                <p>Total Items: <b>${items.length}</b></p>
+                <p>Items with Area: <b>${withArea}</b> (${(100*withArea/items.length).toFixed(1)}%)</p>
+                <p>Known Areas: <b>${areas.length}</b></p>
+                <p>Item Location Mappings: <b>${Object.keys(itemLocations).length}</b></p>
+            </div>
+            <div class="area-card">
+                <h4>Items by Type</h4>
+                ${Object.entries(groups).sort((a,b) => b[1]-a[1]).map(([k,v]) => `<p>${k}: <b>${v}</b></p>`).join('')}
+            </div>
+        `;
+    }
+
+    function findWikiData(areaName) {
+        // Try exact match on UrlTitle or DisplayName
+        const normalized = areaName.replace(/\s+/g, '').replace(/[''']/g, '').toLowerCase();
+        for (const [urlTitle, data] of Object.entries(wikiAreas)) {
+            if (urlTitle.toLowerCase() === normalized) return data;
+            if (data.DisplayName && data.DisplayName.toLowerCase() === areaName.toLowerCase()) return data;
+            if (data.DisplayName && data.DisplayName.replace(/\s+/g, '').toLowerCase() === normalized) return data;
+        }
+        // Try partial match
+        for (const [urlTitle, data] of Object.entries(wikiAreas)) {
+            if (urlTitle.toLowerCase().includes(normalized) || normalized.includes(urlTitle.toLowerCase())) return data;
+        }
+        return null;
+    }
+
+    function showAreaDetail(areaName) {
+        const area = areas.find(a => a.Name === areaName) || { Name: areaName };
+        const areaItems = items.filter(i => i.Area === areaName);
+        const wiki = findWikiData(areaName);
+
+        // Also find items from itemLocations that match this area
+        const locItems = Object.entries(itemLocations)
+            .filter(([name, loc]) => loc.BestGuessArea === areaName)
+            .map(([name, loc]) => ({ name, loc }));
+
+        // Merge: build a combined list with location data
+        const allItemNames = new Set([
+            ...areaItems.map(i => i.Name),
+            ...locItems.map(l => l.name)
+        ]);
+
+        const combinedItems = Array.from(allItemNames).map(name => {
+            const dbItem = items.find(i => i.Name === name);
+            const loc = itemLocations[name];
+            return { name, dbItem, loc };
+        });
+
+        // Build wiki section if available
+        let wikiHtml = '';
+        if (wiki) {
+            if (wiki.AsciiMap && wiki.AsciiMap.length > 100) {
+                wikiHtml += `<h4>Area Map (from wiki.qhcf.net)</h4>
+                    <pre style="font-family:'Courier New',monospace; font-size:11px; line-height:1.2; color:#ccc; background:#0a0a0a; padding:8px; overflow:auto; max-height:400px;">${wiki.AsciiMap.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</pre>`;
+            }
+            const legendKeys = Object.keys(wiki.RoomLegend || {});
+            if (legendKeys.length > 0) {
+                wikiHtml += `<h4>Room Legend (${legendKeys.length})</h4>
+                    <div style="columns:2; font-size:13px; column-gap:20px;">
+                    ${legendKeys.sort((a,b) => parseInt(a)-parseInt(b)).map(k =>
+                        `<div style="break-inside:avoid;"><b style="color:#dfbe6f">${k}</b> - ${wiki.RoomLegend[k]}</div>`
+                    ).join('')}
+                    </div>`;
+            }
+            if (wiki.LinkedAreas && wiki.LinkedAreas.length > 0) {
+                wikiHtml += `<h4>Connected Areas</h4>
+                    <div style="font-size:13px;">
+                    ${wiki.LinkedAreas.map(a =>
+                        `<span class="item-link" onclick="showAreaDetail('${a.replace(/'/g, "\\'")}')">${a}</span>`
+                    ).join(', ')}
+                    </div>`;
+            }
+        }
+
+        document.getElementById('detailContent').innerHTML = `
+            <h3>${area.Name}</h3>
+            ${area.LevelRange ? `<p>Level Range: ${area.LevelRange}</p>` : ''}
+            ${area.Builder ? `<p>Builder: ${area.Builder}</p>` : ''}
+            ${area.Category ? `<p>Category: ${area.Category}</p>` : ''}
+            ${area.IsRestricted ? '<p style="color:#c44">This area is restricted - map sharing not allowed.</p>' : ''}
+            ${wikiHtml}
+            <h4>Items Found Here (${combinedItems.length})</h4>
+            ${combinedItems.length ? combinedItems.map(ci => {
+                const i = ci.dbItem;
+                const loc = ci.loc;
+                const level = i ? `L${i.Level} ${i.Group}` : '';
+                const room = loc?.BestGuessRoom || '';
+                const mob = loc?.BestGuessMob || i?.MobSource || '';
+                const container = loc?.BestGuessContainer || i?.ContainerSource || '';
+                const path = loc?.PathFromCrossroads || i?.PathFromCrossroads || '';
+                const mods = i?.ModifiersPiped ? i.ModifiersPiped.split('|').join(', ') : '';
+
+                return `<div style="margin:4px 0; padding:8px; border-left:2px solid #444;">
+                    <b>${ci.name}</b> ${level ? `(${level})` : ''}
+                    ${room ? `<br><span style="color:#8ab;">Room:</span> ${room}` : ''}
+                    ${mob ? `<br><span style="color:#a86;">Mob:</span> ${mob}` : ''}
+                    ${container ? `<br><span style="color:#8a8;">Container:</span> ${container}` : ''}
+                    ${path ? `<br><span style="color:#888;">Path:</span> <code>${path}</code>` : ''}
+                    ${mods ? `<br><small style="color:#999;">${mods}</small>` : ''}
+                </div>`;
+            }).join('') : '<p style="color:#666">No items mapped to this area yet.</p>'}
+        `;
+        document.getElementById('detailPanel').classList.add('open');
+    }
+
+    function showItemDetail(itemName) {
+        const item = items.find(i => i.Name === itemName);
+        const loc = itemLocations[itemName];
+
+        document.getElementById('detailContent').innerHTML = `
+            <h3>${itemName}</h3>
+            ${item ? `
+                <p><b>Type:</b> ${item.Group} | <b>Slot:</b> ${item.Type} | <b>Material:</b> ${item.Material}</p>
+                <p><b>Level:</b> ${item.Level} | <b>Weight:</b> ${item.Kg}kg ${item.Gram}g | <b>Worth:</b> ${item.Worth} copper</p>
+                ${item.IsWeapon ? `<p><b>Damage:</b> ${item.Damnoun} (avg ${item.Avg})</p>` : ''}
+                ${item.FlaggsPiped ? `<p><b>Flags:</b> ${item.FlaggsPiped.split('|').join(', ')}</p>` : ''}
+                ${item.ModifiersPiped ? `<p><b>Modifiers:</b><br>${item.ModifiersPiped.split('|').join('<br>')}</p>` : ''}
+                ${item.ArmorLine ? `<p><b>Armor:</b> ${item.ArmorLine}</p>` : ''}
+                ${item.Area ? `<p><b>Area:</b> ${item.Area}</p>` : ''}
+            ` : '<p>Item not in database.</p>'}
+            ${loc ? `
+                <h4>Location Data</h4>
+                <p><b>Best Guess Area:</b> ${loc.BestGuessArea || 'Unknown'}</p>
+                <p><b>Best Guess Room:</b> ${loc.BestGuessRoom || 'Unknown'}</p>
+                <h5>All Sightings:</h5>
+                ${loc.Locations.map(l => `
+                    <div style="margin:4px 0; padding:4px; border-left:2px solid #444;">
+                        ${l.RoomName ? `Room: ${l.RoomName}<br>` : ''}
+                        ${l.AreaName ? `Area: ${l.AreaName}<br>` : ''}
+                        ${l.MobName ? `Mob: ${l.MobName}<br>` : ''}
+                        <small>Source: ${l.SourceLog} | Confidence: ${l.Confidence}</small>
+                    </div>
+                `).join('')}
+            ` : ''}
+        `;
+        document.getElementById('detailPanel').classList.add('open');
+    }
+
+    function closeDetail() {
+        document.getElementById('detailPanel').classList.remove('open');
+    }
+
+    // Live search
+    document.getElementById('areaSearch')?.addEventListener('input', renderAreas);
+    document.getElementById('areaCategoryFilter')?.addEventListener('change', renderAreas);
+    document.getElementById('areaLevelFilter')?.addEventListener('change', renderAreas);
+    document.getElementById('withItemsOnly')?.addEventListener('change', renderAreas);
+    document.getElementById('itemAreaSearch')?.addEventListener('input', renderItemsByArea);
+    </script>
+</body>
+</html>

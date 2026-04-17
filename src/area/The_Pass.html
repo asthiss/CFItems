@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pass - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>The Pass</h2>
+<div class="area-nav">Level: 5 - 25 | Builder: Pet/Aeon | </div>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+== The Beaten Path ==
+== <a href="The_Pass.html" style="color:#dfbe6f">The Pass</a> ==
+
+                    NB                         <a href="Udgaard.html" style="color:#dfbe6f">Udgaard</a>     N: Nhergul the Mad (a hammer named 'Dwarf Ruin',
+                   /                              |              dark flail)
+         Ruined   +                               +        B: Orc Beserker (the twisted black spear 'Khalgoth')
+         Tower   /      Few                       +
+      +-------+=+      Bushes                     +
+      |        /       L----L    +                +        L: Leader of the Ambush [hidden] (silent boots)
+   W  |       +        |    |    |\               |
+   a  |      /         +----+    | +--+    +--~~~---+-+
+   t  |     +          |     \   |     \   |      |/  |
+   e  |    /           |      +--+      +--+  AM--+   |   AM: <a href="Abandoned_Mines.html" style="color:#dfbe6f">Abandoned Mines</a>
+   r  |   +            |                          |   |
+   f  |  /             |                          TC  |   TC: <a href="Troglodyte_Caverns.html" style="color:#dfbe6f"><a href="Troglodyte_Caverns.html" style="color:#dfbe6f">Troglodyte</a> Caverns</a>
+   a  +-+              |      +                       |
+   l  |             +-----+  /|                       |
+   l  +             |  | /| + |                       |
+      |             |  |/ |/  |                       |
+      O--+--+--+    |  +  +   |                       |    O: Orc Den (Orcs)
+                \   |         |                       |
+                 +--+     +---+                       |
+                          |<a href="AyrTrinil.html" style="color:#dfbe6f">Ayr'Trinil</a> (Arials)        |
+                          +          a            +   |
+                          |/        /|           /    |
+                       +--+        / v          +     |    A: Over the Canyon (need fly)
+                      /   |       /  P&lt;-----b  /      |    P: Peak of a Mountain (has 3 random exits which
+         Canyon    +-+    |      +    ^     | +       |          will take you back to either a, b, or c)
+          Path    /       A     /      \    |/        |    I: Ironwood Tree
+               +-+        |    /   O    c   I--+--Z   |    O: Orc Den (Orcs)
+              /           |   /    |     \            |    Z: Cyclops Den (Orcs)
+           +-+         +--+  +--+--+      +           |
+          /           /   | /             |           |
+     +-+-+         +-+    |/              |           |
+  B  |   |        /       +            +--+           |
+  r  |   |     +-+                      \             |
+  i  +   +    /                          \            |
+  d  |   | +-+                            \           |
+  g  |   |/                                +          |
+  e  +-+-+      C-+-+            +-+-+     |          |    C: Cyclops (spiked bracers)
+         |          |            | | |     |          |
+       Sitran       +-+       +--S-+-+-M   |          |    S: Sandy Shore of a Lake
+       Slave          |       |  | | |\    |          |    M: Black Moss Monster (Pile of Black Moss)
+       Mines          +       |  +-+-+ +   |          |
+                      |    +--+            |          |
+                      +    |  |          +-+          |
+                      |\   |  R         /             |
+                O-+-+-+ +--+       +---+              |    O: Orc Den (Orcs)           R: Ranger guild (with underdark entrance)
+                           |       |                  |
+                           +---+---+                  |   +                                R
+                               |                      |  /=                                |
+                               +       +              | / +  Cockatrice                    +
+                              /       /|              |/                                   =
+                             +       + +----------+---+---+                                |
+                             |         |          |                                        +
+                             +--~~~--+-+          +--+-+--+                                 \
+                                    /         Inside the Stone of                            +__+
+                                   +            Tandar Oakcrest                               \
+                                   |                                                           + <a href="Underdark.html" style="color:#dfbe6f">Underdark</a> (Inside Rothe Farm)
+                             <a href="The_Open_Plains.html" style="color:#dfbe6f">NorthernRoads</a>
+
+NOTE: This map is actually two separate areas pieced together. They connect at the &quot;~~~&quot; symbols.
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="Udgaard.html">Udgaard</a> &bull; <a href="Abandoned_Mines.html">AbandonedMines</a> &bull; <a href="Troglodyte_Caverns.html">TroglodyteCaverns</a> &bull; <a href="AyrTrinil.html">Ayr'Trinil</a> &bull; <a href="The_Slave_Mines_of_Sitran.html">SlaveMinesOfSitran</a> &bull; <a href="The_Open_Plains.html">NorthernRoads</a> &bull; </div>
+<h3>Items Found Here (5)</h3>
+<div class="item-detail" id="item-a-magenta-potion"><b>a magenta potion</b> <span class="meta">L28 potion / potion / glass</span><br><span class="room">Room:</span> The Study<br><span class="mob">Mob:</span> the Draconian Mage<br><span style="color:#8a8;">Container:</span> a floating chest<br><span class="path">Path from Crossroads:</span> <code>s;d;s;d;2e</code><br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-a-pill"><b>a pill</b> <span class="meta">L40 object / pill'. / food</span><br><span class="room">Room:</span> The Passage of the Damned<br><span class="mob">Mob:</span> A duergar patroller<br><span style="color:#8a8;">Container:</span> a pill box<br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-a-thick-black-leather-bracer"><b>a thick black leather bracer</b> <span class="meta">L26 armor / wrist / leather</span><br><span class="meta">Armor:</span> When worn, it protects you against piercing for 7, bashing for 4,  slashing for 7, magic for 2, and the elements for 8 points each.</div>
+<div class="item-detail" id="item-a-vial-of-yellow-liquid"><b>a vial of yellow liquid</b> <span class="meta">L25 potion / potion / glass</span><br><span class="room">Room:</span> A Dark Passage<br><span class="mob">Mob:</span> a Talshidar<br><span style="color:#8a8;">Container:</span> the burnt corpse of a Talshidar<br><span class="path">Path from Crossroads:</span> <code>e;s;w;d</code><br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-a-violet-garnet"><b>a violet garnet</b> <span class="meta">L15 treasure / treasure / garnet</span><br><span class="room">Room:</span> The floor of the passage is covered in an inch or two of water and mud, while<br><span class="mob">Mob:</span> a stern-looking xvart</div>
+</body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClassRanking - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>ClassRanking</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+
+*Technical part:
+
+To get the figures above, I sorted the class selection by &quot;Ratio&quot;, greatest to least. If there were less than 100 PBFs for a class, I took a sample size of 10 from the middle and excluded characters created before the gank-o-meter started tracking group sizes. If there were greater than 100 PBFs, I took 10% of the total number and calculated from the middle. 
+
+Totals, Averages and sample range as of 11/23/2011:
+Anti-Paladin (74: 32-41) 
+Assassin (148: 67 - 81) 
+Bard (123: 56-67) 
+Berserker (35: 14-16, 19-21, 23, 25-27) 
+Conjurer (55: 23-32) 
+Druid (56: 25-34) 
+Healer (99: 45-46, 48-50, 53-57) 
+Invoker (104: 48-52, 54-56, 58, 60) 
+Necro (61: 27-36) 
+Paladin (135: 62-63, 65-73, 75, 77) 
+Ranger (86: 39-48) 
+Shaman (100: 46-54, 56) 
+<a href="Shifter.html" style="color:#dfbe6f">Shifter</a> (147: 67-71, 73-79, 81-83) 
+Thief (144: 66-79) 
+Transmuter (84: 38-46, 48) 
+<a href="Warrior.html" style="color:#dfbe6f">Warrior</a> (647: 291-355) 
+
+To get a 1-10 scale, I took the range of a given category (lowest number and greatest number), the average of all the numbers in the category, plotted points at 1, 5, and 10, and then calculated a quadratic regression curve through the points. So, the best for any category is 10.0 and the worst is 1.0, with the average of the numbers being equal to 5. The formulae for each is below. 
+
+Formulas for Classes: 
+pk/hr = (-7.309*(x^2)) + 29.7659x + 0.2193 
+pk Win = (-0.0002552115*(x^2)) + 0.1394929873x + 0.2678560592 
+pk Loss = (0.00655*(x^2)) - 0.64924x + 16.74914 
+avg kill group size (solo) = (11.8187*(x^2)) - 55.6521x + 66.4775 
+avg kill group size (support) = (-6.43076*(x^2)) + 34.69306x -36.2598 
+avg death group size = (55.8171987*(x^2)) - 193.0751788x + 167.603349 
+mob deaths = (0.017361*(x^2)) - 1.185173x + 18.996944 
+hours = (0.0001249*(x^2)) - 0.0031453x -1.1426302 
+Popularity = (-0.0000522*(x^2)) + 0.0502771x -0.6958059
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="DikuClan.html">Maintest</a> &bull; </div>
+</body></html>

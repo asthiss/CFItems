@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shields - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Shields</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+
+black enameled shield           L45, 15 15 15 8, dam 2, hit 1, sspell -2, hp 5, steel, w10
+black kite shield               L12, 5 5 4 0, sspell 1, w6
+black shield            -G      L28, 9 8 8 0, dam 1, hit 1, w5
+black steel shield              L18, 8 8 8 0, dam 1, steel, w11
+black steel shield trimmed with gold L35, 8 8 8 0, con 2, hit 1, dam 1, steel, w11
+blood encrusted shield  +E-G    L30, 8 8 8 5, dam 2, hp 10, steel, w15
+blue dragonscale shield         L30, 8 8 8 6, sbreath -8, dam 1, w30
+Blood Tribunal tower shield     L15, 7 7 7 1 4, mana 5, hp 10, TRIBUNAL_ONLY, steel, w11, Tribunal Spire merchant
+body shield             -E      L36, 14 14 13 10, hit 1, arm -9, hp 9, dex -1, w13
+bone shield             +E-G    L10, 8 8 8 10, dex 1, bone, w12
+brass shield                    L18, 6 7 7 0, hp sspell -1, w10
+brightly glowing shield -E      L50, 12 13 13 0, wis 1, w10
+coral shield                    L30, 7 6 7 0, dam 1, stone, w10
+crested shield                  L25, 7 7 8 0, con 1, w20
+crimson shield emblazoned with a brass dragon L20, 12 12 12 12, Diana, Tir Talath.
+darkened shield                 L25, 12 6 0 0, dam -6, hit -2, hp -20, con -2, str -3, iron, w15, nodrop, norem
+darkened shield         -N      L27, 7 9 8 0, hp 10, w10
+decorated bronze shield         L30, 10 12 10 4, con 1, hp 10, bronze, w18
+dragonscale shield              L20, 8 7 7 0, sbreath 3, steel, w18
+drow shield             +E      L35, 5 5 5 5, dam 1, hit 1, arm -10, w11, drow_only
+drow shield             +E      L35, 5 5 5 5, dam 1, hit 1, arm -4, w11
+Eagle Engraved Shield           L45, 15 15 15 10, dex -1, hit 5, dam 1, steel, w20, Lord Captain-Commander, Palace of <a href="Seantryn_Modan.html" style="color:#dfbe6f">Seantryn Modan</a>
+electric shield                 L28, 8 7 8 0, con 1, str -1, w8
+embossed buckler                L52, 10 14 12 4, con 2, arm -10, hp 40, steel, w17
+embroidered seat cushion        L45, 6 6 6 6, dam -5, hit -4, dex -4, w30, embroidered seat cushion, <a href="Octagonal_Tower.html" style="color:#dfbe6f">Octagonal Tower</a>
+enameled shield emblazoned with a circle of stars -NE L33, 11 11 11 2, con 1, hp 8, steel, w10
+finely polished shield          L35, 11, 11, 11, 10, sspell -5, steel, w12
+flawless silver shield          L51, 10 10 10 10, cha 5, dam 1, mana 20, hit 4, silver, w10, human_only
+grinning devil shield     -G    L50, 8 10 8 8, hp 85, sbreath -6, iron, w18, special: disarms, damages and destroys weapons
+hide shield                     L21, 6 6 7 0, leather, w12
+huge tower shield               L29, 8 8 7 0, gold, w14
+ice-rimmed shield               L35, 6 6 7 9, dex -1, sspell -6, energy, w5, Special: Resist fire
+iron shield                     L45, 15 15 15 0, dam 3, dex -1, iron, w15
+iron tower shield bearing an inverted cross +E-G L30, 8 8 8 4, spara -6, sspell -6, dam 1, hit 1, iron, w8, Thestul, <a href="Udgaard.html" style="color:#dfbe6f">Udgaard</a>
+jade dragonscale shield +E-GN   L40, 5 5 5 5, sspell 25, dex -2, dam 3, hit -1, bone, w5
+jagged shield of branches       L45, 12 16 2 6 6, slash resist -3, bash resist +3, wood, w18, <a href="Aturi_Timberlands.html" style="color:#dfbe6f"><a href="Hardan_Road.html" style="color:#dfbe6f">Aturi</a> Timberlands</a>
+Knight Melancholic's shield -E  L35, 8 8 9 0, dam 2, hp -10, w8
+large battered targe            L39, 8 12 10 0, hp 20, dam 2, wood, w20
+large metal shield              L10, 5 5 5 2, w10
+large piece of yellow dragonscale +E-G L51, 11 11 11 11, dam 2, dragonscale, w20
+large round shield              L23, 8 7 7 0, wood, w15
+metal-rimmed shield             L15, 5 10 9 3, wood, w15
+mithril buckler         -E      L30, 9 7 8 9, dex 2, mithril, w10
+mithril shield          -E      L38, 10 10 12 14, arm -5, dam 2, mithril, w13
+mithril shield          -E      L45, 15 15 15 0, dam 3, dex -1, mithril, w15
+obsidian shield                 L49, 12 13 12 0, dam 2, hit 3, w10
+onyx full shield        -G      L25, 5 5 5 5, sspell -3, arm 5, hp 11, w20
+orcish shield                   L6, 4 4 5 0, w6
+patrolman's steel shield        L6, 4 4 4 1 2, steel, w11
+platinum spiked shield  -E      L31, 9 8 9 0, dam 3, hp 10, w40, Diana, [[OfCol]] (No more)
+polished adamantite shield studded with onyx   L25, 8 8 8 8 8, svspell -10, adamantite, w7, <a href="AyrTrinil.html" style="color:#dfbe6f">Ayr'Trinil</a>
+practice shield                 L0, 2 2 2 1, hit 2, wood, w3
+pyrohydra-scale shield          L20, 8 8 8 10, sbreath -6, dam 1, hp 15, dragonscale, w8, pyrohydra, <a href="Ysigrath.html" style="color:#dfbe6f">Ysigrath</a>
+razor-edged shield              L44, 12 12 12 12, hit 1, dam 1, iron, W33-15
+red dragon shield       -G      L28, 8 9 8 0, dam 2, w10
+round shield coated in a viscous black ooze L50, 12 14 12 10 12, con 2, poison resist +20, w7, wood, Aturi Timberlands
+scorched iron shield            L40, 10 10 10 10, dam 3, hp 15, iron, w10, norem, nodrop
+serpent-scale shield            L32, 9 7 8 5, dam 2, hit 1, skin, w30
+shadow shield           -GN     L29, 7 8 7 0, sbreath -2, w15
+shell of purple-red chitin      L44, 10 10 10 10, dam 5, hit -1, bone, w15, norem, nodrop
+shield emblazoned with a crimson cross  -EN L28, 11 11 11 8 6, dam 1, hit 1, str 1, glowing, blessed, mithril, w5, Talshidar caves
+shield emblazoned with a silver phoenix -EN L40, 14 14 14 14, sbreath -4, wood, w10, ??, Kua-Toa Lair
+shield fashioned from an abalone shell L29, 7 7 8 0, stone, w10
+shield from the hide of a snow worm L32, 9 9 9 3, hp 20, hit 2, move 40, sbreath -7, hide, w15, snowworm, Frigid Wasteland
+shield made of boiled leather   L35, 11 11 11 6, leather, w5, special: disarms weapons in combat (even norem ones)
+shield marked with a red horse -E L38, 10 11 12 9, dam 1, arm -5, w15, mithril, lord Tangrin, <a href="Sands_of_Sorrow.html" style="color:#dfbe6f">Sands of Sorrow</a>
+shield of blackest pitch -G     L60, 12 12 12 12, hp 15, mana 15, steel, w15, special: protection from holy, Sitran, Slave mines of Sitran
+shield of darkness              L35, 6 6 7 9, move -30, sspell -8, energy, w5
+shield of defense               L14, 4 4 6 0, dam -1, hit -2, hp 10, mana 10, steel, w15
+shield of flames        -G      L35, 9 10 9 0, sspell -3, dam 2, steel, w16
+shield of Law           -C?     L48, 6 7 6 4, arm -11, move -22, hp 48, dex -1, mithril, w20 Special: Damage reduction against chaotics
+shield of mirror-white dragonscales L48, 8 8 8 0, sbreath -3, sspell -5, dam 3, hp 30, dragonscale, w11
+shield of pure light            L52, 15 15 15 15, sspell -10, hp 25, mana 25, dex 1, str 1, energy, w1, norem, paladin_only, Green Dragon, <a href="Feanwyyn_Weald.html" style="color:#dfbe6f"><a href="Feanwyyn_Weald.html" style="color:#dfbe6f">Feanwyyn</a> Weald</a>
+shield of steel         -E      L23, 8 7 8 0, hp 5, w20
+Shield of the Abyss     +E-G    L40, 10 10 10 10, dam 2, hit 2, iron, w10
+Shield of the Abyss     -GN     L57, 13 14 13 0, hp 30, dam 3, hit 3, arm -15, w60
+Shield of the Five Grotesque Heads +E-G L55, 13 14 16 25, hp 20, hit 2, dam 3, w15
+shield of the rose      -EN     L27, 8 9 8 0, arm -10, w60
+shield of woven deamonscale -GN L51, 11 15 14 9, sspell -5, hp 10, dex 2, skin, w16
+silver full shield              L25, 4 4 4 4, sspell -2, arm 2, hp 10, silver, w20
+silver shield           -E      L25, 9 9 7 0, arm -3, mana 5, w20
+silver shield with a red dragon crest   L8, 3 3 3 1 2, hit 1, hp 5, silver, w14, <a href="Aldevari.html" style="color:#dfbe6f">Aldevari</a>
+small buckler		        L10, 4 9 5 2 5, AC -10, w2, leather, assassin only, assassin guild, <a href="Galadon.html" style="color:#dfbe6f">Galadon</a>
+small round shield              L8, 4 4 4 0, hp5, wood, 6.15w, duergar adv, <a href="Troglodyte_Caverns.html" style="color:#dfbe6f"><a href="Troglodyte_Caverns.html" style="color:#dfbe6f">Troglodyte</a> Caverns</a>
+spiked buckler                  L30, 10 8 9 0, dam 2, w5
+splinted shield                 L7, 3 5 4 0, w8
+steel shield                    L36, 9 10 10 3, str 2, spar -10, steel, w14
+steel tower shield      -NE     L40, 12 12 12 12, dam 3, sbreath -8, steel, w18, Arin, Kua-Toa Lair
+stone shield                    L25, 6 5 6 0, dam 2, hit -1, w15
+studded buckler                 L47, 12 11 11 0, arm -3, w5
+sturdy copper shield            L25, 8 8 7 4, arm -5, copper, w25
+sturdy iron shield      -G      L22, 7 7 8 0, srod -2, spar -2, w5
+sturdy oaken shield             L10, 4 3 3 5 0, morale 4, svspell -5, hp 10, mana 10, w6, rat infestation quest, Galadon lumberyard. 
+thick hide shield               L21, 5 7 7 1, w18
+well-polished mithril shield    L20, 5 5 5 5, hp 10, arm -8, mithril, w15
+White lily              -N      L40, 15 15 15 12, spar -7, mv 25, con 2, plant, w4
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="CarrItems.html">CarrItems</a> &bull; <a href="Syntax.html">Syntax</a> &bull; </div>
+</body></html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Halfling Lands - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>The Halfling Lands</h2>
+<div class="area-nav">Level: 5 - 50 | Builder: Ishmael | Category: Unsorted</div>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+<a href="The_Halfling_Lands.html" style="color:#dfbe6f">The Halfling Lands</a>
+Suggested Levels: 5-50
+
+This area was written by Ishmael in 1996 and later modified by Grumorum in
+2001-2 for use in Carrion Fields.  Then Valguarnera stuck his nose in and
+changed even more things.  Then Thrakburzug got his hands on it and made
+yet more changes in 2002.  This is copyrighted material and other use is
+strictly forbidden.
+
+             <a href="Blackwater_Swamp.html" style="color:#dfbe6f">BlackwaterSwamp</a>
+                |
+    +--+  +     +
+       |  |     |
+    +--+--+--+--+--+
+    |  |  |     |
+    +  +  +  H--+--B
+     \          |
+      +         |  G  + Ivy Bush Inn
+                |  |  |
+             T--+--+--+--+
+                |  |     |
+                H  H     +
+                         |
+            Hobbiton     +
+                         |
+                         +--+ The White Swan Tavern
+                         |
+                         +--+--+--X--+--+--+--+
+                            |     |           |
+                            +   minimaze      +
+                            |     | oldforest |
+                            +     +--+  maze  +
+                            |     |           |
+                            +  +--+--+        +  Dim Path
+                            |     |           |
+                            +     +--+        +
+                      forest maze             |
+                                        <a href="The_Open_Plains.html" style="color:#dfbe6f">NorthernRoads</a>
+
+B - Blacksmithy
+G - General Store
+H - Hobbit Hole
+T - Tobacconist's Shop
+
+Mazes
+
+FO - In a Forest (Maze1)
+  To Green Hills : Look for &quot;You can see some hills off this way.&quot;
+  To Woody End   : Look for &quot;You can see a clearing up ahead.&quot;
+
+OF - The Old Forest (Maze2)
+  To Woody End   : Look for &quot;The huge hedge is up ahead.&quot;
+  To Bombadil    : Look for &quot;You can't tell if this is the way out...&quot;
+
+WB - Within the Barrows (Maze3)
+  To Bombadil    : Look for &quot;You can see the faint outline of a hill.&quot;
+  To the wight   : Look for &quot;The mists seem to continue on forever.&quot;
+
+*first two mazes, (maze1,2) are each 9 rooms big, nonstatic maze, 
+but using a few coins and a piece of paper quite easy to navigate.*
+*going from hidden exit at X through the minimaze to old forest maze, fastest path is- s,e,s(last south is hidden)
+down leads you to babblebrook, then forest maze(maze1)*
+*Maze3 can be reached by going up near the entrance to Tom Bombadils(his name changed).
+small maze, quite easy to navigate.*
+*note: all mazes are cursed.*
+
+                         |
+                         +--+--+--B--+--+--+--+
+                            |     |           |
+                            +  S--C-&gt;A-&gt;c     +
+                            |  |  |  |        |
+                            |  v  |  +--Bh    |
+                            |  A  |           |
+                            |     |           |
+                            |     |           |
+                            +     I--+        +
+                            |     |           |
+                            G  +--+--+        +  Dim Path
+                            |     |           |
+                            FO    +--+        +
+                         (Maze1)              |
+
+Bh,bh - Beyond the Hedge
+B     - Brandywine Bridge
+C     - Before the House at Havenstook
+I     - Inside the house
+A     - Around Back (From here: West to Stable)
+S     - Stable
+G     - Green Hills
+
+WOODY END
+
+     FO--W--Wood Hall     --bh
+  (Maze1) \                /|
+           Stockbrook--+--+ OF
+                          (Maze2)
+W - Woody End
+
+TOM BOMBADIL'S HOUSE
+
+          +--+ Frodo
+          |
+          T    +--WB
+          |   / (Maze3)
+   OF---Before
+(Maze2) a house
+
+T - Tom Bombadil's House (Tom and Goldberry) (now changed to Garinliv and Silverwater)
+
+Garinliv is using:
+&lt;worn on body&gt;      a bright yellow vest
+&lt;worn on legs&gt;      a pair of green breeches
+&lt;worn as shield&gt;    (Glowing) a white lily
+&lt;held&gt;              (Humming) a battered wooden lute
+
+Silverwater is using:
+&lt;worn on body&gt;      (Glowing) a blue-green gown
+&lt;worn on head&gt;      (Glowing) an engraved silver circlet
+
+TODO
+* Needs update (get rid of Tolkein stuff and replace with whatever it is now)
+</pre></div>
+<h3>Rooms (1)</h3>
+<div class="legend-grid">
+<div class="legend-entry"><span class="num">2001</span><span class="room-name">2 for use in Carrion Fields.  Then Valguarnera stuck his nose in and</span></div>
+</div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="Blackwater_Swamp.html">BlackwaterSwamp</a> &bull; <a href="The_Open_Plains.html">NorthernRoads</a> &bull; </div>
+</body></html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Targeth's Manor - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Targeth's Manor</h2>
+<div class="area-nav">Level: All | Builder: Nythos | Category: Humans</div>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+|   All   | Nythos - <a href="Targeths_Manor.html" style="color:#dfbe6f">Targeth's <a href="Manor.html" style="color:#dfbe6f">Manor</a></a>                                         T - Targeth
+                                                                             L - Lhaitek, wandering
+                                                                             B - A Busy Tannery (6AM-6PM)
+      T           +                                                          w - Waterfall (plunge down)
+      |           |                                           <a href="The_Mountain_Stream.html" style="color:#dfbe6f">The Mountain Stream</a>        
+      |           |                                                      |
+      |           |                                   A Calm Stream      |
+      +       +---+ Kitchen                          Near a Waterfall    +   w   
+      |       |   |                                                      |  /  
+      =       |   |     +                                    Waterfall   | /   
+      |       |   |    /|                                                |/ 
+  ?-=-+---L---+---+---+ |     B  A Busy Tannery                  w*      +* The Base of a Waterfall *need flight to go up
+          |       |     |     |                                  |\     / 
+          |       |     +     |                                  | v   /  
+          |       |     |     |                                  |  \|/ 
+          +---+   +---+---+---+                                  s* -1- Deep in the Plunge Basin
+          |       |     |     |         Pit &amp;             Among  |   |\
+          |       |     +     |         Healer             the   |           
+          |       |    /      |                           Rapids |           V - Clearing in the Grasslands, Vistani merchant (6AM-6PM)
+      +---+---+---+---+       r---V       p   +       +          s*          p - Pit and healer
+      |   |   |   |           |           |   |       |          |           S - Smithy (5AM-10PM)
+      |   |   =   =           |           |   =       =          |           D - Draekar *trainer
+      |   |   |   |           |           |   |       |          |           C - Kethaela the Captain
+      S   D   +   C           r           +-=-g---g---g-=-+      s*          s - A Stream in the Valley 
+                              |           |   |   |   |          |           * - current drags northwards
+         -+-                  |           |   |   |   |          |
+        /   \                 |           |   |   |   |          |           h - A Comfortable Home, Oirwn
+       +     +                |           |   |   |   |          |           g - The Village Green
+      /       \               r---m       F &lt;&gt;g---c---g-=-h      s*&lt;&gt;        c - Center of the Village Green, fountain
+     +         +---+          |   |           |   |   |   |      |           m - Farmer's Market (8AM-6PM)
+    /              |\         |   |           |   |   |   =      |           F - Headmaster Foren (trainer)
+ +-+--Moudrilar    | \        |   |           |   |   |   |      | 
+  \                |  t---r---r---r---r---b---r---g---g   +      s* Beneath a Wooden Bridge
+   \        Fhalaugash            |   |    \  |   |   |          |
+    \                             |   |   ^   |   =   =          ^           b - A Wooden Bridge Over a Stream
+     \ <a href="Silverwood.html" style="color:#dfbe6f">Silverwood</a>                 |   |   v   |   |   |          v           r - Road (or civilized Trail)
+      \|                          f---f---s*--t   +   +         -s*-         t - Trail
+       +                          |   |   |   |                  |
+                                  |   |   |   | 
+                                  |   |   |   |                              E - A Small Spring, an elven invoker
+                          f---f---f---K---E*--t                              f - Corn/Wheat Fields 
+                              |   |   |   |   |                              K - Kravenmar, wandering 
+                              |   |   |   |   | 
+                              |   |   |   |   |
+                              f---f---f---f---t       W                      W - Wofeltren, ranger guildmaster
+                              |       |       |       |
+                              |       |       |       |
+                              |       |       |       ~
+                Edge of   f---f       f       t---t---t---+---Virgin Forest
+                the Fields      
+             
+
+
+TARGETH TARGETHS MANOR 'TARGETHS MANOR'
+After a lifetime of war, one of Thera's most experienced mercenaries decided to
+find lands of his own to rule, rather than fight the wars of others.  Finding
+fertile lands beyond the <a href="The_Shadow_Grove.html" style="color:#dfbe6f">Shadow</a> Peaks and with a personal army, the mercenary
+Captain Targeth easily displaced the local Lord.  Though wary of the many
+guards which now patrol the manor's lands, the daily life of the peasantry
+remains mostly unchanged as they toil among the fields.  Lord Targeth himself
+is said to be a firm master, though not unfair to his newfound populace.
+
+Rebuilding the Manorhouse in a more defensible location, the serf village has
+also seen improvements to better provide the basic necessities to the populace.
+Travelers are warned to keep out of the fields at night as raiders from the
+nearby Fhalaugash Keep are said to roam the darkness.
+
+
+******************************************************************************
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="The_Mountain_Stream.html">The_Mountain_Stream</a> &bull; <a href="Moudrilars_Monastery.html">MoudrilarMonastery</a> &bull; <a href="Keep_of_the_Fhalaugash.html">KeepoftheFhalaugash</a> &bull; <a href="Silverwood.html">Silverwood</a> &bull; <a href="A_Virgin_Forest.html">StuntedForest</a> &bull; </div>
+<h3>Items Found Here (1)</h3>
+<div class="item-detail" id="item-a-pair-of-spike-toed-boots"><b>a pair of spike-toed boots</b></div>
+</body></html>

@@ -24,9 +24,27 @@ const sortArrayOfObjects = (arr, propertyName, order = 'asc') => {
     return sortedArr;
 };
 var items;
+var itemLocations = {}; // loaded from item-locations.json - provides room info per item
 document.addEventListener("DOMContentLoaded", () => {
     fetchData();
+    fetchItemLocations();
 });
+
+// Load item-locations.json for room info (not in Azure Table)
+function fetchItemLocations() {
+    fetch('https://cfitems.blob.core.windows.net/cfitems/documents/item-locations.json')
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+            if (data) {
+                itemLocations = data;
+                // Re-render if items are already loaded
+                if (items && items.length) {
+                    createElements(sortArrayOfObjects([...items], "Level", "desc"));
+                }
+            }
+        })
+        .catch(() => console.log('item-locations.json not available'));
+}
 
 const toggleDisplay = (target) => {
     if(!target) return 
@@ -115,7 +133,7 @@ searchForm.addEventListener("submit", (e) => {
     console.log("area:" + area);
     if(area)
     {
-        itemsToSort = itemsToSort.filter(item => item.Area === area);
+        itemsToSort = itemsToSort.filter(item => item.Area && item.Area.toLowerCase().indexOf(area.toLowerCase()) !== -1);
     }
 
     let affect = document.getElementById("affect").value;
@@ -284,6 +302,30 @@ function createElements(items) {
             {
                 item.innerHTML = magicTemplateWithOutFlags(currentItem);
             }
+        }
+
+        // Add location info (area, room, mob, container, path)
+        // Room comes from itemLocations (not stored in Azure Table).
+        var loc = itemLocations[currentItem.Name];
+        var room = loc && loc.BestGuessRoom ? loc.BestGuessRoom : '';
+        var locMob = currentItem.MobSource || (loc && loc.BestGuessMob) || '';
+        var locContainer = currentItem.ContainerSource || (loc && loc.BestGuessContainer) || '';
+        var locArea = currentItem.Area || (loc && loc.BestGuessArea) || '';
+        var locPath = currentItem.PathFromCrossroads || (loc && loc.PathFromCrossroads) || '';
+
+        var parts = [];
+        if(locArea) parts.push('<span style="color:#a86;"><b>Area:</b></span> ' + locArea);
+        if(room)    parts.push('<span style="color:#8ab;"><b>Room:</b></span> ' + room);
+        if(locMob)  parts.push('<span style="color:#c97;"><b>Mob:</b></span> ' + locMob);
+        if(locContainer) parts.push('<span style="color:#8a8;"><b>Container:</b></span> ' + locContainer);
+
+        var locationHtml = parts.join(' &bull; ');
+        if(locPath) {
+            if(locationHtml) locationHtml += '<br>';
+            locationHtml += '<span style="color:#888;"><b>Path from Crossroads:</b></span> <code>' + locPath + '</code>';
+        }
+        if(locationHtml) {
+            item.innerHTML += '<div style="margin-top:4px;padding:4px;border-left:2px solid #dfbe6f;font-size:14px;">' + locationHtml + '</div>';
         }
 
         parent.appendChild(item);
