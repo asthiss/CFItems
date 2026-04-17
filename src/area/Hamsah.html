@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamsah - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Hamsah</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+<a href="Hamsah_Mutazz.html" style="color:#dfbe6f"><a href="Hamsah.html" style="color:#dfbe6f">Hamsah</a> Mu'tazz</a>
+Suggested Levels: All
+
+Hamsah Mu'tazz written by Andy Smith, (c) Jan 2000.  For use by permission
+only.
+
+                                                          
+                                                          <a href="Balator.html" style="color:#dfbe6f">Balator</a>                        Fields
+                                                             |                              |
+                                                             |                              |
+                                      +---+---+---+---+---Outskts---+--+--+--+--+--+--+--+--+
+                                      |                      |
+                                      +                      |           C
+                                      |                      |  T        |                
+                                   +--+                    B-z--+--+--+--+-T              
+                                   |                         |        |                   
+                                   +                         |     r--r--r                
+                                   |                       A-+-J   |  |  |                
+                                   +                     +   |     r  r--r                 +
+                                   |                      \  |                             =
+                          Khalid   +                       W-+                             |
+                            River  |     +--+--+---+       | |           +           +     +--=+
+                             |     O        |      |       + |           =           |    /|
+                      +---+--+     u  T     +      +      d  |  N     +  +  c     f--+=T / =        
+                      |      |     t  |     |    j/       |  |  |     |  |  |        |  /  +       
+  <a href="EasternRoad.html" style="color:#dfbe6f">EasternRoad</a>---+--+--+---+-----+--s--z-----+------+------+--+--+--e  +--+--+  +--v--+ /       
+                             |     k  |                   |  |  |        |           |/
+                             |     t  |                   |  |  |        |           /
+                             |     s  |       P  h-+      |  |  |        +--S     D /|         
+                             |     |  +        \   |      +--+--+        |        |/ |         
+                             |     +  |      +--+--+      |  |  |    TR--+--+     +--+         
+                             |     |  |      |  |  |      |  |  |        |           |            
+                             |     |  +--+---+  O  +--+---+--+--+--+-----+---+---+---+--+--+--+--+--<a href="Seaport.html" style="color:#dfbe6f">Seaport</a>
+                             +   +-+  |      |  |  |      |  |  |  |     |           |            
+                             |   |    |      +--+--+      b  +  1  2  M--+-+--m-x g--+           
+                             |   |    +      |               |           |        |  |
+                             |   +    |      +-s             |           |     +--+  +-T
+                             |   |    |                      |        a--+--p     |  |         <a href="DragonSea.html" style="color:#dfbe6f">DragonSea</a>
+                             |   |    +---------+----+----+--+           |  |     |  +             | 
+                             |   |              |         |              |  L     =                | 
+                             +-- q ----K--------w-------- | ------w----- | -------w----------------y--DragonSea
+                                 |                        +              |        =                |  (The Great Reef)
+                                 +--+    u--u--u          |              |        |     t          |
+                                    |    |     |          |              |        |    /        Tahril Mts
+                                    |    u  u--+----+-----+----+----+----+----+---+   +    (A Water-filled Cave)
+                                    |    |  |  |          |              |            |
+                                    |    u--u  u          |        i--+--+--------+---+
+                                    |       =             |              |
+                                    |       +           T-z-T            +
+                                    |       n             |              |
+                                    +--+--+   \           |              k
+                                          |G=+-+          |
+                                          +----+----+--Outskts--+----+----+----+                +
+                                                          |                    |               /
+                                                          |                    +----+----+----+
+                                                    <a href="Desert_of_Araile.html" style="color:#dfbe6f">DesertOfAraile</a>       
+                                                           
+                                                                                                     
+
+1 - Ahkeem's Apparel Shop
+2 - Al Abbas Animal Bazaar
+a - Assassin-guild
+A - Armory
+b - Baker
+B - Blacksmith / Forge
+c - Bard Guild
+C - Conjurer's guild (Ifrit responds to questions)
+d - Bank
+D - Drunken Efreeti Inn
+e - Butcher
+f - Fish markede
+g - Boat-shop
+G - <a href="The_Ghoul_Tunnels.html" style="color:#dfbe6f">The Ghoul Tunnels</a>
+h - Healer Guild
+i - Invoker guild
+j - Jail house
+J - Art Dealer's shop (jeweler)
+k - Ap-guild
+K - <a href="Khalid_River.html" style="color:#dfbe6f">KhalidRiver</a>
+L - Alchemist Guild
+m - Mercenary Guild
+M - Metalworkers' Guild
+n - Necromancer guild
+N - Nura's Market
+O - HEALER/ACADEMY
+p - Apothecary
+P - Paladins Guild (somewhere on that floor)
+q - Over the <a href="Khalid_River.html" style="color:#dfbe6f">Khalid River</a> (Must be flying to pass)
+r - Garden
+s - Shaman guild
+S - Shapeshifters guild
+t - thief guild
+T - Towers (locked, no-summon)
+TR- Transmuters guild
+u - <a href="Graveyard.html" style="color:#dfbe6f">Graveyard</a>
+v - General store (Water, lamp, sack)
+W - Weapon smith
+w - In the River Canal
+x - <a href="Warrior.html" style="color:#dfbe6f">Warrior</a>-guild
+y - The Mouth of the River
+z - City-gate. Closed at night, cannot be opened. Can use pass door though.
+
+To Do:
+* Needs to get separated from Outskirts, Eastern Rd, and Khalid River (similar to <a href="Galadon.html" style="color:#dfbe6f">Galadon</a> map).
+* Proportions need to be updated and more uniform.
+</pre></div>
+<h3>Rooms (2)</h3>
+<div class="legend-grid">
+<div class="legend-entry"><span class="num">1</span><span class="room-name">Ahkeem's Apparel Shop</span></div>
+<div class="legend-entry"><span class="num">2</span><span class="room-name">Al Abbas Animal Bazaar</span></div>
+</div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="Balator.html">Balator</a> &bull; <a href="FieldsOfBalator.html">FieldsOfBalator</a> &bull; <a href="HamsahOutskirts.html">HamsahOutskirts</a> &bull; <a href="Khalid_River.html">KhalidRiver</a> &bull; <a href="EasternRoad.html">EasternRoad</a> &bull; <a href="Seaport_Of_Hamsah_MuTazz.html">Seaport_Of_Hamsah_Mu'Tazz</a> &bull; <a href="DragonSea.html">DragonSea</a> &bull; <a href="TahrilMountains.html">TahrilMountains</a> &bull; <a href="The_Ghoul_Tunnels.html">The_Ghoul_Tunnels</a> &bull; <a href="Desert_of_Araile.html">DesertOfAraile</a> &bull; <a href="-ACADEMY.html">/ACADEMY</a> &bull; </div>
+<h3>Items Found Here (14)</h3>
+<div class="item-detail" id="item-a-belt-of-hardened-raindrops"><b>a belt of hardened raindrops</b> <span class="meta">L15 armor / waist / water</span><br><span class="room">Room:</span> A Junction on the Seaport<br><span class="mob">Mob:</span> A scullery maid<br><span style="color:#8a8;">Container:</span> a huge chest<br><span class="meta">Flags:</span> magic, conjurer_only<br><span class="meta">Modifiers:</span> Modifies mana by 15, Modifies hp by 15<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 8, bashing for 8,  slashing for 8, magic for 6, and the elements for 6 points each.</div>
+<div class="item-detail" id="item-a-blazing-orange-cloak"><b>a blazing orange cloak</b> <span class="meta">L48 clothing / neck / cloth</span><br><span class="room">Room:</span> Great Temple of Hamsah Mu'tazz<br><span class="meta">Flags:</span> glowing, magic, anti_neutral<br><span class="meta">Modifiers:</span> Modifies hp by 15, Modifies damage roll by 2, Modifies moves by 12, Modifies armor class by -7, Modifies dexterity by 1</div>
+<div class="item-detail" id="item-a-crystal-encrusted-shaft-of-many-colors"><b>a crystal encrusted shaft of many colors</b> <span class="meta">L13 wand / wand / crystal</span><br><span class="room">Room:</span> A Junction on the Seaport<br><span class="mob">Mob:</span> An outlawed conjurer<br><span class="meta">Flags:</span> magic<br><span class="meta">Modifiers:</span> Modifies mana by 20</div>
+<div class="item-detail" id="item-a-knotted-leather-whip"><b>a knotted leather whip</b> <span class="meta">L50 weapon / knotted / leather</span><br><span class="room">Room:</span> Docks of Hamsah Mu'tazz<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;s;5e;n;e</code><br><span class="meta">Weapon:</span> power (avg 28)</div>
+<div class="item-detail" id="item-a-sleek-amber-rod"><b>a sleek amber rod</b> <span class="meta">L30 wand / wand / amber</span><br><span class="room">Room:</span> Docks of Hamsah Mu'tazz<br><span class="mob">Mob:</span> Yasina<br><span style="color:#8a8;">Container:</span> a large chest<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;s;5e;n;e</code><br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-a-spellbook-with-a-copper-dragon-head-on-the-cover"><b>a spellbook with a copper dragon head on the cover</b> <span class="meta">L4 scroll / scroll / paper</span><br><span class="room">Room:</span> The Entrance to the Docks of Hamsah Mu'tazz<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;s;5e;n;2e</code><br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-a-thin-silver-ring"><b>a thin silver ring</b> <span class="meta">L30 treasure / treasure / silver</span><br><span class="room">Room:</span> An Encampment Near Hamsah Mu'Tazz<br><span class="mob">Mob:</span> An old wizard<br><span style="color:#8a8;">Container:</span> the arboreal hollows<br><span class="meta">Flags:</span> magic<br><span class="meta">Modifiers:</span> Modifies save vs spell by -5, Modifies armor class by -10, Modifies hp by 10</div>
+<div class="item-detail" id="item-an-iridescent-stone-amulet"><b>an iridescent stone amulet</b> <span class="meta">L35 treasure / treasure / stone</span><br><span class="room">Room:</span> The Hamsah Mu'tazz Room<br><span class="mob">Mob:</span> Alistin<br><span style="color:#8a8;">Container:</span> the burnt corpse of Qendriko, the meditation leader<br><span class="meta">Flags:</span> glowing, bless<br><span class="meta">Modifiers:</span> Modifies mana by 25, Modifies wisdom by 2, Modifies intelligence by 2, Modifies armor class by -4, Modifies hp by 9</div>
+<div class="item-detail" id="item-black-silk-wing-wrappings"><b>black silk wing wrappings</b> <span class="meta">L50 object / black / silk</span><br><span class="room">Room:</span> The Hamsah Mu'tazz Room<br><span class="meta">Modifiers:</span> Modifies save vs spell by -10, Modifies damage roll by 2, Modifies strength by 2, Modifies dexterity by 2</div>
+<div class="item-detail" id="item-fur-lined-boots"><b>fur-lined boots</b> <span class="meta">L35 object / boots / leather</span><br><span class="room">Room:</span> The Great Temple of Hamsah Mu'tazz, Hall of Creation<br><span style="color:#8a8;">Container:</span> the arboreal hollows<br><span class="meta">Modifiers:</span> Modifies charisma by 5, Modifies moves by 30<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 9,bashing for 5, slashing for 9, magic for 2, and the elements for 10 points each.</div>
+<div class="item-detail" id="item-sleeves-of-flame-colored-silk"><b>sleeves of flame-colored silk</b> <span class="meta">L15 clothing / arms / silk</span><br><span class="room">Room:</span> The Library<br><span class="mob">Mob:</span> An outlawed conjurer<br><span class="meta">Flags:</span> magic<br><span class="meta">Modifiers:</span> Modifies save vs spell by -5, Modifies strength by 1</div>
+<div class="item-detail" id="item-some-aquamarine-ribbons"><b>some aquamarine ribbons</b> <span class="meta">L45 clothing / wings / silk</span><br><span class="room">Room:</span> The Hamsah Mu'tazz Room<br><span style="color:#8a8;">Container:</span> the donation pit<br><span class="meta">Flags:</span> arial_only<br><span class="meta">Modifiers:</span> Modifies charisma by 2, Modifies mana by 55, Modifies dexterity by 2</div>
+<div class="item-detail" id="item-the-badge-of-clan-grethararan"><b>the badge of clan Grethar'aran</b> <span class="meta">L51 object / badge / mithril</span><br><span class="room">Room:</span> The Hamsah Mu'tazz Room<br><span style="color:#8a8;">Container:</span> the donation pit<br><span class="meta">Flags:</span> humming, dark, magic, evil<br><span class="meta">Modifiers:</span> Modifies save vs spell by -15, Modifies hp by 30, Modifies mana by 30</div>
+<div class="item-detail" id="item-the-glowing-egg-of-a-water-serpent"><b>the glowing egg of a water serpent</b> <span class="meta">L20 pill / glowing</span><br><span class="room">Room:</span> noble unicorn              Great Temple of Hamsah Mu'tazz, Hall of Destruction<br><span class="meta">Flags:</span> glowing</div>
+</body></html>

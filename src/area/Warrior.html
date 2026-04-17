@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warrior - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Warrior</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+
+
+<a href="Warrior.html" style="color:#dfbe6f">Warrior</a> Specialization Skills:   
+
+Axe 
+
+Whirl 20 Using the spike on the axe, inflict a painful wound 
+Weaponbreaker 24 Use the weight of the axe to shatter your opponents weapon 
+Hook 27 Use the curving blades of the axe to disarm your opponent 
+Pincer 29 Dual wielding axes, you attempt to trap your victim between them 
+Overhead 30 A powerful overhead strike 
+Disembowel 33 Attempt to disembowel your opponent and end the battle 
+
+Comments:  &quot;&quot;
+
+
+<a href="Dagger.html" style="color:#dfbe6f">Dagger</a> 
+Stab 20 Used in a stabbing motion for greater damage 
+Underhand 23 Attempt to come up beneath your opponent into his ribs 
+Hamstring 25 A well placed strike to the hamstring, reducing movement 
+Artery 27 A well-placed strike to a major artery, inflicting heavy blood loss 
+Twist 30 Cause additional pain by twisting the dagger in a wound, can result in str and dex loss, possibly break the dagger. 
+Concealed 32 Like backfist for assassins. 
+Hurl 33 Throw a dagger with deadly accuracy 
+
+Comments: &quot;&quot;
+
+Hand to Hand 
+
+Ironhands 20 Allows you to parry with your bare hands 
+Evasion 22 Using the terrain to place the combatant out of range 
+Vital Area 23 Attemp to weaken an opponent with a strike to a vital area 
+Pummel 26 Attempt to land a powerful blow on your opponent 
+Stun 30 Attempt to knock a person unconscious 
+Crushing Blow 32 Lacing your hands in a massive strike on your opponent 
+
+Comments:  &quot;&quot;
+
+<a href="Mace.html" style="color:#dfbe6f">Mace</a> 
+Backhand 20 Designed to whittle away at an opponent with measured and compact strikes 
+Deflect Shield 23 Attempt to weaken and/or send the shield flying from an opponents grasp 
+Cranial 26 Attempt to knock your opponent unconscious 
+Boneshatter 28 Attempt to shatter bones, resulting in loss of strength and dexterity for a long time 
+Dent 30 Well placed strikes to severly weaken and possibly destroy an opponents armor 
+Drum 33 Dual wielding maces allowing for up to 5 strikes, with last dealing double damage.
+
+Comments: &quot;&quot;
+
+
+<a href="Sword.html" style="color:#dfbe6f">Sword</a> 
+
+Flourintine 20 Allows you to parry better while dual wielding swords 
+Cross 22 Blocking your opponents weapon, then striking a swift kick while their weapon is entrapped 
+Doublethrust 24 Attempting to strike your opponent in the same spot while dual wielding swords 
+Jab 26 A quick strike used to slowly whittle your opponent down 
+Riposte 29 Countering an incoming attack with an attack of your own 
+Flurry 31 A rushing attack where you try to strike your opponent as many times in a short period, quite exhausting.  
+
+Comments:  Flurry is strength based.
+
+<a href="Staff.html" style="color:#dfbe6f">Staff</a> &amp; <a href="Spear.html" style="color:#dfbe6f">Spear</a> 
+
+Defensive spin 20 Intricate use of your weapon's spinning motion to keep attacks from hitting you 
+Leverage 23 Planting the weapon, and using leverage, deliver a powerful kick to your victim 
+Legsweep 25 Using the long shaft of the weapon to sweep the legs out from your opponent knocking them to the ground 
+Crescent 25 A backhanded slash across the chest of your opponent (only Spear) 
+Misdirect 26 Slamming the ends of your weapon in tandem, it is possible to deliver a powerful blow 
+Impale 32 An attempt to drive your spear through your opponent (Only spear) 
+
+Comments:  &quot;&quot;
+
+Polearm 
+
+Distance 20 Using the length of the polearm to keep your opponents at bay 
+Entrap 23 Using the polearm to entrap your opponents weapon with the shaft of the polearm 
+Chop 24 A short controlled overhand strike with hands spaced apart on the polearm 
+Legsweep 24 Using the long shaft of the polearm to sweep the legs out from your opponent knocking them to the ground 
+Charge Set 30 Using an attackers momentum against them, the polearm can be set against the first attack 
+Cutoff 32 Using the length of the polearm to prevent your opponent from fleeing 
+
+Comments:  &quot;&quot;
+
+<a href="Whip.html" style="color:#dfbe6f">Whip</a> &amp; <a href="Flail.html" style="color:#dfbe6f">Flail</a> 
+
+Sting 20 Quick strike used to injure an opponent and hinder their combat abilities
+Strip 24 Attempt to strip the weapon from an opponent by using the utility of the whip 
+Eyejab 26 Jab your opponent in the eye, attempting to blind them 
+Choke 27 Attempt to render the person unconscious by choking the victim 
+Entwine 32 Use the whip to entwine your victim, to prevent them from fleeing 
+Pull 34 Using your whip, you try to drag your victim into another room for fighting 
+
+Comments:  &quot;&quot;
+
+Legacy:
+
+&quot;autumn&quot;: Autumn Harvest 
+
+The agile swipes and quick maneuvers around and beneath a taller opponent's 
+guard characterizes this method of fighting. Called the Way of the Autumn 
+Harvest, in analogy to the stance of a farmer while sweeping a scythe through 
+wheat, this technique centers around what is anathema to more traditional 
+schools of combat- using one's lack of size as a weapon. By lurking amid the 
+places a larger opponent cannot reach, a warrior vastly improves their defenses.
+
+
+&quot;balance&quot;: Balance of the Sisters 
+
+Adopting an understanding of symmetry, the warriors who developed the style 
+of the Balance of the Sisters could fight equally well with either hand, a 
+difficult feat which requires intense training with the full range of weapons 
+a warrior may employ. Through their stances, a warrior may wield weapons of 
+equal weight in their hands regardless of their type, and may perform a 
+great variety of maneuvers with a weapon in their off hand that another 
+warrior could not
+
+&quot;calming&quot;: Calming the Tempest 
+
+The meditations of Calming the Tempest focused upon not allowing one's self 
+to be swayed by outside forces. Initially practiced in a secret order of 
+warriors to train its members to never reveal what they knew, it was discovered 
+that these warriors could apply their honed willpower to resist the effects of 
+spells and communes
+
+&quot;chilling&quot;: Chilling Embrace 
+
+The school of the Chilling Embrace held that combat is best enhanced through 
+focus on its fundamentals. The style of fighting their members used relies 
+on short, efficient strikes, which land with more force than could be expected 
+from their size and strength. While lacking somewhat in finesse or flair, 
+few wished to duel a warrior who was wise in its ways.  (+10 dam)
+
+
+&quot;crashing&quot;: Crashing of Waves 
+
+While many warriors spend their lives thinking of ways to get around the 
+guard of another, the technique of Crashing of Waves taught strokes which strike 
+through the weapon itself at their foe's body. The timing and force of 
+those warriors who trained in such a fashion was said to tear the weapons from 
+foes who dared parry them without a firm grip.
+
+&quot;cry&quot;: Cry of Thunder 
+
+Those who led the charges of battle in ancient times were said to employ 
+their warcries not only as a means of inspiration, but as a terrible weapon, 
+shocking enemies who have not been steeled by years of battle. A powerful 
+demoralizing weapon, their warcries were carefully chosen to strike fear in the 
+hearts of all who stood against them.
+
+&quot;dance&quot;: Dance Upon the Southern Wind 
+
+By conditioning their legs to constant motion, and their minds to constant 
+action, the warriors who developed the Dance Upon the Southern Wind were a 
+constant flurry of motion, enhancing their ability to avoid blows. Relying 
+on keeping themselves nimble and agile, they were said to be as difficult 
+to strike as the wind itself. 
+
+&quot;enigma&quot;: Enigma of the Thirteen 
+
+The history of this technique is said to be lost in the fall of the ancient 
+band of the thirteen enlightened warriors who formed an elite guard for 
+the last King of Yrida. These warriors learned to use wands offensively, 
+directing them at their foes as a mage would, though they never developed 
+the proper techniques for use with other types of spells. They were also 
+renowned for incorporating the use of potions and pills into their fighting 
+styles, never needing to break from their blur of strikes and parries to 
+consume one of their artificer-king's potent gifts. 
+
+&quot;fires&quot;: Fires of Adversity 
+
+Pain is a part of every warrior's life, but the monks who taught the ways of 
+the Fires of Adversity embraced it as their call to action. Though they 
+bore injuries as any other, they became only more potent in combat as they 
+became wounded, surging in the most impossible of circumstances to turn the 
+tide of battle with their courage and tenacity. 
+
+&quot;fist&quot;: Fist of the Titan 
+
+The Fist of the Titan was the name given to the result of an array of 
+grueling conditioning exercises designed to strengthen the lower arm and hand. 
+The monks who mastered it held their weapons with exceptional force, and were 
+known for marching into battle wielding weapons too heavy for a less trained 
+warrior. Knocking their weapons from their grip was said to be like pulling 
+them from stone itself.  (+10 lbs weapon carrying capacity, hard to disarm)
+
+&quot;flow&quot;: Flow of Shadows 
+
+A hallmark of the Honor Guard of <a href="Darsylon.html" style="color:#dfbe6f">Darsylon</a>'s (ELF) royalty, centuries ago, the secrets 
+of the Flow of Shadows were lost for ages, though occasionally reported to 
+have been used by mysterious rescuers of lost travelers near <a href="Mount_Calandaryl.html" style="color:#dfbe6f">Mount Calandaryl</a>. 
+The stances were designed to permit maximum mobility, owing to the style's 
+focus on slipping away from your opponent's vision through a combination of 
+sweeping, flowing movements and the use of surrounding lighting. Though 
+mastery taxed the initiate's body, the toll on the mind was equally fierce, 
+owing to the style's emphasis on timing and misdirection, and only those 
+who embodied both physical and mental grace were chosen for the most 
+difficult lessons. These movements not only help avoid incoming attacks, but 
+create opportunities for rapid counterstrikes during the moment's confusion.
+
+&quot;fluid&quot;: Fluid Deceptions 
+
+A hallmark of the legendary ARIAL warrior-monk Tareruhl was his ability to 
+mask the true motions of his weapons, performing dramatic flourishes and 
+sudden changes of his stance to mislead his foes into altering their guard 
+the way he wished. His techniques incorporated highly effective feints 
+into his strikes and parries, and his foes were often struck down after 
+having been nearly thrown from their feet by particularly effective ploys.
+
+&quot;forsaken&quot;: Forsaken Thoughts 
+
+The origin of the meditations of the Forsaken Thoughts is shrouded in secrecy. 
+No warrior has ever admitted to knowing them, for the techniques were said to 
+involve rejecting the Divine in all its forms. Legends persist of secret 
+societies who trained their members to combat priests of opposing faiths, 
+resistant to their holy or unholy powers.
+
+&quot;fortress&quot;: Fortress of the Spirit 
+
+Years of secretive monastic training taught the revered Order of Macalla 
+methods to shield their minds and thoughts from others, to best protect 
+their wisdom from those who would put it to dishonorable use. They were 
+said to envision an impenetrable fortress in their mind, repelling magical 
+or mental attempts to distract them from their sacred duties of Honor, just 
+as a stone wall would keep an army at bay.
+
+&quot;gates&quot;: Gates of the Forge 
+
+Travelers' tales have long spoken of a brigade of DUERGAR soldiers who were 
+deployed to charge into the most heavily fortified of the <a href="Underdark.html" style="color:#dfbe6f">Underdark</a>'s tunnels. 
+Displaying uncharacteristic courage, these duergar were sworn to the pure and 
+savage honesty of combat, and measured themselves by the sheer horror they 
+could survive. They wore the heaviest plate armor they could carry, and 
+learned every inch of its surface for how much force it could endure. Even 
+the dwarves they fought were unable to hurt them, as the duergar would turn 
+the thickest portion of their heavy armor into every blow, making superior 
+use of it. The dwarves called their unique style the Gates of the Forge, in 
+memory of the location of the only battle where they could muster the fury to 
+finally break through their armor and hand them their defeat.
+
+&quot;greeting&quot;: Greeting the Avalanche 
+
+By learning to let go of caution and have faith in their training, the fighting 
+monks of the Order of Macalla were said to deliver terrible bashes from the 
+stance of Greeting the Avalanche. Charging forward with no regard for their 
+safety, they would hurl their opponents to the ground in order to finish 
+them. The maneuver proved both difficult to counter, and even more difficult 
+to recover from.
+
+&quot;harmonious&quot;: Harmonious Equilibrium 
+
+Through the balance of the Way of Harmonious Equilibrium, the guardians of the 
+temples of the Order of Macalla once learned to keep both their footing and 
+their wits about them in any combat situation. All attempts to stun them met 
+with limited success, as they rolled, countered, and fought their way back to 
+their fighting stances with instinctive grace and uncanny speed.
+
+&quot;hour&quot;: Hour Past Midnight 
+
+There have been times in Thera's history when men of such malevolence have 
+risen to such influence as to be beyond the reach of a battle of armies, and 
+men of honor have risen from the least likely of sources. What few records 
+exist of one such society of warrior-monks, referred to only by the sobriquet 
+&quot;Hour Past Midnight&quot;, a reference to their secretive meetings, rumored to only 
+occur in the dead of night. They were said to be masters of arming themselves 
+from plain sight, striking their chosen foes down with whatever could be 
+improvised. Legends spoke not only of the range of exotic weapons they would 
+employ, but of their exceptional skill with each, striking and defending as a 
+master. 
+
+&quot;incarnadine&quot;: Incarnadine Wave 
+
+Stalking their prey like wolves, the elite guard of the first Lord Captain 
+of Darsylon (ELF) once practiced a fighting style which their enemies named the 
+Incarnadine Wave, in testament to the savage quickness and flowing, rhythmic 
+style of their sword strokes. Adaptable to any weapon, though most often 
+practiced with lightweight ones, the Royal Family banned its teaching, citing 
+its emphasis on painful strikes to vital areas as unfit for noblemen to employ. 
+Since then, no master of it has come forward, but rumors persist of warrior- 
+monks who have unearthed the forbidden lessons, focusing their will not on 
+brute force, but rather the pinpoint accuracy and striking beauty of its 
+motions.
+
+1) axe 
+You seize an exposed flank, and are greeted by a satisfying gush of crimson. (bleeding) 
+Dropping down, you time a vicious strike with [[YOUR_AXE]] to XXX's legs! (??) 
+
+2) dagger 
+Flowing through the Incarnadine Wave, you precisely time a painful blow! (dam) 
+With practiced quickness, you lunge suddenly, drawing XXX off guard. (feint) 
+***Dagger incarnadine wave effects at hero*** 
+Skill: 'incarnadine wave' modifies dexterity by -1 for 6 hours. 
+Skill: 'incarnadine wave' modifies damage roll by -6 for 6 hours. 
+Skill: 'incarnadine wave' modifies hit roll by -6 for 6 hours. 
+
+3) flail 
+Swiping with savage speed at an XXX's head, you disrupt his concentration! (int) 
+Whirling [[YOUR_FLAIL]] around an XXX's guard, you land a solid blow to his arm! (str) 
+
+4) mace 
+Dropping down, you time a vicious strike with [[YOUR_MACE]] to XXX's legs! (??) 
+Swiping with savage speed at XXX's head, you disrupt his concentration! (int) 
+
+5) polearm 
+You seize an exposed flank, and are greeted by a satisfying gush of crimson. (bleeding) 
+Through the Incarnadine Wave, you time a lunge to push XXX off balance! (lag) 
+
+6) spear 
+With practiced quickness, you lunge suddenly, drawing XXX off guard. (feint) 
+Through the Incarnadine Wave, you time a lunge to push XXX off balance! (lag) 
+
+7) sword 
+Dropping down, you time a vicious strike with [[YOUR_SWORD]] to XXX's legs! (??) 
+You seize an exposed flank, and are greeted by a satisfying gush of crimson. (bleeding) 
+
+8) staff 
+Through the Incarnadine Wave, you time a lunge to push XXX off balance! (lag) 
+Striking with savage speed at an XXX's head, you disrupt his concentration! (int) 
+
+9) whip 
+Flowing through the Incarnadine Wave, you lash at a vulnerable point! (con) 
+Flowing through the Incarnadine Wave, you precisely time a painful lash! (dam) 
+
+10) hand to hand 
+Flowing through the Incarnadine Wave, you precisely time a vicious swipe! (dam) 
+Flowing through the Incarnadine Wave, you strike a vulnerable point! (con) 
+
+11) exotic 
+You seize an exposed flank, and are greeted by a satisfying gush of crimson. (bleeding) 
+Flowing through the Incarnadine Wave, you precisely time a painful blow! (dam) 
+
+
+&quot;landslide&quot;: Landslide of the Second Breath 
+
+Slow to anger in their dealing with others, the warrior-monks of the Order of 
+Macalla are nonetheless mentioned only in whispered tones among their sworn 
+foes, such is their fury during the throes of battle. A hallmark of their 
+DWARVEN members, the maneuver of the Landslide of the Second Breath is an 
+adaptation of driving one's foe to control the place of combat. Modifications 
+of their fighting stances not only made their warriors extremely difficult to 
+move from their chosen place, but allowed them to drive less balanced foes 
+with devastating effect, often hurling them to the ground with their furious 
+charges. 
+
+
+&quot;maelstrom&quot;: Maelstrom of the Veils 
+
+In the scriptures of the warrior-monks of Macalla, it was written that one's 
+duty overshadows all injury to the body. To this end, they trained under any 
+duress imaginable, learning to fight from one knee, with their off hand, or 
+even without their sight. One of the most successful techniques that came from 
+this training involved weeks of sight deprivation during exercises, as the monks 
+learned to rely on hearing, instinctual foresight, and disturbances in the 
+nearby air to anticipate the location of potential foes in their vicinity. 
+While they cannot identify a foe so easily, they have little difficulty lashing 
+out at who is nearby. Finally, they can manipulate their carried gear nearly as 
+well as if they were still sighted, such is their ability to recall and feel the 
+location of each item. More challenging tasks, such as getting things from 
+containers, will still be beyond them. 
+
+(A warrior who comprehends this Legacy can address PCs or NPCs &quot;by number&quot; 
+even while blind. For example, &quot;dirt 2.&quot; will work, but &quot;dirt kobold&quot; will 
+not.) 
+
+&quot;mercy&quot;: Mercy of the Typhoon 
+
+Rumored to have been the creation of the elite guard of Lord Kiadana-Rah, 
+this method of pressing a combat was said to be the difference between the 
+guard defeating an enemy, and routing them. Never pausing to reflect on 
+victory, they learned to overwhelm a single foe and have a second strike 
+upon the next the instant the first perished or sought escape. The legends 
+claim these guards became so furious with battle frenzy as to be beyond 
+their Lord's control, and the secret vanished for centuries after their 
+Lord had them put to death for daring to disobey his orders. 
+
+&quot;one&quot;: One With Shadows 
+
+Every warrior learns the value of being the first to strike in a battle, but 
+few ever master the perpetual state of readiness necessary to thwart their 
+foes' ability to catch them off guard. The stances and grips of those who 
+comprehend the ancient legacy of One With Shadows were designed to let a 
+warrior react at a moment's notice, and were only truly mastered by those 
+who were as clever as they were strong. Through a series of compact ripostes 
+and vicious counters, the warriors who make alertness their unconscious state 
+of mind become adept at foiling surprise attacks of various kinds. 
+
+&quot;outcry&quot;: Outcry of Steel 
+
+The tireless struggle of the most dutiful warriors has led many to seek 
+conditioning above and beyond what their guildmasters say is sufficient. 
+The plains-runners of the northern barbarian tribes were masters of this 
+long before <a href="Udgaard.html" style="color:#dfbe6f">Udgaard</a> Loke's armies pushed them from their homes, and were 
+said to be able to give chase even to the gazelle. The strength in their 
+legs was useful in battle as well, whether in escaping, grasping a thin 
+opportunity to retreat, or dashing into battle with their characteristic 
+clanging of swords. Since that day, the few who preserve their lessons 
+have called the fruits of their labor the Outcry of Steel. 
+
+(Note: Warriors with this legacy may, among other benefits, &quot;nest&quot; dashes 
+together to form one longer dash, i.e. 'dash e dash e bash kobold'. This 
+is tiring, however.) 
+
+&quot;place&quot;: Place of the Raging River 
+
+Among the many meditations of the Order of the Macalla, one of the most 
+difficult to master was the Place of the Raging River. Its nature is 
+steeped in an intensity of thought that few ever master, filling one's 
+mind with flurries of images, ideals, and memories at the slightest 
+hint of the fading of consciousness. The goal is to resist the calling 
+of the gray void of sleep brought on by injury, duress, or malevolent 
+influences, and to ensure if one perishes, it is in the throes of battle, 
+and not the ignominy of inaction. 
+
+&quot;renewal&quot;: Renewal of Spring 
+
+Though the claims of mysterious warrior-monks who endured millennia without 
+feeling the cold grip of age are surely exaggerations, there have certainly 
+been many tales of those who labored to restore the strength of use to their 
+tired forms, slowing the inevitable, and recovering from the toll of lost 
+battles long past. Somewhere amidst these claims is likely a seed of truth, 
+and the vigor of the seldom-seen Elders of these orders bespeaks the success 
+of their ways. 
+
+&quot;riddle&quot;: Riddle of Resilience 
+
+When asked how he could fight on through the worst of injuries, Thokora 
+Meteshen of Calandaryl would simply inform the curious soul that he learned 
+to divorce the sensation of pain from the unpleasant connotation others 
+felt. While he still was aware of its presence, he had unlocked a way to 
+place himself beyond its discomfort, and legends bespoke his victories 
+won with broken bones, horrible bleeding gashes, and worse. Those few who 
+suffered the agony of his teachings were said to resist maladies which would 
+leave a less prepared warrior little more than able to stand. 
+
+
+&quot;soul&quot;: Soul of the Mountain 
+
+Duty was always the first cause of the warrior-monks of the Order of Macalla. 
+And with duty, oft came battles seemingly beyond the reach of a single man, 
+struggling against overwhelming odds and dishonorable treachery. The 
+meditations of the Soul of the Mountain were ones of endurance, of fighting 
+on even when badly injured. Through its ways, the warrior-monks learned to 
+survive even grave injuries, though their meditations did little to reduce 
+the pain. (+200 HP)
+
+&quot;space&quot;: Space Between Heartbeats 
+
+Those warriors who honed their reflexes to the precision demanded by the 
+technique of Space Between Heartbeats were said to be faster than thought. 
+Though not especially forceful, their strikes were masterpieces of rapid 
+acceleration, beginning and ending in one instant. Their hallmark technique 
+was to hover near their foe, daring them to take their eyes off them for 
+that one instant they coveted. Foes who distracted themselves with picking 
+up items, rummaging through packs, fumbling with backup weapons, and the 
+like while fending off these warriors often found themselves on the receiving 
+end of strikes they never saw, delivered in the Space Between Heartbeats. 
+
+&quot;striking&quot;: Striking the Shadows Footfall 
+
+It was said that the eldest and most respected of the warrior-monks of 
+Macalla lost many honorable duels in his life, but never lost one rematch. 
+His eye for detail was passed on to only choice students, and the technique 
+he developed became known as Striking the <a href="Shadow.html" style="color:#dfbe6f">Shadow</a>'s Footfall. This name was 
+chosen because he could predict an opponent's movements so well, he even 
+knew where their shadow would next stand. Though he fought as any other 
+early in a duel, as he sparred with a foe, he eventually learned all their 
+flaws, and before his foe knew how it happened, they were on the ground, his 
+favored staff tapping them lightly on the skull as a signal of his victory. 
+
+The techniques of this Legacy are refined enough that they are curiously 
+useless against unskilled foes. Only members of adventuring guilds possess 
+refined enough styles to take advantage of. 
+
+&quot;surrounding&quot;: Surrounding the Sunrise 
+
+One of the great tests of a warrior's fortitude is the ability to bring 
+battle to more than one opponent. The elite reconnaissance soldiers of 
+Darsylon's Second Dynasty developed a series of maneuvers known as 
+Surrounding the Sunrise, to complement their dangerous missions into 
+both the surrounding forests, and the tightly enclosed spaces of the 
+Underdark. Masters of employing obstacles and cover to their advantage, 
+the legends claimed that to pin them in a place they could not defend 
+was as difficult as Surrounding the Sunrise. In one of the great lessons 
+taught to the proud Darsylon lords, their guard considered their technique 
+too important and valuable to share with commoner warriors, and when the 
+famed patrol was caught in a prepared ambush upon the Northern Plains, it 
+was said their secret perished in the screams of the slaughtered ELVES, 
+their greatest achievement useless in the battle. 
+
+
+&quot;trapping&quot;: Trapping Beneath Thunder 
+
+In the ancient annals, records exist of CLOUD GIANTS flocking to the 
+monasteries of the Order of Macalla in droves, for their lessons of duty, 
+honor, and perseverance appealed to the withdrawn, impartial GIANTS. 
+
+One tradition which the cloud giants practiced among themselves within the 
+halls of the Order was to spar with heavily weighted weapons, so that in 
+true battle, their blades and hammers would feel more agile. One day, a stout 
+SVIRFNEBLIN monk came to the assembled GIANTS, and wisely noticed that the 
+giants had changed their fighting style somewhat, gripping the weapons 
+differently, and using wide, sweeping strokes. At their tiny colleague's 
+suggestion, the giants soon developed a technique called Trapping Beneath 
+Thunder, which taught them to embrace the weight of their unusually heavy 
+weapons rather than be hindered by it, striking blows of tremendous leverage 
+which tore through the defenses of their foes. 
+
+&quot;vanguards&quot;: Vanguards Desire 
+
+Even within the ranks of the Macalla, there were times when their goals of 
+duty, fairness, and honor called for missions involving several monks 
+striking as one against some great tyrant. For these reasons, the eldest of 
+monks learned not only to steel their will against adversity, but to inspire 
+their allies, multiplying their personal effectiveness. From lifting their 
+spirits through dramatic warcries, to their rapid and heroic rescues, to 
+coordinating retreats of the group in times of danger, their leadership 
+proved a great boon to all. 
+
+&quot;ward&quot;: Ward of Blades 
+
+Those few who dedicated themselves to the Ward of Blades devoted their eye 
+and mind to keeping their weapons in constant defensive motion, never 
+pausing while engaged in battle. The constant momentum of their weapons 
+proved effective in turning aside blows, and the early masters soon developed 
+variants of the style for any weapon, even the bare hands. Though less 
+eye-catching than more complex maneuvers, few warriors can ply their craft 
+without effective parrying. 
+
+&quot;whirlwind&quot;: Whirlwind of Steel 
+
+Through exhausting challenges and preparation, the ARIAL warrior-monks of 
+the Order of Macalla were said to have developed this technique to press 
+the advantage they had over slower foes. Capitalizing on being able to 
+outpace their foes, they learned to deliver a frightening volume of strikes 
+by jabbing and swinging before their opponent could adjust and react. The 
+term Whirlwind of Steel was coined, as much a nod to the furious motion as 
+to the swirling winds that followed the wings of these arials. 
+
+
+&quot;whispers&quot;: Whispers of the Great Siege 
+
+Those warriors who heard the Whispers of the Great Siege knew the nature of 
+hardship, and are tenacious even in lean times. Learning to quickly recover 
+from injury, and stretch rations of food and water to their limits, these 
+warriors learned to substitute willpower for more mundane needs of the 
+flesh, fighting on through the worst of conditions. 
+
+
+Todo:  Add more detail and comments.
+
+
+</pre></div>
+</body></html>

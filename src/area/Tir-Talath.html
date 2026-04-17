@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tir-Talath - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Tir-Talath</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+     +--S1-+                    P1
+     |  |  |
+     +--+--+
+
+
+  +--+--+--+--+  +==+  +  +--+--+--+--+
+  |           |  |  |  |  |           |
+  +  W  S0 R  +  +  +==+  +  +  P0 d  +
+  |  |  |  |  |     |     |  |  |  |  |
+  +  +--+--+  +  +==+  +  +  +--z--+  +
+  |  |  |  |  |  |  |  |  |     |     |
+  +  A  +  w  +  +  +==+  +     +     +
+  |     |     |     |     |     |     |
+  +--+--+--+--D--+--+--+--u--+--+--+--+                       b
+              |           |                                   |
+  +--+  +--+  +  +  K0 +  +  +--+  +--+      B  K1 +       +  K2 +
+     =     =  |  |  |  |  |     =     =      |  |  |       =  |  =
+  +--+--+--+--+  +--+--+  +--+--+--+--+      +--+--+       +--+--+
+  =     =     |     |     |  =     =                       =  |  =
+  +--+  +--+  +     +     +  +--+  +--+                    +  +  +
+              |     |     |
+  +--+--+--+--u--+--+--+--u--+--+--+--+
+  |  |  |  |  |     |     |     |     |
+  +--f--v--c--+   E +     +     +     +
+  |           |   | |     |     |     |
+  +--e--a--g--+   L-+     +  Z--t0-+  +      I1-t1-T1      I2 t2 T2
+  |           |     |     |     |     |         |
+  +--i--M--h--+   +-+-s   +     +     +         C1            C2
+  |  |  |  |  |   | |     |           |
+  +--+--+--+--+   F +     +--+--+--+--+
+                    |
+              <a href="NorthernRoads.html" style="color:#dfbe6f">NorthernRoads</a>
+
+A - Armory
+a - Alanna (Flower stall)
+b - Bank
+B - Bard
+c - Dairy Shack
+C - Conjurer
+d - Druid
+D - Diana (Brass Gauntlets, Shield bearing the Insignia of <a href="Tir-Talath.html" style="color:#dfbe6f">Tir-Talath</a>)&amp; Well
+e - Spice Market
+E - Thieves Guild (Poisoness Stiletto)
+f - Fruit Stand
+F - Farrier (Centaur/Mino gear)
+g - Bakery
+h - Confectioner's (candy store)
+I - Invoker
+i - Basket Weaver's
+K - Baron's Keep
+L - The Laughing Dragon (Inn)
+M - The Meat Market
+P - Pit / Recall (Up to 'The Temple Arboretum')
+R - Ranger
+s - Supply Depot (general store)
+S - Sleeping Quarters
+t - Tower
+T - Transmuter
+u - Wells, 'use well' twice then 'drink well'
+v - Vegetable Stand
+W - <a href="Warrior.html" style="color:#dfbe6f">Warrior</a> Guild
+w - Weaponsmith's
+z - Free Wine!!! =]
+Z - Zardroff (Alchemist)
+
+0 - ground level  (can go up)
+1 - one level up  (can go down (and up if in tower or keep))
+2 - two levels up (can go down)
+
+Within the vast northern plains region south of the <a href="Udgaard.html" style="color:#dfbe6f">Udgaard</a> Mountains, 
+several farms and agricultural communities are nestled. Rising up in 
+the midst of the vast, sweeping grasslands, is the Tir-Talath Outpost. 
+Serving as a common center of commerce, defense, and study, Tir-Talath 
+is a formidable fortress in a land often plagued by bandits, natural 
+disasters, and an aggressive neighboring territory. 
+
+Visitors are welcome in Tir-Talath, which boasts several amenities in a 
+region otherwise limited to rather rural conditions. A temple in service 
+to the wise and neutral gods of the Theran pantheon offers healing services 
+and sanctums for prayer, and the open barracks of the Tir-Talath militia 
+welcome any visitors who wish to study the art of war within. The majestic 
+Tower of Tir-Talath offers a place of magical study for both mages and 
+amateurs alike, while the sights and smells of the farmer's market are sure 
+to delight the sense of anyone seeking a unique farm grown gift or treat. 
+
+Order in Tir-Talath is kept by the local militia, who defend the northern 
+plains region and its people under the high command of Baron Telenius, a 
+reluctant, but well-trusted patron who rarely grants audiences to visitors. 
+His personal keep, however, is open to visitors, and stands proudly in the 
+heart of the outpost on top of a secure cistern from which the outpost draws 
+water into its four wells. 
+
+TODO
+Mage guilds
+</pre></div>
+<h3>Rooms (3)</h3>
+<div class="legend-grid">
+<div class="legend-entry"><span class="num">0</span><span class="room-name">ground level  (can go up)</span></div>
+<div class="legend-entry"><span class="num">1</span><span class="room-name">one level up  (can go down (and up if in tower or keep))</span></div>
+<div class="legend-entry"><span class="num">2</span><span class="room-name">two levels up (can go down)</span></div>
+</div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="NorthernRoads.html">NorthernRoads</a> &bull; <a href="-Mino.html">/Mino</a> &bull; </div>
+<h3>Items Found Here (3)</h3>
+<div class="item-detail" id="item-a-brass-chainmail-coif"><b>a brass chainmail coif</b> <span class="meta">L20 armor / head / brass</span><br><span class="room">Room:</span> Telenius Square at South Harvest Way<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 4, bashing for 6,  slashing for 8, magic for 1, and the elements for 5 points each.</div>
+<div class="item-detail" id="item-a-brass-chainmail-tunic"><b>a brass chainmail tunic</b> <span class="meta">L15 armor / body / brass</span><br><span class="room">Room:</span> Knights' Quarter around the Tir-Talath barracks.  Unlike the dirt roads<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 3, bashing for 5,  slashing for 7, magic for 1, and the elements for 4 points each.</div>
+<div class="item-detail" id="item-a-brass-trimmed-crimson-cloak"><b>a brass-trimmed crimson cloak</b> <span class="meta">L20 clothing / neck / cloth</span><br><span class="room">Room:</span> Knights' Quarter around the Tir-Talath barracks.  Unlike the dirt roads</div>
+</body></html>

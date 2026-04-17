@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadow - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Shadow</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+This area was written in the year 2001, for the Carrion
+Fields Mud.  No unauthorized use is allowed.
+
+
+             +-+-+
+             | | |
+           +-+-+-+-+- semi-maze (recurring passages) to Ashes of Nowhere
+     | | | |   |   $
+ L-e-+-+-+-+-D +-E 5
+     | | | |   |   $
+         4-+-+-+-1-+
+         | | | |   $  <a href="HighTowerOfSorcery.html" style="color:#dfbe6f">HighTowerOfSorcery</a>
+           | | |   2  |
+         4&lt;+-+-+    1&lt;C&gt;3 2 (Shifting exits)
+           | | |      |   $
+           +-+-+------+---A-~~~~~~ (going in look for deepening shadows until you stand at A (3 exits),
+             | |      |     (Maze)  and signs of life and trail to get out.)
+             +-+------3     ~~~~~~
+                              |
+                          <a href="Feanwyyn.html" style="color:#dfbe6f">Feanwyyn</a>
+
+$ - Room exits move
+A - Before/out of the maze
+C - Clearing
+D - <a href="Dragon_Tower_Ruins.html" style="color:#dfbe6f">DragonTowerRuins</a>
+e - The edge of the <a href="Shadow.html" style="color:#dfbe6f">Shadow</a> Grove
+E - <a href="Elemental_Temple.html" style="color:#dfbe6f">ElementalTemple</a> 
+L - At the edge of Land's End
+</pre></div>
+<h3>Rooms (1)</h3>
+<div class="legend-grid">
+<div class="legend-entry"><span class="num">4</span><span class="room-name">+-+-+-1-+</span></div>
+</div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="AshesOfNoWhere.html">AshesOfNoWhere</a> &bull; <a href="Dragon_Tower_Ruins.html">DragonTowerRuins</a> &bull; <a href="Elemental_Temple.html">ElementalTemple</a> &bull; <a href="HighTowerOfSorcery.html">HighTowerOfSorcery</a> &bull; <a href="Feanwyyn.html">Feanwyyn</a> &bull; </div>
+<h3>Items Found Here (14)</h3>
+<div class="item-detail" id="item-a-ancient-book"><b>a ancient book</b> <span class="meta">L miscellaneous / book</span><br><span class="room">Room:</span> The Shadow Grove<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code></div>
+<div class="item-detail" id="item-a-black-potion-of-negation"><b>a black potion of negation</b> <span class="meta">L1 potion / potion / glass</span><br><span class="room">Room:</span> The Shadow Grove<br><span style="color:#8a8;">Container:</span> a floating chest<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code><br><span class="meta">Flags:</span> humming, magic</div>
+<div class="item-detail" id="item-a-clear-potion"><b>a clear potion</b> <span class="meta">L15 potion / potion / glass</span><br><span class="room">Room:</span> The Shadow Grove<br><span style="color:#8a8;">Container:</span> the corner<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code><br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-a-copper-and-agateware-ring"><b>a copper and agateware ring</b> <span class="meta">L10 armor / finger / stone</span><br><span class="room">Room:</span> The Shadow Grove<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code><br><span class="meta">Modifiers:</span> Modifies strength by 1, Modifies damage roll by 1<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 3, bashing for 3,  slashing for 3, magic for 3, and the elements for 3 points each.</div>
+<div class="item-detail" id="item-a-double-bladed-battleaxe"><b>a double-bladed battleaxe</b> <span class="meta">L18 weapon / double / steel</span><br><span class="room">Room:</span> The Shadow Grove<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code><br><span class="meta">Weapon:</span> power (avg 13)<br><span class="meta">Modifiers:</span> Modifies damage roll by 2, Modifies strength by 1</div>
+<div class="item-detail" id="item-a-jar-of-viscous-oil"><b>a jar of viscous oil</b> <span class="meta">L21 treasure / treasure / glass</span><br><span class="room">Room:</span> The Shadow Grove<br><span style="color:#8a8;">Container:</span> a floating chest<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code></div>
+<div class="item-detail" id="item-a-robe-of-eyes"><b>a robe of eyes</b> <span class="meta">L55 clothing / about / cloth</span><br><span class="room">Room:</span> The Shadow Grove<br><span class="mob">Mob:</span> Danair<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code><br><span class="meta">Flags:</span> magic, anti_good, evil<br><span class="meta">Modifiers:</span> Modifies hit roll by 3, Modifies armor class by -20, Modifies mana by 40, Modifies wisdom by 2</div>
+<div class="item-detail" id="item-a-runed-iron-breastplate"><b>a runed iron breastplate</b> <span class="meta">L34 object / runed / iron</span><br><span class="room">Room:</span> The Shadow Grove<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code><br><span class="meta">Flags:</span> glowing, bless, anti_evil<br><span class="meta">Modifiers:</span> Modifies damage roll by 2, Modifies hit roll by 1, Modifies dexterity by -2, Modifies hp by 12<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 11,bashing for 12, slashing for 15, magic for 9, and the elements for 6 points each.</div>
+<div class="item-detail" id="item-a-silver-gray-basinet"><b>a silver-gray basinet</b> <span class="meta">L35 armor / head / steel</span><br><span class="room">Room:</span> The Shadow Grove<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code><br><span class="meta">Modifiers:</span> Modifies save vs spell by -5, Modifies strength by 1<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 11, bashing for 11,  slashing for 11, magic for 2, and the elements for 7 points each.</div>
+<div class="item-detail" id="item-a-silver-gray-gorget"><b>a silver-gray gorget</b> <span class="meta">L35 armor / neck / steel</span><br><span class="room">Room:</span> The Shadow Grove<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code><br><span class="meta">Modifiers:</span> Modifies constitution by 2<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 11, bashing for 11,  slashing for 11, magic for 2, and the elements for 7 points each.</div>
+<div class="item-detail" id="item-a-silver-horned-helm"><b>a silver-horned helm</b> <span class="meta">L48 armor / head / silver</span><br><span class="room">Room:</span> The Shadow Grove<br><span style="color:#8a8;">Container:</span> the donation pit<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code><br><span class="meta">Modifiers:</span> Modifies damage roll by 1, Modifies hit roll by 1, Modifies hp by 20<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 13, bashing for 13,  slashing for 13, magic for 3, and the elements for 8 points each.</div>
+<div class="item-detail" id="item-a-sleek-silver-staff"><b>a sleek silver staff</b> <span class="meta">L35 talisman / talisman / silver</span><br><span class="room">Room:</span> The Shadow Grove<br><span class="mob">Mob:</span> a transmuter scholar<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code><br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-a-swirling-blood-red-orb"><b>a swirling blood-red orb</b> <span class="meta">L25 talisman / talisman / gem</span><br><span class="room">Room:</span> The Shadow Grove<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code><br><span class="meta">Flags:</span> magic, anti_good<br><span class="meta">Modifiers:</span> Modifies save vs breath by -4, Modifies wisdom by 2, Modifies intelligence by 2</div>
+<div class="item-detail" id="item-some-silver-gray-leggings"><b>some silver-gray leggings</b> <span class="meta">L35 armor / legs / steel</span><br><span class="room">Room:</span> The Shadow Grove<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;2n;w;5s</code><br><span class="meta">Modifiers:</span> Modifies damage roll by 1, Modifies moves by 25, Modifies dexterity by 1<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 11, bashing for 11,  slashing for 11, magic for 2, and the elements for 7 points each.</div>
+</body></html>

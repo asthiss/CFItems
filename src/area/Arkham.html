@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arkham - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Arkham</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+                                                                                                    C           T
+                                                                                                   /           /
+                                                                                                  +-----+-----+
+                                                                                                        |
+                                                                        <a href="Forest_Road.html" style="color:#dfbe6f">ForestRoad</a>                      |
+                                                                                                        |
+                                    A                                       |               +       I   | +     S       B
+                                   /                                        |              /       /    |/     /       /
+                                  +            14             +             +            13       +-----+-----+       +
+                                  |             |             |             |             |             |             |
+                                  |             |             |             |             |             |             |
+                                  |             |             |             |             |             |             |
+                              N   |             |             |             |             |             |             |       +
+                             /    =             =   Arcanus   |   Avenue    |             =   Arcanus   =   Avenue    =      /
+                            +----=+-------------+-------------+-------------+-------------+-------------+-------------+=----+
+                                  |             =             =             |             =             =            /|
+                                  |             |             |           D |             |             |          FC |
+                                E |             |  +-------------+          |             |             |             |
+                                l |             | /           | /         r |             | +           | +         I |
+                                d |             |/            |/            |             |/            |/          p |
+                                r |             +-------------+           a |             +            12           s |
+                                i |                                         |                                       w |
+                                t |                                       g |                                       i |
+                                c |                                         |                                       c |
+                                h |                                       o |                                       h |
+                                  |                                         |                                         |
+                              +   |       +                               n |                                     +   |       +  
+                             /    |      /                                  |                                    /    |      /
+                            8----=+=----+-----Th                       9----+=----+City Hall, Bank              +----=+=----10
+                                  |                                         |                                         |
+                                  |                                         |                                         |
+                                  |                                         |                                         |
+                                  | L                                       | R                                       | R
+                                  |                                         |                                         |
+      +-+  +                      | a                                       | o           +Healer, Pit                |
+      | = /                       |                                         |             |                           | o
+      + 16             +          | n             W             He          | a           |               +           |
+      | =             /           |              /             /            |             |              /            |
+    +-+-+-+         15            | e           +             +             | d           +Fountain     1             | w
+      | | |          |            |             |             |             |             |             |             |
+      +-+-+-+        |            |             |             |             |             |             |             |       +
+Dragon| | |          =            |             =    Main     |   Street    |             =    Main     =    Street   |      /
+Sea --+-+-+----------+------------+-------------+-------------+-------------0-------------+-------------+-------------+=----3=+
+      | | |         /=            |             =             =            /|             =             =             |
+    +-+-+-+   +   FC | +          |             | +           |          FC |             |             | +           |
+      | | |  /       |/         E |             |/            |             |             |             |/          I |
+      +-18-+=17      2          l |             6             |             |             4             5           p |
+                                d |                           |             |                                       s |
+       The                      r |                           |             |                                       w |
+      Wharf                     i |                           |             |                                       i |
+                                t |                           |             |       Sh                              c |
+                                c |                           |             |      /                                h |
+                                h |                     +-----+------------=+=----+                                   |
+                                  |                     |     |   +         |                                         |
+                              +   |                     |     |  /          |                                     +   |       As
+                             /    |                     +     | +         D |                                    /    |      /
+                            +----=+=----+                     |/          r |                                  11----=+=----+
+                                  |                     +----=7=----+     a |                                         |
+                                  |                           =           g |                                         |
+                                  |                           |           o |                                         |
+                                  | L                         |           n |                                         | R
+                                  |                           +             |                                         |
+                                  | a                         |             |                                         |
+                                  |                           P             |                                         | o
+                                  | n             +                         | R             +                         |
+                                  |              /                          | o            /                          |
+                                  | e           +             +             | a           +Trainer      +             | w
+                                  |             |             |             | d           |             |             |
+                                  |             |             |             |             |             |             |
+                                  |             =   Corrine   =     Way     |             =   Corrine   =     Way     |
+                            +----=+-------------+-------------+-------------+-------------+-------------+-------------+---- Outlying
+                                  |             =             =             |             =             =             =     Villages
+                                  |             |             | +           |             |             | +           |
+                                  |             |             |/            Temple        |             |/            |
+                                  +             +             +                           +             +             +
+
+0 - Town Circle
+1 - Candi's Confectionary
+2 - Dolansten's Map Making
+3 - The Dragon Head Pub
+4 - The Corbert Cottage
+5 - The Spinning Wheel
+6 - Grishug's Metal Working
+7 - Cathedral of Light
+8 - Gorval's Fine Liquors
+9 - The Stable
+10 - The Finest Cut (butcher)
+11 - The Old Leather Sole
+12 - Jimiton's Magical Supply
+13 - The Bubbling Brew
+14 - Astor's Bounty Office
+15 - Jamehta's Clothing Supply
+16 - The Wharf Bazaar
+17 - Fisherman's Pub
+18 - Omis the boat merchant (boats)
+</pre></div>
+<h3>Rooms (19)</h3>
+<div class="legend-grid">
+<div class="legend-entry"><span class="num">0</span><span class="room-name">Town Circle</span></div>
+<div class="legend-entry"><span class="num">1</span><span class="room-name">Candi's Confectionary</span></div>
+<div class="legend-entry"><span class="num">2</span><span class="room-name">Dolansten's Map Making</span></div>
+<div class="legend-entry"><span class="num">3</span><span class="room-name">The Dragon Head Pub</span></div>
+<div class="legend-entry"><span class="num">4</span><span class="room-name">The Corbert Cottage</span></div>
+<div class="legend-entry"><span class="num">5</span><span class="room-name">The Spinning Wheel</span></div>
+<div class="legend-entry"><span class="num">6</span><span class="room-name">Grishug's Metal Working</span></div>
+<div class="legend-entry"><span class="num">7</span><span class="room-name">Cathedral of Light</span></div>
+<div class="legend-entry"><span class="num">8</span><span class="room-name">Gorval's Fine Liquors</span></div>
+<div class="legend-entry"><span class="num">9</span><span class="room-name">The Stable</span></div>
+<div class="legend-entry"><span class="num">10</span><span class="room-name">The Finest Cut (butcher)</span></div>
+<div class="legend-entry"><span class="num">11</span><span class="room-name">The Old Leather Sole</span></div>
+<div class="legend-entry"><span class="num">12</span><span class="room-name">Jimiton's Magical Supply</span></div>
+<div class="legend-entry"><span class="num">13</span><span class="room-name">The Bubbling Brew</span></div>
+<div class="legend-entry"><span class="num">14</span><span class="room-name">Astor's Bounty Office</span></div>
+<div class="legend-entry"><span class="num">15</span><span class="room-name">Jamehta's Clothing Supply</span></div>
+<div class="legend-entry"><span class="num">16</span><span class="room-name">The Wharf Bazaar</span></div>
+<div class="legend-entry"><span class="num">17</span><span class="room-name">Fisherman's Pub</span></div>
+<div class="legend-entry"><span class="num">18</span><span class="room-name">Omis the boat merchant (boats)</span></div>
+</div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="Forest_Road.html">ForestRoad</a> &bull; <a href="Forgotten_Crypts.html">ForgottenCrypts</a> &bull; <a href="DragonSea.html">DragonSea</a> &bull; <a href="Outlying_Villages.html">OutlyingVillages</a> &bull; <a href="Temple_of_the_Scarab.html">Temple_of_the_Scarab</a> &bull; </div>
+<h3>Items Found Here (4)</h3>
+<div class="item-detail" id="item-a-rolled-bright-yellow-scroll"><b>a rolled bright yellow scroll</b> <span class="meta">L15 scroll / scroll / vellum</span><br><span class="room">Room:</span> An Arkham guard vigilantly roams the city streets searching for the lawless.<br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-a-salamander-talon"><b>a salamander talon</b> <span class="meta">L45 weapon / dagger / dragonbone</span><br><span class="room">Room:</span> The Arkham Sanatorium<br><span class="mob">Mob:</span> A huge magma para-elemental<br><span class="meta">Weapon:</span> slice (avg 81)<br><span class="meta">Flags:</span> magic, no_drop<br><span class="meta">Modifiers:</span> Modifies damage roll by 4, Modifies hit roll by 4</div>
+<div class="item-detail" id="item-a-scroll-marked-with-a-starburst"><b>a scroll marked with a starburst</b> <span class="meta">L15 scroll / scroll / paper</span><br><span class="room">Room:</span> An Arkham guard vigilantly roams the city streets searching for the lawless.<br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-a-triangular-shard-of-red-crystal"><b>a triangular shard of red crystal</b> <span class="meta">L50 wand / wand / crystal</span><br><span class="room">Room:</span> The Arkham Sanatorium<br><span style="color:#8a8;">Container:</span> a floating chest<br><span class="meta">Flags:</span> glowing, humming, magic<br><span class="meta">Modifiers:</span> Modifies strength by 4</div>
+</body></html>

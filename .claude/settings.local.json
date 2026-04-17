@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "Bash(dotnet build:*)",
+      "Bash(dotnet new:*)",
+      "Bash(dotnet run:*)",
+      "Bash(', `\\):*)",
+      "Bash(powershell -Command ':*)",
+      "Bash(ls /c/source/github/CFItems/data/logs/*.log)",
+      "Bash(taskkill //F //IM \"CFItems.DataPipeline.exe\")",
+      "Bash(curl -s \"https://carrionfields.net/helpsearch.php?keyword=human\")",
+      "Bash(curl -sL \"https://carrionfields.net/helpsearch.php?keyword=human\")",
+      "Bash(curl -v \"https://carrionfields.net/helpsearch.php?keyword=human\")",
+      "Bash(curl -sL \"https://mud.fandom.com/wiki/Carrion_Fields\")",
+      "Bash(curl -sL \"https://carrionfields.net/edgelist.php\")",
+      "Bash(curl -sL \"https://carrionfields.net/helpsearch.php?keywords=human\")",
+      "Bash(curl -sL \"https://carrionfields.net/helpsearch.php?id=242\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://cfitems.blob.core.windows.net/cfknowledge/MapOfThera.txt?sv=2025-11-05&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2030-04-15T16:21:07Z&st=2026-04-16T08:06:07Z&spr=https&sig=REDACTED_SAS_SIG%3D\")",
+      "Bash(where.exe func:*)",
+      "Bash(where.exe dotnet:*)",
+      "Bash(where.exe npx:*)",
+      "Bash(where.exe python:*)",
+      "Bash(dotnet tool:*)",
+      "Bash(grep -v \"^$\")",
+      "Bash(curl -s \"https://cfitems.azurewebsites.net/api/items/all\")",
+      "Bash(curl -s -I \"https://cfitems.blob.core.windows.net/cfitems/documents/item-locations.json\")",
+      "Bash(curl -s -I -H \"Origin: http://localhost\" \"https://cfitems.blob.core.windows.net/cfitems/documents/item-locations.json\")",
+      "Bash(curl -sL \"http://wiki.qhcf.net/\" -m 10)",
+      "Bash(curl -sL \"http://wiki.qhcf.net/index.php?title=Galadon\" -m 10)",
+      "Bash(curl -sL \"http://wiki.qhcf.net/index.php?title=Special:AllPages\" -m 10)",
+      "Bash(curl -sL \"http://wiki.qhcf.net/index.php?title=Special:AllPages&from=Legs\" -m 10)",
+      "Bash(ls /c/source/github/CFItems/src/area/*.html)",
+      "Bash(curl -sL \"http://wiki.qhcf.net/index.php?title=WorldMap\" -m 10)"
+    ]
+  }
+}

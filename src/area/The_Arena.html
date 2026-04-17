@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Arena - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>The Arena</h2>
+<div class="area-nav">Level: All | Builder: Corrlaan | </div>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+  A--A
+  |  |
+  A--A
+
+  RR1    RR2  LL
+
+                 D--L--B--L--C
+                       |
+                       E
+                       |
+ <a href="Outskirts_of_Galadon.html" style="color:#dfbe6f">Outskirts of <a href="Galadon.html" style="color:#dfbe6f">Galadon</a></a>--+
+
+A - A Massive Arena
+R1- A Dark Hall 1 (Ready Room 20 sec)
+R2- A Dark Hall 2 (Ready Room 20 sec)
+LL- A Bloody Pit (Loser's Lane - Where you go when DEFEATED)
+E - The Entrance to a Grand Arena
+B - A Lavishly Furnished Balcony   -  Also where you make groups, bets, and issue challenges.
+L - A Lavishly Furnished Balcony
+C - Elysium's Last Call
+ The shop's hours are 12 AM until 11 PM.
+ [Lv Price] Item                                       (Type)
+ [ 1    37] a simple glass of water                    (drink container)
+ [ 1    87] a tall glass of light colored champagne    (drink container)
+ [ 1    75] a jigger of strawberry brandy              (drink container)
+ [ 1   255] a bottle of slightly aged white wine       (drink container)
+ [ 1   330] a bottle of aged red wine                  (drink container)
+ [ 1   231] a scrumptious serving of string beans and almonds (food)
+ [ 1   387] a seared loin of moose                     (food)
+ [ 1   262] a succulent chunk of buttered tiger shark soaked in white wine (food)
+ [ 1   281] a bowl of rolled noodle with sun-dried tomatoes (food)
+ [ 1   187] a roll of rice and smoked salmon           (food)
+ A white cloaked being tells you 'Anything whet your fancy?'
+D - Dark Grotto of Defiled Reverie
+ The shop's hours are 12 AM until 11 PM.
+ [Lv Price] Item                                       (Type)
+ [ 1    62] a shot of green bitters                    (drink container)
+ [ 1    25] a steaming cup of coffee                   (drink container)
+ [ 1    37] a simple glass of water                    (drink container)
+ [ 1    50] a cold mug of beer                         (drink container)
+ [ 1   250] a squirming mess of basilisk hatchlings    (food)
+ [ 1   156] a crunchy slab of burnt blue flesh         (food)
+ [ 1   312] a tiny flank steak from a pixie            (food)
+ [ 1   406] a few pieces of crisped heart from a wild-elf (food)
+ [ 1   250] a tender serving of baked minotaur cheek   (food)
+ A dark shrouded being tells you 'Nothing but the finest for my customers!'
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="Outskirts_of_Galadon.html">Outskirts_of_Galadon</a> &bull; </div>
+<h3>Items Found Here (4)</h3>
+<div class="item-detail" id="item-an-eog-sabre-with-a-jagged-edge"><b>an eog sabre with a jagged edge</b> <span class="meta">L50 weapon / sword / onyx</span><br><span class="room">Room:</span> The Arena of Ostalagiah<br><span class="meta">Weapon:</span> slash (avg 27)<br><span class="meta">Flags:</span> bless, cursed<br><span class="meta">Modifiers:</span> Modifies damage roll by 3, Modifies hit roll by 5</div>
+<div class="item-detail" id="item-arcane-robes-draped-with-a-bear-pelt"><b>arcane robes draped with a bear pelt</b> <span class="meta">L51 object / arcane / fur</span><br><span class="room">Room:</span> The Arena of Ostalagiah<br><span style="color:#8a8;">Container:</span> the burnt corpse of Draegonast the Elemental Hand<br><span class="meta">Flags:</span> magic<br><span class="meta">Modifiers:</span> Modifies save vs spell by -5, Modifies mana by 80, Modifies constitution by 1, Modifies dexterity by -2</div>
+<div class="item-detail" id="item-the-acid-of-a-sea-dragon"><b>the acid of a sea dragon</b> <span class="meta">L40 ingredient / ingredient / cloth</span><br><span class="room">Room:</span> The Arena of Ostalagiah<br><span class="mob">Mob:</span> Vethrai the One-Pawed<br><span class="meta">Flags:</span> humming</div>
+<div class="item-detail" id="item-vambraces-of-supple-rothe-hide-reinforced-with-iron-spikes"><b>vambraces of supple rothe hide reinforced with iron spikes</b> <span class="meta">L30 armor / arms / leather</span><br><span class="room">Room:</span> komodo dragon              The Arena of Ostalagiah<br><span class="mob">Mob:</span> Llovallos of Menzarhgal<br><span class="meta">Flags:</span> anti_good, anti_neutral, evil, elf_only<br><span class="meta">Modifiers:</span> Modifies damage roll by 3, Modifies hit roll by 1, Modifies constitution by 3<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 12, bashing for 12,  slashing for 12, magic for 9, and the elements for 6 points each.</div>
+</body></html>

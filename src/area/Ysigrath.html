@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ysigrath - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Ysigrath</h2>
+<div class="area-nav">Level: 5 - 15 | Builder: Nepenthe | Category: Forest</div>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+<a href="Ysigrath.html" style="color:#dfbe6f">Ysigrath</a> is no summon, no gate, and no word. (except from Hallowed place)
+
+                HU WH U  WH HU
+|--------|      |  |  |  |  |    Sz'weh
+|        |------+--+--+--+--+    Village
+|        |      |  |  |  |  |
+|        |      HU HU |  HU HU
+|        |            |
+|        |         HU-+-HU
+|        |            |   =
+|        |            |    + a dark place(gems)
+|        |         HU-+-HU
+|        |            |
+| Heart  |   |--------------------|
+|  of    |   |untamed wilds of    |
+|Ysigrath|   |the Ysigrath.(Maze2)|
+|(Maze3) |   |--------------------|
+|        |            |
+|        |         DW-+-DW
+|        |            |
+|        |         DW-+-DW   K'sra
+|        |            |      Village
+|        |  DW DW CD  |  S
+|        |  |  |  |   |  |
+|        |--+--+--+---C--H
+|--------|  |  |  |   |
+            DW DW DW  |
+                      |
+                  DW--+--DW
+                      |                  <a href="SeaOfDespair.html" style="color:#dfbe6f">SeaOfDespair</a>
+                  DW--K--DW  The Forgotten  | |   |
+                      |             Island  ~-~---~  
+              |----------------|          ^  \|   |    (Note: This part of the Sea of Despair
+              |Ysigrath (Maze1)|--T--D--Dock--~---~          and Yisgrath are same area)
+              |----------------|          |   |   |           
+                                        <a href="AshesOfNoWhere.html" style="color:#dfbe6f">AshesOfNoWhere</a>
+
+
+C - center of the village of the K'sra
+CD - chieftain's dwelling, Ghyss (lichen gloves)
+D - dark trail into Ysigrath
+DW - Inside a K'sra dwelling
+H - Hallowed Place (Sanctified room)
+HU - Inside a Sz'weh hut
+O - On Dock
+S - Shaman's Dwelling, Jhel'nra (fragrant necklace of marsh flowers)
+T - trail's end
+U - unholy place. Zen'kra (Silver Chain <a href="Flail.html" style="color:#dfbe6f">Flail</a>(FB) Mithril Chain Flail(AB), unholy symbol)
+WH - Inside a Sz'weh warrior's hut (Bone Axe, Bone Armor)
+~ - Sea of Despair
+
+Maze1:
+Into K'sra : 
+Look for &quot;Something seems different about the swamp in this direction.&quot;. The direction is north.
+path:   sw nnw n   from the first room off the main trail (room 1). The first sw to room 6 can be replaced with nnw, see, nwe
+
+Into K'sra from any room of Maze1:
+Mindlessly spam nnw until you get there. Finding room 1 and following above route works as well.
+
+Back to AshesOfNoWhere:   
+eee, wse, swe or ssee   From the first room south of K'Sra Entrance (room 9). Last e is from room 1 to T.
+
+Back to AshesOfNoWhere from any Maze1 room: 
+-Look east for &quot;You think you see a trail.&quot; If you see it, you are in room 1. Do this every time you enter a room.
+-If you are not in room 1, go south twice. 
+-If you still haven't reached room 1, you are either in room 4 or room 8. Go west once. If you aren't in room 1 by now, go north to room 1.
+
+Map of Maze1:
+
+    K 6 7
+    | ^ v
+  2&lt;9&lt;5&gt;2    
+    v ^ |
+1&lt;1&lt;4&lt;7&gt;1-T
+    | ^ |
+  9&gt;8&lt;6-3-8&gt;1
+    | v |
+    4 4&lt;2&gt;2
+
+In above map, | and - are two-way exits, &lt;&gt;^v are one way exits. A&gt;B is a one-way exit from A to B to the east. 
+All 9 rooms of the maze have 4 exits, all of which cannot be shown in the above map. Hence, exits by room are listed below. 
+Exits in below map all are one-way from the room in the center of the cross. The map seen above is based on map seen below.
+
+  2     3     1     8     6     7     5     4     K
+  |     |     |     |     |     |     |     |     |
+1-1-T 4-2-2 6-3-8 1-4-6 9-5-2 8-6-3 4-7-1 3-8-1 2-9-8
+  |     |     |     |     |     |     |     |     |
+  3     1     2     8     4     4     2     4     4
+
+Maze2:
+path to Sz'weh From K'Sra: nenwwn From first room north of K'Sra
+Into Sz'weh: Look for &quot;You can barely see smoke rising from the swamp in this direction.&quot;
+Into K'sra from Sz'Weh:   wes    From first room south of Sz'weh Entrance
+
+Maze3: [Poisonous gas]
+A Lost Paladin? : Carries Silverbladed Poleaxe (Wrath Attack), Platinum Signet Ring
+A swamp serpent carries a platinum signet ring.
+
+Into K'sra   : Look for &quot;You can see the village of the K'sra.&quot;
+Into Sz'weh  : Look for &quot;You see the village of the Sz'weh.&quot;
+To Pyrohydra : Look for &quot;an area filled with black moss.&quot; [Forget] Then &quot;some more swamp.&quot; 
+                Then &quot;a partially-concealed cave entrance.&quot;
+                Pyrfohydra carries a pyrohydra-scale shield and a necklace of pyrohydra teeth 
+                (EQ BURNER!)
+To hatchlings: Look for &quot;You see swamp.&quot; Then &quot;You see a cave.&quot;
+                Black dragon hatchling carries a belt of black dragonscales, black dragon's tooth (dagger), 
+                and piece of black dragon scales
+To Druid guild: Look for &quot;A circle of stones rises out of the swamp.&quot;
+
+Quick Reference
+Maze 1 To: swnnwn
+Maze 1 From: swe
+
+Maze 2 To: nenwwn
+Maze 2 From: wes
+</pre></div>
+<h3>Rooms (1)</h3>
+<div class="legend-grid">
+<div class="legend-entry"><span class="num">1</span><span class="room-name">1-T 4-2-2 6-3-8 1-4-6 9-5-2 8-6-3 4-7-1 3-8-1 2-9-8</span></div>
+</div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="SeaOfDespair.html">SeaOfDespair</a> &bull; <a href="StrangeIsland.html">StrangeIsland</a> &bull; <a href="AshesOfNoWhere.html">AshesOfNoWhere</a> &bull; </div>
+<h3>Items Found Here (10)</h3>
+<div class="item-detail" id="item-a-black-moss-poncho"><b>a black moss poncho</b> <span class="meta">L10 object / poncho / plant</span><br><span class="room">Room:</span> The Heart of Ysigrath<br><span class="mob">Mob:</span> the obliviax<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n;s;w;3n;2w;s;n;w</code><br><span class="meta">Flags:</span> bless<br><span class="meta">Modifiers:</span> Modifies save vs breath by -3, Modifies save vs paralysis by -3, Modifies intelligence by 2<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 2,bashing for 2, slashing for 3, magic for 5, and the elements for 6 points each.</div>
+<div class="item-detail" id="item-a-large-emerald-ring"><b>a large emerald ring</b> <span class="meta">L48 treasure / treasure / emerald</span><br><span class="room">Room:</span> Swamps of Ysigrath Room<br><span class="meta">Modifiers:</span> Modifies damage roll by 1, Modifies hit roll by 1, Modifies armor class by -5, Modifies strength by 1</div>
+<div class="item-detail" id="item-a-lump-of-brown-pudding"><b>a lump of brown pudding</b> <span class="meta">L18 object / lump / carrion</span><br><span class="room">Room:</span> The Heart of Ysigrath<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n;s;w;3n;2w;s;n;w</code></div>
+<div class="item-detail" id="item-a-maroon-potion"><b>a maroon potion</b> <span class="meta">L20 potion / potion / glass</span><br><span class="room">Room:</span> The Heart of Ysigrath<br><span class="mob">Mob:</span> The brown pudding<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n;s;w;3n;2w;s;n;w</code><br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-a-pair-of-silver-lined-silk-sleeves"><b>a pair of silver-lined silk sleeves</b> <span class="meta">L48 clothing / arms / silk</span><br><span class="room">Room:</span> Swamps of Ysigrath Room<br><span class="mob">Mob:</span> Fralstatil, Emissary of Teth Azeleth<br><span class="meta">Flags:</span> magic, conjurer_only<br><span class="meta">Modifiers:</span> Modifies save vs mental by -2, Modifies mana by 25, Modifies wisdom by 1, Modifies intelligence by 1</div>
+<div class="item-detail" id="item-a-platinum-signet-ring"><b>a platinum signet ring</b> <span class="meta">L20 treasure / treasure / platinum</span><br><span class="room">Room:</span> The Heart of Ysigrath<br><span class="mob">Mob:</span> a swamp serpent<br><span style="color:#8a8;">Container:</span> a huge chest<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n;s;w;3n;2w;s;n;w</code><br><span class="meta">Flags:</span> bless, orderly_only, orderly<br><span class="meta">Modifiers:</span> Modifies charisma by 1, Modifies save vs spell by -5, Modifies hp by 20<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 5,bashing for 5, slashing for 5 and magic for 12 points each.</div>
+<div class="item-detail" id="item-a-silver-flute"><b>a silver flute</b> <span class="meta">L15 object / flute / silver</span><br><span class="room">Room:</span> The Heart of Ysigrath<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n;s;w;3n;2w;s;n;w</code><br><span class="meta">Modifiers:</span> Modifies save vs paralysis by -2, Modifies moves by 30</div>
+<div class="item-detail" id="item-a-sprig-of-marshweed"><b>a sprig of marshweed</b> <span class="meta">L12 food / food / plant</span><br><span class="room">Room:</span> The Heart of Ysigrath<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n;s;w;3n;2w;s;n;w</code></div>
+<div class="item-detail" id="item-an-engraved-silver-bracelet"><b>an engraved silver bracelet</b> <span class="meta">L15 treasure / treasure / silver</span><br><span class="room">Room:</span> Ysigrath<br><span style="color:#8a8;">Container:</span> the burnt corpse of a python<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n;s;w;3n;2w</code><br><span class="meta">Flags:</span> bless, chaotic_only<br><span class="meta">Modifiers:</span> Modifies charisma by 1, Modifies save vs spell by -5, Modifies damage roll by 1, Modifies moves by 20, Modifies dexterity by 1<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 7,bashing for 7, slashing for 7 and magic for 9 points each.</div>
+<div class="item-detail" id="item-the-toxic-spittle-of-a-black-dragon"><b>the toxic spittle of a black dragon</b> <span class="meta">L18 ingredient / ingredient / water</span><br><span class="room">Room:</span> The Heart of Ysigrath<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n;s;w;3n;2w;s;n;w</code></div>
+</body></html>

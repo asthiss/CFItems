@@ -115,7 +115,7 @@ searchForm.addEventListener("submit", (e) => {
     console.log("area:" + area);
     if(area)
     {
-        itemsToSort = itemsToSort.filter(item => item.Area === area);
+        itemsToSort = itemsToSort.filter(item => item.Area && item.Area.toLowerCase().indexOf(area.toLowerCase()) !== -1);
     }
 
     let affect = document.getElementById("affect").value;
@@ -284,6 +284,21 @@ function createElements(items) {
             {
                 item.innerHTML = magicTemplateWithOutFlags(currentItem);
             }
+        }
+
+        // Add location info (mob, container, path)
+        var locationHtml = '';
+        if(currentItem.MobSource) {
+            locationHtml += '<b>Mob:</b> ' + currentItem.MobSource + ' ';
+        }
+        if(currentItem.ContainerSource) {
+            locationHtml += '<b>Container:</b> ' + currentItem.ContainerSource + ' ';
+        }
+        if(currentItem.PathFromCrossroads) {
+            locationHtml += '<br><b>Path from Crossroads:</b> <code>' + currentItem.PathFromCrossroads + '</code>';
+        }
+        if(locationHtml) {
+            item.innerHTML += '<div style="margin-top:4px;padding:4px;border-left:2px solid #dfbe6f;font-size:14px;">' + locationHtml + '</div>';
         }
 
         parent.appendChild(item);

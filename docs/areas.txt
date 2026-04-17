@@ -1,0 +1,157 @@
+areas
+| 40 - 51 | Dhuuston          - Subterranean Spire
+| 40 - 51 | Neajess           - Temple of Qhabiszan
+|   All   | Rahsael/Ishuli    - The Shadow Peak Pass
+| 25 - 45 | Rarywey           - Aubade
+|   All   | Ishuli            - Saurian Village
+| 20 - 51 | Thaedan           - Workshop of the Master Enchanter
+| 30 - 51 | Whildur           - Evergrove Outpost
+| 20 - 40 | Rahsael           - The Buried Battlefield
+| 25 - 45 | Ishuli            - Goblin Outpost
+| 10 - 51 | Verathi           - Aturi Timberlands
+| 15 - 35 | Drehir            - Dhumlar-Ko
+|   All   | Nythos            - Targeth's Manor
+| 15 - 35 | Destuvius         - The Forgotten Island
+| 20 - 30 | Ysaloerye         - The Ancient Plain Stones
+|   All   | Nreykre           - The Frozen Gorge
+| 10 - 51 | Nnaeshuk          - Enpolad's Game Garden
+| 35 - 50 | Malakhi           - Eil Shaeria
+|   All   | Laurella          - Darsylon
+|  1 - 30 | Laurella          - The Vale of Arendyl
+| 40 - 51 | Fjarn             - Abandoned Siege Encampment
+|   All   | Corrlaan          - The Arena
+| 10 - 51 | Strienat          - Ancient Emerald Forest
+|  5 - 20 | Yean              - Udgaardian Plains
+| 15 - 40 | Farigno           - Khardrath's Planar Sanctum
+| 11 - 51 | Aarn/Rayihn       - The Consortium
+| 35 - 51 | Thrak/Sebeok/Kast - High Lord's Keep
+|  1 - 5  | Crellan           - The Academy
+|   All   | Crysseara         - The Seaport of Hamsah Mu'tazz
+| 40 - 51 | Nimbus/Corrlaan   - Lower Cragstone
+| 10 - 51 | Twist             - Forest of NoWhere
+|   All   | Desmonn Kinnt     - Upper Cragstone
+| 10 - 51 | Justin            - The Sea of Despair
+| 30 - 51 | Justin            - The Coral Head
+|   All   | Bria/Ysaloerye    - Northern Foothills
+| 25 - 40 | Galadriel         - The Plains of Arendyl
+| 15 - 40 | Muuloc            - Coven of Dralkar Wood
+| 15 - 30 | Dreaa             - Mansion of Twilight
+| 10 - 45 | Andrlos/Thrak     - Loch Terradian
+|  1 - 15 | Choranek          - Amaranthian Forest
+| 40 - 51 | Phaelim           - Ruins of Maethien
+|  6 - 30 | Grurk             - Forgotten Crypts
+| 11 - 25 | Soucivi           - Keep of the Fhalaugash
+| 20 - 40 | Sevarecan         - Ruins of Delar-Tol
+| 11 - 51 | Quezzumpliet      - The Fields of Balator
+| 35 - 51 | Phaelim           - Maethien
+|  1 - 5  | Iunna             - Caravans of the Jhaana
+| 25 - 51 | Gherian           - Delar-Tol
+| 25 - 35 | Sabiene           - The Village of Azuremain
+| 30 - 51 | Rogardian/ShaidarH - The Northern Mountains
+| 30 - 51 | Blachmianan       - Dra'Melkhur
+|  1 - 15 | Trasthe           - Forest of Prosimy
+| 20 - 35 | Mortimor          - Hidden Forest
+| 20 - 30 | Shokai            - The Rocky Paths
+|   All   | Kastellyn         - Feanwyyn Weald
+|  1 - 10 | Beroxxus          - Troglodyte Caverns
+| 30 - 51 | Zulghinlour       - The Skies of the Past
+| 10 - 20 | Calradian         - Gol'Galath
+|   All   | Noldruk           - South Dairein Settlement
+| 20 - 35 | Acallsho          - Moudrilar's Monastery
+|  1 - 20 | Iunna             - Village of Lallenyha
+|  5 - 35 | Thror             - The Ruins of Ostalagiah
+|   All   | Thror/Pico        - The Dwarf Forest
+| 11 - 51 | Thror             - The Citadel of Ostalagiah
+| 10 - 25 | Karithia          - Keep of the Righteous
+|  7 - 20 | Calradian         - The Stone's Embrace
+|  5 - 30 | Mayesha/ShDancer  - Ar'atouldain
+|  5 - 50 | Ishmael           - The Halfling Lands
+| 10 - 30 | Divox             - Blackwater Swamp
+|  5 - 51 | Thror/Grumorum    - Galadonian Settlement
+|  1 - 20 | Vynmylak          - V'Dramir's Cove
+|  6 - 30 | Intronan          - The Bandit Stronghold
+| 20 - 40 | Saldradien        - Coastal Wetlands
+| 15 - 40 | Selric            - The Drogran Hills
+|   All   | Keniston/Leika    - The Tower of Sorcery
+|  1 - 20 | Kastellyn         - Temple of Loch Grynmear
+|   All   | Andaren           - The Open Plains
+|   All   | Sattanos/Orsil    - The Dragon Sea
+| 30 - 51 | Andaren           - The Skies above Thera
+| 10 - 51 | Proserpina        - The Oryx Steppes
+| 20 - 40 | Vahlen            - Felar Encampment
+| 35 - 51 | Mayesha           - Valley of Veran
+| 30 - 45 | Valguarnera       - Kteng's Laboratory
+| 30 - 51 | Arvam             - Mines of Zakiim
+| 30 - 45 | Gadinias          - The Dranettie Wood
+|   All   | Thror             - Grinning Skull Village
+|  1 - 20 | Shenara           - The Sewers of Seantryn Modan
+| 40 - 51 | Ashaxreyn         - Mount Calandaryl
+| 40 - 51 | Ashaxreyn         - The Underdark Sea
+| 20 - 30 | Jacynth           - Ship Graveyard
+| 10 - 35 | Guerric           - Western Aryth Ocean
+| 20 - 35 | Eryndorial        - Crystal Island
+|  5 - 25 | Taerin            - Outlying Villages
+| 10 - 30 | Braerus           - Azreth Wood
+| 15 - 30 | Astein            - Keep of Ceawlin
+| 25 - 40 | Zulghinlour       - The Talshidar Caves
+|   All   | Macheath          - Dagdan
+| 45 - 51 | Teiphicker        - Ruins of the Deep
+| 40 - 51 | Stellyx           - Whistlewood Swamp
+[Hit Return to continue]
+
+| 40 - 51 | Iukuru            - Pine Forest
+| 30 - 50 | Amlaruil          - Elemental Temple
+| 40 - 51 | Amaranthe         - The Pyramid of Azhan
+|   All   | Shea              - Hillcrest
+| 20 - 35 | Holtzendorff      - Castle of Akan
+|  1 - 20 | Holtzendorff      - Akan
+|  1 - 25 | Vilhazarog/Braemir - Silverwood
+|  5 - 45 | Gareth            - The Basilica
+|   All   | Poetry            - Evermoon Hollow
+|   All   | Yanoreth          - Blackclaw Village
+|  1 - 30 | Galadriel         - Copeham Inn
+|  5 - 20 | Galadriel         - The Redhorn Mountains
+| 40 - 51 | Tureanthen        - The Slave Mines of Sitran
+| 20 - 40 | Montolio          - Spiderhaunt Woods
+|  5 - 25 | Montolio          - Lord Tabershaw's Keep
+| 25 - 51 | Nazmorghul        - Mortorn
+| 25 - 50 | Khargqwzxdds      - Mausoleum
+| 25 - 40 | Lloth             - The Frigid Wasteland
+|  5 - 25 | Pet/Aeon          - The Pass
+| 10 - 20 | Shokai            - Sands of Sorrow
+|  5 - 25 | Shokai            - Desert of Araile
+| 25 - 50 | Radickon          - Mount Kiadana-Rah
+|  5 - 35 | Cyra              - Aturi
+|  5 - 30 | Amaranthe         - The Galadon Sewers
+| 12 - 18 | Amaranthe/Valg    - Glauruk Spawning Ground
+| 40 - 50 | Kadizine          - Village of Mal'trakis
+| 45 - 51 | Agathocles        - Island of Corte
+|  5 - 25 | Sattanos          - The Grove
+|  1 - 7  | Cador/Eshval      - The Kobold Warrens
+| 20 - 51 | Mayesha           - Velkyn Oloth
+| 10 - 25 | Zulghinlour       - The Village of Barovia
+| 30 - 50 | Zulghinlour       - The Keep of Barovia
+| 35 - 50 | Savraeth          - Lost in the Mists
+|  5 - 51 | Twist/Tureanthen/Kors - The Ashes of NoWhere
+| 35 - 51 | Scarabaeus        - The Dark Wood
+| 40 - 50 | Scarabaeus        - Ante-Hell
+|  2 - 10 | Jormungandr/Nelt  - The Goblin Village
+|  3 - 10 | ShaidarHaran/Soucivi - Graveyard
+| 25 - 45 | ShaidarHaran      - Abandoned Mines
+| 35 - 51 | ShaidarHaran      - Teth Azeleth
+| 35 - 51 | ShaidarHaran      - Underdark
+| 35 - 51 | ShaidarHaran      - Coral Palace
+|   All   | Vass/Rad          - Seantryn Harbor
+|  1 - 10 | Vassagon          - The Lumberyard
+| 15 - 50 | Vassagon          - Waters of the Deep
+| 40 - 51 | Nepenthe          - Kuo-Toa Lair
+|  5 - 15 | Nepenthe          - Ysigrath
+| 10 - 40 | Nepenthe          - Balator
+|  1 - 20 | Pico              - The Coastal Plains
+| 15 - 35 | Pico              - The Jade Mountains
+| 30 - 50 | Pico              - The Wastes of Nonviel
+| 10 - 25 | Pico              - The Xvart Lair
+| 10 - 35 | Jullias/Nalasul   - The Aryth Ocean
+|  1 - 10 | Jullias           - Aldevari
+|  5 - 15 | Jullias           - The Violet Woodland
+| 20 - 50 | Nimbus/Thror      - The Battlefield

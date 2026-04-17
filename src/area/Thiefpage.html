@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thiefpage - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Thiefpage</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+
+Total cumulative points available:
+  Levels 1...41: 2 thief points/level
+  Level 42     : 18 thief points
+  total        : 100 thief points
+
+-LEVEL-     -SKILL NAME-              -COST-  -CUMULATIVE-    -PREREQUISITE-
+                                              -   COST   -  
+Base Thief Skills (no cost, no prerequisites, any guild):
+  Level 1:  dagger
+            mace
+            spear
+            sword
+            backstab
+            dodge
+            trip
+            haggle
+            hide
+            peek
+            recall
+  Level 2:  aim
+  Level 3:  dirt kicking
+  Level 4:  sneak
+  Level 5:  steal
+  Level 6:  evade
+  Level 7:  pick lock
+  Level 8:  elbow
+  Level 9:  light armor use
+  Level 10: detect hidden
+            relock
+  Level 11: knee
+            panhandle
+  Level 12: disarm
+            second attack
+  Level 13: parry
+  Level 14: kick
+  Level 15: hand to hand
+            meditation
+            circle
+  Level 16: fast healing
+  Level 18: lore
+            pierce
+  Level 19: rogues awareness
+  Level 20: precise aim
+            pen
+  Level 25: enhanced damage
+            dual wield
+  Level 42: opportunity strike
+  
+-LEVEL-     -SKILL NAME-              -COST-  -CUMULATIVE-    -PREREQUISITE-
+                                              -   COST   -  
+General Thief Skills (any guild):
+  Level 13: gentle walk               3       3               None
+  Level 14: knife                     8       8               None
+  Level 15: bribe mercenary           1       1               None
+  Level 16: covert                    2       2               None
+  Level 17: blackjack                 8       8               None
+  Level 19: disengage                 2       2               None
+  Level 20: shield block              10      10              None
+  Level 21: climb                     2       2               None
+  Level 22: doubleback                2       2               None
+  Level 23: precision strike          5       5               None
+  Level 24: thief waylay              3       3               None
+  Level 25: cheap shot                14      14              None
+  Level 26: weapon trip               4       4               None
+  Level 27: improved hide             4       4               None
+  Level 28: grease weapon             4       4               None
+  Level 32: grapple                   2       2               None
+  Level 33: isolate                   4       4               None
+  Level 34: separate                  6       6               None
+  Level 35: dual backstab             5       5               None
+  Level 37: shadow disappear          2       2               None
+
+-LEVEL-     -SKILL NAME-              -COST-  -CUMULATIVE-    -PREREQUISITE-
+                                              -   COST   -  
+Locksmith Skills (<a href="Darsylon.html" style="color:#dfbe6f">Darsylon</a>):
+  Level 34: advanced picklock         8       8               pick lock
+  Level 40: locksmith                 6       14              advanced picklock
+
+-LEVEL-     -SKILL NAME-              -COST-  -CUMULATIVE-    -PREREQUISITE-
+                                              -   COST   -  
+Mystic Skills (<a href="Arkham.html" style="color:#dfbe6f">Arkham</a>):
+  Level 1 : scrolls                   4       4               None
+  Level 13: arcane lore               7       11              scrolls
+  Level 20: glimpse                   1       12               arcane lore
+  Level 27: veil of secrecy           4       16              glimpse
+  Level 29: lore of the ages          6       22              veil of secrecy
+  Level 32: veil of souls             3       25              lore of the ages
+  Level 35: infiltrate                2       27              veil of souls
+  Level 38: hypnotize                 7       34              infiltrate
+  Level 41: arcane vision             2       36              hypnotize
+
+-LEVEL-     -SKILL NAME-              -COST-  -CUMULATIVE-    -PREREQUISITE-
+                                              -   COST   -  
+Pickpocket Skills (<a href="Galadon.html" style="color:#dfbe6f">Galadon</a>, <a href="Udgaard.html" style="color:#dfbe6f">Udgaard</a>):
+  Level 12: plant                     6       6               None
+  Level 15: discerning gaze           4       10              plant
+  Level 19: eye of avarice            4       14              discerning gaze
+  Level 21: deft touch                6       20              eye of avarice
+  Level 23: cutpurse                  2       22              deft touch
+  Level 25: appraise                  2       24              cutpurse
+  Level 25: combat steal              2       26              appraise
+  Level 26: warning skill             4       30              combat steal
+  Level 29: container stealing        2       32              warning skill
+  Level 33: acrobatics                12      44              container stealing
+  Level 36: counterfeit               2       46              acrobatics
+  Level 38: fence                     2       48              counterfeit
+
+-LEVEL-     -SKILL NAME-              -COST-  -CUMULATIVE-    -PREREQUISITE-
+                                              -   COST   -  
+Thug Skills (<a href="Dagdan.html" style="color:#dfbe6f">Dagdan</a>, <a href="Tir-Talath.html" style="color:#dfbe6f">Tir-Talath</a>, Northern mountains):
+  Level 12: push                      2       2               None
+  Level 14: kidney shot               4       6               push
+  Level 17: gouge                     8       14              kidney shot
+  Level 21: weapon butt blackjack     6       20              gouge
+  Level 26: parting block             8       28              weapon butt blackjack
+  Level 28: payment of the coward     4       32              parting block
+  Level 29: sucker hit                4       36              payment of the coward
+  Level 30: gut shot                  4       40              sucker hit
+  Level 31: death strike              2       42              gut shot
+  Level 35: third attack              6       48              death strike
+  Level 36: strike on the abandoned   2       50              third attack
+  Level 38: earclap                   2       52              strike on the abandoned
+  Level 42: prey on the weak          4       56              earclap
+
+-LEVEL-     -SKILL NAME-              -COST-  -CUMULATIVE-    -PREREQUISITE-
+                                              -   COST   -  
+Binder Skills (<a href="Hamsah_Mutazz.html" style="color:#dfbe6f"><a href="Hamsah.html" style="color:#dfbe6f">Hamsah</a> Mu'tazz</a>, <a href="Seantryn_Modan.html" style="color:#dfbe6f">Seantryn Modan</a>, Barovia):
+  Level 12: nimble fingers            8       8               None
+  Level 21: bind legs                 6       14              nimble fingers
+  Level 23: garrotte                  4       18              bind legs
+  Level 26: gag                       6       24              garrotte
+  Level 28: blindfold                 6       30              gag
+  Level 29: bind hands                6       36              blindfold
+  Level 31: sleeping disarm           6       42              bind hands
+  Level 33: tie                       6       48              sleeping disarm
+  Level 34: truss                     6       54              tie
+  Level 36: drag                      2       56              truss
+  Level 38: shadow drag               2       58              drag
+
+-LEVEL-     -SKILL NAME-              -COST-  -CUMULATIVE-    -PREREQUISITE-
+                                              -   COST   -  
+Poisoner Skills (<a href="Voralian_City.html" style="color:#dfbe6f">Voralian City</a>, <a href="Hillcrest.html" style="color:#dfbe6f">Hillcrest</a>, <a href="Evermoon_Hollow.html" style="color:#dfbe6f">Evermoon Hollow</a>):
+  Level 10: envenom                   8       8               None
+  Level 12: apply                     14      22              envenom
+  Level 12: concoct poison            0       22              apply
+  Level 12: food poison               0       22              apply
+  Level 12: emetic poison             0       22              apply
+  Level 14: concoct antidote          2       24              emetic poison
+  Level 14: drink poison              4       28              concoct antidote
+  Level 17: inhaled poison            4       32              drink poison
+  Level 19: knock-out poison          4       36              inhaled poison
+  Level 23: weapon poison             4       40              knock-out poison
+  Level 23: neurological poison       4       44              weapon poison
+  Level 30: fear poison               4       48              neurological poison
+  Level 33: contact poison            4       52              fear poison
+  Level 35: weapon nick               4       56              contact poison
+  Level 36: mind control poison       4       60              weapon nick
+  Level 40: forgiving cruor           1       61              mind control poison
+  Level 42: grenade missile           2       63              forgiving cruor
+
+-LEVEL-     -SKILL NAME-              -COST-  -CUMULATIVE-    -PREREQUISITE-
+                                              -   COST   -
+Trapper Skills (<a href="Blackclaw.html" style="color:#dfbe6f">Blackclaw</a>, Arial City, <a href="Upper_Cragstone.html" style="color:#dfbe6f">Upper <a href="Cragstone.html" style="color:#dfbe6f">Cragstone</a></a>):
+  Level 10: bag of tricks             10      10              None                     
+  Level 13: smoke bomb                 2      12              bag of tricks            
+  Level 17: stench cloud               3      15              smoke bomb               
+  Level 20: detect traps              14      29              stench cloud             
+  Level 20: physical trap              0      29              detect traps             
+  Level 20: glowing trap               0      29              detect traps             
+  Level 26: knock-out trap             4      33              glowing trap             
+  Level 26: blister agent              2      35              knock-out trap           
+  Level 29: abrasive powder            3      38              blister agent            
+  Level 31: direction trap             4      42              abrasive powder          
+  Level 35: damage trap                4      46              direction trap           
+  Level 39: burst trap                 4      50              damage trap              
+  Level 42: pepper dust                6      56              burst trap  
+</pre></div>
+</body></html>

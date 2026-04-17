@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evermoon Hollow - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Evermoon Hollow</h2>
+<div class="area-nav">Level: All | Builder: Poetry | </div>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+<a href="Evermoon_Hollow.html" style="color:#dfbe6f">Evermoon Hollow</a>
+Suggested Levels: All
+
+This area written by Poetry, copyright 1999. Made for <a href="CarrionFields.html" style="color:#dfbe6f">CarrionFields</a>
+exclusively. Do not distribute to other MUDs.
+
+Modified with permission in October of 2005 by Amaranthe.
+
+
+                                                 P
+                                                 |
+                                                 w   +---+   +   +   +
+                                                 |\  |       |   |   |       +---+
+           1) To the academy                     | 1 |       |   |   |       |   |
+                                                 +---+---+---+---+---+---+   | + |
+                                                 |           |   |   |       |  \|
+                                          D      +       s   +   +   +---+---o---+---+
+                                          |      |       |               |   |   |   |
+                                      L---+--+---+---+---+---t           +   |   |   |
+                                          |      |       |               |   |   |   |
+                                          A      +       i               +-p +---+---+---+---+
+                                                 |           W           |   |   |   |   |   |
+                                                 |   B       |           |   | + |   | R |   |
+                                                 |   |       |           |   |  \|   |  \|   |
+                                                 +---+---+---+       H   +   +---+---+---+---+-+
+                                                 |   |       |       |   |       |   |   |   | |
+                                                 |   T       |       |   |       | + |   | + | |
+                             +       +           |           +---+---+---+       |  \|   |  \| |
+                             |       |           |           |           |       +---+---+---+-+
+                      d--+---+---+---+           |           +---m   c---+-J         |   |   | |
+                             |                   |           |           |           | + | + | |
+                 d           +                   |           U           g           |  \|  \| |
+                 |           |                   |                                   +---+---+-+
+                 |           |                   |                       d               |   | |
+                 +       q---+---k               |               +---+---+               |   | |
+                 |           |                   |               |       |               |   | |
+                 +---+---+---+            +--f   |       +---h   +---    +               +---+-+-+-+
+                 |   |       |            |  |   |       |   |   |       |\              |         |
+                 |   |       |            |  |   |       |   |   |       | 2(a)          |         |
+                 d   +---l   +---+        k--+---+       +   +---+---+---+---d           |         |
+                             |                   |       |       |                     C-+         +
+                         +---+---+   a   b---+---+---+---+---+   +                                 |
+                         |       |   |   |       |           |                                     |
+                         |       |   |   |       +-+         |                                     |
+                         |       |   |   |         |         |                                     +---+---+
+                     d---+   a---+---+---+         +         a
+                                                   |
+                                              <a href="Aratouldain.html" style="color:#dfbe6f">Aratouldain</a>
+
+                                                    Z---Y---+   +---+
+                                                            |   |   |
+                                                   \|   |   |   |   |
+                                                   -2---+---+---+-  +
+                                                    |   |   |   |     \
+                                                            |          3
+                                                        x---+
+
+                                +
+                                |
+                                +---+
+                                    |  \
+                                    +---3---+---+
+                                                |
+                                                +
+
+
+A) Armor store
+a) Advisor
+B) Bank
+b) Bodyguard - (Vandrer)
+the royal bodyguard is using:
+&lt;worn on body&gt;      a gleaming moonstone breastplate
+&lt;worn on head&gt;      a gleaming moonstone helm
+&lt;worn about waist&gt;  a gleaming moonstone girth
+&lt;wielded&gt;           a gleaming moonstone sword
+
+C) Druid guild
+c) conjurer guild
+D) Weapon store
+d) Dwarf prisoner
+E) Elf-king
+f) Food-dude
+g) Transmuter guild
+H) Healer guild
+h) Halfling thief(wandering) - &lt;wielded&gt;           (Glowing) sting
+i) Music Shop
+J) Invoker guild
+k) King
+the wood-elf King is using:
+&lt;worn on finger&gt;    (Glowing) a moonstone ring
+&lt;worn about body&gt;   kingly robes
+&lt;wielded&gt;           (Glowing) a carven staff of oak
+&lt;held&gt;              a beautiful gold pen
+
+l) Princess
+the wood-elf Princess is using:
+&lt;worn on finger&gt;    a gold leaf ring
+&lt;worn on body&gt;      a suit of mithril chainmail
+&lt;worn about body&gt;   a brown hunting cape
+
+L) General Store
+m) Bard guild
+0) The Greenwood
+P) Pit, Healer
+p) Paladin guild
+q) Queen
+the wood-elf Queen is using:
+&lt;worn on finger&gt;    an intertwined gold ring
+&lt;worn on body&gt;      a blue formal gown
+&lt;worn on head&gt;      (Glowing) a silver coronet
+&lt;wielded&gt;           a golden sceptre
+R) Ranger Guild
+s) Magic shop
+T) Trainer
+t) Treasure Room
+U) Thief guild
+w) Water
+W) <a href="Warrior.html" style="color:#dfbe6f">Warrior</a> guild
+x) Dwarf prisoner
+Dwarf prisoner is using:
+&lt;worn on head&gt;      a sky blue hood with a silver tassle
+&lt;worn about body&gt;   a sky blue cape
+&lt;worn about waist&gt;  an ornate gold belt
+(a) New exit down is &quot;trapdoor&quot;
+Y) Midnight black dragon (Midnight black dragon eq)
+Z) Hatchling Dragons
+
+Copied from the old <a href="ErynGalen.html" style="color:#dfbe6f">ErynGalen</a> map with few modifications.
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="CarrionFields.html">CarrionFields</a> &bull; <a href="Aratouldain.html">Aratouldain</a> &bull; <a href="ErynGalen.html">ErynGalen</a> &bull; </div>
+<h3>Items Found Here (2)</h3>
+<div class="item-detail" id="item-a-ring-set-with-a-flaming-red-ruby"><b>a ring set with a flaming red ruby</b> <span class="meta">L30 treasure / treasure / ruby</span><br><span class="room">Room:</span> A Straight Hall of Evermoon Hollow<br><span class="mob">Mob:</span> Freerkoth<br><span style="color:#8a8;">Container:</span> the donation pit<br><span class="meta">Flags:</span> glowing, magic<br><span class="meta">Modifiers:</span> Modifies hp by 10, Modifies mana by 10</div>
+<div class="item-detail" id="item-an-alabaster-medallion-on-a-fine-silver-chain"><b>an alabaster medallion on a fine silver chain</b> <span class="meta">L51 object / alabaster / gem</span><br><span class="room">Room:</span> A Twisting Hall of Evermoon Hollow<br><span class="meta">Flags:</span> glowing, magic<br><span class="meta">Modifiers:</span> Modifies save vs spell by -15, Modifies hit roll by 2, Modifies hp by 35, Modifies mana by 35, Modifies wisdom by 3, Modifies intelligence by 3</div>
+</body></html>

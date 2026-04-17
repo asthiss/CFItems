@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Western Aryth Ocean - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Western Aryth Ocean</h2>
+<div class="area-nav">Level: 10 - 35 | Builder: Guerric | </div>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+     |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+   --~---~---t---t---t&gt;/-t---t---~---~---~---~---~---~---~---~-- A         ~: Western Aryth
+     |       |   |   | v |   |   |   |   |   |   |   |   |   |     O     t/T: Tempest (freq. damage)
+     |       |   |   | b |   |   |   |   |   |   |   |   |   |   r         b: Beneath the Aryth
+   --~       T---T---j---H---t---~---~---~---~---~---~---~---~--   c       H: Hull of a Ship (engraved silver
+     |       |   |   |   |   |   |   |   |   |   |   |   |   |   y            longsword)
+     |       |   |   |   |   |   |   |   |   |   |   |   |   |     e
+   --~---t---t---T---J---j---t---~---~---~---~---~---~---~---~-- t       j/J: Jagged Rocks
+     |   |   |   |   |   |   |   |   |   |   | _^|   |   |   |     a
+     |   |   |   |   |   |   |   |   |   |   |/  |   |   |   |   h
+   --t---t---t---t---t---t---t---~---~---~---~&lt;--~---~---~---~--   n
+     |   |   |   |   |^_ |   |   |   |   |   |               |
+     |   |   |   |   |  \|   |   |   |   |   |            Coastal
+   --~---t---t---t---~-C ~---~---~---~---~---~           Wetlands         C: <a href="Crystal_Island.html" style="color:#dfbe6f">Crystal Island</a>
+     |   |   |   |   |   |   |   |   |
+     |   |   |   |   |   |   |   |   |
+   --~---t---~---~---~---~---~---~---~
+     |   |   |   |   |   |   |   |
+     |   |   |   |   |   |   |   |
+   --~---~---~---~---~---~---~---~
+     |   |   |   |   |   |   |                                          Note: Spend some time at
+     |   |   |   |   |   |   |                                                any of the T's and you'll
+   --~---~---~---~---~---~---~                                                get thrown onto J (with damage).
+     |   |   |   |   |   |
+     |   |   |   |   |   |
+   --~---~---~---~---~---~
+     |   |   |   |
+
+
+     |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+   --s---s---B---b---b---b--&gt;b---B---B---B---B---B---B---B---B-- In        b: Beneath the Waves (can't go down)
+     |       |   |           |   |   |   |   |   |   |   |   |             B: Beneath the Waves (can go down)
+     |       |   |           |   |   |   |   |   |   |   |   |
+   --s       B&lt;--b           b---B---B---B---B---B---B---B---B-- the       s: Shallow Waters
+     |       |   |           |   |   |   |   |   |   |   |   |
+     |       |   |           |   |   |   |   |   |   |   |   |
+   --B&lt;--B&lt;--B&lt;--b           b---B---B---B---B---B---B---B---B-- Aryth
+     |   |   |   |           |   |   |   |   |   |   |   |   |
+     |   |   |   |           |   |   |   |   |   |   |   |   |
+   --B---B---B---b---b---b---b---B---B---B---b---b---b---b---b-- Ocean
+     |   |   |   |   |   |   |   |   |   |   |
+     |   |   |   |   |   |   |   |   |   |   |
+   --B---B---B---B---B---B---B---B---b---b---b
+     |   |   |   |   |   |   |   |   |
+     |   |   |   |   |   |   |   |   |
+   --B---B---B---B---B---B---B---b---b
+     |   |   |   |   |   |   |   |
+     |   |   |   |   |   |   |   |
+   --B---B---B---B---B---B---b---b
+     |   |   |   |   |   |   |
+     |   |   |   |   |   |   |
+   --c---c---c---c---B---b---b                                             c: Colorful Reef
+     |   |   |   |   |   |
+     |   |   |   |   |   |
+   --c---c---c---c---B---b
+     |   |   |   |   |
+                                                 <a href="Ship_Graveyard.html" style="color:#dfbe6f">Ship <a href="Graveyard.html" style="color:#dfbe6f">Graveyard</a></a>
+                                                     |
+             |                   |   |   |   |   |   |   |   |
+             o                   o---o---o---o---o---o---o---o-- Deep      o: On the Ocean Floor
+             |                   |   |   |   |   |   |   |   |
+             |                   |   |   |   |   |   |   |   |
+             o                   o---o---o---o---o---o---o---o-- in the
+             |                   |   |   |   |   |   |   |   |
+             |                   |   |   |   |   |   |   |   |
+   --o---o---o                   o---o---o---o---o---o---o---o-- Aryth
+     |   |   |                   |   |   |
+     |   |   |                   |   |   |
+   --o---o---o                   o---o---o
+     |   |   |                   |
+     |   |   |                   |
+   --o---o---o---o---o---o---o---o
+     |   |   |   |   |   |   |
+     |   |   |   |   |   |   |
+   --o---o---o---o---o---S---o                                             S: Sea Snake (sea snake belt,
+     |   |   |   |   |   |                                                    poisonous fang dagger)
+     |   |   |   |   |   |
+   --o---o---o---o---o---o
+     |   |   |   |   |
+     |   |   |   |   v
+   --c---c---c---c---o                                                     c: Colorful Reef
+     |   |   |   |   |                                                        (down from here to
+     |   |   |   |   |                                                         Twinkling Darkness)
+   --c---c---c---c---o
+     |   |   |   |   |
+
+
+      /   /   /   /
+     t---t---t---t                                                         t: Twinkling Darkness
+     |   |   |   |
+     |/  |/  |/  |/                                                        c: chest (pearl-handled whip)
+     c---t---m---t                                                         m: Meriaen Witch (circlet of bone)
+
+TODO: Map entrance to Ship Graveyard.
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="ArythOcean.html">ArythOcean</a> &bull; <a href="Coastal_Wetlands.html">CoastalWetlands</a> &bull; <a href="Crystal_Island.html">CrystalIsland</a> &bull; <a href="Ship_Graveyard.html">ShipGraveyard</a> &bull; </div>
+</body></html>

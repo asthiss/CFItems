@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whip - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Whip</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+
+Name                                 Lvl  Damage    Damage Type Affects                  Material   Weight(lb)  Flags/Special              Location
+alligator-skin whip              -G  L35  6d6 (21)              dam 2, hit 2, mana 100   Leather    15                                     Mage Guildmaster, <a href="Udgaard.html" style="color:#dfbe6f">Udgaard</a>
+barbed black-iron whip           -GN L55  6d7 (24)  Defilment   dam 3, hit 3             Steel      9                                      Slavemaster, Slave mines of Sitran
+barb tipped cat-o-nine tails         L55  7d7 (28)                                       Leather                                           <a href="Island_of_Corte.html" style="color:#dfbe6f">Island of Corte</a>
+barbed whip flecked with crimson     L35  3d12(19)                                       Iron       3                                      Slavers in the past
+black leather whip                   L50  8d4 (20)              dam 3, hit 1             Leather    3                                      Slaver, ?
+bone-spiked whip of supple goat hide L25  8d3 (16)              dam 2, hit 2             Leather    5                                      <a href="AyrTrinil.html" style="color:#dfbe6f">Ayr'Trinil</a>
+cat-o-nine tail whip                 L30  5d6 (17)                                                  15                                     Anti-paladin guildguard, <a href="Galadon.html" style="color:#dfbe6f">Galadon</a>
+corded, griffon-maned whip           L35  4d11(24)                                                                                         Evansh in <a href="Galadonian_Settlement.html" style="color:#dfbe6f">Galadonian Settlement</a>, Past
+Chromatic <a href="Whip.html" style="color:#dfbe6f">Whip</a>                       L40  6d7 (24)              dam 4, hit 4             Energy     8         Special: random spell        Kryldor, <a href="Balator.html" style="color:#dfbe6f">Balator</a>
+demon whip                        -G L48   ?  (28)              dam 4, hit 4, sbreath -10           12                                     Mage Ambassador, High Lords Keep
+diamond studded whip            +E-G L30  7d4 (18)  Poison      dam 4, hit 2                        6         special: poisons in combat   Disgusting Wight, Keep of Barovia
+dragon tailed whip                -G L40   ?  (23)              dam 2, hit 2                        14
+firestrike whip                      L38  4d9 (20)  Flaming     dam 5, hit 3             Leather    5                                      Fire Giant Shaman, <a href="Mount_Kiadana-Rah.html" style="color:#dfbe6f">Mount Kiadana-Rah</a>
+gaudy whip of snake skin             L20  3d8 (13)  Poison      dam 2, hit 3, cha 2,     Leather                                           <a href="Village_of_Lallenyha.html" style="color:#dfbe6f">Village of Lallenyha</a>
+                                                                svbreath -4  
+gem studded whip                 -GN L45  6d7 (24)              dam 1, hit 4             Iron       9         D-Elf only
+icy long whitesteel chain        -E  L22  9d2 (13)  Freezing    dam 1, hit 2, str 1      Whitesteel 10        blessed                      <a href="Keep_of_the_Righteous.html" style="color:#dfbe6f">Keep of the Righteous</a> 
+ixitxachitl tail whip                L48  8d6 (28)              dam 2, hit 2             Leather    10                                     Sahuagin Prince, Coral Head
+leather whip                         L19  3d8 (13)                                       Leather    3                                      Orc Chief, Misty Mountains
+long braided whip                    L10  3d5 (9)   Stinging    dam 2                    Leather    5        conjurer only                 Conjurer's guild in Galadon 
+long-handled whip                 -E L30  5d8 (22)              dam 1, hit 4             Leather    8
+master's whip                  +E-GN L45  7d6 (24)              dam 4, hit 4                        10                                     Drow Magic Master, Drow City
+pearl handled-whip                   L25  5d5 (15)              hit 3                               7                                      <a href="WesternAryth.html" style="color:#dfbe6f">WesternAryth</a>
+practice whip                        L5   4d5 (12)                                       Leather    3                                      Closet, Balator
+rat's tail                           L4   2d5 (6)                                        Flesh      5                                      Rat, <a href="Lumberyard.html" style="color:#dfbe6f">Lumberyard</a>
+tail of drolem                    -E L53  7d7 (28)              dam 3                    Mithril    2
+sharkskin whip                       L10  3d5 (9)               dam 1 hit 1              Leather    1                                      V'dramirs cove
+Torden's battle whip                 L2   8d3 (16)              dam 3, hit 2             Iron       15                                     Torden's <a href="Arms.html" style="color:#dfbe6f">Arms</a>, Udgaard
+wicked leather whip                  L16  4d7 (13)              dam 3, hit 1                        10                                     Globssard the warboss, Gor'Galath
+whip made of six living snakes +E-NG L51  11d5(33)  Wrath       dam 5, hit 5, hp 30      Adamantite 9      norem, Special: poison, weaken  Matron Mother of the First House, Drow City
+whipping tail of a manticore         L50  8d6 (28)              dam 3, hit 3                        7                                      Imbessar, <a href="Emerald.html" style="color:#dfbe6f">Emerald</a> Forest
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="CarrItems.html">CarrItems</a> &bull; <a href="Syntax.html">Syntax</a> &bull; </div>
+</body></html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Galadon Sewers - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>The Galadon Sewers</h2>
+<div class="area-nav">Level: 5 - 30 | Builder: Amaranthe | </div>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+ This area written by Amaranthe in March of 2003. It is a complete cosmetic
+ and partial functional revamp of the stock ROM sewers area written by
+ Diku. For use by Carrion Fields only.
+
+== LEVEL 1 ==
+
+      +-----C----+---&gt;+---&gt;+--+--+
+      |     |    |         |     + The Watery sewer
+   +  +--+  |    H--+---+  +     +
+   |     |  |    |  |   |  |     |
+   +--+  +--|----+  +   +  +--+  +--+ A ledge by the dark pool
+   |  |  |  |    |      |  |  |  |  |
+   +  |  |  |    |      |  |  |  |  |
+  v   +--+  | +--+--+   +--+  A  +  |
+ 6    |     |  \    |         |  |  |
+      |     |   +   |         |  |  |
+      |     |       |         |  |  | A ledge by the dark pool
+      |  +--+----R--+   +     +  +--+
+      |  |       |     v|     |  |   \ The fissure
+    +-+--P     +-0-+  3 |     |  |    \  under the ledge
+   /  |  |    v  |  v   W  T  +  +     +
+  /   |  |   1   |   4  |  |  |  |      \
+ 2    +--+-------R------+--+--+--+       +
+                 |                The Edge of the Water
+          <a href="Galadon.html" style="color:#dfbe6f">Galadon</a> River
+
+# - Stairs
+
+0 - Below Large Intersection, Galadon
+A - Below Assassins Guild
+C - Below the Clerics Guild?
+D - Docks
+H - Another intersection
+M - Below the [mage] Guild?
+P - Below AP's Guild
+R - A Large Sewage Junction
+T - Below the Thieves Guild
+W - Below the warriors Guild
+
+== LEVEL 2 ==
+
+                                  L
+                                  |
+                            A--+--+
+                               |
+              +----+----+   +--+
+              |    |    |\  |
+              +-@  @  @-+ = |
+              |         |  \|
+              +-@     @-+   +
+              |         |
+              +-@     @-+    3
+              |         |   /
+              +-@  @  @-+--+
+              |    |    |
+              +----+----+
+             /|    |
+    6--+ U--+ |    +
+       |   /  |   /
+     2 |  @   |  5
+    /  |      |
+   +---+------1--4
+  /
+ 2
+
+A - A Strange Altar Room
+L - An Abandoned Laboratory
+U - <a href="Underdark.html" style="color:#dfbe6f">Underdark</a>
+
+== LEVEL 3A ==
+
+             Lloth's Shrine
+                   |
+                   |
+                   | The Entrance to
+    +---&lt;----+--G--+ an Unholy place
+    |           |
+    +  +--+--+--+--+--+  Dark Cavern Tunnel
+    |  |        |     |
+    +--+        +-----R  A Massive Cavern
+    |  |
+ B--B  S--S-=+--+---+--+ Dark
+ |  |  |  |     |   |  |
+ B--B  +--S  A  + 2 +  + Cavern
+ |        |  =  |/  |  |
+ +        +--+  +   +--+ Tunnel
+ |        |         |
+ +--+     +----+----+
+ |  |     |
+ +--+--+--+
+ Pool  Spongy room
+
+A - A Primitive Altar Room
+B - Umber Hulk Lair
+G - Glittering Room
+R - Red Dragon
+S - Square lair
+
+== LEVEL 3B ==
+
+      +=M
+        |
+        +--+
+        |  |
+        +--+
+        |  |
+        +--+  +  +--+
+        |     |  |
+        +--+--+--+
+              |
+              +   +--G        +
+              |   |           |
+              +   +--+--+--+--+
+              |               |
+           +--+--+            |
+           |       /          |
+           +------5----+------+
+
+5 - To level 2
+G - Gigantic rat
+M - Master mindflayer
+G fra 3b
+
+                 +
+                 |
+                 +     +
+                 |     |
+              +--+--+--+
+                 |     |
+                 +     +--P
+                 |     |
+         --G--+--+--+--+
+
+P - Wererat prince (girdle of rats!)
+
+rundt omkring giant wererats (brass collar)
+</pre></div>
+<h3>Rooms (3)</h3>
+<div class="legend-grid">
+<div class="legend-entry"><span class="num">0</span><span class="room-name">Below Large Intersection, Galadon</span></div>
+<div class="legend-entry"><span class="num">5</span><span class="room-name">To level 2</span></div>
+<div class="legend-entry"><span class="num">6</span><span class="room-name">-+ U--+ |    +</span></div>
+</div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="Galadon.html">Galadon</a> &bull; <a href="Underdark.html">Underdark</a> &bull; </div>
+<h3>Items Found Here (3)</h3>
+<div class="item-detail" id="item-a-living-boa-constrictor"><b>a living Boa Constrictor</b> <span class="meta">L40 armor / neck / flesh</span><br><span class="room">Room:</span> The North Galadon Road<br><span style="color:#8a8;">Container:</span> the donation pit<br><span class="path">Path from Crossroads:</span> <code>s</code><br><span class="meta">Flags:</span> evil<br><span class="meta">Modifiers:</span> Modifies hp by 66, Modifies dexterity by -2, Modifies armor class by -10, Modifies armor class by -3, Modifies hp by 4<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 10, bashing for 6,  slashing for 10, magic for 2, and the elements for 10 points each.</div>
+<div class="item-detail" id="item-a-pair-of-thick-hide-boots"><b>a pair of thick hide boots</b> <span class="meta">L18 armor / feet / hide</span><br><span class="room">Room:</span> Inside the Leader's Tent<br><span class="mob">Mob:</span> Hurand<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 5, bashing for 3,  slashing for 5, magic for 1, and the elements for 5 points each.</div>
+<div class="item-detail" id="item-some-leggings-formed-of-a-dragon-turtle-shell"><b>some leggings formed of a dragon turtle shell</b> <span class="meta">L54 armor / legs / dragonbone</span><br><span class="room">Room:</span> The North Galadon Road<br><span class="path">Path from Crossroads:</span> <code>s</code><br><span class="meta">Modifiers:</span> Modifies hp by 30, Modifies dexterity by -2<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 19, bashing for 16,  slashing for 16, magic for 3, and the elements for 19 points each.</div>
+</body></html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArialCity - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>ArialCity</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+                      Lang Park Road
+                         +--+--+
+                         |
+                 SW      |               SE
+                /        +              /                          X
+               +         |             +                          /
+              /          |            /             +         +--+
+             +--+--+--+--+--+--+--+--+             /|        /
+                         |          Dru        +--+ +       +
+       1--+--+           |           |        /     |      /
+           D |           +           + +--+--+      +--+--+
+           a +--3--2     |           |/
+           r       |     |   +-+-+-+-+-+-+-+-+
+           k Alley +--+  +--+-Rngr   |
+                      |  |           +  T
+                      =  |           |  r
+                      Y--+           +  a
+M=-N=&gt;Y=-S            |  |           |  d
+|  |     =           Brd ~           +  e
+=  =     Cr      + Thi-+-+-+-AP      |
+J  |     /      /   Dark | ....      +  R
+  *M*   +      +    .... | Area      |  o
+        |     /   Asn-+--+--+-Nec    +  a
+Cul-   MS    +           ~       Tra |  d                               +-----+--+--+--+--+--R-~-E
+de-          |           |        |  +                                  |    /
+sac          + Culdesac  |        +  |                                  | [1]
+             |     |     |        |  |                                  +--So
+          +--+--+--+--+--I--+--+--+--+--+   Palace             [1]      |
+             |           |     |  |     |                 +   /         +--So
+             +           |     +  +     +--+--+--+--+--+--+--+          |
+             |           |     |  |                       + /           +--So
+             +           |    War Inv                      /            |
+                      B--+--F                             /             +
+                         |                    O     O    /O     O       |
+                         |                    |     |   / |     |       +
+                      P--+--Q              O--L--+--L--L--L--L--+--OL   |
+            A            |                    |     |     |     |       +
+           /             |                    O     O     O     O       |
+          +--+--+     T--+--Y     +--+--+                               +--So
+              O |    /   |        | O                                   |
+        West  v +  Ac    |        + v  East                             +--So
+              e | Sha-+--+--+-Hea | e                                   |
+              r +        |        + r                                   +--So
+              l |        |        | l                                   |
+              o +--+--+--C--+--+--+ o                                   +--So
+              ok Walk    |    Walk ko
+                         G
+                        /
+                <a href="Udgaard.html" style="color:#dfbe6f">Udgaard</a> Mountains
+
+
+
+G - Gates of the City in the Clouds
+C - Centre Square
+A - Arial Captain of the Guard (pair of black, steel-taloned boots, badge of dull black feathers, (I)royal bracer,
+         axe named 'The Punisher')
+Sha - Shaman Guild
+Hea - Healer Guild
+T - Temple (Pit) &amp; <a href="Academy.html" style="color:#dfbe6f">Academy</a>
+Y - Healer
+P - Pet Store: 
+    Ariana ((G) the Elven <a href="Helm.html" style="color:#dfbe6f">Helm</a> of the Princess) &amp; Slitthroat
+Q - Antique Shop: 
+B - Bakery: mud cake(7)
+            scones with butter and jam(10)
+F - Fabian's General Store: map of Southern Arial City(52)
+                            map of Northern Arial City(52)
+                            potion of flight(210)
+                            potion of return(3150)
+                            water bottle(15)
+I - Main Intersection: Cistern (Fountain)
+J - Jynon (royal steel sword}
+M - Matgar (royal steel sword)
+N - Nilium (royal steel sword)
+Y - Myle (royal steel sword)
+S - Shavos (King's Halberd)
+Cr - Crimbun ((G)(H)(I)Axe of Conquest)
+Asn - Assassin Guild
+Thi - Thieves Guild (Traps): jar of worm stomach fluid(450)
+                             box of sharp spikes(525)
+                             bunch of bright red(450)
+                             thin sack of glowing, purple dust(300)
+Y - Blue Sky Tavern: Shadowy Protector
+Brd - Bard Guild
+1 - Shady [Hidden] (dark avian's black leather mask, (G)<a href="Dagger.html" style="color:#dfbe6f">Dagger</a> of Death)
+2 - Roger Red-Eye [Hidden] (pair of the Leggings of Darkness)
+3 - Three-Fingered Pete (pair of leather boots, three-bladed dagger, battle cloak)
+D - Dark Arial Guards (x2)
+SW - Sky Demon (model of the sky demon)
+SE - Sky Devil
+Rngr - Ranger Guild
+A/P - Anti-Paladin Guild
+Nec - Necromancer Guild
+War - <a href="Warrior.html" style="color:#dfbe6f">Warrior</a> Guild
+Tra - Transmuter Guild
+Inv - Invoker Guild
+Dru - Druid Guild
+X - Hanging Place
+O - Arial Prisoners
+L - Large, Trained Warrior Guards (x2)
+So - Soldier
+R - Arial Royal Palace Guard ((G)royal sword)
+E - Arial Queen ((G)thin silver veil decorated with black feathers, pair of black-feathered
+         ribbons)
+    Arial Emperor (pair of silver-tipped feathered ribbons, sword of honor)
+</pre></div>
+<h3>Rooms (3)</h3>
+<div class="legend-grid">
+<div class="legend-entry"><span class="num">1</span><span class="room-name">Shady [Hidden] (dark avian's black leather mask, (G)Dagger of Death)</span></div>
+<div class="legend-entry"><span class="num">2</span><span class="room-name">Roger Red-Eye [Hidden] (pair of the Leggings of Darkness)</span></div>
+<div class="legend-entry"><span class="num">3</span><span class="room-name">Three-Fingered Pete (pair of leather boots, three-bladed dagger, battle cloak)</span></div>
+</div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="Galadon.html">Galadon</a> &bull; <a href="Academy.html">Academy</a> &bull; <a href="Traveller.html">Traveller</a> &bull; <a href="-P.html">/P</a> &bull; </div>
+</body></html>

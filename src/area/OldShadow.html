@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OldShadow - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>OldShadow</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+                  4        +--+--+
+                  |        |  |  |
+                3-6-1   +--+--+--+--+--X
+                  |     |     |     |
+                4-5-2 1-+--S  +     +
+                  |     |     |     |
+                6-1-----+--+--+--+--+
+                  |     |  |  |  I  |
+                5-2-4 1-+--C--+  =  +
+                  |     |  |  |  O  |
+            L--E--3-6   |  |  |  |  |
+                  |     +--+--+--+--+--*--E--Forbidden
+                  4-5      |  |  |            Forest
+                           +--+--+
+
+
+Deeper into the Grove - The shadows of the forest seem to deepen.
+Pathway out - You think you can make out faint sounds of life in this direction.
+Exit to Forest - A small path leads back to the path.
+
+E - The Edge of <a href="The_Shadow_Grove.html" style="color:#dfbe6f">The <a href="Shadow.html" style="color:#dfbe6f">Shadow</a> Grove</a>
+O - Outside a Small Cottage
+I - Inside a Small Cottage
+    (Ghostly)Old Wizard (thin silver ring, strange sword of etched steel)
+X - Dead End Pathway
+C - A Small Clearing in the Shadow Grove
+S - A Smoke Filled Clearing
+L - At the Edge of Land's End
+</pre></div>
+<h3>Rooms (4)</h3>
+<div class="legend-grid">
+<div class="legend-entry"><span class="num">3</span><span class="room-name">6-1   +--+--+--+--+--X</span></div>
+<div class="legend-entry"><span class="num">4</span><span class="room-name">5      |  |  |            Forest</span></div>
+<div class="legend-entry"><span class="num">5</span><span class="room-name">2-4 1-+--C--+  =  +</span></div>
+<div class="legend-entry"><span class="num">6</span><span class="room-name">1-----+--+--+--+--+</span></div>
+</div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="ForbiddenForest.html">ForbiddenForest</a> &bull; </div>
+</body></html>

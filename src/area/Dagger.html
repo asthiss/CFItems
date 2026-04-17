@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dagger - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Dagger</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+
+Name                                       Lvl  Damage    Damage Type Affects                  Material   Wght(lb)  Flags/Special            Location
+Adamantite dagger                    +E-NG L35  8d4 (20)              dam 4, hit 4, dex 1      Adamantite 2         D-elf only               <a href="Teth_Azeleth.html" style="color:#dfbe6f">Teth Azeleth</a> (Drow)
+                                                                      svs -4
+Ba'al Verzi <a href="Dagger.html" style="color:#dfbe6f">Dagger</a>                   +E-NG L45  4d12(26)              dam 2, hit 5             Steel      10                                 Strahd, Keep of Barovia
+Barbed dagger                          -GN L15  7d3 (14)              dam 2                    Iron       4         D-elf only, mage only    Drow mage, Feanwyn Weald
+Black dragon's tooth                       L15  4d7 (16)              dex 1, sbreath -2        Dragonbone 4                                  Black Dragon, Barovia
+Black serrated dagger                      L10  3d2 (9)               dex 2                    Iron       3                                  Duergar, <a href="Aldevari.html" style="color:#dfbe6f">Aldevari</a>
+Blackened iron stake                       L20  4d7 (16)              dam 4, hit 2, con -2     Iron       6                                  <a href="Outlying_Villages.html" style="color:#dfbe6f">Outlying Villages</a> (Dale cemetery)
+Blessed dagger named 'heartseeker'     -NE L45  6d8 (27)              dam 3, hit 3, spar -8    Mithril    2  special:Extra dam vs drow/duerg 
+Bloodstained fork                          L26  3d8 (13)              dam 1, hit 1                        2                                  <a href="Arkham.html" style="color:#dfbe6f">Arkham</a>
+Bloody dagger                              L18  5d5 (15)              dam 2, hit 2                        5
+Bone handled main gauche                +E L46  5d8 (22)              dex 2                    Bone       5          nodrop
+Brass dragon's talon                       L40  8d5 (24)              dam 4, hit 4             Dragonbone 2                                  Brass Dragon, Drogran hills
+Brilliant crystal dagger                   L25  7d4 (17)              dam 2, hit 2,            Crystal    6                                  <a href="Upper_Cragstone.html" style="color:#dfbe6f">Upper <a href="Cragstone.html" style="color:#dfbe6f">Cragstone</a></a>
+Chipped stone, sharpened at the edge       L35  6d6 (21)  Flaming                              Stone,     3                                  Morkaih, <a href="Galadon.html" style="color:#dfbe6f">Galadon</a> Settlement 
+Compass                                    L29   ?  (18)              dam 1, hit 1             Steel      1                                  Chartmaker, Arkham
+Copper dagger                              L4   2d4 (5)                                        Copper     3                                  gnome adv, <a href="Troglodyte_Caverns.html" style="color:#dfbe6f"><a href="Troglodyte.html" style="color:#dfbe6f">Troglodyte</a> Caverns</a>
+Coral dagger                            -N L35  5d5 (15)                                       Glass      10
+Crescent-Shaped Dagger                     L44  5d9 (25)              dam 9, hit 5             Steel      5      norem                       Invoker Advisor, Palace of <a href="Seantryn_Modan.html" style="color:#dfbe6f">Seantryn Modan</a>
+                                                                                                                special: heals, energizes, explodes   
+Crude dirk                                 L30  8d2 (12)                                       Tin        5                                  Desert Trader, Wastes of Nonveil
+Crystalline shard                       -N L49  5d9 (25)  Freezing    dam 3, hit 4, hp -25     Glass      5      norem                       Crystalline Dragon, <a href="Mount_Kiadana-Rah.html" style="color:#dfbe6f">Mount Kiadana-Rah</a>
+                                                                      str -2
+Cuendillar Dagger of the Empress           L48  7d7 (28)              dam 3, hit 6, wis 2      Heartstone 4                                  Empress, Palace of Seantryn Modan 
+                                                                      int 2, mana 20
+Curved dagger of darkly stained bone       L35  6d6 (21)              hit 2, svspell -3        Bone       5     cursed                       <a href="Aturi_Timberlands.html" style="color:#dfbe6f"><a href="Aturi.html" style="color:#dfbe6f">Aturi</a> Timberlands</a>
+dagger named 'frostbite'                   L40  8d5 (24)  Freezing    dam 2, hit 1, mana 10                                                  <a href="Felar_Encampment.html" style="color:#dfbe6f">Felar Encampment</a>
+Dagger of Betrayal                         L31  9d3 (18)              dam 2, hit 2, int -3     Iron            norem, nodrop poisons enemy   Duke, Keep of Ceawlyn 
+dagger named 'talon'                       L20  4d6 (14)              hit 3, dex 2             Iron       3                                  Filthy halfling in the shire
+Dagger of Rogues                     +E-GN L23  4d7 (16)              dam 2, hit 4, dex 1      Silver     6                                  Skulbis the Rogue, Barovia Forest
+dagger of scarring                         L36  5d9 (25)                                       Iron       9                                  Grinning skulls Village
+Dagger of the Elven Princess               L45  6d6 (21)              dam 4, hit 1                        10
+Dagger of the Ferret                  +E-G L40  8d4 (20)                                       Iron       3    nodrop                        Thief Guildmaster, <a href="Darsylon.html" style="color:#dfbe6f">Darsylon</a>
+Dagger of the Lich                    +E-G L35  8d4 (20)              dam 2, hit 2, int 2      Silver     3    norem                         Lich, Keep of Barovia
+darkened dagger                            L45  8d5 (24)              dam 2, hit 2             Adamantite 6                                  Duergar Scout in past
+diamond dagger named 'Light of Redemption' L40  4d10(22) Brilliant    dam 3, hit 6, svspell -4 Diamond    2                                  <a href="Velkyn_Oloth.html" style="color:#dfbe6f">Velkyn Oloth</a>
+                                      +G-NE              Radiance  
+dragon dagger                              L35  14d2(21)              dam 2, dex 2, ac -5      Dragonbone 2    nodrop
+                                                                      sbreath -10     
+dragon's talon                             L45  4d11(24)              dam 4, hit 2             Dragonbone 25                                 Captain on the Dragon's Song, Dragon Sea
+dragon's tooth knife                       L25   ?  (15)              dam 2, dex 1             Bone       6
+dripping bloody knife                   -G L15  3d8 (13)              dam 2, hit 2 hp 20       Steel      1    cursed                        possessed villager, dale
+                                                                      hp 20, mana 20
+dripping dagger                         +E L6   4d4 (10)              dam 2, hit 2             Steel      7                                  Duergar, <a href="Mortorn.html" style="color:#dfbe6f">Mortorn</a>
+elven dagger                               L12   ?  (9)               hit 1                               2                                  Wood Elf, Mirkwood
+emerald-encrusted iron dagger              L30  5d6 (17)              dam 3                    Iron       2
+envenomed dagger                           L35  5d5 (15)  Poison      dam 1, hit 4             Iron       4    special: poison               <a href="Udgaard.html" style="color:#dfbe6f">Udgaard</a> bankguard
+envenomed steel stiletto                   L38  4d9 (20)              dam 2, hit 6, con -2     Steel      6    poisons enemy
+feathered death                            L26  8d4 (20)              dam 3, hit 3                        3    nodrop                        Sweeney the Mad, <a href="Battlefield.html" style="color:#dfbe6f">Battlefield</a>
+fishing knife                           +E L40  5d8 (22)              dex 1, cha -1            Steel      1 
+fist of lightning                          L30  5d6 (17)  lightning                            Energy     15                                 Transmuter Guild Guard, Galadon
+forked dagger                              L23  5d6 (17)              dam 4                    Iron       1
+grimy dagger                               L11  4d3 (8)               dam -1, hit 1            Steel      2
+Guildmaster's dagger                       L50  10d4(25)              dam 2, hit 2                        5                                  Thief Guildmaster, Udgaard
+iron legion dagger                         L19  8d3 (16)                                       Iron       5                                  <a href="Dhumlar.html" style="color:#dfbe6f">Dhumlar</a> Ko
+ivory hilted dagger                     -E L40   ?  (16)              dam 5, hit 5             Steel      6
+jade handled dagger                     -E L36  4d10(22)              hit 3, dex 2             Silver     5                                  Lord Talenzan, Seantryn Modan
+jade handled butterfly knife               L50  8d6 (28)              dam 1, hit 7             Stone
+large mithril dagger                       L30  6d5 (18)              hit 5                    Mithril    5                                  <a href="Feanwyyn_Weald.html" style="color:#dfbe6f"><a href="Feanwyyn.html" style="color:#dfbe6f">Feanwyyn</a> Weald</a>
+large sharp needle                         L20  4d5 (12)              dam -1                   Steel      1
+leaf-bladed dagger                      +E L50  4d10(22)              dam 4, hit 4,            Iron       9       nodrop                     Barrow-Wight, Shire
+light silver dagger                        L2   2d4 (5)               hit 1, arm -1            Silver     2
+lightning bladed dagger                    L30  5d6 (17)                                       lightning  6.5                                Transmuter Guild Guard, Galadon
+long elven dagger                     -E-N L22   ?  (4)               hit 2                    Mithril    2                                  elf_only
+long slim dagger                           L5    ?  (7)               dam 1, hit 1             Steel      4
+metal shard                             +E L23   ?  (15)                                                  2
+nicked dagger                              L21  8d3 (16)              dam 1, hit 1             Steel      1
+old dirk                                   L4   3d4 (7)                                        Steel      4                                  Zombie, <a href="Graveyard.html" style="color:#dfbe6f">Graveyard</a>
+obsidian kris                              L30  6d5 (18)              dam 3, hit 3             Obsidian                                      Juzoch, Blackwater
+ornate main gauche                         L35  5d7 (20)              dam 2, hit 1             Adamantite                                    Felar Encampment
+paring knife                               L15   ?  (12)                                       Bronze     5
+Scissors of Urd                        -EN L50  8d6 (28)              dam 5, hit 5             Gold       15
+pirate's dagger                       +E-G L50  5d9 (25)              dex 2, cha -1            Steel      1
+poisonous fang of a sea snake              L20  5d5 (15)                                       Bone       5      special: poison             Sea Snake, Western Aryth
+practice dagger                            L5   4d4 (10)                                       Wood       2                                  Closet, <a href="Balator.html" style="color:#dfbe6f">Balator</a>
+rune-covered knife                      -E L6   2d4 (5)               hit 1                               1
+rune-engraved iron dagger             +E-G L45  6d7 (24)              dam 2, hit 2, mana 20, int 2
+rusty dagger                            +E L24   ?  (15)                                                  2
+scalping knife                             L40  5d4 (12)                                       Steel      5  Special: &quot;Cry out 'Ai!' when taking the scalp of your prey.&quot;
+seashell dagger                         -N L35  5d8 (22)                                       Plant      8
+serrated bone dagger                       L38  9d4 (22)              dam 2, hit 4, dex 2      Bone       6                                  <a href="Spiderhaunt_Woods.html" style="color:#dfbe6f">Spiderhaunt Woods</a>
+serpentine dagger                     +E-G L45  4d10(22)              dam 5, hit 3             Gem        3                                  Lady Kiadan-Rah, Mount Kiadan-Rah
+<a href="Shadow.html" style="color:#dfbe6f">Shadow</a> Dagger                           +E L49  6d8 (27)  Defilment   dam 6, hit 8, int 1      Iron       1                                  Kharzandra(wielded), <a href="Mausoleum.html" style="color:#dfbe6f">Mausoleum</a>
+                                                                      arm -9
+Shadow Dagger                           +E L52  1d1 (1)               hp -100, move -200       Iron       1       norem, nodrop              Kharzandra(inventory), Mausoleum
+                                                                      dex -2, str -8
+shark's tooth                              L25  6d5 (18)                                       Bone       3
+sharp coral-bladed dagger             +E-G L52  6d8 (27)              dam 4, hit 3, mana 25    Stone      8
+sharp shard of obsidian                 -G L30   ?  (18)              dam 5, hit 2                        8
+silver jambiya                             L15  2d10(11)              hp +10, mana +20         Silver     2                                  cultist, Arkham <a href="Sewers.html" style="color:#dfbe6f">Sewers</a>
+silver stiletto                       +E-G L24  8d3 (16)              dam 2, hit 4                        3
+silvery dagger                             L16   ?  (12)              hit 1                    Silver     5
+snake fang                            +E-G L14   ?  (10)                                                  1                                  Black Snake, Mirkwood
+spider-shaped dagger                       L35  8d4 (20)              dam 3, hit 3             Silver     4                                  Terminator, Balator
+steel dagger                               L22  6d5 (18)              hit 2                    Steel      5
+stone awl                                  L33   ?  (20)                                       Stone      3
+tiny, iron dagger                          L35  9d4 (22)              dam 3, hit 3, str 1      Iron       4                                  Drow, Bandit Camp
+                                                                      dex 2  
+Thief's dagger                          -G L23   ?  (16)              dam 1, hit 3             Steel      2                                  Captain of Rogues, Forest of Barovia
+thieves dagger                          -G L21   ?  (13)              dam 1, hit 3                        2
+thieves dagger                          -G L22   ?  (16)              dam 1, hit 3                        2
+water elemental crystal                    L45  6d7 (24)  Water                                Water      9
+whitesteel shiv                         -E L30  12d2(18)              dam 1, hit 3, dex 2      Whitesteel 2                                  Forgotten Island
+wide-bladed dwarven dagger                 L30  5d5 (15)              dam 3, hit 1             Steel      5        dwarf_only
+wyvern's sting                          +E L25  3d7 (12)              dam 1, hit 1, sspell -1  Steel      5                                  Mother Wyvern, Tabershaws Keep
+bone hunting knife                         L20  4d8 (18)              dam 2, hit 5
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="CarrItems.html">CarrItems</a> &bull; <a href="Syntax.html">Syntax</a> &bull; </div>
+</body></html>

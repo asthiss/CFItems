@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Axe - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Axe</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+
+Name                                                    Lvl  Damage    Damage Type Affects                  Material   Weight(lb)  Flags/Special         Location
+axe entwined with serpents                         +E-G L40  4d6 (14)                                       Steel,     20 
+Axe of Conquest                                         L60  11d5(33)              dam 6, hit 6, dex 2      Steel      50          norem                 Crimbun, Arial City
+                                                                                   arm -10, str 1                                                                                  
+Axe of fury                                             L46  4d12(26)              dam 4, hit 2, str 1      Wood                   giant str/extra damage
+Axe of the Executioner                                  L35  7d5 (21)              hp 15, mana 15, str 1    Adamantite 17          lawful_only
+Battleaxe of Mondurian                                  L48   ?  (29)              dam 4, hit 5, arm -10    Steel      25          2HD                   <a href="Warrior.html" style="color:#dfbe6f">Warrior</a> Ambassador, High Lords Keep
+blackened copper axe                                 -G L20  4d6 (14)  Flaming     dam 3, hit 3, int 1      Copper     12                                Globsard, <a href="<a href="GolGalath.html" style="color:#dfbe6f">GolGalath</a>.html" style="color:#dfbe6f">Gol'Galath</a>
+Bloody Axe named 'Flame Tongue'                    +E-G L30  4d9 (20)  Flaming     dam 3, hit 3             Steel,     27                                Pale-Skinned Vampire, Keep of Barovia
+bone axe                                           +E-G L10  5d4 (12)              spet -2                  Bone       10                                Sz'weh Hunter, <a href="Ysigrath.html" style="color:#dfbe6f">Ysigrath</a>
+broad-bladed battleaxe crackling with energy            L25  10d4(25)              dam 4, hit 4             Obsidian   18                                Fire giant, Past ostalagiah 
+bronze war axe                                          L15  2d10(11)              dam 2, hit 1             Bronze     9                                 dwarven trooper, Gol'Galath
+burrow-warden's mithril pickaxe                         L51  8d6 (28)              dam 4, hit 3             Mithril    20          norem                 Burrow-Warden Krieger, <a href="Underdark.html" style="color:#dfbe6f">Underdark</a>
+carved violet crystal battle axe                        L25  5d6 (17)              dam 3, hit 3, con 2      Crystal    13          2HD                   Goblin general, <a href="Emerald.html" style="color:#dfbe6f">Emerald</a> Forest
+cruel battle axe                                        L12  5d4 (12)              dam 3, hit 2, str 1      Steel      19                                Troll, <a href="Goblin_Village.html" style="color:#dfbe6f">Goblin Village</a>
+double-bladed battleaxe named 'Scream of the Damned'    L51  4d12(26)              dam 5, hit 5             Adamantite 21
+double-headed steel axe                                 L25  5d6 (17)  Cleave      dam 2, hit 3, cha 2      Steel      7                                 union leader, new arial city.
+dwarven war axe                                      -E L18  3d9 (15)              dam 3, hit 1             Mithril    15          dwarf_only            dwarven watchman, <a href="Akan.html" style="color:#dfbe6f">Akan</a>
+flaming axe                                          -G L15  10d2(15)  Flaming     dam 1, mana -5, sspell 5 Iron,      9                                 <a href="Feanwyyn_Weald.html" style="color:#dfbe6f"><a href="Feanwyyn.html" style="color:#dfbe6f">Feanwyyn</a> Weald</a>
+flawless crystal axe named 'Balance'                -GE L31  6d5 (18)              dam 3, hit 3             Crystal    22                                <a href="Upper_Cragstone.html" style="color:#dfbe6f">Upper <a href="Cragstone.html" style="color:#dfbe6f">Cragstone</a></a>
+flawless two-headed Pickaxe named 'Earthquake'          L51  9d6 (31)              dam 3, hit 3, spet -2    Mithril    20          norem                 King Schnicktick, Blingdenstone
+                                                                                   str 2
+gargantuan axe named 'iron flame'                    -G L38  4d12(26)              dam 4, hit 3             Iron       29          norem                 Enormous Orc, Orc Village
+Golrhun the Great Axe                                -G L51  15d3(30)              dam 5, hit 2, hp 10      Iron       17          norem, 2HD            Ludan, <a href="Mortorn.html" style="color:#dfbe6f">Mortorn</a>
+                                                                                   dex -1  
+great axe ??                                            L33   ?  (20)              dam 2, hit 2                        26
+great battleaxe rimmed in slime named 'Flesh Render' -G L35  10d3(20)              dam 3, hit 3             Iron       18                                Citadel of <a href="Ostalagiah.html" style="color:#dfbe6f">Ostalagiah</a>, AB
+Half-Moon Shaped Axe                                    L42  8d5 (24)              dam 5, arm 20, str 2     Steel      25                                Goliath, <a href="Seantryn_Modan.html" style="color:#dfbe6f">Seantryn Modan</a>
+hand axe                                                L24  5d5 (15)                                       Steel      13                                Hobbit Border Guard, Shire
+huge axe named `Shockwave'                          -EN L34  11d3(22)  Lightning   dam 5, hit 4,            Energy     35  special: lightning bolt       Storm Giant King, The Lake
+                                                                                   sspell -9. str 2   
+iron axe                                                L23  8d3 (16)                                       Iron       15                                Assorted guards, Ruined Keep
+iron pickaxe                                            L29  4d5 (12)              dam 6, hit -2            Iron       15                                Dwarven miner
+jumnarl's double-bladed battle axe                +E-GN L47   ?  (27)              dam 5, hit 5, svb -15    Iron       35         giant_only             Jumnarl, Frigid Wasteland
+Lifthrasir, the dual-bladed battleaxe              +E-G L47  8d6 (28)              dam 2, hit 7, svb -15    Steel      40                                Ford, <a href="Battlefield.html" style="color:#dfbe6f">Battlefield</a>
+Mahn-Tor's Great Axe                                    L32  5d8 (22)              dam 4, hit 4, hp 20      Adamantite 17                                Frigid Wasteland, Barbarian
+massive, double-bladed axe                              L44  8d6 (28)              dam 4, hit 4, hp 30      Iron       35         2HD
+massive half-moon axe                                   L40  6d5 (20)              dam 2, hit 2             Steel                                        Felar encampment
+nasty looking battle axe                             +E L32  5d6 (17)              dam 3, hit 3, str 2                 15
+notched axe                                          -E L49   ?  (26)                                       Silver     25 
+notched axe with a wicked blade                         L30  4d9 (20)  Blunt       dam 4, hit -2            Iron       27                                Rogash, Colliseum, Blunt dam
+ornate, black battle-axe                             -G L38  12d3(24)              dam 2, hit 4             Onyx       22
+ornate silver battle-axe                            -EN L40  4d11(24)              dam 2, hit 2, sspell -3  Silver     10                                Lord Tangrin, <a href="Sands_of_Sorrow.html" style="color:#dfbe6f">Sands of Sorrow</a>
+pick                                                    L5   4d3 (8)                                        Steel      14
+practice axe                                            L5   4d5 (12)                                       Wood       10                                Closet, <a href="Balator.html" style="color:#dfbe6f">Balator</a>
+rune-marked war axe named 'Animus'                      L30  9d3 (18)              dam 3, mana 40           Adamantite 8                                 <a href="AyrTrinil.html" style="color:#dfbe6f">Ayr'Trinil</a>
+rusted war-axe                                          L21  8d3 (16)                                       Steel      21
+shining steel mining pick                               L30  4d7 (16)              dam 3, hit 3             Steel      13
+shining mithril war axe                              -E L25  4d7 (16) Burst Energy dam 3, hit 2, str 1                 15                                Gol'Galath
+small hatchet                                           L50  6d5 (18)              dam 2                    Steel      12                                Human slave, Slave mines of Sitran
+small steel pickaxe                                     L??                                                                                              Human slave, Slave mines of Sitran
+small, blackened pick                                +E L20  5d5 (15)              dam 2, hit 1             Steel      10
+spider axe                                           +E L40  13d3(26)              dam 5, hit 3, str 2      Adamantite 15                                Drider, Underdark
+spiked hand axe                                         L15  4d6 (14)              dam 4                    Steel      8                                 duergar soldier, <a href="Udgaard.html" style="color:#dfbe6f">Udgaard</a>
+spiked udgaardian hand axe                           +E L45  12d3(24)              dam 5, hit -2            Steel      15
+Thin axe                                                L35  8d4 (20)              dam 2, hit 2             Steel      10                                Warrior Guildmaster, Udgaard
+thin broadaxe                                           L45  12d2(18)              dam 1, hit 2             Steel      14                                <a href="Aturi_Timberlands.html" style="color:#dfbe6f"><a href="Aturi.html" style="color:#dfbe6f">Aturi</a> Timberlands</a>
+twin-edged axe named 'Elfreaver'                        L40  11d4(27)              dam 4, hit 4, dex -1     Iron                   orc only
+                                                                                   str -2
+thick, steel-bladed throwing axe                        L15  5d6 (17)              dam 2, hit 2             Steel      17                                druids in past
+two-handed dwarven battle axe                           L30  6d5 (18)              dam 4, hit 1             Steel      9           dwarf_only            Dwarven Guard, Mortorn
+two-headed pickaxe with tips of diamond                 L48  5d9 (25)              dam 5, hit 5             Iron       16          norem                 Elite Svirfnebli  Blingdenstone
+unholy axe named 'Venom'                             +E L45  4d11(24)              dam 4, hit 2             Iron       15                                Black Storm in the Dragon Sea 
+unholy axe, 'Nightbringer'                         +E-G L40  5d8 (22)              dam 3, hit 3             Brass      20
+wide mithril battle axe                                 L40  9d4 (22)              dam 3, hit 3             Mithril    23                                Delar Tol (past)
+wide-angled splitting axe                               L45  3d11(18)              dam 1, hit 3             Steel      23                                Aturi Timberlands
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="CarrItems.html">CarrItems</a> &bull; <a href="Syntax.html">Syntax</a> &bull; </div>
+</body></html>

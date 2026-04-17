@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Battlefield - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>The Battlefield</h2>
+<div class="area-nav">Level: 20 - 50 | Builder: Nimbus/Thror | </div>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+ The                      C---C---C                     B: Thicket of Bushes (also ? rooms)
+ Battlefields             |       |                     C: Creeping Green
+                          |       |                     D: Dusty Crevice            
+                          C       L                     E: Edge of the Desert
+                          |                            ER: Eastern Side of Ridge
+                          |                             F: Fresh, Green Fields
+  R---R---R               C               s---s        FS: Filthy Sewer Drain 
+  |       |               |               |   |         G: Gunner's Gap                                  
+  |       |               |               |   |         H: The Hollow
+  R---5   R       C---C---C---C      NW---N---N---N     L: The Lair
+  |       |       |          /|       |                 M: Muddy Battlefront 
+  |       |       =         = =       |                MD: Moss-covered Depression 
+  R       M---B-\ B        P  B---?&lt;--W                MM: Man-made Cave, Lined with Mud                      
+  |       |   ^ | |               ^   |                 N: Outside the Northern Wall 
+  |       |   |v  |               |   |                NW: Northwestern Corner of the Wall
+  1---2-=-M   M---M---?----?--?---T---W                 P: The Pit
+  |   |   |   |   |   ^   /   ^   |   |                 R: Rocky Passage
+  |   |   |   |   |   |  MD   |   |   |                RW: Rabbit <a href="Warren.html" style="color:#dfbe6f">Warren</a>
+  3---4---M---M---M--WR      ER---T---W                 s: Small Clearing
+  |           |   |    \      |   |   |                 S: Outside the Southern Wall
+  |           |   |     \     |   |   |                SD: Bottom of a Sharp Drop
+  R       H   M---M   6  MM  ER---F---W                SE: South End of Ridge  
+  |       =       |   |       |   |   |                SW: Southwestern Corner of the Wall
+  |       |       |   |       |   |   |                 t: Damp Tunnel
+  |       |       |   |       |   |   |                 T: Trampled, Green Fields
+  R---R---R---R---M---M      ER---T---W                 W: Outside the Western Wall 
+      |           |           |   |   |                WR: Western Side of Ridge    
+      |           |           |   |   |                 ?: Random exits that take you a room or two away
+      |           |           |   |   |
+      8           G---G--SE  SD---T   W                       <a href="OstalagiahPast.html" style="color:#dfbe6f">OstalagiahPast</a> 
+                         /|       |   |\                     = 
+                        / |       |   | =                   FS
+                       /  |       |   |  \                 =  
+                      D   E---E---T   7   t---t---t---t---t                                                 
+                                  |   |\                                           
+                                  |   | RW                         
+                                  |   |                                                        
+                                  E--SW---S---S---S
+
+
+1 - NW Corner of the Giants' Caravan - Ysbaddaden the Giant Chief (Armageddon, Bracelet of Bifrost, 
+     Shield of the Five Grotesque Heads)
+2 - NE Corner of the Giants' Caravan - Monmouth (Blood-stained Tunic)
+3 - SW Corner of the Giants' Caravan - Ford the Giant General (<a href="Helm.html" style="color:#dfbe6f">Helm</a> of Supremacy, 
+     Lifthrasir, the dual-bladed battleaxe)
+4 - SE Corner of the Giants' Garavan - Thorgrimr the Giant Priest (ruby-encrusted collar, Hammer of Muspellsheim) 
+5 - Meeting Place - Sweeney the Mad [hidden] (Girdle of endless space, Feathered Death)
+6 - Recruitment Center - The Recruiter (pracice &amp; train here)
+7 - Outside the Western Wall - Rig the bearded brute (Belt of Strength)
+8 - Dark Entranceway - Tired old mage (dented iron helm)
+
+Roaming
+  Bronstead (Gauntlets of Living Flesh)
+  Pale-skinned giant (Gauntlets of Devilry)
+  Paton (Whetstone Scepter)
+  Vimir (adamantite bracer, The <a href="Sword.html" style="color:#dfbe6f">Sword</a> of Wailing Souls)
+</pre></div>
+<h3>Rooms (7)</h3>
+<div class="legend-grid">
+<div class="legend-entry"><span class="num">1</span><span class="room-name">NW Corner of the Giants' Caravan - Ysbaddaden the Giant Chief (Armageddon, Bracelet of Bifrost,</span></div>
+<div class="legend-entry"><span class="num">2</span><span class="room-name">NE Corner of the Giants' Caravan - Monmouth (Blood-stained Tunic)</span></div>
+<div class="legend-entry"><span class="num">3</span><span class="room-name">SW Corner of the Giants' Caravan - Ford the Giant General (Helm of Supremacy,</span></div>
+<div class="legend-entry"><span class="num">5</span><span class="room-name">Meeting Place - Sweeney the Mad [hidden] (Girdle of endless space, Feathered Death)</span></div>
+<div class="legend-entry"><span class="num">6</span><span class="room-name">Recruitment Center - The Recruiter (pracice &amp; train here)</span></div>
+<div class="legend-entry"><span class="num">7</span><span class="room-name">Outside the Western Wall - Rig the bearded brute (Belt of Strength)</span></div>
+<div class="legend-entry"><span class="num">8</span><span class="room-name">Dark Entranceway - Tired old mage (dented iron helm)</span></div>
+</div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="OstalagiahPast.html">OstalagiahPast</a> &bull; </div>
+</body></html>

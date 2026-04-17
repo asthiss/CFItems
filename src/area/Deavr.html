@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deavr - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Deavr</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+
+I'm back, but not on as much as before.
+Known to <a href="Zargu.html" style="color:#dfbe6f">Zargu</a> the Diku Gimp.
+AIM - [[DeavrAu]]
+ICQ - 317690784
+deavr@hotmail.com
+
+Recent characters:
+ - Ghuishoc (scion shaman)
+ - Jolaerg (scion warrior duerg axe spec)
+
+Has many Zmud maps &amp; scripts for ver 6.16.
+Including a ident parsing script that even puts them in a file if there are no duplicates if anyone is interested:
+(This was adapted from the id script also found at this site.)
+
+#CLASS {Items}
+#ALIAS pid {com 'iden' %1;#t+ ident;@identcomments = &quot;1&quot;}
+#ALIAS pide {com 'iden' %1;exa %1;#t+ ident}
+#ONINPUT {item (*) ~*(*)~*} {#gag;#Trigger {%1} {#sub {%1 %%ansi( green)*%2*%%ansi( white)}} &quot;items&quot;;#Echo %1 %ansi( green)*%2*%ansi( white)}
+#TRIGGER {This {object|armor|weapon}, } {#t+ ident}
+#TRIGGER {Moon Shaped Axe} {#sub {Moon Shaped Axe %ansi(green)*24 d5 arm20 str2*%ansi(white)}}
+#CLASS 0
+
+#CLASS {Items|hvad}
+#ALIAS hvad {#file 2 carritems.txt;#var tmp_list %grep( 2, &quot;%1*%2*%3&quot;);#close 2;#forall @tmp_list {#echo %{i}};#unvar tmp_listNOT}
+#ALIAS cari {#file 2 carrdeavritems.txt;#var tmp_list %grep( 2, &quot;%1*%2*%3&quot;);#close 2;#forall @tmp_list {#echo %{i}};#unvar tmp_listNOT}
+#VAR tmp_list {}
+#CLASS 0
+
+#CLASS {Items|ident} {disable}
+#VAR identshort {axe|reaver|Frostreaver|battle|battleaxe}
+#VAR identlevel {L48, }
+#VAR identmaterial {steel, }
+#VAR identweight {W17-15}
+#VAR identclass {}
+#VAR identcomments {0}
+#VAR identname {large battleaxe named 'Frostreaver' }
+#VAR identspecial {}
+#VAR identparse {large battleaxe named 'Frostreaver' L48, 4d12 (26), dam 4, hit 4, steel, W17-15}
+#TRIGGER {This {object|armor|weapon}, (*) can be referred to as '(*)'.} {@identaffects = &quot;&quot;;@identstats = &quot;&quot;;@identalignpos = &quot;+&quot;;@identalignneg = &quot;-&quot;;@identspecial = &quot;Special: &quot;;@identshort = %2;#if (%begins( %lower( &quot;%1&quot;), &quot;a &quot;) or %begins( %lower( &quot;%1&quot;), &quot;an &quot;) or %begins( %lower( &quot;%1&quot;), &quot;the &quot;)) { @identname = %right( &quot;%1&quot;, %pos( &quot; &quot;, &quot;%1&quot;))&quot; &quot;} {@identname = &quot;%1&quot;&quot; &quot;};@identshort = %replace( @identshort, &quot; &quot;, &quot;|&quot;)}
+#TRIGGER {$} {#WHILE (%len( @identname) &lt; %len( &quot;black standard          &quot;)) {@identname = @identname&quot; &quot;};#if (%len( @identalignpos) = %len( &quot;+&quot;)) {} {@identname = %concat( @identname, @identalignpos)};#if (%len( @identalignneg) = %len( &quot;-&quot;)) {} {@identname = %concat( @identname, @identalignneg)};#if (%ends( @identname, &quot; &quot;)) {} {@identname = @identname&quot; &quot;};#WHILE (%len( @identname) &lt; %len( &quot;black standard          -G      &quot;)) {@identname = @identname&quot; &quot;};#if (@identcomments = &quot;1&quot;) {@identcomments = &quot;&quot;;#PR identcomments &quot;Enter comments: Blah, Blah2&quot;;#if (@identcomments != &quot;&quot;) {@identspecial = %concat( @identspecial, @identcomments, &quot;, &quot;)};@identcomments = &quot;0&quot;};#if (%len( @identspecial) = %len( &quot;Special: &quot;)) {@identweight = %leftback( @identweight, 2);@identspecial = &quot;&quot;} {@identspecial = %leftback( @identspecial, 2)};@identparse = %concat( @identname, @identlevel, @identstats, @identaffects, @identmaterial, @identweight, @identspecial);#echo @identparse;#file 3 carrdeavritems.txt;#if (%grep( 3, @identparse) = %null) {#WRI 3 @identparse} {#echo Duplicate found};#close 3;#t- ident%</pre></div>
+</body></html>

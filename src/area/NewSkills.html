@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NewSkills - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>NewSkills</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+
+1:::Recall:::Skill:::Anti-Paladin
+1:::Axe:::Skill:::Anti-Paladin
+1:::<a href="Dagger.html" style="color:#dfbe6f">Dagger</a>:::Skill:::Anti-Paladin
+1:::<a href="Flail.html" style="color:#dfbe6f">Flail</a>:::Skill:::Anti-Paladin
+1:::<a href="Mace.html" style="color:#dfbe6f">Mace</a>:::Skill:::Anti-Paladin
+1:::Polearm:::Skill:::Anti-Paladin
+1:::<a href="Spear.html" style="color:#dfbe6f">Spear</a>:::Skill:::Anti-Paladin
+1:::<a href="Sword.html" style="color:#dfbe6f">Sword</a>:::Skill:::Anti-Paladin
+1:::<a href="Whip.html" style="color:#dfbe6f">Whip</a>:::Skill:::Anti-Paladin
+1:::Enhanced Damage:::Skill:::Anti-Paladin
+1:::Parry:::Skill:::Anti-Paladin
+1:::Scrolls:::Skill:::Anti-Paladin
+1:::Wands:::Skill:::Anti-Paladin
+1:::Shield Block:::Skill:::Anti-Paladin
+3:::Dirt Kicking:::Skill:::Anti-Paladin
+5:::Elbow:::Skill:::Anti-Paladin
+6:::Knee:::Skill:::Anti-Paladin
+7:::Fast Healing:::Skill:::Anti-Paladin
+7:::Second Attack:::Skill:::Anti-Paladin
+8:::Haggle:::Skill:::Anti-Paladin
+8:::Aim:::Skill:::Anti-Paladin
+9:::Kick:::Skill:::Anti-Paladin
+10:::Trip:::Skill:::Anti-Paladin
+10:::Pick Lock:::Skill:::Anti-Paladin
+11:::Disarm:::Skill:::Anti-Paladin
+12:::Metal Armor Use:::Skill:::Anti-Paladin
+13:::Third Attack:::Skill:::Anti-Paladin
+14:::Hand to Hand:::Skill:::Anti-Paladin
+15:::Bash:::Skill:::Anti-Paladin
+15:::Lash(Whip[[/Flail]]):::Skill:::Anti-Paladin
+15:::Meditation:::Skill:::Anti-Paladin
+15:::Dual Wield:::Skill:::Anti-Paladin
+17:::Shield Cleave(Axe):::Skill:::Anti-Paladin
+18:::Thrust(Polearm[[/Spear]]):::Skill:::Anti-Paladin
+19:::Pierce(Spear):::Skill:::Anti-Paladin
+20:::Pen:::Skill:::Anti-Paladin
+20:::Charge(Spear[[/Polearm]]):::Skill:::Anti-Paladin
+20:::Lore:::Skill:::Anti-Paladin
+20:::Slice(Polearm):::Skill:::Anti-Paladin
+21:::Light Armor Use:::Skill:::Anti-Paladin
+23:::Faceslash(Dagger):::Skill:::Anti-Paladin
+25:::Cleave(Sword[[/Axe]]):::Skill:::Anti-Paladin
+26:::Lashes of the Slave(Whip):::Skill:::Anti-Paladin
+28:::Vault(Spear):::Skill:::Anti-Paladin
+29:::Crippling Stike(Mace):::Skill:::Anti-Paladin
+30:::Demand:::Skill:::Anti-Paladin
+33:::Charge of the Morosa(Polearm):::Skill:::Anti-Paladin
+38:::Mystical Armor Use:::Skill:::Anti-Paladin
+43:::Evade:::Skill:::Anti-Paladin
+2:::Chill Touch:::Spell:::Anti-Paladin
+4:::Blindness:::Spell:::Anti-Paladin
+5:::Detect Magic:::Spell:::Anti-Paladin
+6:::Poison:::Spell:::Anti-Paladin
+8:::Curse:::Spell:::Anti-Paladin
+8:::Protection:::Spell:::Anti-Paladin
+9:::Invis:::Spell:::Anti-Paladin
+10:::Detect Invis:::Spell:::Anti-Paladin
+12:::Teleport:::Spell:::Anti-Paladin
+13:::Lightning Bolt:::Spell:::Anti-Paladin
+16:::Energy Drain:::Spell:::Anti-Paladin
+19:::Excision:::Spell:::Anti-Paladin
+21:::Summon:::Spell:::Anti-Paladin
+22:::Deafen:::Spell:::Anti-Paladin
+24:::Power Word Despondence:::Spell:::Anti-Paladin
+25:::Plague:::Spell:::Anti-Paladin
+25:::Sleep:::Spell:::Anti-Paladin
+27:::Fireball:::Spell:::Anti-Paladin
+31:::Aura of Despair:::Spell:::Anti-Paladin
+32:::Iceball:::Spell:::Anti-Paladin
+34:::Bloodlust of the Twelve Fiends:::Spell:::Anti-Paladin
+35:::Enervating Spirits:::Spell:::Anti-Paladin
+36:::Unholy Blessing:::Spell:::Anti-Paladin
+36:::Leech Unholy Blessing:::Spell:::Anti-Paladin
+40:::Iron Grip of Azazel(Undispellable after sufficient charges):::Spell:::Anti-Paladin
+42:::Worldbind:::Spell:::Anti-Paladin
+43:::Control Unholy Blessing(Gained after sufficient charges):::Spell:::Anti-Paladin
+43:::Flames of Ninauurm(Gained after sufficient charges):::Spell:::Anti-Paladin
+45:::Icy Grip of Baalduru(Gained after sufficient charges):::Spell:::Anti-Paladin
+47:::Arcing Touch of Akkabal(Gained after sufficient charges):::Spell:::Anti-Paladin
+49:::Burning Acid of Heglial-Gil(Gained after sufficient charges):::Spell:::Anti-Paladin
+51:::Blessing of Sedayamin(Gained after sufficient charges):::Spell:::Anti-Paladin
+1:::Dagger:::Skill:::Assassin
+1:::Spear:::Skill:::Assassin
+1:::Sword:::Skill:::Assassin
+1:::<a href="Staff.html" style="color:#dfbe6f">Staff</a>:::Skill:::Assassin
+1:::Dodge:::Skill:::Assassin
+1:::Hand to Hand:::Skill:::Assassin
+1:::Recall:::Skill:::Assassin
+1:::Wheel Kick:::Skill:::Assassin
+2:::Beseech (Good only):::Skill:::Assassin
+3:::Dirt Kicking:::Skill:::Assassin
+4:::Hide:::Skill:::Assassin
+4:::Sneak:::Skill:::Assassin
+5:::Dark Vision:::Skill:::Assassin
+5:::Aim:::Skill:::Assassin
+6:::Sweep Kick (91% Wheel Kick):::Skill:::Assassin
+7:::Heightened Awareness:::Skill:::Assassin
+7:::Evade:::Skill:::Assassin
+8:::Trip:::Skill:::Assassin
+8:::Light Armor Use:::Skill:::Assassin
+9:::Fast Healing:::Skill:::Assassin
+9:::Bind Wounds:::Skill:::Assassin
+10:::Detect Hidden:::Skill:::Assassin
+10:::Second Attack:::Skill:::Assassin
+10:::Endure:::Skill:::Assassin
+10:::Mark of the Prey:::Skill:::Assassin
+11:::Parry:::Skill:::Assassin
+11:::Side Kick (91% Sweep Kick):::Skill:::Assassin
+12:::Shield Block:::Skill:::Assassin
+13:::Disarm:::Skill:::Assassin
+13:::Caltraps:::Skill:::Assassin
+14:::Pick Lock:::Skill:::Assassin
+15:::Meditation:::Skill:::Assassin
+15:::Unarmed Defense:::Skill:::Assassin
+16:::Third Attack:::Skill:::Assassin
+16:::Vanish:::Skill:::Assassin
+16:::Scissor Kick (91% Side Kick):::Skill:::Assassin
+17:::Haggle:::Skill:::Assassin
+17:::Throw:::Skill:::Assassin
+18:::Blindness Dust:::Skill:::Assassin
+18:::Dual Wield:::Skill:::Assassin
+19:::Lore:::Skill:::Assassin
+20:::Poison Smoke:::Skill:::Assassin
+20:::Nerve:::Skill:::Assassin
+20:::Strangle:::Skill:::Assassin
+20:::Locate Mark:::Skill:::Assassin
+20:::Pen:::Skill:::Assassin
+21:::Mule Kick (91% Scissor Kick):::Skill:::Assassin
+21:::Enhanced Damage:::Skill:::Assassin
+22:::Kotegaeshi:::Skill:::Assassin
+24:::Ground Control:::Skill:::Assassin
+25:::Pugil(Staff):::Skill:::Assassin
+25:::Poison Dagger:::Skill:::Assassin
+26:::Crescent Kick (91% Mule Kick):::Skill:::Assassin
+27:::Tiger Claw:::Skill:::Assassin
+28:::Kansetsuwaza:::Skill:::Assassin
+29:::Precise Aim:::Skill:::Assassin
+30:::Backfist:::Skill:::Assassin
+31:::Axe Kick (91% Crescent Kick):::Skill:::Assassin
+35:::Assassinate:::Skill:::Assassin
+35:::Stalk:::Skill:::Assassin
+35:::Poison Darts:::Skill:::Assassin
+36:::Storm Mountain Kick (91% Axe Kick):::Skill:::Assassin
+40:::Owaza:::Skill:::Assassin
+41:::Double Spin Kick (91% Storm Mountain Kick):::Skill:::Assassin
+45:::Martial Trance:::Skill:::Assassin
+46:::Rising Phoenix Kick (91% Double Spin Kick):::Skill:::Assassin
+1:::Dagger:::Skill:::Bard
+1:::Mace:::Skill:::Bard
+1:::Sword:::Skill:::Bard
+1:::Staff:::Skill:::Bard
+1:::Haggle:::Skill:::Bard
+1:::Scrolls:::Skill:::Bard
+1:::talismans:::Skill:::Bard
+1:::Recall:::Skill:::Bard
+1:::Sing:::Skill:::Bard
+2:::Dirt Kicking:::Skill:::Bard
+2:::Beseech (Good only):::Skill:::Bard
+3:::Dodge:::Skill:::Bard
+3:::Mimic:::Skill:::Bard
+4:::Trip:::Skill:::Bard
+5:::Aim:::Skill:::Bard
+5:::Tune:::Skill:::Bard
+6:::Hand to Hand:::Skill:::Bard
+6:::Elbow:::Skill:::Bard
+7:::Knee:::Skill:::Bard
+7:::Kick:::Skill:::Bard
+8:::Flourish:::Skill:::Bard
+9:::Pick Lock:::Skill:::Bard
+9:::Evade:::Skill:::Bard
+10:::Fast Healing:::Skill:::Bard
+10:::Lore:::Skill:::Bard
+11:::Roundhouse:::Skill:::Bard
+12:::Meditation:::Skill:::Bard
+12:::Panhandle:::Skill:::Bard
+12:::Light Armor Use:::Skill:::Bard
+13:::Parry:::Skill:::Bard
+15:::Second Attack:::Skill:::Bard
+16:::Shield Block:::Skill:::Bard
+18:::Disarm:::Skill:::Bard
+19:::Pugil(Staff):::Skill:::Bard
+20:::Pen:::Skill:::Bard
+25:::Enhanced Damage:::Skill:::Bard
+30:::Sneak:::Skill:::Bard
+30:::A cappella (Perfect Sing):::Skill:::Bard
+36:::Precise Aim:::Skill:::Bard
+2:::Travelers March:::Song:::Bard
+4:::Charismatic Prelude:::Song:::Bard
+7:::Adagio:::Song:::Bard
+9:::Piercing Dissonance:::Song:::Bard
+10:::Battaglia:::Song:::Bard
+14:::Canticle of the Gods:::Song:::Bard
+15:::Elven Adagio:::Song:::Bard
+16:::Lullaby:::Song:::Bard
+17:::Languid Carol:::Song:::Bard
+18:::Anthem of Resistance:::Song:::Bard
+19:::Riddle of Revelation:::Song:::Bard
+20:::Reveille:::Song:::Bard
+21:::Rastoral of the Mind:::Song:::Bard
+22:::Tranquil Serenade:::Song:::Bard
+26:::Requiem:::Song:::Bard
+27:::Elegy of Tears:::Song:::Bard
+28:::Bagatelle of Bravado:::Song:::Bard
+29:::Laborious Lament:::Song:::Bard
+32:::Vibrato:::Song:::Bard
+33:::Nocturne of Fright:::Song:::Bard
+34:::Apocalyptic Overture:::Song:::Bard
+38:::Fantasia of Illusion:::Song:::Bard
+40:::Dirge of Solitude:::Song:::Bard
+45:::Grand Nocturne:::Song:::Bard
+1:::Recall:::Skill:::Berserker
+1:::Axe:::Skill:::Berserker
+1:::Dagger:::Skill:::Berserker
+1:::Flail:::Skill:::Berserker
+1:::Mace:::Skill:::Berserker
+1:::Polearm:::Skill:::Berserker
+1:::Spear:::Skill:::Berserker
+1:::Sword:::Skill:::Berserker
+1:::Whip:::Skill:::Berserker
+1:::Enhanced Damage:::Skill:::Berserker
+1:::Hand to Hand:::Skill:::Berserker
+2:::Dirt Kicking:::Skill:::Berserker
+2:::Elbow:::Skill:::Berserker
+3:::Knee:::Skill:::Berserker
+3:::Metal Armor Use:::Skill:::Berserker
+4:::Kick:::Skill:::Berserker
+5:::Trip:::Skill:::Berserker
+5:::Fast Healing:::Skill:::Berserker
+6:::Berserk:::Skill:::Berserker
+6:::Parry:::Skill:::Berserker
+7:::Fallback:::Skill:::Berserker
+7:::Bone Armor Use:::Skill:::Berserker
+8:::Scavenging:::Skill:::Berserker
+8:::Aim:::Skill:::Berserker
+9:::Cheap Shot:::Skill:::Berserker
+10:::Second Attack:::Skill:::Berserker
+10:::Warcry:::Skill:::Berserker
+12:::Light Armor Use:::Skill:::Berserker
+14:::Hide:::Skill:::Berserker
+15:::Bash:::Skill:::Berserker
+15:::Dual Wield:::Skill:::Berserker
+15:::Exsanguinate:::Skill:::Berserker
+16:::Dodge:::Skill:::Berserker
+17:::Thrust(Polearm[[/Spear]]):::Skill:::Berserker
+18:::Butcher:::Skill:::Berserker
+19:::Toughness:::Skill:::Berserker
+19:::Slice:::Skill:::Berserker
+20:::Third Attack:::Skill:::Berserker
+20:::Shield Cleave(Axe):::Skill:::Berserker
+20:::Headbutt:::Skill:::Berserker
+20:::Pen:::Skill:::Berserker
+21:::Charge(Spear[[/Polearm]]):::Skill:::Berserker
+22:::Bloodletting:::Skill:::Berserker
+23:::Crushing Assault:::Skill:::Berserker
+24:::Lash(Whip[[/Flail]]):::Skill:::Berserker
+25:::Steal:::Skill:::Berserker
+25:::Bloodsteep(Sword[[/Dagger/Spear]]):::Skill:::Berserker
+26:::Warshout:::Skill:::Berserker
+26:::Evade:::Skill:::Berserker
+27:::Spinebreaker:::Skill:::Berserker
+28:::Last Stand:::Skill:::Berserker
+29:::Ingest spoils:::Skill:::Berserker
+29:::Regurgitate:::Skill:::Berserker
+29:::Opportunity Strike:::Skill:::Berserker
+30:::Demoralize:::Skill:::Berserker
+30:::Grapple Weapon:::Skill:::Berserker
+31:::Pin(Spear[[/Polearm]]):::Skill:::Berserker
+32:::Savage Feeding:::Skill:::Berserker
+33:::Offhand Grapple:::Skill:::Berserker
+34:::Fashion War Banner:::Skill:::Berserker
+35:::Trample:::Skill:::Berserker
+35:::Enslave:::Skill:::Berserker
+35:::Soot Ritual(Mundunugu):::Skill:::Berserker
+35:::Whomp(Mamlauk):::Skill:::Berserker
+35:::Rush(Shig-ru):::Skill:::Berserker
+35:::Cower(Skrugga):::Skill:::Berserker
+36:::Bully:::Skill:::Berserker
+37:::Stone <a href="Hands.html" style="color:#dfbe6f">Hands</a>(Mamlauk):::Skill:::Berserker
+38:::Blood Ritual(Mundunugu):::Skill:::Berserker
+38:::Improved Flee(Skrugga):::Skill:::Berserker
+39:::Track Prey:::Skill:::Berserker
+40:::Desecration:::Skill:::Berserker
+40:::Set Snares:::Skill:::Berserker
+40:::Swat(Mamlauk):::Skill:::Berserker
+40:::Willbreaker(Shig-ru):::Skill:::Berserker
+40:::Take Cover(Skrugga):::Skill:::Berserker
+42:::Staff Defense(Skrugga):::Skill:::Berserker
+43:::Sanguine Filter(Mundunugu):::Skill:::Berserker
+43:::Brute Force(Mamlauk):::Skill:::Berserker
+43:::Pillage(Shig-ru):::Skill:::Berserker
+45:::Fetish(Mundunugu):::Skill:::Berserker
+45:::Dirty Fighting(Skrugga):::Skill:::Berserker
+46:::Hack(Mamlauk):::Skill:::Berserker
+46:::Masochism(Shig-ru):::Skill:::Berserker
+48:::Dash:::Skill:::Berserker
+48:::Gravesleep(Mundunugu):::Skill:::Berserker
+48:::Punt(Shig-ru):::Skill:::Berserker
+50:::Overrun:::Skill:::Berserker
+51:::Assemble Horde:::Skill:::Berserker
+51:::Demand Tribute:::Skill:::Berserker
+51:::Rally Forces:::Skill:::Berserker
+1:::Dagger:::Skill:::Conjurer
+1:::Axe:::Skill:::Conjurer
+1:::Whip:::Skill:::Conjurer
+1:::Staff:::Skill:::Conjurer
+1:::Scrolls:::Skill:::Conjurer
+1:::talismans:::Skill:::Conjurer
+1:::Wands:::Skill:::Conjurer
+1:::Recall:::Skill:::Conjurer
+1:::Stone Armor Use(Svirf only):::Skill:::Conjurer
+2:::Beseech (Good only):::Skill:::Conjurer
+7:::Meditation:::Skill:::Conjurer
+9:::Haggle:::Skill:::Conjurer
+14:::Parry:::Skill:::Conjurer
+14:::Trance:::Skill:::Conjurer
+15:::Fast Healing:::Skill:::Conjurer
+15:::Shield Block:::Skill:::Conjurer
+16:::Hand to Hand:::Skill:::Conjurer
+16:::Lash(Whip[[/Flail]]):::Skill:::Conjurer
+20:::Pen:::Skill:::Conjurer
+21:::Second Attack:::Skill:::Conjurer
+1:::Magic Missile:::Spell:::Conjurer
+2:::Detect Magic:::Spell:::Conjurer
+2:::Sighttheft:::Spell:::Conjurer
+3:::Detect Charm:::Spell:::Conjurer
+3:::Detect Invis:::Spell:::Conjurer
+4:::Invis:::Spell:::Conjurer
+5:::Armor:::Spell:::Conjurer
+6:::Faerie Fire:::Spell:::Conjurer
+9:::Infravision:::Spell:::Conjurer
+11:::Warp Dimension:::Spell:::Conjurer
+13:::Teleport:::Spell:::Conjurer
+14:::Dispel Magic:::Spell:::Conjurer
+15:::Identify:::Spell:::Conjurer
+15:::Locate Object:::Spell:::Conjurer
+16:::Flash:::Spell:::Conjurer
+17:::Familiar:::Spell:::Conjurer
+18:::Cancellation:::Spell:::Conjurer
+18:::Resist Negative:::Spell:::Conjurer
+18:::Resist Positive:::Spell:::Conjurer
+19:::Conjure Smoke Mephit:::Spell:::Conjurer
+20:::Pass Door:::Spell:::Conjurer
+20:::Conjure Elemental:::Spell:::Conjurer
+20:::Bind Elemental:::Spell:::Conjurer
+21:::Deny Summoning:::Spell:::Conjurer
+22:::Celestial Circle:::Spell:::Conjurer
+23:::Conjure Will-O-Wisp:::Spell:::Conjurer
+23:::Dismissal:::Spell:::Conjurer
+24:::Mystical Armor Use:::Skill:::Conjurer
+25:::Conjure Angel:::Spell:::Conjurer
+25:::Lightbind:::Spell:::Conjurer
+25:::Conjure Demon:::Spell:::Conjurer
+25:::Darkbind:::Spell:::Conjurer
+26:::Sending:::Spell:::Conjurer
+27:::Thaumaturgic Circle:::Spell:::Conjurer
+28:::Phase Door:::Spell:::Conjurer
+30:::Projection:::Spell:::Conjurer
+34:::Word of Recall:::Spell:::Conjurer
+35:::Conjure Archon:::Spell:::Conjurer
+35:::Conjure Devil:::Spell:::Conjurer
+37:::Kaubris's Anchor:::Spell:::Conjurer
+40:::Conjure Nightgaunt:::Spell:::Conjurer
+40:::Bind Nightgaunt:::Spell:::Conjurer
+43:::Clairaudience:::Spell:::Conjurer
+44:::Clairvoyance:::Spell:::Conjurer
+45:::Contact Other Planes:::Spell:::Conjurer
+51:::Tesseract:::Spell:::Conjurer
+52:::Owl (Good Only):::Familiar:::Conjurer
+52:::Faerie Dragon (Good Only:::Familiar:::Conjurer
+52:::Coyote (Good Only):::Familiar:::Conjurer
+52:::Quasit (Evil Only):::Familiar:::Conjurer
+52:::Raven (Evil Only):::Familiar:::Conjurer
+52:::Imp (Evil Only):::Familiar:::Conjurer
+52:::Shadowcat (Neutral Only):::Familiar:::Conjurer
+52:::Monkey (Neutral Only):::Familiar:::Conjurer
+52:::Homonculous (Neutral Only):::Familiar:::Conjurer
+1:::Axe:::Skill:::Druid
+1:::Mace:::Skill:::Druid
+1:::Spear:::Skill:::Druid
+1:::Staff:::Skill:::Druid
+1:::Recall:::Skill:::Druid
+3:::Dirt Kicking:::Skill:::Druid
+4:::Herbal Medicine:::Skill:::Druid
+5:::Meditation:::Skill:::Druid
+9:::Fast Healing:::Skill:::Druid
+9:::Pathfinding:::Skill:::Druid
+10:::Light Armor Use:::Skill:::Druid
+11:::Kick:::Skill:::Druid
+11:::Trance:::Skill:::Druid
+13:::Quiet Movement:::Skill:::Druid
+13:::Forage:::Skill:::Druid
+14:::Hand To Hand:::Skill:::Druid
+15:::Herbal Forage:::Skill:::Druid
+15:::Haggle:::Skill:::Druid
+15:::Bark Skin:::Skill:::Druid
+16:::Bone Armor Use:::Skill:::Druid
+17:::Shield Cleave(Axe):::Skill:::Druid
+17:::Pugil(Staff):::Skill:::Druid
+20:::Shield Block:::Skill:::Druid
+20:::Pen:::Skill:::Druid
+20:::Protection Elements:::Skill:::Druid
+21:::Thrust(Polearm[[/Spear]]):::Skill:::Druid
+22:::Pierce(Spear):::Skill:::Druid
+23:::Parry:::Skill:::Druid
+24:::Second Attack:::Skill:::Druid
+38:::Call of the Wild:::Skill:::Druid
+1:::Mend Wounds:::Commune:::Druid
+2:::Carapace:::Commune:::Druid
+2:::Detect Consecration:::Commune:::Druid
+3:::Refresh:::Commune:::Druid
+3:::Decompose:::Commune:::Druid
+4:::Detect Evil:::Commune:::Druid
+4:::Detect Good:::Commune:::Druid
+5:::Detect Invis:::Commune:::Druid
+6:::Know Alignment:::Commune:::Druid
+7:::Earthquake:::Commune:::Druid
+8:::Bless:::Commune:::Druid
+8:::Infravision:::Commune:::Druid
+10:::Control Weather:::Commune:::Druid
+10:::Moonbeam:::Commune:::Druid
+11:::Create Spring:::Commune:::Druid
+11:::Serpentine Staff:::Commune:::Druid
+12:::Transmute Metal To Wood:::Commune:::Druid
+12:::Protection From Metals:::Commune:::Druid
+13:::Telluric surge:::Commune:::Druid
+14:::Call Lightning:::Commune:::Druid
+15:::Fly:::Commune:::Druid
+15:::Armor Of Thorns:::Commune:::Druid
+16:::Identify:::Commune:::Druid
+16:::Water Breathing:::Commune:::Druid
+17:::Animism:::Commune:::Druid
+17:::Entangle:::Commune:::Druid
+18:::Forest Haven:::Commune:::Druid
+18:::Fire Seeds:::Commune:::Druid
+19:::Faerie Fog:::Commune:::Druid
+19:::Tsunami:::Commune:::Druid
+20:::Treeform:::Commune:::Druid
+20:::Whirling Simoon:::Commune:::Druid
+21:::Frenzy:::Commune:::Druid
+22:::Thornheart:::Commune:::Druid
+23:::Cancellation:::Commune:::Druid
+24:::Spike Growth:::Commune:::Druid
+25:::Swarm of Leeches:::Commune:::Druid
+26:::Pass Door:::Commune:::Druid
+28:::Thorn:::Commune:::Druid
+29:::Spores:::Commune:::Druid
+30:::Heroes Feast:::Commune:::Druid
+31:::Plant Growth:::Commune:::Druid
+32:::Briartangle:::Commune:::Druid
+33:::Liveoak:::Commune:::Druid
+34:::Primordial Vengeance:::Commune:::Druid
+35:::Sunray:::Commune:::Druid
+36:::Treeform:::Commune:::Druid
+40:::Birdform:::Commune:::Druid
+42:::The Hunt:::Commune:::Druid
+45:::Bearform:::Commune:::Druid
+1:::Flail:::Skill:::Healer
+1:::Mace:::Skill:::Healer
+1:::Staff:::Skill:::Healer
+1:::Whip:::Skill:::Healer
+1:::Recall:::Skill:::Healer
+1:::First Aid:::Skill:::Healer
+1:::Stone Armor Use(Dwarf[[/Svirf]] only):::Skill:::Healer
+2:::Beseech (Good only):::Skill:::Healer
+6:::Meditation:::Skill:::Healer
+10:::Fast Healing:::Skill:::Healer
+11:::Shield Block:::Skill:::Healer
+12:::Assess:::Skill:::Healer
+13:::Hand To Hand:::Skill:::Healer
+15:::Kick:::Skill:::Healer
+16:::Trance:::Skill:::Healer
+17:::Haggle:::Skill:::Healer
+17:::Nap:::Skill:::Healer
+18:::Pugil(Staff):::Skill:::Healer
+19:::Parry:::Skill:::Healer
+19:::Lash(Whip[[/Flail]]):::Skill:::Healer
+20:::Pen:::Skill:::Healer
+25:::Second Attack:::Skill:::Healer
+28:::Light Armor Use:::Skill:::Healer
+1:::Mend Wounds:::Commune:::Healer
+2:::Detect Consecration:::Commune:::Healer
+2:::Soothe(Good):::Commune:::Healer
+3:::Create Food:::Commune:::Healer
+3:::Illuminate:::Commune:::Healer
+4:::Sate:::Commune:::Healer
+5:::Detect Evil:::Commune:::Healer
+5:::Detect Good:::Commune:::Healer
+5:::Rouse:::Commune:::Healer
+6:::Create Water:::Commune:::Healer
+6:::Refresh:::Commune:::Healer
+7:::Bless:::Commune:::Healer
+7:::Cure Blindness:::Commune:::Healer
+8:::Detect Invis:::Commune:::Healer
+8:::Know Alignment:::Commune:::Healer
+8:::Protection:::Commune:::Healer
+9:::Quench:::Commune:::Healer
+10:::Cure Poison:::Commune:::Healer
+10:::Infravision:::Commune:::Healer
+10:::Aegis:::Commune:::Healer
+11:::Cure Disease:::Commune:::Healer
+11:::Gate:::Commune:::Healer
+11:::Cure Deafness:::Commune:::Healer
+12:::Remove Curse:::Commune:::Healer
+12:::Vitality(Good):::Commune:::Healer
+13:::Protective Shield:::Commune:::Healer
+14:::Curse:::Commune:::Healer
+15:::Invigorate:::Commune:::Healer
+15:::Ardent Faith:::Commune:::Healer
+15:::Stalwart Arm:::Commune:::Healer
+16:::Calm:::Commune:::Healer
+17:::Create Spring:::Commune:::Healer
+17:::Fly:::Commune:::Healer
+17:::Heal:::Commune:::Healer
+18:::Unveiling:::Commune:::Healer
+19:::Teleport:::Commune:::Healer
+19:::Restoration:::Commune:::Healer
+19:::Guiding hand:::Commune:::Healer
+20:::Awaken:::Commune:::Healer
+20:::Antipathy:::Commune:::Healer
+21:::Identify:::Commune:::Healer
+21:::Sanctuary:::Commune:::Healer
+22:::Spirit Shepherd:::Commune:::Healer
+23:::Prayer:::Commune:::Healer
+24:::Cancellation:::Commune:::Healer
+25:::Cleanse:::Commune:::Healer
+26:::Pass Door:::Commune:::Healer
+27:::Word of Recall:::Commune:::Healer
+28:::Turn Undead(Good):::Commune:::Healer
+29:::Frenzy:::Commune:::Healer
+29:::Spiritual Salve:::Commune:::Healer
+30:::Swiftness:::Commune:::Healer
+31:::Healing Sleep:::Commune:::Healer
+32:::Remove Paralysis:::Commune:::Healer
+33:::Group Teleport:::Commune:::Healer
+34:::Purity of Blood:::Commune:::Healer
+35:::Mass Healing:::Commune:::Healer
+35:::Sanctify Room(Good):::Commune:::Healer
+35:::Sanctify Self(Neutral[[/Evil]]):::Commune:::Healer
+36:::Purity of Flesh:::Commune:::Healer
+37:::Blade Barrier:::Commune:::Healer
+38:::Purity of Mind:::Commune:::Healer
+42:::Divine Bond(Good):::Commune:::Healer
+42:::Dark Pact(Evil):::Commune:::Healer
+43:::Rejuvenate:::Commune:::Healer
+45:::Lifeshield:::Commune:::Healer
+47:::Bulwark of Faith:::Commune:::Healer
+48:::Soul Citadel(Good[[/Neutral]]):::Commune:::Healer
+51:::Miraculous Foresight:::Commune:::Healer
+1:::Dagger:::Skill:::Invoker
+1:::Mace:::Skill:::Invoker
+1:::Whip:::Skill:::Invoker
+1:::Hand to Hand:::Skill:::Invoker
+1:::Scrolls:::Skill:::Invoker
+1:::talismans:::Skill:::Invoker
+1:::Wands:::Skill:::Invoker
+1:::Spellcraft:::Skill:::Invoker
+1:::Recall:::Skill:::Invoker
+1:::Stone Armor Use(Svirf only):::Skill:::Invoker
+2:::Beseech (Good only):::Skill:::Invoker
+5:::Meditation:::Skill:::Invoker
+8:::Haggle:::Skill:::Invoker
+13:::Trance:::Skill:::Invoker
+15:::Fast Healing:::Skill:::Invoker
+15:::Parry:::Skill:::Invoker
+20:::Lash(Whip[[/Flail]]):::Skill:::Invoker
+20:::Pen:::Skill:::Invoker
+28:::Second Attack:::Skill:::Invoker
+28:::Mystical Armor Use:::Skill:::Invoker
+1::: Acidic Secretion:::Spell:::Invoker
+1:::Create Water:::Spell:::Invoker
+1:::Channel Heat:::Spell:::Invoker
+1:::Frost Fingers:::Spell:::Invoker
+1:::Shocking Touch:::Spell:::Invoker
+1:::Earthquake:::Spell:::Invoker
+1:::Cyclone:::Spell:::Invoker
+2:::Detect Magic:::Spell:::Invoker
+3:::Detect Invis:::Spell:::Invoker
+4:::Invis:::Spell:::Invoker
+5:::Sheen of Stone (Perfect Earthquake):::Spell:::Invoker
+6:::Flare:::Spell:::Invoker
+9:::Infravision:::Spell:::Invoker
+11:::Whispering Wind (Perfect Cyclone):::Spell:::Invoker
+11:::Create Spring (Perfect Create water):::Spell:::Invoker
+12:::Grease (Perfect Acidic Secretion):::Spell:::Invoker
+12:::Wall of Fire (Perfect Channel Heat):::Spell:::Invoker
+13:::Icicle (Perfect Frost Fingers):::Spell:::Invoker
+13:::Charge Weapon (Perfect Shocking Touch):::Spell:::Invoker
+13:::Teleport:::Spell:::Invoker
+14:::Stoneshatter (Perfect Earthquake):::Spell:::Invoker
+14:::Faerie Fog:::Spell:::Invoker
+15:::Identify:::Spell:::Invoker
+15:::Locate Object:::Spell:::Invoker
+16:::Wind Wall (Perfect Cyclone):::Spell:::Invoker
+18:::Cancellation:::Spell:::Invoker
+19:::Dispel Magic:::Spell:::Invoker
+19:::Siltscreen (Perfect Grease):::Spell:::Invoker
+21:::Fireball (Perfect Wall of Fire):::Spell:::Invoker
+21:::Lightning Bolt (Perfect Charge Weapon):::Spell:::Invoker
+22:::Avalanche (Perfect Stoneshatter):::Spell:::Invoker
+22:::Iceshards (Perfect Icicle):::Spell:::Invoker
+23:::Adhesive Web (Perfect Grease):::Spell:::Invoker
+24:::Pass Door:::Spell:::Invoker
+25:::Word of Recall:::Spell:::Invoker
+26:::Drown (Perfect Create Spring):::Spell:::Invoker
+27:::Buffet (Perfect Wind Wall):::Spell:::Invoker
+27:::Earth Ripple (Perfect Avalance):::Spell:::Invoker
+28:::Tsunami (Perfect Create Spring):::Spell:::Invoker
+29:::Gel (Perfect Adhesive Web):::Spell:::Invoker
+30:::Controlled Fireball (Perfect Fireball):::Spell:::Invoker
+30:::Forked Lightning (Perfect Lightning Bolt):::Spell:::Invoker
+32:::Pebble to Boulder (Perfect Avalanche):::Spell:::Invoker
+32:::Cone of Cold (Perfect Iceshards):::Spell:::Invoker
+34:::Noxious Cloud (Perfect Wall of Fire, Buffet):::Spell:::Invoker
+35:::Nova (Perfect Controlled Fireball):::Spell:::Invoker
+36:::Vitriolic Stream (Perfect Gel):::Spell:::Invoker
+37:::Iceneedles (Perfect Cone of Cold):::Spell:::Invoker
+38:::Watershield (Perfect Tsunami[[/Drown]]):::Spell:::Invoker
+38:::Airshield (Perfect Buffet):::Spell:::Invoker
+38:::Fireshield (Perfect Nova):::Spell:::Invoker
+38:::Lightningshield (Perfect Forked Lightning):::Spell:::Invoker
+38:::Earthshield (Perfect Pebble to Boulder):::Spell:::Invoker
+38:::Frostshield (Perfect Iceneedles):::Spell:::Invoker
+38:::Oozeshield (Perfect Vitriolic Stream):::Spell:::Invoker
+38:::Shield of Winds (Perfect Airshield):::Spell:::Invoker
+38:::Shield of Electricity (Perfect Lightningshield):::Spell:::Invoker
+38:::Shield of Earth (Perfect Earthshield):::Spell:::Invoker
+38:::Shield of Flames (Perfect Fireshield):::Spell:::Invoker
+38:::Shield of Waves (Perfect Watershield):::Spell:::Invoker
+38:::Shield of Slime (Perfect Oozeshield):::Spell:::Invoker
+38:::Shield of Ice (Perfect Frostshield):::Spell:::Invoker
+39:::Iceslick (Perfect Iceneedles):::Spell:::Invoker
+41:::Dig (Perfect Earthshield):::Spell:::Invoker
+41:::Vortex (Perfect Airshield):::Spell:::Invoker
+43:::Engulf (Perfect Watershield):::Spell:::Invoker
+43:::Conglaciation (Perfect Frostshield):::Spell:::Invoker
+44:::Pillar of the Heavens (Perfect Lightningshield):::Spell:::Invoker
+44:::Improved Invis (Perfect Vortex):::Spell:::Invoker
+45:::Immolation (Perfect Fireshield):::Spell:::Invoker
+45:::Geyser (Perfect Watershield):::Spell:::Invoker
+46:::Quicksand (Perfect Oozeshield):::Spell:::Invoker
+47:::Incindenary Cloud (Perfect Fireshield, Buffet):::Spell:::Invoker
+48:::Rain of Stone (Perfect Earthshield):::Spell:::Invoker
+1:::Dagger:::Skill:::Necromancer
+1:::Sword:::Skill:::Necromancer
+1:::Whip:::Skill:::Necromancer
+1:::Scrolls:::Skill:::Necromancer
+1:::talismans:::Skill:::Necromancer
+1:::Wands:::Skill:::Necromancer
+1:::Spellcraft:::Skill:::Necromancer
+1:::Recall:::Skill:::Necromancer
+7:::Meditation:::Skill:::Necromancer
+9:::Haggle:::Skill:::Necromancer
+14:::Parry:::Skill:::Necromancer
+14:::Trance:::Skill:::Necromancer
+15:::Fast Healing:::Skill:::Necromancer
+19:::Embalm:::Skill:::Necromancer
+20:::Hand to Hand:::Skill:::Necromancer
+20:::Pen:::Skill:::Necromancer
+20:::Lash(Whip[[/Flail]]):::Skill:::Necromancer
+25:::Second Attack:::Skill:::Necromancer
+27:::Repel Undead:::Skill:::Necromancer
+31:::Mystical Armor Use:::Skill:::Necromancer
+34:::Bone Armor Use:::Skill:::Necromancer
+38:::Speak With Dead:::Skill:::Necromancer
+47:::Lifesense:::Skill:::Necromancer
+49:::Horror:::Skill:::Necromancer
+1:::Chill Touch:::Spell:::Necromancer
+1:::Ventriloquate:::Spell:::Necromancer
+2:::Detect Magic:::Spell:::Necromancer
+2:::Torment Spirit:::Spell:::Necromancer
+3:::Detect Invis:::Spell:::Necromancer
+3:::Ghoulish Numbing:::Spell:::Necromancer
+4:::Invis:::Spell:::Necromancer
+5:::Armor of Living Bone:::Spell:::Necromancer
+6:::Faerie Fire:::Spell:::Necromancer
+8:::Reanimate:::Spell:::Necromancer
+9:::Infravision:::Spell:::Necromancer
+10:::Sleep:::Spell:::Necromancer
+11:::Weaken:::Spell:::Necromancer
+12:::Blindness:::Spell:::Necromancer
+13:::Teleport:::Spell:::Necromancer
+14:::Dispel Magic:::Spell:::Necromancer
+15:::Identify:::Spell:::Necromancer
+15:::Locate Object:::Spell:::Necromancer
+16:::Corpse Thrall:::Spell:::Necromancer
+17:::Faerie Fog:::Spell:::Necromancer
+17:::Poison:::Spell:::Necromancer
+18:::Cancellation:::Spell:::Necromancer
+18:::Curse:::Spell:::Necromancer
+19:::Energy Drain:::Spell:::Necromancer
+20:::Lesser Golem:::Spell:::Necromancer
+23:::Crimson Scourge:::Spell:::Necromancer
+24:::Wraithform:::Spell:::Necromancer
+25:::Animate Dead:::Spell:::Necromancer
+26:::Disruption:::Spell:::Necromancer
+27:::Summon:::Spell:::Necromancer
+27:::Graft:::Spell:::Necromancer
+28:::Vampiric Touch:::Spell:::Necromancer
+29:::Wall of Putrid Flesh:::Spell:::Necromancer
+30:::Control Undead:::Spell:::Necromancer
+32:::Word of Recall:::Spell:::Necromancer
+33:::Greater Undead:::Spell:::Necromancer
+35:::Forget:::Spell:::Necromancer
+36:::Invis to Undead:::Spell:::Necromancer
+39:::Power Word Decay:::Spell:::Necromancer
+40:::Power Word Kill:::Spell:::Necromancer
+41:::Manifest <a href="Shadow.html" style="color:#dfbe6f">Shadow</a>:::Spell:::Necromancer
+51:::Ritual of Abominations:::Spell:::Necromancer
+1:::Mace:::Skill:::Paladin
+1:::Polearm:::Skill:::Paladin
+1:::Sword:::Skill:::Paladin
+1:::Staff:::Skill:::Paladin
+1:::Parry:::Skill:::Paladin
+1:::Rescue:::Skill:::Paladin
+1:::Recall:::Skill:::Paladin
+1:::Shield Block:::Skill:::Paladin
+1:::Stone Armor Use(Dwarf only):::Skill:::Paladin
+2:::Anoint Weapon:::Skill:::Paladin
+2:::Beseech:::Skill:::Paladin
+3:::First Aid:::Skill:::Paladin
+3:::Metal Armor Use:::Skill:::Paladin
+4:::Enhanced Damage:::Skill:::Paladin
+6:::Second Attack:::Skill:::Paladin
+7:::Hand to Hand:::Skill:::Paladin
+7:::Fast Healing:::Skill:::Paladin
+9:::Light Armor Use:::Skill:::Paladin
+9:::Aim:::Skill:::Paladin
+10:::Disarm:::Skill:::Paladin
+10:::Shield Bash:::Skill:::Paladin
+10:::Charge(Spear[[/Polearm]]):::Skill:::Paladin
+10:::Lay Hands:::Skill:::Paladin
+10:::Strike of Faith (Two-Handed)(Sword[[/Mace]]):::Skill:::Paladin
+10:::Shield Mastery (Shield):::Skill:::Paladin
+10:::Avoid (Monk):::Skill:::Paladin
+10:::Bat (Champion):::Skill:::Paladin
+12:::Haggle:::Skill:::Paladin
+13:::Third Attack:::Skill:::Paladin
+14:::Meditation:::Skill:::Paladin
+15:::Shield Jab (Shield):::Skill:::Paladin
+15:::Avoid (Champion):::Skill:::Paladin
+19:::Lore:::Skill:::Paladin
+20:::Pen:::Skill:::Paladin
+20:::Strike of Purity (Two-Handed)(Sword[[/Mace]]):::Skill:::Paladin
+20:::Transcend (Monk):::Skill:::Paladin
+22:::Pugil(Staff):::Skill:::Paladin
+23:::Slice(Polearm):::Skill:::Paladin
+23:::Defy (Monk):::Skill:::Paladin
+24:::Flank Attack (Shield):::Skill:::Paladin
+24:::Maneuver (Champion):::Skill:::Paladin
+25:::Templar's Defense (Two-Handed):::Skill:::Paladin
+25:::Respond (Monk):::Skill:::Paladin
+28:::Track The Wicked:::Skill:::Paladin
+30:::Strike of Deliverance (Two-Handed)(Sword[[/Mace]]):::Skill:::Paladin
+30:::Intensify (Monk):::Skill:::Paladin
+31:::Ascend (Monk):::Skill:::Paladin
+31:::Marshal (Champion):::Skill:::Paladin
+32:::Angel's Wing (Shield):::Skill:::Paladin
+35:::Evade:::Skill:::Paladin
+35:::Anticipate (Monk):::Skill:::Paladin
+1:::Mend Wounds:::Commune:::Paladin
+1:::Detect Evil:::Commune:::Paladin
+2:::Armor:::Commune:::Paladin
+3:::Create Food:::Commune:::Paladin
+4:::Create Water:::Commune:::Paladin
+4:::Know Alignment:::Commune:::Paladin
+5:::Detect Consecration:::Commune:::Paladin
+6:::Bless:::Commune:::Paladin
+6:::Detect Invis:::Commune:::Paladin
+7:::Cure Blindness:::Commune:::Paladin
+10:::Flamestrike:::Commune:::Paladin
+11:::Call Lightning:::Commune:::Paladin
+11:::Protection:::Commune:::Paladin
+13:::Remove Curse:::Commune:::Paladin
+17:::Cure Deafness:::Commune:::Paladin
+19:::Blessed Divination:::Commune:::Paladin
+20:::Wrath:::Commune:::Paladin
+21:::Summon:::Commune:::Paladin
+22:::Crusade:::Commune:::Paladin
+24:::Remove Taint:::Commune:::Paladin
+25:::Turn Undead:::Commune:::Paladin
+27:::Sanctuary:::Commune:::Paladin
+29:::Heal:::Commune:::Paladin
+32:::Word of Recall:::Commune:::Paladin
+32:::Fervor:::Commune:::Paladin
+33:::Righteousness:::Commune:::Paladin
+37:::Redemption:::Commune:::Paladin
+38:::Holy Word:::Commune:::Paladin
+40:::Sanctify Room:::Commune:::Paladin
+52::: :::Virtue of Charity:::Paladin
+52:::Essence of Charity:::Commune:::Paladin
+52:::Lifeboon:::Commune:::Paladin
+52:::Ceremonial Burial:::Commune:::Paladin
+52:::Call of the Martyr:::Commune:::Paladin
+53::: :::Virtue of Faith:::Paladin
+53:::Essence of Faith:::Commune:::Paladin
+53:::Templars Will:::Commune:::Paladin
+53:::Fast:::Skill:::Paladin
+53:::Spiritual Hammer:::Commune:::Paladin
+53:::Divine Intervention:::Commune:::Paladin
+53:::Silent Prayer:::Skill:::Paladin
+53:::Fire and Brimstone:::Commune:::Paladin
+54::: :::Virtue of Fortitude:::Paladin
+54:::Essence of Fortitude:::Commune:::Paladin
+54:::Divine Blessing:::Commune:::Paladin
+54:::Veterans Insight:::Skill:::Paladin
+54:::Spirit of the Blade:::Commune:::Paladin
+54:::Aristaeia:::Commune:::Paladin
+55::: :::Virtue of Temperance:::Paladin
+55:::Essence of Temperance:::Commune:::Paladin
+55:::Templars Vigilance:::Commune:::Paladin
+55:::Revelation:::Commune:::Paladin
+55:::Counterstrike:::Skill:::Paladin
+55:::Divine Insight:::Commune:::Paladin
+55:::Champions Stand:::Commune:::Paladin
+56::: :::Virtue of Retribution:::Paladin
+56:::Essence of Retribution:::Commune:::Paladin
+56:::Retributive Curing:::Skill:::Paladin
+56:::Force of Will:::Commune:::Paladin
+56:::Divine Retribution:::Commune:::Paladin
+56:::Fire and Brimstone:::Commune:::Paladin
+56:::Light of Heaven:::Commune:::Paladin
+57::: :::Virtue of Hope:::Paladin
+57:::Templars Prayer:::Commune:::Paladin
+57:::Call to <a href="Arms.html" style="color:#dfbe6f">Arms</a>:::Commune:::Paladin
+57:::Holy Strength:::Commune:::Paladin
+57:::Sacred Guardian:::Commune:::Paladin
+57:::Steadfast Heart:::Commune:::Paladin
+57:::Blessed Remission:::Commune:::Paladin
+57:::Escape of the Innocent:::Commune:::Paladin
+57:::Sacred Rites:::Commune:::Paladin
+1:::Axe:::Skill:::Ranger
+1:::Dagger:::Skill:::Ranger
+1:::Spear:::Skill:::Ranger
+1:::Sword:::Skill:::Ranger
+1:::Staff:::Skill:::Ranger
+1:::Whip:::Skill:::Ranger
+1:::Parry:::Skill:::Ranger
+1:::Scrolls:::Skill:::Ranger
+1:::talismans:::Skill:::Ranger
+1:::Recall:::Skill:::Ranger
+1:::Stone Armor Use(Svirf only):::Skill:::Ranger
+2:::Light Armor Use:::Skill:::Ranger
+2:::Beseech (Good only):::Skill:::Ranger
+3:::Elbow:::Skill:::Ranger
+4:::Camouflage:::Skill:::Ranger
+5:::Dirt Kicking:::Skill:::Ranger
+5:::Quiet Movement:::Skill:::Ranger
+6:::Knee:::Skill:::Ranger
+6:::Fast Healing:::Skill:::Ranger
+7:::Acute Vision:::Skill:::Ranger
+7:::Dark Vision:::Skill:::Ranger
+7:::Pathfinding:::Skill:::Ranger
+7:::Aim:::Skill:::Ranger
+8:::Kick:::Skill:::Ranger
+8:::Second Attack:::Skill:::Ranger
+9:::Dodge:::Skill:::Ranger
+9:::Butcher:::Skill:::Ranger
+10:::Herbs:::Skill:::Ranger
+10:::Shield Block:::Skill:::Ranger
+10:::Protection Heat Cold:::Skill:::Ranger
+11:::Disarm:::Skill:::Ranger
+12:::Ambush:::Skill:::Ranger
+13:::Enhanced Damage:::Skill:::Ranger
+14:::Hand to Hand:::Skill:::Ranger
+15:::Haggle:::Skill:::Ranger
+15:::Tame:::Skill:::Ranger
+15:::Bark Skin:::Skill:::Ranger
+16:::Lash(Whip[[/Flail]]):::Skill:::Ranger
+16:::Meditation:::Skill:::Ranger
+16:::Pierce(Spear):::Skill:::Ranger
+17:::Bone Armor Use:::Skill:::Ranger
+18:::Lore:::Skill:::Ranger
+18:::Dual Wield:::Skill:::Ranger
+19:::Find Water:::Skill:::Ranger
+19:::Creep:::Skill:::Ranger
+20:::Shield Cleave(Axe):::Skill:::Ranger
+20:::Pugil(Staff):::Skill:::Ranger
+20:::Pen:::Skill:::Ranger
+20:::Serpentstrike:::Skill:::Ranger
+20:::Warcry:::Skill:::Ranger
+21:::Thrust(Polearm[[/Spear]]):::Skill:::Ranger
+22:::Camp:::Skill:::Ranger
+23:::Charge(Spear[[/Polearm]]):::Skill:::Ranger
+25:::Third Attack:::Skill:::Ranger
+26:::Evade:::Skill:::Ranger
+28:::Survivalist:::Skill:::Ranger
+30:::Track:::Skill:::Ranger
+30:::Fashion Staff:::Skill:::Ranger
+30:::Bearcharge:::Skill:::Ranger
+32:::Fashion Spear:::Skill:::Ranger
+32:::Waylay:::Skill:::Ranger
+35:::Backrake:::Skill:::Ranger
+35:::Wilderness Familiarity:::Skill:::Ranger
+40:::Snare:::Skill:::Ranger
+8:::Armor:::Spell:::Ranger
+17:::Call Lightning:::Spell:::Ranger
+19:::Control Weather:::Spell:::Ranger
+20:::Entangle:::Spell:::Ranger
+30:::Imbue Weapon:::Spell:::Ranger
+52:::Forester:::Terrain:::Ranger
+52:::Doesn't lose or gain any extra skills:::Classic Ranger:::Ranger
+53:::Plainsrunner:::Terrain:::Ranger
+53:::Plainsrunning(Level 20):::Skill:::Ranger
+53:::Bramble Pit(Level 35):::Skill:::Ranger
+53:::Pursuit(Level 45):::Skill:::Ranger
+53:::Snare:::Loses Skill:::Ranger
+53:::Strong charge:::Specialty:::Ranger
+54:::Bedouin:::Terrain:::Ranger
+54:::Endure Heat(Level 12):::Skill:::Ranger
+54:::Sandswirl(Level 20):::Skill:::Ranger
+54:::Stash(Level 25):::Skill:::Ranger
+54:::Dervishdance(Level 42):::Skill:::Ranger
+54:::Whirling Simoon(Level 30):::Spell:::Ranger
+54:::Bearcharge:::Loses Skill:::Ranger
+54:::Snare:::Loses Skill:::Ranger
+54:::Charge:::Loses Skill:::Ranger
+54:::Entangle:::Loses Spell:::Ranger
+54:::Harder to dirt:::Speciality:::Ranger
+55:::Mountaineer:::Terrain:::Ranger
+55:::Endure Cold(Level 12):::Skill:::Ranger
+55:::Sure Footing(Level 25):::Skill:::Ranger
+55:::Boreal Wind(Level 42):::Spell:::Ranger
+55:::Scrolls:::Loses Skill:::Ranger
+55:::Protection Heat Cold:::Loses Skill:::Ranger
+55:::Bark Skin:::Loses Skill:::Ranger
+55:::Backrake:::Loses Skill:::Ranger
+55:::Strong charge:::Speciality:::Ranger
+55:::Avalanche warcry in mountains:::Speciality:::Ranger
+56:::Caverndweller:::Terrain:::Ranger
+56:::Sure Footing(Level 25):::Skill:::Ranger
+56:::Rebounding Strike(Level 32):::Skill:::Ranger
+56:::Shadowstride(Level 37):::Skill:::Ranger
+56:::Deafening Howl(Level 39):::Skill:::Ranger
+56:::Smokescreen(Level 40):::Skill:::Ranger
+56:::Cavernfall(Level 45):::Spell:::Ranger
+56:::Call Lightning:::Loses Spell:::Ranger
+56:::Control Weather:::Loses Spell:::Ranger
+56:::Entangle:::Loses Spell:::Ranger
+56:::Can navigate caves even when blind:::Speciality:::Ranger
+56:::Dive ambush in caves:::Speciality:::Ranger
+57:::Marshdweller:::Terrain:::Ranger
+57:::Draw Breath(Level 14):::Skill:::Ranger
+57:::Bloodletting(Level 24):::Skill:::Ranger
+57:::Swarm of Leeches(Level 28):::Spell:::Ranger
+57:::Swampmire(Level 30):::Skill:::Ranger
+57:::Scourge of Mosquitos(Level 36):::Spell:::Ranger
+57:::Pursuit(Level 45):::Skill:::Ranger
+57:::Scrolls:::Loses Skill:::Ranger
+57:::Charge:::Loses Skill:::Ranger
+57:::Bearcharge:::Loses Skill:::Ranger
+57:::Find Water:::Loses Skill:::Ranger
+57:::Dirt kick lasts longer+can poison in home terrain:::Speciality:::Ranger
+58:::Mariner:::Terrain:::Ranger
+58:::Navigation(Level 10):::Skill:::Ranger
+58:::Draw Breath(Level 14):::Skill:::Ranger
+58:::Harpoon(Level 32):::Skill:::Ranger
+58:::Netcasting(Level 38):::Skill:::Ranger
+58:::Stormcalling(Level 45):::Spell:::Ranger
+58:::Charge:::Loses Skill:::Ranger
+58:::Snare:::Loses Skill:::Ranger
+58:::Pathfinding:::Loses skill:::Ranger
+58:::Can Entangle (only) on sea:::Speciality:::Ranger
+58:::Fashions strong Harpoons, not spears:::Speciality:::Ranger
+59:::Animist:::Expertise:::Ranger
+59:::Trance(Level 18):::Skill:::Ranger
+59:::Animism(Level 22):::Spell:::Ranger
+59:::Zephyr(Level 25):::Spell:::Ranger
+59:::Symbiosis(Level 28):::Spell:::Ranger
+59:::Call Messenger(Level 30):::Spell:::Ranger
+59:::Speak with Spirits(Level 31):::Spell:::Ranger
+59:::Spirit Allies(Level 33):::Skill:::Ranger
+59:::Primordial Vengeance(Level 38):::Spell:::Ranger
+59:::Gust of Wind(Level 40):::Spell:::Ranger
+59:::Spirit Guardian(Level 42):::Spell:::Ranger
+59:::Spirit Howl(Level 46):::Spell:::Ranger
+59:::Backrake:::Loses Skill:::Ranger
+59:::Bearcharge:::Loses Skill:::Ranger
+59:::Third Attack:::Loses Skill:::Ranger
+60:::Beastmaster:::Expertise:::Ranger
+60:::Predators Stance(Level 22):::Skill:::Ranger
+60:::Bear Kinship(Level 36):::Skill:::Ranger
+60:::Serpent Kinship(Level 38):::Skill:::Ranger
+60:::Wolf Kinship(Level 44):::Skill:::Ranger
+60:::Cloud of Wasps(Level 31):::Spell:::Ranger
+60:::Scrolls:::Loses Skill:::Ranger
+60:::Haggle:::Loses Skill:::Ranger
+60:::Pen:::Loses Skill:::Ranger
+60:::Control Weather:::Loses Spell:::Ranger
+60:::Call Lightning:::Loses Spell:::Ranger
+61:::Explorer:::Expertise:::Ranger
+61:::Wanderlust(Level 16):::Skill:::Ranger
+61:::Avoidance(Level 21):::Skill:::Ranger
+61:::Resilience(Level 24):::Skill:::Ranger
+61:::Watchful Eye(Level 28):::Skill:::Ranger
+61:::Tend Wounds(Level 31):::Skill:::Ranger
+61:::Scatter(Level 33):::Skill:::Ranger
+61:::Backrake:::Loses Skill:::Ranger
+61:::Call Lightning:::Loses Spell:::Ranger
+61:::Control Weather:::Loses Spell:::Ranger
+61:::Group camp:::Speciality:::Ranger
+62:::Hunter:::Expertise:::Ranger
+62:::Archery(Level 15):::Skill:::Ranger
+62:::Poison Arrow(Level 22):::Skill:::Ranger
+62:::Bait(Level 25):::Skill:::Ranger
+62:::Rapid Shot(Level 25):::Skill:::Ranger
+62:::Flaming Arrow(Level 30):::Skill:::Ranger
+62:::Aimed Shot(Level 32):::Skill:::Ranger
+62:::Observe(Level 33):::Skill:::Ranger
+62:::Aerial Shot(Level 36):::Skill:::Ranger
+62:::Stalker of the Wilds(Level 38):::Skill:::Ranger
+62:::Precision(Level 40):::Skill:::Ranger
+62:::Timed Attack(Level 44):::Skill:::Ranger
+62:::Axe:::Loses Skill:::Ranger
+62:::Shield Cleave:::Loses Skill:::Ranger
+62:::Dual Wield:::Loses Skill:::Ranger
+62:::Backrake:::Loses Skill:::Ranger
+62:::Entangle:::Loses Spell:::Ranger
+62:::Maledicting Serpentstrike:::Speciality:::Ranger
+62:::Can detect sneaking/creeping:::Speciality:::Ranger
+63:::Savage:::Expertise:::Ranger
+63:::Mace(Level 1):::Skill:::Ranger
+63:::Brutal Rush(Level 20):::Skill:::Ranger
+63:::Improvise Weapon(Level 25):::Skill:::Ranger
+63:::Smear Mud(Level 28):::Skill:::Ranger
+63:::Staunch(Level 30):::Skill:::Ranger
+63:::Warpaint(Level 33):::Skill:::Ranger
+63:::Savage Blow(Level 42):::Skill:::Ranger
+63:::Protection From Metals(Level 23):::Spell:::Ranger
+63:::Scrolls:::Loses Skill:::Ranger
+63:::Meditation:::Loses Skill:::Ranger
+63:::Shield Block:::Loses Skill:::Ranger
+63:::Barkskin:::Loses Skill:::Ranger
+63:::Control Weather:::Loses Spell:::Ranger
+63:::Metal armor affects Wilderness abilities:::Speciality:::Ranger
+64:::Survivalist:::Expertise:::Ranger
+64:::Doesn't lose or gain any extra skills:::Classic Ranger:::Ranger
+1:::Axe:::Skill:::Shaman
+1:::Flail:::Skill:::Shaman
+1:::Polearm:::Skill:::Shaman
+1:::Sword:::Skill:::Shaman
+1:::Recall:::Skill:::Shaman
+1:::Stone Armor Use(Dwarf only):::Skill:::Shaman
+2:::Beseech (Good only):::Skill:::Shaman
+6:::Fast Healing:::Skill:::Shaman
+7:::Kick:::Skill:::Shaman
+9:::Meditation:::Skill:::Shaman
+10:::Hand To Hand:::Skill:::Shaman
+14:::Metal Armor Use:::Skill:::Shaman
+14:::Aim:::Skill:::Shaman
+15:::Shield Block:::Skill:::Shaman
+16:::Parry:::Skill:::Shaman
+16:::Charge(Spear[[/Polearm]]):::Skill:::Shaman
+17:::Lash(Whip[[/Flail]]):::Skill:::Shaman
+17:::Warcry:::Skill:::Shaman
+18:::Haggle:::Skill:::Shaman
+19:::Shield Cleave(Axe):::Skill:::Shaman
+20:::Second Attack:::Skill:::Shaman
+20:::Trance:::Skill:::Shaman
+20:::Pen:::Skill:::Shaman
+22:::Slice(Polearm):::Skill:::Shaman
+22:::Light Armor Use:::Skill:::Shaman
+25:::Enhanced Damage:::Skill:::Shaman
+1:::Afflict:::Commune:::Shaman
+2:::Faerie Fire:::Commune:::Shaman
+3:::Mend Wounds:::Commune:::Shaman
+3:::Detect Consecration:::Commune:::Shaman
+4:::Detect Evil:::Commune:::Shaman
+4:::Detect Magic:::Commune:::Shaman
+4:::Detect Good:::Commune:::Shaman
+5:::Blindness:::Commune:::Shaman
+5:::Refresh:::Commune:::Shaman
+6:::Detect Invis:::Commune:::Shaman
+6:::Protection:::Commune:::Shaman
+7:::Earthquake:::Commune:::Shaman
+7:::Know Alignment:::Commune:::Shaman
+8:::Poison:::Commune:::Shaman
+9:::Infravision:::Commune:::Shaman
+9:::Weaken:::Commune:::Shaman
+11:::Summon:::Commune:::Shaman
+12:::Cure Poison:::Commune:::Shaman
+12:::Dispel:::Commune:::Shaman
+12:::Dispel Evil:::Commune:::Shaman
+12:::Dispel Good:::Commune:::Shaman
+12:::Famish:::Commune:::Shaman
+15:::Cure Blindness:::Commune:::Shaman
+15:::Curse:::Commune:::Shaman
+15:::Plague:::Commune:::Shaman
+16:::Protective Shield:::Commune:::Shaman
+17:::Faerie Fog:::Commune:::Shaman
+17:::Tsunami:::Commune:::Shaman
+18:::Cure Disease:::Commune:::Shaman
+19:::Energy Drain:::Commune:::Shaman
+20:::Frenzy:::Commune:::Shaman
+20:::Damnation:::Commune:::Shaman
+21:::Fatigue:::Commune:::Shaman
+22:::Turn Undead:::Commune:::Shaman
+23:::Fervor:::Communre:::Shaman
+24:::Sanctuary:::Commune:::Shaman
+25:::Cancellation:::Commune:::Shaman
+26:::Redemption:::Commune:::Shaman
+27:::Locate Object:::Commune:::Shaman
+28:::Word of Recall:::Commune:::Shaman
+29:::Holy Word:::Commune:::Shaman
+29:::Identify:::Commune:::Shaman
+34:::Demonfire:::Commune:::Shaman
+38:::Aristaeia:::Commune:::Shaman
+40:::Wither:::Commune:::Shaman
+42:::Rot:::Commune:::Shaman
+1:::Dagger:::Skill:::Shapeshifter
+1:::Staff:::Skill:::Shapeshifter
+1:::Whip:::Skill:::Shapeshifter
+1:::Scrolls:::Skill:::Shapeshifter
+1:::talismans:::Skill:::Shapeshifter
+1:::Wands:::Skill:::Shapeshifter
+1:::Spellcraft:::Skill:::Shapeshifter
+1:::Stone Armor Use(Svirf only):::Skill:::Shapeshifter
+2:::Beseech (Good only):::Skill:::Shapeshifter
+5:::Meditation:::Skill:::Shapeshifter
+8:::Haggle:::Skill:::Shapeshifter
+14:::Trance:::Skill:::Shapeshifter
+15:::Fast Healing:::Skill:::Shapeshifter
+19:::Parry:::Skill:::Shapeshifter
+20:::Pugil(Staff):::Skill:::Shapeshifter
+20:::Lash(Whip[[/Flail]]):::Skill:::Shapeshifter
+20:::Pen:::Skill:::Shapeshifter
+27:::Mystical Armor Use:::Skill:::Shapeshifter
+28:::Shapeshift Skill:::Skill:::Shapeshifter
+34:::Control Levitation:::Skill:::Shapeshifter
+35:::Control Speed:::Skill:::Shapeshifter
+36:::Control Skin:::Skill:::Shapeshifter
+37:::Control Phase:::Skill:::Shapeshifter
+1:::Faerie Fire:::Spell:::Shapeshifter
+1:::Ventriloquate:::Spell:::Shapeshifter
+1:::Shell of the Armadillo:::Spell:::Shapeshifter
+2:::Detect Magic:::Spell:::Shapeshifter
+2:::Chitin of the Crab:::Spell:::Shapeshifter
+3:::Scales of the Crocodile:::Spell:::Shapeshifter
+3:::Detect Invis:::Spell:::Shapeshifter
+3:::Hooves of the Gazelle:::Spell:::Shapeshifter
+4:::Invis:::Spell:::Shapeshifter
+4:::<a href="Tail.html" style="color:#dfbe6f">Tail</a> of the Lizard:::Spell:::Shapeshifter
+5:::Hide of the Rhino:::Spell:::Shapeshifter
+8:::Horns of the Bull:::Spell:::Shapeshifter
+9:::Eye of the Cat:::Spell:::Shapeshifter
+10:::Fly:::Spell:::Shapeshifter
+10:::Paws of the Cheetah:::Spell:::Shapeshifter
+11:::Giant Strenght:::Spell:::Shapeshifter
+12:::Fangs of the Serpent:::Spell:::Shapeshifter
+13:::Faerie Fog:::Spell:::Shapeshifter
+14:::Teleport:::Spell:::Shapeshifter
+14:::Water Breathing:::Spell:::Shapeshifter
+14:::Ears of the Bat:::Spell:::Shapeshifter
+14:::Shapeshift:::Spell:::Shapeshifter
+14:::Tier 4, Major Focus (Chance to get 1/3):::Form:::Shapeshifter
+15:::Haste:::Spell:::Shapeshifter
+15:::Identify:::Spell:::Shapeshifter
+15:::Locate Object:::Spell:::Shapeshifter
+15:::Tier 4, Major Focus (Chance to get 1/3):::Form:::Shapeshifter
+16:::Tier 4, Major Focus (Chance to get 1/3):::Form:::Shapeshifter
+17:::Dispel Magic:::Spell:::Shapeshifter
+18:::Cancellation:::Spell:::Shapeshifter
+18:::Slow:::Spell:::Shapeshifter
+20:::Tier 3, Major Focus (Chance to get 1/3):::Form:::Shapeshifter
+21:::Tier 3, Major Focus (Chance to get 1/3):::Form:::Shapeshifter
+22:::Fumble:::Spell:::Shapeshifter
+22:::Tier 3, Major Focus (Chance to get 1/3):::Form:::Shapeshifter
+23:::Enlarge:::Spell:::Shapeshifter
+23:::Tier 3, Minor Focus (Chance to get 1/3):::Form:::Shapeshifter
+24:::Pass Door:::Spell:::Shapeshifter
+24:::Stone Skin:::Spell:::Shapeshifter
+24:::Tier 3, Minor Focus (Chance to get 1/3):::Form:::Shapeshifter
+25:::Tier 3, Minor Focus (Chance to get 1/3):::Form:::Shapeshifter
+26:::Reduce:::Spell:::Shapeshifter
+28:::Word of Recall:::Spell:::Shapeshifter
+28:::Tier 2, Major Focus (Chance to get 1/3):::Form:::Shapeshifter
+29:::Tier 2, Major Focus (Chance to get 1/3):::Form:::Shapeshifter
+30:::Tier 2, Major Focus (Chance to get 1/3):::Form:::Shapeshifter
+31:::Tier 2, Minor Focus (Chance to get 1/3):::Form:::Shapeshifter
+32:::Tier 2, Minor Focus (Chance to get 1/3):::Form:::Shapeshifter
+33:::Tier 2, Minor Focus (Chance to get 1/3):::Form:::Shapeshifter
+34:::Spiderhands:::Spell:::Shapeshifter
+36:::Control Translucence:::Spell:::Shapeshifter
+42:::Tier 1, Major Focus (Chance to get 1/3):::Form:::Shapeshifter
+43:::Tier 1, Major Focus (Chance to get 1/3):::Form:::Shapeshifter
+44:::Tier 1, Major Focus (Chance to get 1/3):::Form:::Shapeshifter
+47:::Tier 2, Minor Focus (Chance to get 1/2):::Form:::Shapeshifter
+48:::Tier 2, Minor Focus (Chance to get 1/2):::Form:::Shapeshifter
+52:::Offense:::Shapefocus:::Shapeshifter
+52:::Mountain Goat:::Tier 4 Offense Form:::Shapeshifter
+52:::Ferret:::Tier 4 Offense Form:::Shapeshifter
+52:::Feral Pig:::Tier 4 Offense Form:::Shapeshifter
+52:::Majestic Elk:::Tier 4 Offense Form:::Shapeshifter
+52:::Ornery Mule:::Tier 4 Offense Form:::Shapeshifter
+52:::Soldier Ant:::Tier 4 Offense Form:::Shapeshifter
+52:::Black Panther:::Tier 3 Offense Form:::Shapeshifter
+52:::Jackal:::Tier 3 Offense Form:::Shapeshifter
+52:::Black Bear:::Tier 3 Offense Form:::Shapeshifter
+52:::Great Moose:::Tier 3 Offense Form:::Shapeshifter
+52:::Bull:::Tier 3 Offense Form:::Shapeshifter
+52:::Whip Scorpion:::Tier 3 Offense Form:::Shapeshifter
+52:::Zebra:::Tier 3 Offense Form:::Shapeshifter
+52:::Boar:::Tier 2 Offense Form:::Shapeshifter
+52:::Striped Badger:::Tier 2 Offense Form:::Shapeshifter
+52:::Old Wolf:::Tier 2 Offense Form:::Shapeshifter
+52:::Arctic Fox:::Tier 2 Offense Form:::Shapeshifter
+52:::Copperhead:::Tier 2 Offense Form:::Shapeshifter
+52:::Lynx:::Tier 2 Offense Form:::Shapeshifter
+52:::Snow Badger:::Tier 2 Offense Form:::Shapeshifter
+52:::Wary Ocelot:::Tier 2 Offense Form:::Shapeshifter
+52:::Tiger:::Tier 1 Offense Form:::Shapeshifter
+52:::Grizzled Ram:::Tier 1 Offense Form:::Shapeshifter
+52:::Lion:::Tier 1 Offense Form:::Shapeshifter
+52:::Massive Alligator:::Tier 1 Offense Form:::Shapeshifter
+52:::Black Rhinoceros:::Tier 1 Offense Form:::Shapeshifter
+52:::Golden Jaguar:::Tier 1 Offense Form:::Shapeshifter
+52:::Silverback Gorilla:::Tier 1 Offense Form:::Shapeshifter
+52:::Grizzly Bear:::Tier 1 Offense Form:::Shapeshifter
+52:::Wolverine:::Tier 1 Offense Form:::Shapeshifter
+52:::Dire Wolf:::Tier 1 Offense Form:::Shapeshifter
+53:::Defense:::Shapefocus:::Shapeshifter
+53:::Spiny Hedgehog:::Tier 4 Defense Form:::Shapeshifter
+53:::Warthog:::Tier 4 Defense Form:::Shapeshifter
+53:::Weasel:::Tier 4 Defense Form:::Shapeshifter
+53:::Swamp Rat:::Tier 4 Defense Form:::Shapeshifter
+53:::Marmot:::Tier 4 Defense Form:::Shapeshifter
+53:::Araile Lizard:::Tier 4 Defense Form:::Shapeshifter
+53:::Ugly Wombat:::Tier 3 Defense Form:::Shapeshifter
+53:::Opossum:::Tier 3 Defense Form:::Shapeshifter
+53:::Clouded Leopard:::Tier 3 Defense Form:::Shapeshifter
+53:::Stag Beetle:::Tier 3 Defense Form:::Shapeshifter
+53:::Tuara Lizard:::Tier 3 Defense Form:::Shapeshifter
+53:::Brown Bear:::Tier 3 Defense Form:::Shapeshifter
+53:::Polar Bear:::Tier 2 Defense Form:::Shapeshifter
+53:::Hare:::Tier 2 Defense Form:::Shapeshifter
+53:::Sand Lizard:::Tier 2 Defense Form:::Shapeshifter
+53:::Muscular Bobcat:::Tier 2 Defense Form:::Shapeshifter
+53:::Tortoise:::Tier 2 Defense Form:::Shapeshifter
+53:::Snow Leopard:::Tier 2 Defense Form:::Shapeshifter
+53:::Mongoose:::Tier 1 Defense Form:::Shapeshifter
+53:::Diamondback Rattlesnake:::Tier 1 Defense Form:::Shapeshifter
+53:::Komodo Dragon:::Tier 1 Defense Form:::Shapeshifter
+53:::Angry Crocodile:::Tier 1 Defense Form:::Shapeshifter
+53:::Porcupine:::Tier 1 Defense Form:::Shapeshifter
+53:::Armadillo:::Tier 1 Defense Form:::Shapeshifter
+53:::Lemur:::Tier 1 Defense Form:::Shapeshifter
+53:::Pachyderm:::Tier 1 Defense Form:::Shapeshifter
+54:::Utility:::Shapefocus:::Shapeshifter
+54:::Red Wolf:::Tier 4 Utility Form:::Shapeshifter
+54:::Anteater:::Tier 4 Utility Form:::Shapeshifter
+54:::Giant Squirrel:::Tier 4 Utility Form:::Shapeshifter
+54:::Chimpanzee:::Tier 4 Utility Form:::Shapeshifter
+54:::Mastiff:::Tier 4 Utility Form:::Shapeshifter
+54:::Deer:::Tier 4 Utility Form:::Shapeshifter
+54:::Coyote:::Tier 4 Utility Form:::Shapeshifter
+54:::Honey Badger:::Tier 3 Utility Form:::Shapeshifter
+54:::Giant Leech:::Tier 3 Utility Form:::Shapeshifter
+54:::Scorpion:::Tier 3 Utility Form:::Shapeshifter
+54:::Two-humped Camel:::Tier 3 Utility Form:::Shapeshifter
+54:::Skunk:::Tier 3 Utility Form:::Shapeshifter
+54:::Giant toad:::Tier 3 Utility Form:::Shapeshifter
+54:::Mustang:::Tier 3 Utility Form:::Shapeshifter
+54:::Gibbon:::Tier 3 Utility Form:::Shapeshifter
+54:::Bombardier Beetle:::Tier 2 Utility Form:::Shapeshifter
+54:::Ostrich:::Tier 2 Utility Form:::Shapeshifter
+54:::Cat:::Tier 2 Utility Form:::Shapeshifter
+54:::Racoon:::Tier 2 Utility Form:::Shapeshifter
+54:::Giant Mantis:::Tier 2 Utility Form:::Shapeshifter
+54:::Hairy Long Legged Spider:::Tier 2 Utility Form:::Shapeshifter
+54:::Swift Looking Gazelle:::Tier 2 Utility Form:::Shapeshifter
+54:::Spider Monkey:::Tier 2 Utility Form:::Shapeshifter
+54:::Baboon:::Tier 2 Utility Form:::Shapeshifter
+54:::Stink Badger:::Tier 2 Utility Form:::Shapeshifter
+54:::Trapdoor Spider:::Tier 1 Utility Form:::Shapeshifter
+54:::Cavefisher:::Tier 1 Utility Form:::Shapeshifter
+54:::Fox:::Tier 1 Utility Form:::Shapeshifter
+54:::Wildcat:::Tier 1 Utility Form:::Shapeshifter
+54:::Howler Monkey:::Tier 1 Utility Form:::Shapeshifter
+54:::Cheetah:::Tier 1 Utility Form:::Shapeshifter
+54:::Striped Hyena:::Tier 1 Utility Form:::Shapeshifter
+54:::Cobra:::Tier 1 Utility Form:::Shapeshifter
+54:::Orangutan:::Tier 1 Utility Form:::Shapeshifter
+55:::Air:::Shapefocus:::Shapeshifter
+55:::Peacock:::Tier 4 Air Form:::Shapeshifter
+55:::Wild Turkey:::Tier 4 Air Form:::Shapeshifter
+55:::Flying Squirrel:::Tier 4 Air Form:::Shapeshifter
+55:::Tree Cricket:::Tier 4 Air Form:::Shapeshifter
+55:::Emu:::Tier 3 Air Form:::Shapeshifter
+55:::Goshawk:::Tier 3 Air Form:::Shapeshifter
+55:::Nightengale:::Tier 3 Air Form:::Shapeshifter
+55:::Parrot:::Tier 3 Air Form:::Shapeshifter
+55:::Yellowjacket:::Tier 3 Air Form:::Shapeshifter
+55:::Firefly:::Tier 3 Air Form:::Shapeshifter
+55:::Burrowing Owl:::Tier 2 Air Form:::Shapeshifter
+55:::Osprey:::Tier 2 Air Form:::Shapeshifter
+55:::Skyflash:::Tier 2 Air Form:::Shapeshifter
+55:::Shikra:::Tier 2 Air Form:::Shapeshifter
+55:::Crag Soarer:::Tier 2 Air Form:::Shapeshifter
+55:::Boulder Hawk:::Tier 2 Air Form:::Shapeshifter
+55:::Golden Eagle:::Tier 1 Air Form:::Shapeshifter
+55:::Falcon:::Tier 1 Air Form:::Shapeshifter
+55:::Vulture:::Tier 1 Air Form:::Shapeshifter
+55:::Great Horned Owl:::Tier 1 Air Form:::Shapeshifter
+55:::Hummingbird:::Tier 1 Air Form:::Shapeshifter
+55:::Vampire Bat:::Tier 1 Air Form:::Shapeshifter
+55:::Giant Wasp:::Tier 1 Air Form:::Shapeshifter
+56:::Water:::Shapefocus:::Shapeshifter
+56:::Penguin:::Tier 4 Water Form:::Shapeshifter
+56:::Beaver:::Tier 4 Water Form:::Shapeshifter
+56:::Long Necked Swan:::Tier 4 Water Form:::Shapeshifter
+56:::Bullfrog:::Tier 4 Water Form:::Shapeshifter
+56:::Platypus:::Tier 4 Water Form:::Shapeshifter
+56:::Red-bellied Newt:::Tier 4 Water Form:::Shapeshifter
+56:::Archerfish:::Tier 3 Water Form:::Shapeshifter
+56:::Crab:::Tier 3 Water Form:::Shapeshifter
+56:::Electric Catfish:::Tier 3 Water Form:::Shapeshifter
+56:::Piranha:::Tier 3 Water Form:::Shapeshifter
+56:::Caiman:::Tier 3 Water Form:::Shapeshifter
+56:::Giant Gar:::Tier 3 Water Form:::Shapeshifter
+56:::Otter:::Tier 3 Water Form:::Shapeshifter
+56:::Sea Snake:::Tier 2 Water Form:::Shapeshifter
+56:::Snapping Turtle:::Tier 2 Water Form:::Shapeshifter
+56:::Barracuda:::Tier 2 Water Form:::Shapeshifter
+56:::Hippopotamus:::Tier 2 Water Form:::Shapeshifter
+56:::Seal:::Tier 2 Water Form:::Shapeshifter
+56:::Mako Shark:::Tier 2 Water Form:::Shapeshifter
+56:::Shark:::Tier 1 Water Form:::Shapeshifter
+56:::Electric Eel:::Tier 1 Water Form:::Shapeshifter
+56:::Manta Ray:::Tier 1 Water Form:::Shapeshifter
+56:::Tusked Walrus:::Tier 1 Water Form:::Shapeshifter
+56:::Squid:::Tier 1 Water Form:::Shapeshifter
+56:::Orca:::Tier 1 Water Form:::Shapeshifter
+56:::Blue Dolphin:::Tier 1 Water Form:::Shapeshifter
+56:::Giant Lobster:::Tier 1 Water Form:::Shapeshifter
+1:::Dagger:::Skill:::Thief
+1:::Mace:::Skill:::Thief
+1:::Spear:::Skill:::Thief
+1:::Sword:::Skill:::Thief
+1:::Backstab:::Skill:::Thief
+1:::Dodge:::Skill:::Thief
+1:::Trip:::Skill:::Thief
+1:::Haggle:::Skill:::Thief
+1:::Hide:::Skill:::Thief
+1:::Peek:::Skill:::Thief
+1:::Recall:::Skill:::Thief
+2:::Aim:::Skill:::Thief
+2:::Beseech (Good only):::Skill:::Thief
+3:::Dirt Kicking:::Skill:::Thief
+4:::Sneak:::Skill:::Thief
+5:::Steal:::Skill:::Thief
+6:::Evade:::Skill:::Thief
+7:::Pick Lock:::Skill:::Thief
+8:::Elbow:::Skill:::Thief
+9:::Light Armor Use:::Skill:::Thief
+10:::Detect Hidden:::Skill:::Thief
+10:::Relock:::Skill:::Thief
+11:::Knee:::Skill:::Thief
+11:::Panhandle:::Skill:::Thief
+12:::Disarm:::Skill:::Thief
+12:::Second Attack:::Skill:::Thief
+13:::Parry:::Skill:::Thief
+14:::Kick:::Skill:::Thief
+15:::Hand To Hand:::Skill:::Thief
+15:::Meditation:::Skill:::Thief
+15:::Circle:::Skill:::Thief
+16:::Fast Healing:::Skill:::Thief
+18:::Lore:::Skill:::Thief
+18:::Pierce(Spear):::Skill:::Thief
+19:::Rogues Awareness:::Skill:::Thief
+20:::Precise Aim:::Skill:::Thief
+20:::Pen:::Skill:Thief
+25:::Enhanced Damage:::Skill:::Thief
+25:::Dual Wield:::Skill:::Thief
+42:::Opportunity Strike:::Skill:::Thief
+52:::General thief:::Thief Path:::Thief
+52:::Gentlewalk (3 points, level 13):::Skill:::Thief
+52:::Knife (8 points, level 13):::Skill:::Thief
+52:::Bribe mercenary (1 points, level 15):::Skill:::Thief
+52:::Covert (2 points, level 16):::Skill:::Thief
+52:::Blackjack (8 points, level 17):::Skill:::Thief
+52:::Disengage (2 points, level 19):::Skill:::Thief
+52:::Shield block (10 points, level 20):::Skill:::Thief
+52:::Climb (2 points, level 21):::Skill:::Thief
+52:::Doubleback (2 points, level 22):::Skill:::Thief 
+52:::Precision strike (5 points, level 23):::Skill:::Thief
+52:::Thief waylay (3 points, level 24):::Skill:::Thief
+52:::Cheap shot (14 points, level 25):::Skill:::Thief
+52:::Weapon trip (4 points, level 26):::Skill:::Thief
+52:::Improved hide (4 points, level 27):::Skill:::Thief
+52:::Grease weapon (4 points, level 28):::Skill:::Thief
+52:::Grapple (2 points, level 32):::Skill:::Thief
+52:::Isolate (4 points, level 33):::Skill:::Thief
+52:::Separate (6 points, level 34):::Skill:::Thief
+52:::Dual backstab (5 points, level 35):::Skill:::Thief
+52:::Shadow disappear (2 points, level 37):::Skill:::Thief
+53:::Locksmith (<a href="Darsylon.html" style="color:#dfbe6f">Darsylon</a>):::Thief Path:::Thief
+53:::Advanced picklock (8 points, level 34):::Thief Path:::Thief
+53:::Locksmith (6 points, level 40, Advanced picklock):::Thief Path:::Thief
+54:::Mystic (<a href="Arkham.html" style="color:#dfbe6f">Arkham</a>):::Thief Path:::Thief
+54:::Scrolls (4 points, level 1):::Skill:::Thief
+54:::Arcane lore (7 points, level 13, Scrolls):::Skill:::Thief
+54:::Glimpse (1 points, level 20, Arcane lore):::Skill:::Thief
+54:::Veil of Secrecy (4 points, level 27, Glimpse):::Skill:::Thief
+54:::Lore of the ages (6 points, level 27, Veil of secrecy):::Skill:::Thief
+54:::Veil of souls (3 points, level 32, Lore of the ages):::Skill:::Thief
+54:::Infiltrate (2 points, level 35, Veil of souls):::Skill:::Thief
+54:::Hypnotize (7 points, level 38, Infiltrate):::Skill:::Thief
+54:::Arcane vision (2 points, level 41, Hypnotize):::Skill:::Thief 
+55:::Pickpocket (<a href="Galadon.html" style="color:#dfbe6f">Galadon</a>, <a href="Udgaard.html" style="color:#dfbe6f">Udgaard</a>):::Thief Path:::Thief
+55:::Plant (6 points, level 12):::Skill:::Thief
+55:::Discerning gaze (4 points, level 15, Plant):::Skill:::Thief
+55:::Eye of avarice (4 points, level 14, Discerning gaze):::Skill:::Thief
+55:::Deft touch (6 points, level 21, Eye of avarice):::Skill:::Thief
+55:::Cutpurse (2 points, level 23, Deft touch):::Skill:::Thief
+55:::Appraise (2 points, level 25, Cutpurse):::Skill:::Thief
+55:::Combat steal (2 points, level 25, Appraise):::Skill:::Thief
+55:::Warning skill (4 points, level 26, Combat steal):::Skill:::Thief
+55:::Container stealing (2 points, level 29, Warning skill):::Skill:::Thief
+55:::Acrobatics (12 points, level 33, Container stealing):::Skill:::Thief
+55:::Counterfeit (2 points, level 36, Acrobatics):::Skill:::Thief
+55:::Fence (2 points, level 38, Counterfeit):::Skill:::Thief
+56:::Thug (<a href="Dagdan.html" style="color:#dfbe6f">Dagdan</a>, <a href="Tir-Talath.html" style="color:#dfbe6f">Tir-Talath</a>, Northern Mountains):::Thief Path:::Thief
+56:::Push (2 points, level 12):::Skill:::Thief 
+56:::Kidney shot (4 points, level 14, Push):::Skill:::Thief
+56:::Gouge (8 points, level 17, Kidney shot):::Skill:::Thief 
+56:::Weapon butt blackjack (6 points, level 21, gouge):::Skill:::Thief 
+56:::Parting block (8 points, level 26, Weapon butt blackjack):::Skill:::Thief 
+56:::Payment of the coward (4 points, level 28, Parting block):::Skill:::Thief 
+56:::Sucker hit (4 points, level 29, Payment of the coward):::Skill:::Thief 
+56:::Gut shot (4 points, level 30, Sucker hit):::Skill:::Thief 
+56:::Death strike (2 points, level 31, Gut shot):::Skill:::Thief
+56:::Third attack (6 points, level 35, Death strike):::Skill:::Thief
+56:::Strike on the abandoned (2 points, level 36, Third attack):::Skill:::Thief
+56:::Earclap (2 points, level 38, Strike on the abandoned):::Skill:::Thief  
+56:::Prey on the weak (4 points, level 42, Earclap):::Skill:::Thief  
+57:::Binder (<a href="Hamsah_Mutazz.html" style="color:#dfbe6f"><a href="Hamsah.html" style="color:#dfbe6f">Hamsah</a> Mu'tazz</a>, <a href="Seantryn_Modan.html" style="color:#dfbe6f">Seantryn Modan</a>, Barovia):::Thief Path:::Thief
+57:::Nimble fingers (8 points, level 12):::Skill:::Thief 
+57:::Bind legs (6 points, level 21, nimble fingers):::Skill:::Thief 
+57:::Garrotte (4 points, level 23, Bind legs):::Skill:::Thief 
+57:::Gag (6 points, level 26, Garrotte):::Skill:::Thief 
+57:::Blindfold (6 points, level 28, Gag):::Skill:::Thief
+57:::Bind hands (6 points, level 29, Blindfold):::Skill:::Thief
+57:::Sleeping disarm (6 points, level 31, Bind hands):::Skill:::Thief 
+57:::Tie (6 points, level 33, Sleeping disarm):::Skill:::Thief 
+57:::Truss (6 points, level 34, Tie):::Skill:::Thief 
+57:::Drag (2 points, level 36, Truss):::Skill:::Thief 
+57:::Shadow drag (2 points, level 38, Drag):::Skill:::Thief  
+58:::Poisoner (<a href="Voralian_City.html" style="color:#dfbe6f">Voralian City</a>, <a href="Hillcrest.html" style="color:#dfbe6f">Hillcrest</a>, <a href="Evermoon_Hollow.html" style="color:#dfbe6f">Evermoon Hollow</a>):::Thief Path:::Thief
+58:::Envenom (8 points, level 10):::Skill:::Thief
+58:::Apply (14 points, level 12, Envenom):::Skill:::Thief 
+58:::Concoct poison (0 points, level 12, Apply):::Skill:::Thief
+58:::Emetic poison (0 points, level 12, Apply ):::Skill:::Thief
+58:::Food poison (0 points, level 12, Apply ):::Skill:::Thief 
+58:::Concoct antidote (2 points, level 14, Emetic poison):::Skill:::Thief
+58:::Drink poison (4 points, level 14, Concoct antidote):::Skill:::Thief 
+58:::Inhaled poison (4 points, level 17, Drink poison):::Skill:::Thief
+58:::Knock-out poison (4 points, level 19, inhaled poison):::Skill:::Thief
+58:::Weapon poison (4 points, level 23, Knock-out poison):::Skill:::Thief 
+58:::Neurological poison (4 points, level 23, Weapon poison):::Skill:::Thief 
+58:::Fear poison (4 points, level 30, Neurological poison):::Skill:::Thief 
+58:::Contact poison (4 points, level 33, Fear poison):::Skill:::Thief 
+58:::Weapon nick (4 points, level 35, Contact poison):::Skill:::Thief 
+58:::Mind control poison (4 points, level 36, Weapon nick):::Skill:::Thief 
+58:::Forgiving cruor (1 points, level 40, Mind control poison):::Skill:::Thief 
+58:::Grenade missile (2 points, level 42, Forgiving cruor):::Skill:::Thief 
+59:::Trapper (<a href="Blackclaw.html" style="color:#dfbe6f">Blackclaw</a>, Arial City, <a href="Upper_Cragstone.html" style="color:#dfbe6f">Upper <a href="Cragstone.html" style="color:#dfbe6f">Cragstone</a></a>):::Thief Path:::Thief
+59:::Bag of Tricks (10 points, level 10):::Skill:::Thief
+59:::Smoke bomb (2 points, level 13, Bag of tricks):::Skill:::Thief
+59:::Stench cloud (3 points, level 17, Smoke bomb):::Skill:::Thief
+59:::Detect traps (14 points, level 20, Stench cloud):::Skill:::Thief
+59:::Physical trap (0 points, level 20, Detect traps):::Skill:::Thief
+59:::Glowing trap (0 points, level 20, Detect traps):::Skill:::Thief
+59:::Knock-out trap (4 points, level 26, Glowing trap):::Skill:::Thief
+59:::Blister agent (2 points, level 26, Knock-out trap):::Skill:::Thief
+59:::Abrasive powder (3 points, level 29, Blister agent):::Skill:::Thief
+59:::Direction trap (4 points, level 31, Abrasive powder):::Skill:::Thief
+59:::Damage trap (4 points, level 35, Direction trap):::Skill:::Thief
+59:::Burst trap (4 points, level 39, Damage trap):::Skill:::Thief
+59:::Pepper dust (6 points, level 42, Burst trap):::Skill:::Thief
+1:::Dagger:::Skill:::Transmuter
+1:::Staff:::Skill:::Transmuter
+1:::Whip:::Skill:::Transmuter
+1:::Scrolls:::Skill:::Transmuter
+1:::talismans:::Skill:::Transmuter
+1:::Wands:::Skill:::Transmuter
+1:::Spellcraft:::Skill:::Transmuter
+1:::Recall:::Skill:::Transmuter
+1:::Stone Armor Use(Svirf only):::Skill:::Transmuter
+2:::Beseech (Good only):::Skill:::Transmuter
+5:::Meditation:::Skill:::Transmuter
+8:::Haggle:::Skill:::Transmuter
+14:::Trance:::Skill:::Transmuter
+15:::Fast Healing:::Skill:::Transmuter
+19:::Parry:::Skill:::Transmuter
+20:::Pugil(Staff):::Skill:::Transmuter
+20:::Lash(Whip[[/Flail]]):::Skill:::Transmuter
+20:::Pen:::Skill:::Transmuter
+23:::Mystical Armor Use:::Skill:::Transmuter
+25:::Hand to Hand:::Skill:::Transmuter
+30:::Second Attack:::Skill:::Transmuter
+33:::Metabolic Unity:::Skill:::Transmuter
+1:::Bioluminescence:::Spell:::Transmuter
+1:::Ventriloquate:::Spell:::Transmuter
+1:::Detect Magic:::Spell:::Transmuter
+2:::Relaxation:::Spell:::Transmuter
+2:::Crack Flesh:::Spell:::Transmuter
+3:::Occular Enhancement:::Spell:::Transmuter
+4:::Invis:::Spell:::Transmuter
+4:::Desensitize:::Spell:::Transmuter
+5:::Adrenal Surge:::Spell:::Transmuter
+6:::Muscular Lethargy:::Spell:::Transmuter
+7:::Toughened Skin:::Spell:::Transmuter
+9:::Adrenal Burst:::Spell:::Transmuter
+10:::Fly:::Spell:::Transmuter
+11:::Giant Strength:::Spell:::Transmuter
+11:::Mass Invis:::Spell:::Transmuter
+12:::Metabolic quickening:::Spell:::Transmuter
+13:::Faerie Fog:::Spell:::Transmuter
+13:::Mass Bioluminescence:::Spell:::Transmuter
+13:::Mental Jolt:::Spell:::Transmuter
+14:::Teleport:::Spell:::Transmuter
+14:::Gill Growth:::Spell:::Transmuter
+14:::Mass Relaxation:::Spell:::Transmuter
+15:::Identify:::Spell:::Transmuter
+15:::Locate Object:::Spell:::Transmuter
+16:::Metabolic Slowing:::Spell:::Transmuter
+17:::Dispel Magic:::Spell:::Transmuter
+17:::Gill Removal:::Spell:::Transmuter
+18:::Cancellation:::Spell:::Transmuter
+18:::Earthbind:::Spell:::Transmuter
+18:::Mass Lethargy:::Spell:::Transmuter
+21:::Accelerate:::Spell:::Transmuter
+22:::Fumble:::Spell:::Transmuter
+22:::Corporeal Softening:::Spell:::Transmuter
+23:::Enlarge:::Spell:::Transmuter
+24:::Pass Door:::Spell:::Transmuter
+24:::Calcify:::Spell:::Transmuter
+25:::Corporeal Hardening:::Spell:::Transmuter
+25:::Disrupt Flesh:::Spell:::Transmuter
+26:::Reduce:::Spell:::Transmuter
+27:::Repair Flesh:::Spell:::Transmuter
+27:::Petrify Flesh:::Spell:::Transmuter
+28:::Word of Recall:::Spell:::Transmuter
+29:::Decalcify:::Spell:::Transmuter
+29:::Disrupt Muscle:::Spell:::Transmuter
+31:::Augment Toxins:::Spell:::Transmuter
+31:::Mass Metabolic Slowing:::Spell:::Transmuter
+32:::Disrupt Bone:::Spell:::Transmuter
+34:::Repair Bone:::Spell:::Transmuter
+34:::Mass Corporeal Softening:::Spell:::Transmuter
+34:::Spiderhands:::Spell:::Transmuter
+35:::Mallebility:::Spell:::Transmuter
+36:::Control Translucence:::Spell:::Transmuter
+36:::Duo Dimension:::Spell:::Transmuter
+37:::Neurological Disruption:::Spell:::Transmuter
+38:::Mass Reduce:::Spell:::Transmuter
+40:::Mass Decalcify:::Spell:::Transmuter
+41:::Disrupt Organ:::Spell:::Transmuter
+42:::Buoyancy:::Spell:::Transmuter
+43:::Mass Augment Toxins:::Spell:::Transmuter
+43:::Repair Organ:::Spell:::Transmuter
+50:::Mass Buoancy:::Spell:::Transmuter
+1:::Axe:::Skill:::<a href="Warrior.html" style="color:#dfbe6f">Warrior</a>
+1:::Dagger:::Skill:::Warrior
+1:::Flail:::Skill:::Warrior
+1:::Mace:::Skill:::Warrior
+1:::Polearm:::Skill:::Warrior
+1:::Spear:::Skill:::Warrior
+1:::Sword:::Skill:::Warrior
+1:::Enhanced Damage:::Skill:::Warrior
+1:::Staff:::Skill:::Warrior
+1:::Whip:::Skill:::Warrior
+1:::Parry:::Skill:::Warrior
+1:::Recall:::Skill:::Warrior
+1:::Rescue:::Skill:::Warrior
+1:::Shield Block:::Skill:::Warrior
+1:::Stone Armor Use(Dwarf[[/Svirf]] only):::Skill:::Warrior
+2:::Light Armor Use:::Skill:::Warrior
+2:::Metal Armor Use:::Skill:::Warrior
+2:::Elbow:::Skill:::Warrior
+2:::Beseech (Good only):::Skill:::Warrior
+3:::Dirt Kicking:::Skill:::Warrior
+4:::Aim:::Skill:::Warrior
+4:::Knee:::Skill:::Warrior
+5:::Second Attack:::Skill:::Warrior
+6:::Fast Healing:::Skill:::Warrior
+8:::Kick:::Skill:::Warrior
+10:::Disarm:::Skill:::Warrior
+10:::Feint:::Skill:::Warrior
+12:::Third Attack:::Skill:::Warrior
+12:::Dual Wield:::Skill:::Warrior
+13:::Dodge:::Skill:::Warrior
+14:::Haggle:::Skill:::Warrior
+14:::Pierce(Spear):::Skill:::Warrior
+15:::Bash:::Skill:::Warrior
+15:::Trip:::Skill:::Warrior
+15:::Shield Cleave(Axe):::Skill:::Warrior
+15:::Meditation:::Skill:::Warrior
+15:::Pugil(Staff):::Skill:::Warrior
+16:::Charge(Spear[[/Polearm]]):::Skill:::Warrior
+17:::Thrust(Spear[[/Polearm]]):::Skill:::Warrior
+18:::Berserk:::Skill:::Warrior
+18:::Lash(Whip[[/Flail]]):::Skill:::Warrior
+19:::Slice(Polearm):::Skill:::Warrior
+20:::Warcry:::Skill:::Warrior
+20:::Parting Blow:::Skill:::Warrior
+20:::Pen:::Skill:::Warrior
+20:::Stab (Dagger Spec):::Skill:::Warrior
+20:::Whirl (Axe Spec):::Skill:::Warrior
+20:::Ironhands (Hand to Hand Spec):::Skill:::Warrior
+20:::Backhand (Mace Spec):::Skill:::Warrior
+20:::Flourintine (Sword Spec):::Skill:::Warrior
+20:::Defensive Spin (Staff[[/Spear]] Spec):::Skill:::Warrior
+20:::Distance (Polearm Spec):::Skill:::Warrior
+20:::Bludgeon (Flail Spec):::Skill:::Warrior
+20:::Sting (Whip Spec):::Skill:::Warrior
+21:::Lore:::Skill:::Warrior
+21:::Retreat:::Skill:::Warrior
+22:::Evasion (Hand to Hand Spec):::Skill:::Warrior
+22:::Cross (Sword Spec):::Skill:::Warrior
+23:::Offhand Disarm:::Skill:::Warrior
+23:::Drive:::Skill:::Warrior
+23:::Underhand (Dagger Spec):::Skill:::Warrior
+23:::Vital Area (Hand to Hand Spec):::Skill:::Warrior
+23:::Pummel (Hand to Hand Spec):::Skill:::Warrior
+23:::Deflect Shield (Mace Spec):::Skill:::Warrior
+23:::Leverage (Staff[[/Spear]] Spec):::Skill:::Warrior
+23:::Entrap (Polearm Spec):::Skill:::Warrior
+24:::Evade:::Skill:::Warrior
+24:::Weaponbreaker (Axe Spec):::Skill:::Warrior
+24:::Doublethrust (Sword Spec):::Skill:::Warrior
+24:::Legsweep (Staff[[/Spear]] Spec, Polearm Spec):::Skill:::Warrior
+24:::Chop (Polearm Spec):::Skill:::Warrior
+24:::Strip (Whip[[/Flail]] Spec):::Skill:::Warrior
+25:::Hamstring (Dagger Spec):::Skill:::Warrior
+25:::Crescent (Spear Spec):::Skill:::Warrior
+26:::Cranial (Mace Spec):::Skill:::Warrior
+26:::Jab (Sword Spec):::Skill:::Warrior
+26:::Misdirect (Staff[[/Spear]] Spec):::Skill:::Warrior
+26:::Eyejab (Whip[[/Flail]] Spec):::Skill:::Warrior
+27:::Hook (Axe Spec):::Skill:::Warrior
+27:::Artery (Dagger Spec):::Skill:::Warrior
+27:::Choke (Whip[[/Flail]] Spec):::Skill:::Warrior
+28:::Boneshatter (Mace Spec):::Skill:::Warrior
+29:::Pincer (Axe Spec):::Skill:::Warrior
+29:::Riposte (Sword Spec):::Skill:::Warrior
+30:::Fourth Attack:::Skill:::Warrior
+30:::Dash:::Skill:::Warrior
+30:::Overhead (Axe Spec):::Skill:::Warrior
+30:::Twist (Dagger Spec):::Skill:::Warrior
+30:::Stun (Hand to Hand Spec):::Skill:::Warrior
+30:::Dent (Mace Spec):::Skill:::Warrior
+30:::Charge Set (Polearm Spec):::Skill:::Warrior
+31:::Flurry (Sword Spec):::Skill:::Warrior
+32:::Impale (Spear Spec):::Skill:::Warrior
+32:::Concealed (Dagger Spec):::Skill:::Warrior
+32:::Cutoff (Polearm Spec):::Skill:::Warrior
+32:::Entwine (Whip[[/Flail]] Spec):::Skill:::Warrior
+33:::Disembowel (Axe Spec):::Skill:::Warrior
+33:::Hurl (Dagger Spec):::Skill:::Warrior
+33:::Crushing Blow (Hand to Hand Spec):::Skill:::Warrior
+33:::Drum (Mace Spec):::Skill:::Warrior
+34:::Pull (Whip[[/Flail]] Spec):::Skill:::Warrior
+35:::Precise Aim:::Skill:::Warrior
+36:::Bone Armor Use:::Skill:::Warrior
+46:::Enhanced Reactions:::Skill:::Warrior
+52:::Autumn Harvest:::Legacy:::Warrior
+52:::Balance of the Sisters:::Legacy:::Warrior
+52:::Calming the Tempest:::Legacy:::Warrior
+52:::Chilling Embrace:::Legacy:::Warrior
+52:::Crashing of Waves:::Legacy:::Warrior
+52:::Cry of Thunder:::Legacy:::Warrior
+52:::Dance Upon the Southern Wind:::Legacy:::Warrior
+52:::Enigma of the Thirteen:::Legacy:::Warrior
+52:::Fires of Adversity:::Legacy:::Warrior
+52:::Fist of the Titan:::Legacy:::Warrior
+52:::Flow of Shadows:::Legacy:::Warrior
+52:::Fluid Deceptions:::Legacy:::Warrior
+52:::Forsaken Thoughts:::Legacy:::Warrior
+52:::Fortress of the Spirit:::Legacy:::Warrior
+52:::Gates of the Forge:::Legacy:::Warrior
+52:::Greeting the Avalanche:::Legacy:::Warrior
+52:::Harmonius Equilibrium:::Legacy:::Warrior
+52:::Hour Past Midnight:::Legacy:::Warrior
+52:::Incarnadine Wave:::Legacy:::Warrior
+52:::Landslide of the Second Breath:::Legacy:::Warrior
+52:::Maelstrom of the Veils:::Legacy:::Warrior
+52:::Mercy of the Typhoon:::Legacy:::Warrior
+52:::One with Shadows:::Legacy:::Warrior
+52:::Outcry of Steel:::Legacy:::Warrior
+52:::Place of the Raging River:::Legacy:::Warrior
+52:::Renewal of Spring:::Legacy:::Warrior
+52:::Riddle of Resilience:::Legacy:::Warrior
+52:::Soul of the Mountain:::Legacy:::Warrior
+52:::Space between Heartbeats:::Legacy:::Warrior
+52:::Striking the Shadows Footfall:::Legacy:::Warrior
+52:::Surrounding the Sunrise:::Legacy:::Warrior
+52:::Trapping Beneath Thunder:::Legacy:::Warrior
+52:::Vanguards Desire:::Legacy:::Warrior
+52:::Ward of Blades:::Legacy:::Warrior
+52:::Whirlwind of Steel:::Legacy:::Warrior
+52:::Whispers of the Great Siege:::Legacy:::Warrior
+53:::Whip and flail are one specialization.:::Sidenote:::Warrior
+53:::Spear and staff are one specialization.:::Sidenote:::Warrior
+</pre></div>
+</body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feanwyyn - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>Feanwyyn</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+Area created by Kastellyn.
+
+                         <a href="South_Dairein.html" style="color:#dfbe6f">SouthDairein</a>
+                               |
+                            F--F
+                            |  |
+         <a href="AshesOfNoWhere.html" style="color:#dfbe6f">AshesOfNoWhere</a>--O--O--F--F                  <a href="Kobold.html" style="color:#dfbe6f">Kobold</a>
+                         |  |  |  |                    |
+             Rocky   Z   F--O--F--F--F--F              +--+--O--.
+              Vale  /       |  |  |  |  |              |  |
+                +--+        O--O--F--F--F        +--+--+--E--u--G
+                |  |           |                 |  |  |  |
+          D--D  +--+--+--+--+--b--+--+--+--+&lt;-r--+--F--F--E--t--a
+          |  |                 |  ^  ^  ^  |        |  |  |
+          D--D--D--D--D--c--c--Wx-c--c--c-&gt;+--+--+--F--F--E--s--l
+  <a href="Shadow.html" style="color:#dfbe6f">Shadow</a>  |  |  |  |  |  |  |  |  |  |  |  ^  ^  |  |  |  |
+  Grove   D--D--D--c--c--c--D  LF M  M--c--c--c--c--c--F--E--k--a
+    |     |  |  |  |  |  |  |           |  |  |  |  |  |  |
+    C--c--D--D--c--c--D--D--D     M  M--+--F--F--+--c--c--c--i--d
+       |  |  |  |  |        |     |  |  |  |     |  |  |  |
+       c--c--c--c--D  +--+--D     R--R--b--R Cabin  F--F--E--r--o
+       |  |  |  |  |  T  |        |  |  |  |        |  |  |
+       |  |  |  |  |  |  +        |  |  |  |        |  |  |
+ <a href="Glauruk.html" style="color:#dfbe6f">Glauruk</a>&lt;-R--R--R--R--R        U  R--A--A--R--R--F--F--F--E--t--n
+                      |        |  |  |  |  |  |  |  |  |  |
+                      R--R--b--R--R--A--A--A--R--R--R--F--E--s--.
+                      |  |        |  |  |  |  |  |  |  |  |
+         <a href="Saurian_Village.html" style="color:#dfbe6f">Saurian Village</a> |        A--A--A--+--A--F--R--R--R--R--<a href="Galadon.html" style="color:#dfbe6f">Galadon</a>/
+                        Forest                   |  |  |       <a href="Voralias_Tears.html" style="color:#dfbe6f">Voralia'sTears</a>
+                        Road                     F--F--F
+                                                 |  |  |
+                                                 F--F--F--F
+                                                    |  |  |
+                                                    F--F--F
+                                                    |     |
+                                                 d--F     F
+                                                          |
+                                                    <a href="Silverwood.html" style="color:#dfbe6f">Silverwood</a>
+
+A - A Cleared Area in the <a href="Feanwyyn_Weald.html" style="color:#dfbe6f"><a href="Feanwyyn.html" style="color:#dfbe6f">Feanwyyn</a> Weald</a>
+b - Bridge 
+c - Crumbling Road
+C - Colossal Tree (opal ring)
+D - Deep within Feanwyyn Weald
+d - Druid's Guild
+E - The Edge of the Feanwyyn Weald
+F - The Feanwyyn Weald
+M - Marsh
+O - <a href="Forest_Road.html" style="color:#dfbe6f">Forest Road</a>
+R - Murky River
+r - Ranger's Guild (guilguard holds the Axe of the Executioner, orderly only)
+T - <a href="The_Tower_of_the_Masters.html" style="color:#dfbe6f">The Tower of the Masters</a>
+U - End Underground River
+Z - To green dragon, need fly (e n n) (bloodstone ring, shield of pure light, burned mithril plaque, iron crown)
+
+Filthy Lumberjack - Flaming axe (roaming)
+
+Wandering traveler - bone lockpicks/bagpipes/colorful cloak with patches (limited)
+
+Flistnack the trader - aquamarine bracelet/malachite bracelet
+Svirfneblin thief - conical cap, bejeweled sacrificial dagger
+Fire Giant <a href="Warrior.html" style="color:#dfbe6f">Warrior</a> - (thief, warrior aggro when any of the three are attacked)
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="South_Dairein.html">SouthDairein</a> &bull; <a href="AshesOfNoWhere.html">AshesOfNoWhere</a> &bull; <a href="Kobold.html">Kobold</a> &bull; <a href="GaladonOutskirts.html">GaladonOutskirts</a> &bull; <a href="Galadon.html">Galadon</a> &bull; <a href="Shadow.html">Shadow</a> &bull; <a href="LightForest.html">LightForest</a> &bull; <a href="The_Tower_of_the_Masters.html">The_Tower_of_the_Masters</a> &bull; <a href="Glauruk_Spawning_Ground.html">GlaurukSpawningGround</a> &bull; <a href="Saurian_Village.html">Saurian_Village</a> &bull; <a href="Forest_Road.html">Forest_Road</a> &bull; <a href="Voralias_Tears.html">Voralia'sTears</a> &bull; <a href="Silverwood.html">Silverwood</a> &bull; </div>
+<h3>Items Found Here (16)</h3>
+<div class="item-detail" id="item-a-bloodstone-ring"><b>a bloodstone ring</b> <span class="meta">L52 object / red / bloodstone</span><br><span class="room">Room:</span> Inside a Large Cave<br><span class="meta">Flags:</span> warrior_only<br><span class="meta">Modifiers:</span> Modifies save vs spell by -15, Modifies damage roll by 3, Modifies hp by 25, Modifies dexterity by 1, Modifies strength by 2</div>
+<div class="item-detail" id="item-a-book-bound-in-black-leather"><b>a book bound in black leather</b> <span class="meta">L10 object / object / paper</span><br><span class="room">Room:</span> A Small Clearing in the Feanwyyn Weald<br><span class="mob">Mob:</span> Merianta</div>
+<div class="item-detail" id="item-a-braided-circlet-of-dusty-red-crystal"><b>a braided circlet of dusty red crystal</b> <span class="meta">L25 treasure / treasure / stone</span><br><span class="room">Room:</span> The Feanwyyn Weald<br><span class="mob">Mob:</span> Gygax<br><span style="color:#8a8;">Container:</span> the burnt corpse of Gygax<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n</code><br><span class="meta">Flags:</span> glowing, bless<br><span class="meta">Modifiers:</span> Modifies moves by 30, Modifies save vs paralysis by -8, Modifies hp by 15, Modifies mana by 20, Modifies armor class by -4, Modifies hp by 5<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 0,bashing for 0, slashing for 0 and magic for 3 points each.</div>
+<div class="item-detail" id="item-a-brass-dragonscale-bracer"><b>a brass dragonscale bracer</b> <span class="meta">L40 armor / wrist / dragonscale</span><br><span class="room">Room:</span> Within the Tree of Ages<br><span style="color:#8a8;">Container:</span> the arboreal hollows<br><span class="meta">Modifiers:</span> Modifies damage roll by 2, Modifies hp by 10, Modifies armor class by -4, Modifies hp by 8<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 12, bashing for 7,  slashing for 12, magic for 2, and the elements for 14 points each.</div>
+<div class="item-detail" id="item-a-dove-figurine"><b>a dove figurine</b> <span class="meta">L35 talisman / talisman / glass</span><br><span class="room">Room:</span> A Path Through the Feanwyyn Weald<br><span class="mob">Mob:</span> Vanyonilyn the Wanderer<br><span style="color:#8a8;">Container:</span> a mangled corpse<br><span class="meta">Flags:</span> magic<br><span class="meta">Modifiers:</span> Modifies save vs paralysis by -5</div>
+<div class="item-detail" id="item-a-knotted-bough"><b>a knotted bough</b> <span class="meta">L35 weapon / mace / wood</span><br><span class="room">Room:</span> The Feanwyyn Weald<br><span class="mob">Mob:</span> Quenteria Ukurui, the druid guildguard<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n</code><br><span class="meta">Weapon:</span> smash (avg 21)<br><span class="meta">Flags:</span> neutral_only<br><span class="meta">Modifiers:</span> Modifies damage roll by 1, Modifies hp by 15, Modifies mana by 15</div>
+<div class="item-detail" id="item-a-mantle-of-air"><b>a mantle of air</b> <span class="meta">L46 armor / neck / air</span><br><span class="room">Room:</span> The Edge of the Feanwyyn Weald<br><span style="color:#8a8;">Container:</span> a huge chest<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n;e</code><br><span class="meta">Flags:</span> glowing, transparant, bless<br><span class="meta">Modifiers:</span> Modifies hp by 10, Modifies mana by 10, Modifies dexterity by 3, Modifies save vs spell by -5<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 15, bashing for 15,  slashing for 15, magic for 13, and the elements for 15 points each.</div>
+<div class="item-detail" id="item-a-polished-mithril-breastplate"><b>a polished mithril breastplate</b> <span class="meta">L50 object / polished / mithril</span><br><span class="room">Room:</span> The Feanwyyn Weald<br><span style="color:#8a8;">Container:</span> the donation pit<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n</code><br><span class="meta">Modifiers:</span> Modifies armor class by -15, Modifies hp by 25, Modifies damage roll by 2<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 19,bashing for 20, slashing for 23, magic for 7, and the elements for 11 points each.</div>
+<div class="item-detail" id="item-a-shield-of-pure-light"><b>a shield of pure light</b> <span class="meta">L52 armor / shield / energy</span><br><span class="room">Room:</span> The Feanwyyn Weald<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n</code><br><span class="meta">Flags:</span> glowing, magic, bless, paladin_only<br><span class="meta">Modifiers:</span> Modifies save vs spell by -10, Modifies hp by 25, Modifies mana by 25, Modifies dexterity by 1, Modifies strength by 1<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 18, bashing for 16,  slashing for 31, magic for 19, and the elements for 16 points each.</div>
+<div class="item-detail" id="item-a-thick-strip-of-red-leather"><b>a thick strip of red leather</b> <span class="meta">L16 armor / head / leather</span><br><span class="room">Room:</span> The Feanwyyn Weald<br><span class="mob">Mob:</span> Voran<br><span style="color:#8a8;">Container:</span> the sacrificial pit<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n</code><br><span class="meta">Flags:</span> bless<br><span class="meta">Modifiers:</span> Modifies strength by 1, Modifies charisma by 2, Modifies save vs spell by -6, Modifies hit roll by 3<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 5, bashing for 3,  slashing for 5, magic for 6, and the elements for 6 points each.</div>
+<div class="item-detail" id="item-an-axe-named-defilers-doom"><b>an axe named 'Defiler's Doom'</b> <span class="meta">L52 weapon / axe / bone</span><br><span class="room">Room:</span> The Feanwyyn Weald<br><span class="mob">Mob:</span> Methasan Brunelli, the druid guildmaster<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n</code><br><span class="meta">Weapon:</span> wrath (avg 28)<br><span class="meta">Flags:</span> bless, anti_evil<br><span class="meta">Modifiers:</span> Modifies save vs spell by -10, Modifies save vs paralysis by -10, Modifies damage roll by 3</div>
+<div class="item-detail" id="item-an-ivory-bracelet"><b>an ivory bracelet</b> <span class="meta">L47 treasure / treasure / ivory</span><br><span class="room">Room:</span> Feanwyyn Weald Room<br><span class="meta">Modifiers:</span> Modifies armor class by -10, Modifies mana by 30</div>
+<div class="item-detail" id="item-robes-of-the-grand-druid"><b>Robes of the Grand Druid</b> <span class="meta">L40 object / robes / cloth</span><br><span class="room">Room:</span> Deep in the Feanwyyn Weald<br><span class="meta">Flags:</span> glowing, bless, anti_good, anti_evil, druid_only<br><span class="meta">Modifiers:</span> Modifies hp by 50, Modifies wisdom by 1</div>
+<div class="item-detail" id="item-some-plain-white-robes"><b>some plain white robes</b> <span class="meta">L35 clothing / body / cloth</span><br><span class="room">Room:</span> The Feanwyyn Weald<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n</code></div>
+<div class="item-detail" id="item-the-boots-of-stealth"><b>the boots of Stealth</b> <span class="meta">L48 clothing / feet / leather</span><br><span class="room">Room:</span> The Chamber of the Council of Four<br><span style="color:#8a8;">Container:</span> an Altar to the Dark Gods<br><span class="path">Path from Crossroads:</span> <code>e;3n;s;3n;u</code><br><span class="meta">Modifiers:</span> Modifies damage roll by 2, Modifies dexterity by 1</div>
+<div class="item-detail" id="item-the-medallion-of-the-wild"><b>the medallion of the Wild</b> <span class="meta">L35 clothing / neck / wood</span><br><span class="room">Room:</span> The Feanwyyn Weald<br><span class="mob">Mob:</span> Quenteria Ukurui, the druid guildguard<br><span class="path">Path from Crossroads:</span> <code>s;u;w;e;n;w;n</code><br><span class="meta">Flags:</span> bless, druid_only<br><span class="meta">Modifiers:</span> Modifies damage roll by 2, Modifies hp by 20, Modifies mana by 20, Modifies strength by 1</div>
+</body></html>

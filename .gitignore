@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Data pipeline output (logs, exports, generated knowledge)
+data/

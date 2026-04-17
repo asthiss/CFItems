@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Consortium - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>The Consortium</h2>
+<div class="area-nav">Level: 11 - 51 | Builder: Aarn/Rayihn | </div>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+                   +--+
+                   |
+                   +
+                   |
+           D--M    +    +--A
+           |       |       |
+           +--+----+----+--+
+              |    |    |
+              +    E    |       +--+
+              |    |    |       |  |
+              +    F 2  |       2--+     
+              |     /   |      /|
+           +--+----+----+--C    +
+           |  |   /|    |  |
+           +--+  / +    +--+
+                /  |
+           +   /   +
+           |  /    |
+       +   + / +   +
+       |   |/  |   |
+       +---+---+   + Adamantine construct (won't let you pass if not a mage)
+       |       |   |
+       +       +  <a href="NorthernRoads.html" style="color:#dfbe6f">NorthernRoads</a>
+
+
+ A - Festpath the Archmage
+
+ E - Eliana Vienthi the Curator is using:                                                            
+ &lt;worn on head&gt;      (Glowing) a halo of blue                                                    
+ &lt;worn on arms&gt;      (Glowing) bands of blue energy
+ &lt;worn on wrist&gt;     a bracelet of chained star rubies                                         
+
+ F - a felar shapeshifter is using:
+ &lt;worn around neck&gt;  (Magical) a moonstone choker
+
+ M - Myshrai Ar'tinuilin is using:
+ &lt;worn on finger&gt;    (Magical) (Noteworthy) a white gold band set with a fire opal
+ &lt;mainhand wielded&gt;  (Magical) (Famous) (Glowing) a knife of fire opal
+ &lt;held in hand&gt;      (Magical) (Glowing) a fire opal dancing on a platinum chain
+
+ C - a human conjurer is using:
+ &lt;worn on body&gt;      (Magical) black robes trimmed with onyx
+ &lt;worn on head&gt;      (Magical) (Glowing) a halo of clarity
+
+ D - Destanin the Archmage
+     Simshipple Fligliveryshins is using:
+     &lt;worn on body&gt;      green robes trimmed with peridot
+     &lt;worn on head&gt;      a wreathe of golden wire and lapis lazuli
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="NorthernRoads.html">NorthernRoads</a> &bull; </div>
+<h3>Items Found Here (9)</h3>
+<div class="item-detail" id="item-a-cloudy-quartz-scrying-stone"><b>a cloudy quartz scrying stone</b> <span class="meta">L45 wand / wand / quartz</span><br><span class="room">Room:</span> The Magical Bazaar<br><span class="mob">Mob:</span> a human conjurer<br><span class="meta">Flags:</span> magic, conjurer_only</div>
+<div class="item-detail" id="item-a-golden-ring-with-a-spider-shaped-ruby"><b>a golden ring with a spider-shaped ruby</b> <span class="meta">L51 treasure / treasure / ruby</span><br><span class="room">Room:</span> The Muddy Battlefront<br><span style="color:#8a8;">Container:</span> the donation pit<br><span class="path">Path from Crossroads:</span> <code>e;w;u;w;s;e;w</code><br><span class="meta">Flags:</span> glowing, magic, anti_good, anti_neutral, evil<br><span class="meta">Modifiers:</span> Modifies hp by 15, Modifies strength by 1, Modifies save vs breath by -4, Modifies save vs spell by -4</div>
+<div class="item-detail" id="item-a-gray-silk-robe"><b>a gray silk robe</b> <span class="meta">L51 container / container / silk</span><br><span class="room">Room:</span> The Library of the Consortium<br><span class="mob">Mob:</span> A felar shapeshifter<br><span style="color:#8a8;">Container:</span> the burnt corpse of the old wizard<br><span class="meta">Flags:</span> magic<br><span class="meta">Modifiers:</span> Modifies save vs spell by -5, Modifies save vs paralysis by -5, Modifies mana by 50, Modifies armor class by -10</div>
+<div class="item-detail" id="item-a-halo-of-blue"><b>a halo of blue</b> <span class="meta">L40 treasure / treasure / energy</span><br><span class="room">Room:</span> The Library of the Consortium<br><span class="mob">Mob:</span> Eliana Vienthi the Curator<br><span style="color:#8a8;">Container:</span> a huge chest<br><span class="meta">Flags:</span> glowing, magic<br><span class="meta">Modifiers:</span> Modifies save vs spell by -7, Modifies mana by 40</div>
+<div class="item-detail" id="item-a-halo-of-clarity"><b>a halo of clarity</b> <span class="meta">L45 treasure / treasure / energy</span><br><span class="room">Room:</span> The Consortium Pathway<br><span style="color:#8a8;">Container:</span> the donation pit<br><span class="meta">Flags:</span> glowing, magic<br><span class="meta">Modifiers:</span> Modifies hp by 35, Modifies mana by 40</div>
+<div class="item-detail" id="item-a-moonstone-choker"><b>a moonstone choker</b> <span class="meta">L45 treasure / treasure / moonstone</span><br><span class="room">Room:</span> The Library of the Consortium<br><span class="mob">Mob:</span> a tiger<br><span class="meta">Flags:</span> magic<br><span class="meta">Modifiers:</span> Modifies hp by 20, Modifies save vs paralysis by -10</div>
+<div class="item-detail" id="item-a-sheet-of-vellum-with-a-gold-border"><b>a sheet of vellum with a gold border</b> <span class="meta">L45 scroll / scroll / vellum</span><br><span class="room">Room:</span> The Library of the Consortium<br><span class="meta">Flags:</span> magic</div>
+<div class="item-detail" id="item-an-iron-ring-set-with-a-white-moonstone"><b>an iron ring set with a white moonstone</b> <span class="meta">L34 treasure / treasure / iron</span><br><span class="room">Room:</span> The Consortium Pathway<br><span style="color:#8a8;">Container:</span> the donation pit<br><span class="meta">Flags:</span> bless<br><span class="meta">Modifiers:</span> Modifies save vs spell by -4, Modifies hp by 25<br><span class="meta">Armor:</span> When worn, it protects you against piercing for 7,bashing for 7, slashing for 7 and magic for 1 points each.</div>
+<div class="item-detail" id="item-bands-of-blue-energy"><b>bands of blue energy</b> <span class="meta">L40 treasure / treasure / energy</span><br><span class="room">Room:</span> The Conjurers' Lecture Hall<br><span style="color:#8a8;">Container:</span> the donation pit<br><span class="meta">Flags:</span> glowing, magic<br><span class="meta">Modifiers:</span> Modifies save vs spell by -5, Modifies save vs breath by -5, Modifies save vs paralysis by -5</div>
+</body></html>

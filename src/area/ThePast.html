@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThePast - Carrion Fields</title>
+<link rel="stylesheet" type="text/css" href="../cfitems.css">
+<style>
+        #mapContainer { overflow: auto; padding: 10px; background: #0a0a0a; border: 1px solid #333; margin: 10px 0; }
+        #mapPre { font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.3; color: #ccc; white-space: pre; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
+        .legend-entry { padding: 4px 8px; border-left: 2px solid #444; background: #111; font-size: 13px; }
+        .legend-entry .num { color: #dfbe6f; font-weight: bold; margin-right: 8px; }
+        .legend-entry .room-name { color: #fff; }
+        .legend-entry .item-list { display: block; margin-top: 4px; color: #8a8; font-size: 12px; }
+        .legend-entry.has-items { background: #1a1810; border-left-color: #dfbe6f; }
+        .item-detail { padding: 8px; border-left: 2px solid #444; margin: 6px 0; background: #0f0f0f; font-size: 13px; }
+        .item-detail b { color: #dfbe6f; }
+        .item-detail .meta { color: #888; font-size: 12px; }
+        .item-detail .mob { color: #c97; }
+        .item-detail .room { color: #8ab; }
+        .item-detail .path { color: #aaa; font-family: monospace; }
+        h2 { color: #dfbe6f; }
+        h3 { color: #c9a45c; margin-top: 20px; }
+        .area-nav { color: #888; font-size: 13px; margin: 5px 0; }
+        .area-nav a { color: #dfbe6f; }
+        </style>
+</head><body>
+<div id="topNav">
+<a href="../index.html">Items</a>
+<a href="../knowledge.html">Knowledge</a>
+<a href="../map.html">Map</a>
+<a href="../areas.html">Areas</a>
+<a href="../documents.html">Documents</a>
+</div>
+<hr/>
+<h2>ThePast</h2>
+<h3>Area Map</h3>
+<div id="mapContainer"><pre id="mapPre">
+         MAP OF THERA                                            +------------------Road to----<a href="Goblin_Outpost.html" style="color:#dfbe6f">Goblin Outpost</a>                      MAP OF THERA
+                                                    <a href="Pine_Forest.html" style="color:#dfbe6f">Pine Forest</a>-/                   the
+                                                                  Northern Trail----Wastes-----<a href="Hillcrest.html" style="color:#dfbe6f">Hillcrest</a>
+                                                                  |     +  ~        |
+                                  +----<a href="Mount_Calandaryl.html" style="color:#dfbe6f">Mount Calandaryl</a>----Northern     U  ~ <a href="Udgaardian_Plains.html" style="color:#dfbe6f">Udgaardian Plains</a>**
+                                  |                             Mounts--D  ~                |
+          ########                |           Ruins of      **    |     G  ~~Nanthor~~   High
+          <a href="InTheAir.html" style="color:#dfbe6f">InTheAir</a>             <a href="Darsylon.html" style="color:#dfbe6f">Darsylon</a>       <a href="Maethien.html" style="color:#dfbe6f">Maethien</a>        \   |     A            ~   |  |
+          ########                |             |     Ayr'   Abandoned  A--Plains of ~ San  P
+                                  |  Abandoned -M      Trinil     Mines R     <a href="Udgaard.html" style="color:#dfbe6f">Udgaard</a>~ ctum a
+                                  |  Siege Camp i         \       |     D            ~~~~~~~s
+                                  |      |      s          The---Pass----+-Gamepath         s      <a href="Evermoon_Hollow.html" style="color:#dfbe6f">Evermoon Hollow</a>
+                   Blackwater---Vale of  |      t  Cons-  | \                    \_TrogCav  |       |
+                      Swamp     Arendyl**|      s ortium  | Slave Mines of Sitran           |       |   Bandit                        UNDERGROUND
+                        |              | |      |   |     |                         +------<a href="Aratouldain.html" style="color:#dfbe6f">Aratouldain</a>--Stronghold
+                        Halfling Lands +------Open--+-North   +------<a href="GolGalath.html" style="color:#dfbe6f">GolGalath</a>------+            |                                     Kteng's
+                                     | |------------+++++-e---+                                 Velkyn                <a href="Abandoned_Mines.html" style="color:#dfbe6f">Abandoned Mines</a>    Lab     Riverside Path
+                                     | |------------+TIR+-r         Ruins              Castle   Oloth-**                          \      |      /
+                    Dranettie Wood   +++-----------N++TA+-n     +---Delar  <a href="Azuremain.html" style="color:#dfbe6f">AzureMain</a>   of <a href="Akan.html" style="color:#dfbe6f">Akan</a>                       <a href="Cragstone.html" style="color:#dfbe6f">Cragstone</a>--The-<a href="Underdark.html" style="color:#dfbe6f">Underdark</a>(**)--Underdark
+                            |         |-------P----o-+ L+-|     |   Tol        |              \                                     /         |           Sea
+         Enpolad's Game     |         |-------l----r-++A+-F   Redhorn-----Voralia's   <a href="Mortorn.html" style="color:#dfbe6f">Mortorn</a>  \  Stones                          The      <a href="Teth_Azeleth.html" style="color:#dfbe6f">TethAzeleth</a>
+          /  Garden         |         |-------a----t +TH+-o    |          tears   \  /       \  | Embrace    Imperial          <a href="Sewers.html" style="color:#dfbe6f">Sewers</a>(*)
+      <a href="Hamsah.html" style="color:#dfbe6f">Hamsah</a>  |           <a href="Dagdan.html" style="color:#dfbe6f">Dagdan</a>      |-------i----h ++++-othills~~~~     ~        ** LochGry \ |  |          Lands                       <a href="Forest_of_Prosimy.html" style="color:#dfbe6f">Forest of Prosimy</a>
+          Forgotten       |   |       |-------n----|   |  |||||||   ~~~~~~~~~~~~~       |      Akan-            |                               |  \            
+             Island    <a href="Trails.html" style="color:#dfbe6f">Trails</a> |       |-------s----| Shepherds-Row--~ VORALIAN  ~-SilverpineRd |           KoR--B                               A   Mansion of
+               |       /  |   |       |------------R           |    ~   +---+   ~     |        /--Grinning      a                               m    Twilight
+      <a href="Ysigrath.html" style="color:#dfbe6f">Ysigrath</a>-+------+   |   +-------+--WS---Rd---o----ES---Road---~           ~--EaststrideRd    Skull        l                               a
+               |Sea of| South | CRAG  |            a           |    ~   +---+   ~     |                         a                               r
+               |Despair Dairein STONE |      Mauso d------NS Road---~   CITY    ~--Bramblefield    Dark         t                  <a href="DraMelkhur.html" style="color:#dfbe6f">Dra'Melkhur</a>--a--<a href="Basilica.html" style="color:#dfbe6f">Basilica</a>
+               |~~~~\~|       |       |      -leum |           |    ~~~~~~~~~~~~~     |            Wood~        o-<a href="FieldsOfBalator.html" style="color:#dfbe6f">FieldsOfBalator</a>               n
+               ++---Ruins of  +-----Azreth      |  |           |          ~     ~~~Road   TO PAST+     ~        r      |   |                    t--Village of
+                |   the Deep  |     Forest  +---|--+------+    S          ~        |             |     ~        |      |   |                    h   Barovia
+ <a href="Eil_Shaeria.html" style="color:#dfbe6f">Eil Shaeria</a>    |             |             |O+-|--+----+O|    S          ~        |             The   ~        |      |   |        V'dramir's--i       |
+       |        |             |      <a href="Kobold.html" style="color:#dfbe6f">Kobold</a> |u|GY|  |Cpm|u| HW |   ~~~~~~~~        | <a href="Aldevari.html" style="color:#dfbe6f">Aldevari</a>-+-Grove  K +--Outskirts--+   |  Is.       <a href="Cove.html" style="color:#dfbe6f">Cove</a>    a     Keep of
+       |     Ashes of NoWhere-+      Warrens|t|--+  +---|t+--Road  ~               |    |         |  ~~h |             |   | of Corte     |     n FC  Barovia
+       |     |                |         |   |s|         |s|        ~               |    |         |  | a |   HAMSAH   Sea  |       \      |     | /
+ Tower of    |       +--------+---------+---+k+ GALADON +k+------The---+---Eastern-+----+---Road--+--+-l-+   MU'TAZZ  Port----The----Dragon---<a href="Arkham.html" style="color:#dfbe6f">Arkham</a>---Outlying
+High Sorcery |   Fean|    <a href="Feanwyyn.html" style="color:#dfbe6f">Feanwyyn</a>        ~~|i|~~~~~~~~~|i|~~~~~~~~    |    |  |   |         |  |      i |             |  \         S  +++  S           Villages
+         |   |  Weald|         Weald      ~ |r|--+   +--|r|       ~    |    Ruins  D        +--Dr-H    d~+~River~~~~~~~|~~<a href="WotDeep.html" style="color:#dfbe6f">WotDeep</a>~~~e  +++  e                    \
+Dragon--<a href="Shadow.html" style="color:#dfbe6f">Shadow</a>--+----+        ~~~~~~~~~~~~~ |t|S*|   |LY|t|       ~    |     of    w        |   o-i      +------+------+            a-------a  <a href="Valley_of_Veran.html" style="color:#dfbe6f">Valley of <a href="Veran.html" style="color:#dfbe6f">Veran</a></a>    <a href="Evergrove_Outpost.html" style="color:#dfbe6f">Evergrove Outpost</a>
+  Tower  Grove  |       ~~~~~~Feanwyyn      |s+----+----+s|      <a href="Blackclaw.html" style="color:#dfbe6f">Blackclaw</a>  Osta---a--LT Keep   g-l             |      M    Coral    ||||||| \_/
+          |     |       ~     |     Weald-+ +------+------+        Village   lag   r        |   r-l--Sands   Desert    t      Head---||The||  \_Mt. Kiadana Rah
+          |     <a href="Glauruk.html" style="color:#dfbe6f">Glauruk</a>~~     |           |        |                         iah   v        +--an-s    of      of      s             |Aryth|\
+    Elemental   Spawning      |           +-----<a href="Silverwood.html" style="color:#dfbe6f">Silverwood</a>----Goblin               e           |     Sorrow--Araile--Tahril          ||||||| \__CoralPalace
+      Temple  +-Ground        +Forest          |    |  |  |       Village          n-----F     |        |    |   |     |            O-c-e-a-n
+              |    |                |          |    |  |  |                        |     o     |  Pyramid of |  Oryx   | Crystal Is  ||||||| \_Kuo-Toa lair
+              | High Lord's         R         /     |  |  |   _Moud Monastery     ++     r     |     Azhan   | Steppes |    |        ||S-I||            \
+  Whistlewood-+    Keep             d   <a href="Emerald.html" style="color:#dfbe6f">Emerald</a>     |  |  |  /                    |      e     |             |         |   Western---|||||||  Village    UDS
+    Swamp          |                |   Forest--<a href="Aubade.html" style="color:#dfbe6f">Aubade</a> |  The <a href="Manor.html" style="color:#dfbe6f">Manor</a>---Virgin Forest      s---A--Dry-Riverbed-+         |     A       Coastal  Lallenyha
+           Village of          Loch-+-+-+    |\        |        \         |           FG-t                             |     r      -++++++   |
+           <a href="Maltrakis.html" style="color:#dfbe6f">Maltrakis</a>       Terradian  | |    | <a href="VioletWoodland.html" style="color:#dfbe6f">VioletWoodland</a>    \        |              |        Mines------Talshidar-+   __y     / Plains---<a href="JadeMountains.html" style="color:#dfbe6f">JadeMountains</a>
+                                      | |    |                  Keep of Fhalaugash    Frigid     Zakiim       Caves       /  t  Xvart  |                  |
+                                      | +-Spiderhaunt                                  Wasteland                         /   h   Lair  |               Wastes of
+                                      |    Woods                                         |                 <a href="Ship_Graveyard.html" style="color:#dfbe6f">ShipGraveyard</a>     |         |                Nonviel
+                                    <a href="Dhumlar.html" style="color:#dfbe6f">Dhumlar</a>                                             Felar                              Seantryn--SEANTRYN
+                         <a href="Qhabiszan.html" style="color:#dfbe6f">Qhabiszan</a>---Ko                                             Encampment                Coastal---Harbor------MODAN \_Sewers of SM
+                                                                                                               Wetlands                 |
+                                                                                                                                      <a href="Aturi.html" style="color:#dfbe6f">Aturi</a>--<a href="Caravans.html" style="color:#dfbe6f">Caravans</a>
+                                                                                                                                        +----<a href="Keep_of_Ceawlin.html" style="color:#dfbe6f">Keep of Ceawlin</a>
+                                                                                                                                        |
+                                                                                                                                  <a href="Aturi_Timberlands.html" style="color:#dfbe6f">Aturi Timberlands</a>
+THE PAST
+
+                            Maethien----Plains of Arendyl--<a href="Delar-Tol.html" style="color:#dfbe6f">Delar-Tol</a>
+       Forest of                |          |
+       NoWhere                  |       Past Grove--Present Grove
+Past       |                    |          |
+Shadow--Hidden--Galadonian--<a href="A_Wagon-Marked_Road.html" style="color:#dfbe6f">A Wagon-Marked Road</a>
+Grove   Forest  Settlement        |  |
+                                Citadel of
+                                <a href="Ostalagiah.html" style="color:#dfbe6f">Ostalagiah</a>
+                               /
+                    <a href="The_Battlefield.html" style="color:#dfbe6f">The <a href="Battlefield.html" style="color:#dfbe6f">Battlefield</a></a>
+
+Original map by <a href="RobertDunn.html" style="color:#dfbe6f">RobertDunn</a>
+Ported by <a href="Zendrac.html" style="color:#dfbe6f">Zendrac</a>
+Continued updates by <a href="Yhorian.html" style="color:#dfbe6f">Yhorian</a> and <a href="DurNominator.html" style="color:#dfbe6f">DurNominator</a>
+</pre></div>
+<h3>Connected Areas</h3>
+<div class="area-nav">
+<a href="The_Ancient_Road_to_the_Wastes.html">The_Ancient_Road_to_the_Wastes</a> &bull; <a href="Goblin_Outpost.html">Goblin_Outpost</a> &bull; <a href="Pine_Forest.html">Pine_Forest</a> &bull; <a href="A_Northern_Trail.html">A_Northern_Trail</a> &bull; <a href="Hillcrest.html">Hillcrest</a> &bull; <a href="Mount_Calandaryl.html">Mount_Calandaryl</a> &bull; <a href="NorthernMountains.html">NorthernMountains</a> &bull; <a href="Udgaard.html">Udgaard</a> &bull; <a href="Udgaardian_Plains.html">Udgaardian_Plains</a> &bull; <a href="Underdark.html">Underdark</a> &bull; <a href="Ruins_of_Maethien.html">Ruins_of_Maethien</a> &bull; <a href="The_River_Nanthor.html">The_River_Nanthor</a> &bull; <a href="The_High_Pass.html">The_High_Pass</a> &bull; <a href="InTheAir.html">InTheAir</a> &bull; <a href="Darsylon.html">Darsylon</a> &bull; <a href="AyrTrinil.html">Ayr'Trinil</a> &bull; <a href="Abandoned_Mines.html">AbandonedMines</a> &bull; <a href="PlainsOfUdgaard.html">PlainsOfUdgaard</a> &bull; <a href="Khardraths_Planar_Sanctum.html">Khardrath's_Planar_Sanctum</a> &bull; <a href="AbandonedSiegeCamp.html">AbandonedSiegeCamp</a> &bull; <a href="Traveller.html">Traveller</a> &bull; <a href="Evermoon_Hollow.html">EvermoonHollow</a> &bull; <a href="Blackwater_Swamp.html">BlackwaterSwamp</a> &bull; <a href="The_Vale_of_Arendyl.html">TheValeofArendyl</a> &bull; <a href="The_Consortium.html">TheConsortium</a> &bull; <a href="Troglodyte_Caverns.html">TroglodyteCaverns</a> &bull; <a href="SlaveMinesOfSitran.html">SlaveMinesOfSitran</a> &bull; <a href="BanditEncampment.html">BanditEncampment</a> &bull; <a href="Aratouldain.html">Aratouldain</a> &bull; <a href="TheShire.html">TheShire</a> &bull; </div>
+</body></html>
