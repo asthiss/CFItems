@@ -42,7 +42,6 @@
 
     <div class="legend">
         <span style="color:#dfbe6f">Gold = Clickable Area</span>
-        <span style="color:#7a7">** = Major City</span>
         <span style="color:#aaa">--- = Road/Path</span>
         <span style="color:#68a">~~~ = Water</span>
     </div>
@@ -130,6 +129,42 @@ Continued updates by <a href="area/Yhorian.html" class="area-link" title="Yhoria
 
     <script>
     var currentFontSize = 13;
+
+    // Colorize water in blue:
+    //  - all ~ characters (rivers/oceans on the main map)
+    //  - Aryth Ocean pipe-patterns: |||||||, ||The||, |Aryth|, |S-I|
+    (function colorizeWater() {
+        const pre = document.getElementById('mapPre');
+        // Combined pattern: one-or-more ~, or |||+, or |Aryth|, ||The||, |S-I|
+        const waterRegex = /(~+|\|\|+|\|Aryth\||\|S-I\|)/g;
+        function walk(node) {
+            if (node.nodeType === 3) { // text node
+                if (waterRegex.test(node.nodeValue)) {
+                    waterRegex.lastIndex = 0;
+                    const parent = node.parentNode;
+                    const parts = node.nodeValue.split(waterRegex);
+                    const frag = document.createDocumentFragment();
+                    parts.forEach(p => {
+                        if (p && waterRegex.test(p)) {
+                            waterRegex.lastIndex = 0;
+                            const span = document.createElement('span');
+                            span.style.color = '#68a';
+                            span.textContent = p;
+                            frag.appendChild(span);
+                        } else if (p) {
+                            frag.appendChild(document.createTextNode(p));
+                        }
+                    });
+                    parent.replaceChild(frag, node);
+                }
+            } else if (node.nodeType === 1 && node.tagName !== 'A') {
+                // skip <a> tags; recurse into others
+                const children = Array.from(node.childNodes);
+                children.forEach(walk);
+            }
+        }
+        walk(pre);
+    })();
 
     document.getElementById('mapSearch').addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase();
