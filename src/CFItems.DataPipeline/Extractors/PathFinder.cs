@@ -12,27 +12,20 @@ public class PathFinder
     }
 
     /// <summary>
-    /// Find the best starting room on the Eastern Road crossroads.
+    /// Find the starting room for path calculations - "A Large Crossroads" on the Eastern Road.
     /// </summary>
     public string? FindCrossroadsRoom()
     {
-        // Priority: rooms with "Crossroads" in name on Eastern Road
-        var candidates = _map.Rooms.Keys
-            .Where(r => r.Contains("Crossroads", StringComparison.OrdinalIgnoreCase) ||
-                        r.Contains("Eastern Road", StringComparison.OrdinalIgnoreCase))
-            .ToList();
+        const string target = "A Large Crossroads";
 
-        // Prefer the room with most exits (most connected = best crossroads)
-        var best = candidates
-            .Where(r => _map.Rooms.ContainsKey(r))
-            .OrderByDescending(r => _map.Rooms[r].Exits.Count)
-            .ThenByDescending(r => r.Contains("Crossroads", StringComparison.OrdinalIgnoreCase) ? 1 : 0)
-            .FirstOrDefault();
+        if (_map.Rooms.TryGetValue(target, out var room) && room.Exits.Count > 0)
+        {
+            Console.WriteLine($"Crossroads room: '{target}' with {room.Exits.Count} exits, {room.VisitCount} visits");
+            return target;
+        }
 
-        if (best != null)
-            Console.WriteLine($"Crossroads room: '{best}' with {_map.Rooms[best].Exits.Count} exits");
-
-        return best;
+        Console.WriteLine($"WARNING: '{target}' not found in world map (or has no recorded exits).");
+        return null;
     }
 
     /// <summary>

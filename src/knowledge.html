@@ -13,12 +13,21 @@
         .tab-content { display: none; padding: 10px 0; }
         .tab-content.active { display: block; }
         .search-box { padding: 8px 12px; width: 300px; background: #1a1a1a; color: white; border: 1px solid #dfbe6f; margin: 10px 0; }
-        .area-card { border-left: 3px solid #dfbe6f; padding: 8px 12px; margin: 8px 0; background: #111; }
-        .area-card h4 { color: #dfbe6f; margin: 0 0 4px 0; }
+        .area-card { border-left: 3px solid #444; padding: 8px 12px; margin: 8px 0; background: #111; position: relative; cursor: pointer; }
+        .area-card:hover { background: #1a1a1a; }
+        .area-card h4 { color: #aaa; margin: 0 0 4px 0; }
         .area-card .level { color: #888; font-size: 14px; }
         .area-card .category { color: #7a9; font-size: 13px; text-transform: uppercase; }
-        .area-card .items { color: #aaa; font-size: 14px; margin-top: 4px; }
+        .area-card .items { color: #dfbe6f; font-size: 14px; margin-top: 4px; font-weight: bold; }
         .area-card .restricted { color: #c44; font-size: 12px; }
+        /* Highlight areas with known items */
+        .area-card.has-items { border-left-color: #dfbe6f; background: #1a1610; }
+        .area-card.has-items h4 { color: #dfbe6f; }
+        .area-card.has-items::after {
+            content: "\2605"; /* star */
+            position: absolute; top: 6px; right: 10px;
+            color: #dfbe6f; font-size: 18px;
+        }
         .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 8px; }
         .detail-panel { position: fixed; right: 0; top: 0; width: 40%; height: 100%; background: #0a0a0a; border-left: 2px solid #dfbe6f; padding: 20px; overflow-y: auto; display: none; z-index: 100; }
         .detail-panel.open { display: block; }
@@ -59,6 +68,9 @@
                 <option value="30-40">30-40</option>
                 <option value="40-51">40-51</option>
             </select>
+            <label style="margin-left:10px;color:#dfbe6f;cursor:pointer;">
+                <input type="checkbox" id="withItemsOnly" style="vertical-align:middle;"> &#9733; With items only
+            </label>
         </div>
         <div id="areaList" class="stat-grid"></div>
     </div>
@@ -115,11 +127,18 @@
             } catch(e) {}
         }
 
-        // Load wiki area data (ASCII maps, room legends, links)
-        try {
-            const wikiResp = await fetch('https://cfitems.blob.core.windows.net/cfitems/documents/qhcf-wiki-areas.json');
-            if (wikiResp.ok) wikiAreas = await wikiResp.json();
-        } catch(e) { console.log('No wiki areas data'); }
+        // Load wiki area data (ASCII maps, room legends, links).
+        // Prefer the complete scrape (758 pages) over the curated subset (139).
+        const wikiUrls = [
+            'https://cfitems.blob.core.windows.net/cfitems/documents/qhcf-wiki-all.json',
+            'https://cfitems.blob.core.windows.net/cfitems/documents/qhcf-wiki-areas.json'
+        ];
+        for (const u of wikiUrls) {
+            try {
+                const wikiResp = await fetch(u);
+                if (wikiResp.ok) { wikiAreas = await wikiResp.json(); break; }
+            } catch(e) {}
+        }
 
         // If no blob areas, build from items data
         if (!areas.length && items.length) {
@@ -166,10 +185,17 @@
         const search = (document.getElementById('areaSearch').value || '').toLowerCase();
         const catFilter = document.getElementById('areaCategoryFilter').value;
         const levelFilter = document.getElementById('areaLevelFilter').value;
+        const withItemsOnly = document.getElementById('withItemsOnly')?.checked || false;
 
-        let filtered = areas.filter(a => {
+        // Compute item counts once
+        const withCounts = areas.map(a => ({ area: a, count: countItemsForArea(a.Name) }));
+
+        let filtered = withCounts.filter(({ area: a, count }) => {
+            // Hide Circles of Hell (files were removed)
+            if (/Circle of Hell/i.test(a.Name)) return false;
             if (search && !a.Name.toLowerCase().includes(search)) return false;
             if (catFilter !== 'all' && a.Category !== catFilter) return false;
+            if (withItemsOnly && count === 0) return false;
             if (levelFilter !== 'all') {
                 const [min, max] = levelFilter.split('-').map(Number);
                 const range = a.LevelRange || '';
@@ -182,18 +208,65 @@
             return true;
         });
 
+        // Sort: areas with items first (by count desc), then alphabetical
+        filtered.sort((a, b) => {
+            if ((a.count > 0) !== (b.count > 0)) return b.count - a.count;
+            if (a.count !== b.count) return b.count - a.count;
+            return a.area.Name.localeCompare(b.area.Name);
+        });
+
+        const total = filtered.length;
+        const withItems = filtered.filter(f => f.count > 0).length;
         const container = document.getElementById('areaList');
-        container.innerHTML = filtered.map(a => {
-            const itemCount = items.filter(i => i.Area === a.Name).length;
-            return `<div class="area-card" onclick="showAreaDetail('${a.Name.replace(/'/g, "\\'")}')">
+        container.innerHTML = filtered.map(({ area: a, count: itemCount }) => {
+            const hasItems = itemCount > 0;
+            return `<div class="area-card${hasItems ? ' has-items' : ''}" onclick="showAreaDetail('${a.Name.replace(/'/g, "\\'")}')">
                 <h4>${a.Name}</h4>
                 ${a.LevelRange ? `<span class="level">Level: ${a.LevelRange}</span>` : ''}
                 ${a.Category ? `<span class="category"> ${a.Category}</span>` : ''}
                 ${a.Builder ? `<br><span class="level">Builder: ${a.Builder}</span>` : ''}
                 ${a.IsRestricted ? '<br><span class="restricted">RESTRICTED - No Map Sharing</span>' : ''}
-                ${itemCount > 0 ? `<div class="items">${itemCount} known items</div>` : ''}
+                ${hasItems ? `<div class="items">${itemCount} known item${itemCount === 1 ? '' : 's'}</div>` : ''}
             </div>`;
         }).join('');
+
+        // Show count summary
+        let summary = document.getElementById('areaCountSummary');
+        if (!summary) {
+            summary = document.createElement('div');
+            summary.id = 'areaCountSummary';
+            summary.style.cssText = 'color:#888;font-size:13px;margin:6px 0;';
+            container.parentElement.insertBefore(summary, container);
+        }
+        summary.textContent = `Showing ${total} area${total === 1 ? '' : 's'} (${withItems} with items)`;
+    }
+
+    // Count items attributed to an area, matching on Area field or BestGuessArea
+    // in itemLocations. Uses loose matching (spaces stripped) to handle variants.
+    function countItemsForArea(areaName) {
+        if (!areaName) return 0;
+        const norm = areaName.toLowerCase().replace(/\s+/g, '').replace(/['"`]/g, '');
+        const matches = new Set();
+
+        // Match from items (Azure Table Area field)
+        items.forEach(i => {
+            if (!i.Area) return;
+            const ia = i.Area.toLowerCase().replace(/\s+/g, '').replace(/['"`]/g, '');
+            if (ia === norm || ia.includes(norm) || norm.includes(ia)) {
+                matches.add(i.Name);
+            }
+        });
+
+        // Match from itemLocations (from log extraction)
+        Object.entries(itemLocations).forEach(([name, loc]) => {
+            if (!loc.BestGuessArea) return;
+            const la = loc.BestGuessArea.toLowerCase().replace(/\s+/g, '').replace(/['"`]/g, '');
+            if (la === norm || la.includes(norm) || norm.includes(la)) {
+                matches.add(name);
+            }
+        });
+
+        return matches.size;
     }
 
     function renderItemsByArea() {
@@ -401,6 +474,7 @@
     document.getElementById('areaSearch')?.addEventListener('input', renderAreas);
     document.getElementById('areaCategoryFilter')?.addEventListener('change', renderAreas);
     document.getElementById('areaLevelFilter')?.addEventListener('change', renderAreas);
+    document.getElementById('withItemsOnly')?.addEventListener('change', renderAreas);
     document.getElementById('itemAreaSearch')?.addEventListener('input', renderItemsByArea);
     </script>
 </body>

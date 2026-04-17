@@ -50,6 +50,12 @@ switch (command)
     case "backfill":
         await RunBackfill();
         break;
+    case "reset-locations":
+        await RunResetLocations();
+        break;
+    case "clear-paths":
+        await RunClearPaths();
+        break;
     case "all":
         await RunAll();
         break;
@@ -62,8 +68,26 @@ switch (command)
     case "scrape-qhcf-all":
         await RunScrapeQhcfAll();
         break;
+    case "scrape-phorum":
+        await RunScrapePhorum();
+        break;
+    case "scrape-dcboard":
+        await RunScrapeDcBoard();
+        break;
+    case "scrape-qhcf-site":
+        await RunScrapeQhcfSite();
+        break;
+    case "scrape-all-sites":
+        await RunScrapeAllSites();
+        break;
+    case "build-training-data":
+        RunBuildTrainingData();
+        break;
     case "generate-area-pages":
         RunGenerateAreaPages();
+        break;
+    case "consolidate-area-pages":
+        RunConsolidateAreaPages();
         break;
     case "generate-map-links":
         RunGenerateMapLinks();
@@ -239,6 +263,84 @@ void RunExtractLocations(List<AreaInfo>? areas = null, List<SeedItemMapping>? se
     Console.WriteLine($"Saved to {locationsOutputPath}");
 }
 
+async Task RunClearPaths()
+{
+    // 1. Clear paths in local item-locations.json
+    if (File.Exists(locationsOutputPath))
+    {
+        var locations = JsonSerializer.Deserialize<Dictionary<string, ItemLocation>>(
+            File.ReadAllText(locationsOutputPath)) ?? new();
+        var cleared = 0;
+        foreach (var loc in locations.Values)
+        {
+            if (!string.IsNullOrEmpty(loc.PathFromCrossroads))
+            {
+                loc.PathFromCrossroads = null;
+                cleared++;
+            }
+        }
+        var json = JsonSerializer.Serialize(locations, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText(locationsOutputPath, json);
+        Console.WriteLine($"Cleared PathFromCrossroads from {cleared} items in {locationsOutputPath}");
+    }
+
+    // 2. Clear PathFromCrossroads for every item in Azure Table
+    Console.WriteLine("Clearing PathFromCrossroads in Azure Table...");
+    var uri = new Uri($"{tableEndpoint}cfitems?{sasToken}");
+    var tableClient = new Azure.Data.Tables.TableClient(uri);
+
+    var allItems = new List<ItemRecord>();
+    await foreach (var item in tableClient.QueryAsync<ItemRecord>())
+        allItems.Add(item);
+
+    var updated = 0;
+    var failed = 0;
+    foreach (var item in allItems)
+    {
+        if (string.IsNullOrEmpty(item.PathFromCrossroads)) continue;
+        try
+        {
+            item.PathFromCrossroads = null;
+            await tableClient.UpsertEntityAsync(item);
+            updated++;
+            if (updated % 50 == 0) Console.WriteLine($"  Cleared {updated} items...");
+        }
+        catch (Exception ex)
+        {
+            failed++;
+            if (failed <= 3) Console.WriteLine($"  Failed on '{item.RowKey}': {ex.Message}");
+        }
+    }
+    Console.WriteLine($"Done. Cleared paths on {updated} items in Azure Table ({failed} failures)");
+}
+
+async Task RunResetLocations()
+{
+    if (!File.Exists(locationsOutputPath))
+    {
+        Console.WriteLine("No item-locations.json found. Run 'extract-locations' first.");
+        return;
+    }
+
+    var locations = JsonSerializer.Deserialize<Dictionary<string, ItemLocation>>(
+        File.ReadAllText(locationsOutputPath)) ?? new();
+
+    // Build dict of items to update with fresh data (only from the cleaner extraction)
+    var updates = locations
+        .Where(kv => kv.Value.Locations.Any(l => l.Confidence is "high" or "medium"))
+        .Where(kv => !string.IsNullOrEmpty(kv.Value.BestGuessArea) ||
+                     !string.IsNullOrEmpty(kv.Value.BestGuessMob) ||
+                     !string.IsNullOrEmpty(kv.Value.BestGuessContainer) ||
+                     !string.IsNullOrEmpty(kv.Value.PathFromCrossroads))
+        .ToDictionary(
+            kv => kv.Key,
+            kv => ((string?)kv.Value.BestGuessArea, (string?)kv.Value.BestGuessMob,
+                   (string?)kv.Value.BestGuessContainer, (string?)kv.Value.PathFromCrossroads));
+
+    Console.WriteLine($"Will update {updates.Count} items with fresh data and clear the rest.");
+    await storageService.ResetAndUpdateAllLocationsAsync(updates);
+}
+
 async Task RunBackfill()
 {
     if (!File.Exists(locationsOutputPath))
@@ -367,13 +469,42 @@ async Task RunScrapeWorldMap()
         return text;
     });
 
+    // Colorize water (~ characters) outside of HTML tags
+    var colorized = ColorizeWater(rewritten);
+
     // Save the fragment
     var outputPath = Path.Combine(FindRepoRoot(), "src", "worldmap-fragment.html");
-    File.WriteAllText(outputPath, rewritten);
+    File.WriteAllText(outputPath, colorized);
     Console.WriteLine($"Saved linkified world map to {outputPath}");
 
     // Also build the full map.html
-    BuildMapHtmlFromFragment(rewritten);
+    BuildMapHtmlFromFragment(colorized);
+}
+
+/// <summary>
+/// Wraps every `~` character outside of HTML tags in a blue-colored span
+/// (matching the water legend color). Tracks tag state to avoid touching
+/// `~` inside attribute values.
+/// </summary>
+string ColorizeWater(string html)
+{
+    var sb = new System.Text.StringBuilder(html.Length + 1000);
+    var inTag = false;
+    foreach (var c in html)
+    {
+        if (c == '<') inTag = true;
+        else if (c == '>') { inTag = false; sb.Append(c); continue; }
+
+        if (!inTag && c == '~')
+        {
+            sb.Append("<span style=\"color:#68a\">~</span>");
+        }
+        else
+        {
+            sb.Append(c);
+        }
+    }
+    return sb.ToString();
 }
 
 void BuildMapHtmlFromFragment(string mapFragment)
@@ -484,6 +615,11 @@ void RunGenerateAreasIndex()
         ? JsonSerializer.Deserialize<List<ItemRecord>>(File.ReadAllText(itemsExportPath)) ?? new()
         : new List<ItemRecord>();
 
+    // Load item locations for richer counting (BestGuessArea from log extraction)
+    var itemLocations = File.Exists(locationsOutputPath)
+        ? JsonSerializer.Deserialize<Dictionary<string, ItemLocation>>(File.ReadAllText(locationsOutputPath)) ?? new()
+        : new Dictionary<string, ItemLocation>();
+
     // Known area pages (filter out non-area pages like skills/faqs/etc)
     var areaPageDir = Path.Combine(FindRepoRoot(), "src", "area");
 
@@ -497,11 +633,18 @@ void RunGenerateAreasIndex()
     sb.AppendLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"cfitems.css\">");
     sb.AppendLine(@"<style>
         .areas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; margin: 10px 0; }
-        .area-entry { padding: 8px 12px; border-left: 3px solid #dfbe6f; background: #111; }
-        .area-entry a { color: #dfbe6f; text-decoration: none; font-weight: bold; }
+        .area-entry { padding: 8px 12px; border-left: 3px solid #444; background: #111; position: relative; padding-right: 32px; }
+        .area-entry a { color: #aaa; text-decoration: none; font-weight: bold; }
         .area-entry a:hover { text-decoration: underline; color: #fff; }
         .area-entry .meta { color: #888; font-size: 12px; margin-top: 2px; }
-        .area-entry.has-items { border-left-color: #e8c77a; }
+        /* Highlight areas with known items - same style as knowledge.html */
+        .area-entry.has-items { border-left-color: #dfbe6f; background: #1a1610; }
+        .area-entry.has-items a { color: #dfbe6f; }
+        .area-entry.has-items::after {
+            content: ""\2605""; /* star */
+            position: absolute; top: 6px; right: 10px;
+            color: #dfbe6f; font-size: 18px;
+        }
         .search { padding: 10px 14px; width: 100%; max-width: 400px; background: #1a1a1a; color: white; border: 1px solid #dfbe6f; font-size: 15px; margin: 10px 0; box-sizing: border-box; }
         .letter-nav { display: flex; flex-wrap: wrap; gap: 4px; margin: 15px 0; padding: 8px; background: #111; border: 1px solid #333; }
         .letter-nav a { color: #dfbe6f; padding: 4px 8px; text-decoration: none; border: 1px solid #333; border-radius: 3px; }
@@ -541,9 +684,14 @@ void RunGenerateAreasIndex()
     sb.AppendLine("<div class=\"type-tab\" onclick=\"setFilter('areas-only', this)\">Areas Only (No FAQs/Skills)</div>");
     sb.AppendLine("</div>");
 
-    // Letter navigation
+    // Only include titles whose area page actually exists
+    var validTitles = allTitles
+        .Where(t => File.Exists(Path.Combine(areaPageDir, AreaPageGenerator.MakeFileName(t))))
+        .ToList();
+
+    // Letter navigation - only letters that have at least one page
     sb.AppendLine("<div class=\"letter-nav\">");
-    var letters = allTitles.Select(t => char.ToUpper(t[0])).Distinct().OrderBy(c => c).ToList();
+    var letters = validTitles.Select(t => char.ToUpper(t[0])).Distinct().OrderBy(c => c).ToList();
     foreach (var letter in letters)
     {
         sb.AppendLine($"<a href=\"#letter-{letter}\">{letter}</a>");
@@ -551,7 +699,7 @@ void RunGenerateAreasIndex()
     sb.AppendLine("</div>");
 
     // Group by first letter
-    var grouped = allTitles
+    var grouped = validTitles
         .OrderBy(t => t, StringComparer.OrdinalIgnoreCase)
         .GroupBy(t => char.ToUpper(t[0]))
         .OrderBy(g => g.Key);
@@ -572,10 +720,29 @@ void RunGenerateAreasIndex()
                 a.Name.Equals(title, StringComparison.OrdinalIgnoreCase) ||
                 a.Name.Replace(" ", "").Equals(title.Replace(" ", ""), StringComparison.OrdinalIgnoreCase));
 
-            // Count items for this area
-            var itemCount = items.Count(i => i.Area != null &&
-                (i.Area.Equals(title, StringComparison.OrdinalIgnoreCase) ||
-                 i.Area.Replace(" ", "").Equals(title.Replace(" ", ""), StringComparison.OrdinalIgnoreCase)));
+            // Count items for this area - same matching logic as AreaPageGenerator
+            // (aggressive normalization: lowercase + strip non-alphanumeric).
+            string Norm(string s) => new string((s ?? "").ToLower().Where(char.IsLetterOrDigit).ToArray());
+            var titleNorm = Norm(title);
+            var titleNormNoThe = Norm(title.StartsWith("The ", StringComparison.OrdinalIgnoreCase)
+                ? title.Substring(4) : title);
+
+            bool MatchArea(string? candidate)
+            {
+                if (string.IsNullOrEmpty(candidate)) return false;
+                var c = Norm(candidate);
+                if (c.Length == 0) return false;
+                return c == titleNorm || c == titleNormNoThe ||
+                       c.Contains(titleNorm) || titleNorm.Contains(c) ||
+                       c.Contains(titleNormNoThe) || titleNormNoThe.Contains(c);
+            }
+
+            var matched = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var i in items)
+                if (i.Name != null && MatchArea(i.Area)) matched.Add(i.Name);
+            foreach (var (name, loc) in itemLocations)
+                if (MatchArea(loc.BestGuessArea)) matched.Add(name);
+            var itemCount = matched.Count;
 
             // Classify: is this an "area" or a helpfile/FAQ/skill page?
             var isArea = !IsHelpfilePage(title);
@@ -1001,6 +1168,13 @@ void RunGenerateMapLinks()
     Console.WriteLine($"Saved to {outputPath}");
 }
 
+void RunConsolidateAreaPages()
+{
+    var srcDir = Path.Combine(FindRepoRoot(), "src");
+    var consolidator = new AreaPageConsolidator(srcDir);
+    consolidator.Consolidate();
+}
+
 void RunGenerateAreaPages()
 {
     var knowledgeDir = Path.Combine(dataDir, "knowledge");
@@ -1039,6 +1213,47 @@ void RunGenerateAreaPages()
     var count = generator.GenerateAllPages(outputDir);
 
     Console.WriteLine($"Generated {count} area pages in {outputDir}");
+}
+
+async Task RunScrapePhorum()
+{
+    var forumsDir = Path.Combine(dataDir, "forums");
+    var scraper = new PhorumScraper(forumsDir);
+    await scraper.ScrapeAllBoardsAsync();
+}
+
+async Task RunScrapeDcBoard()
+{
+    var forumsDir = Path.Combine(dataDir, "forums");
+    var scraper = new DcBoardScraper(forumsDir);
+    await scraper.ScrapeAllForumsAsync();
+}
+
+async Task RunScrapeQhcfSite()
+{
+    var knowledgeDir = Path.Combine(dataDir, "knowledge");
+    var scraper = new QhcfSiteScraper(knowledgeDir);
+    await scraper.ScrapeAllAsync();
+}
+
+async Task RunScrapeAllSites()
+{
+    Console.WriteLine("\n=== Step 1: qhcf.net premium pages ===");
+    await RunScrapeQhcfSite();
+
+    Console.WriteLine("\n=== Step 2: qhcf.net phorum ===");
+    await RunScrapePhorum();
+
+    Console.WriteLine("\n=== Step 3: forums.carrionfields.com ===");
+    await RunScrapeDcBoard();
+
+    Console.WriteLine("\n=== All scraping complete ===");
+}
+
+void RunBuildTrainingData()
+{
+    var formatter = new TrainingFormatter(dataDir);
+    formatter.Build();
 }
 
 async Task RunScrapeQhcfAll()

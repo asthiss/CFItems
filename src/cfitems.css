@@ -3,6 +3,7 @@ body {
     background-color: black;
     color: white;
     font-size: 18px;
+    padding-bottom: 80px;
 }
 
 fieldset {

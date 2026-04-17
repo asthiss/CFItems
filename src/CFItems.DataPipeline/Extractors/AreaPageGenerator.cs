@@ -281,26 +281,38 @@ public class AreaPageGenerator
         return result;
     }
 
+    /// <summary>
+    /// Aggressively normalize an area name for loose matching:
+    /// lowercase, strip spaces/underscores/apostrophes/hyphens/punctuation.
+    /// So "Ar'atouldain", "Aratouldain", "Ar_atouldain" all collapse to "aratouldain".
+    /// </summary>
+    private static string NormalizeArea(string s) =>
+        new string((s ?? "").ToLower().Where(char.IsLetterOrDigit).ToArray());
+
     private List<(string name, ItemRecord? item, ItemLocation? loc)> FindItemsForArea(string areaTitle)
     {
         var matches = new List<(string, ItemRecord?, ItemLocation?)>();
         var seen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-        // Normalize for matching
-        var normalized = areaTitle.Replace("_", " ").ToLower();
-        var variants = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        // Normalized forms of the title for matching. Also try stripping "The " prefix.
+        var titleNorm = NormalizeArea(areaTitle);
+        var titleNormNoThe = NormalizeArea(areaTitle.StartsWith("The ", StringComparison.OrdinalIgnoreCase)
+            ? areaTitle.Substring(4) : areaTitle);
+
+        bool MatchesArea(string? candidate)
         {
-            areaTitle, normalized, areaTitle.Replace(" ", ""), normalized.Replace(" ", ""),
-            "The " + areaTitle, "The " + normalized,
-            areaTitle.Replace("The ", ""), normalized.Replace("the ", "")
-        };
+            if (string.IsNullOrEmpty(candidate)) return false;
+            var c = NormalizeArea(candidate);
+            if (c.Length == 0) return false;
+            return c == titleNorm || c == titleNormNoThe ||
+                   c.Contains(titleNorm) || titleNorm.Contains(c) ||
+                   c.Contains(titleNormNoThe) || titleNormNoThe.Contains(c);
+        }
 
         // Items from Azure Table with Area field
         foreach (var item in _items)
         {
-            if (string.IsNullOrEmpty(item.Area)) continue;
-            if (variants.Any(v => item.Area.Contains(v, StringComparison.OrdinalIgnoreCase) ||
-                                  v.Contains(item.Area, StringComparison.OrdinalIgnoreCase)))
+            if (MatchesArea(item.Area))
             {
                 if (seen.Add(item.Name ?? ""))
                 {
@@ -313,9 +325,7 @@ public class AreaPageGenerator
         // Items from itemLocations with BestGuessArea
         foreach (var (name, loc) in _itemLocations)
         {
-            if (string.IsNullOrEmpty(loc.BestGuessArea)) continue;
-            if (variants.Any(v => loc.BestGuessArea.Contains(v, StringComparison.OrdinalIgnoreCase) ||
-                                  v.Contains(loc.BestGuessArea, StringComparison.OrdinalIgnoreCase)))
+            if (MatchesArea(loc.BestGuessArea))
             {
                 if (seen.Add(name))
                 {

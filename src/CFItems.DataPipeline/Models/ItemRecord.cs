@@ -102,6 +102,43 @@ public class WorldMap
     public int TotalLogsProcessed { get; set; }
 }
 
+public class ForumPost
+{
+    public string? Author { get; set; }
+    public string? Timestamp { get; set; }
+    public string? Title { get; set; }
+    public string Body { get; set; } = "";
+}
+
+public class ForumThread
+{
+    public string ThreadId { get; set; } = "";
+    public string ForumId { get; set; } = "";
+    public string ForumName { get; set; } = "";
+    public string? Title { get; set; }
+    public string Url { get; set; } = "";
+    public List<ForumPost> Posts { get; set; } = new();
+    public string? FirstPostDate { get; set; }
+}
+
+public class TrainingDocument
+{
+    public string Text { get; set; } = "";
+    public string Source { get; set; } = "";
+    public string? Title { get; set; }
+    public string? Url { get; set; }
+    public Dictionary<string, string> Metadata { get; set; } = new();
+}
+
+public class ScrapedPage
+{
+    public string Title { get; set; } = "";
+    public string Url { get; set; } = "";
+    public string Text { get; set; } = "";
+    public string? RawHtml { get; set; }
+    public Dictionary<string, string> Metadata { get; set; } = new();
+}
+
 public class AreaInfo
 {
     public string Name { get; set; } = "";

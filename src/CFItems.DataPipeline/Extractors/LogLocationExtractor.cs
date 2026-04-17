@@ -16,6 +16,16 @@ public class LogLocationExtractor
 
     private readonly HashSet<string> _knownAreaNames;
     private readonly Dictionary<string, string> _roomToAreaMap;
+    private readonly HashSet<string> _knownPlayerNames;
+
+    // Regex to detect player names in various log contexts
+    // "(PK) Malliokh    Along the Eastern Road"    - where command
+    // "Malliokh has arrived." / "Malliokh has left." - movement
+    // "Malliokh says " / "Malliokh tells you " - chat
+    private static readonly Regex WhereNameRegex = new(@"^\(PK\)\s+(\w+)\s", RegexOptions.Compiled);
+    private static readonly Regex WhoNameRegex = new(@"\[\s*\d+\s+\w+\s+\w+\s*\]\s*\(?P?K?\)?\s*(\w+)", RegexOptions.Compiled);
+    private static readonly Regex ArrivalRegex = new(@"^(\w+) has (arrived|left)\.", RegexOptions.Compiled);
+    private static readonly Regex ChatRegex = new(@"^(\w+) (tells you|says ['""])", RegexOptions.Compiled);
 
     public LogLocationExtractor(List<AreaInfo> areas, List<SeedItemMapping> seedMappings)
     {
@@ -24,14 +34,86 @@ public class LogLocationExtractor
             StringComparer.OrdinalIgnoreCase);
 
         _roomToAreaMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        _knownPlayerNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    /// Pre-pass over all log files to collect player names from `where` output,
+    /// arrivals, and chat. These names are used to filter out PK corpses.
+    /// </summary>
+    public void CollectPlayerNames(string logDirectory)
+    {
+        Console.WriteLine("Pre-pass: collecting player names from logs...");
+        var logFiles = Directory.GetFiles(logDirectory, "*.log")
+            .Concat(Directory.GetFiles(logDirectory, "*.txt"))
+            .Concat(Directory.GetFiles(logDirectory, "*.TXT"))
+            .Distinct()
+            .ToArray();
+
+        foreach (var logFile in logFiles)
+        {
+            try
+            {
+                foreach (var raw in File.ReadLines(logFile))
+                {
+                    var line = raw.Trim();
+                    // (PK) PlayerName    Room
+                    var m = WhereNameRegex.Match(line);
+                    if (m.Success) { _knownPlayerNames.Add(m.Groups[1].Value); continue; }
+                    // PlayerName has arrived/left
+                    m = ArrivalRegex.Match(line);
+                    if (m.Success) { _knownPlayerNames.Add(m.Groups[1].Value); continue; }
+                    // PlayerName tells you / says
+                    m = ChatRegex.Match(line);
+                    if (m.Success) { _knownPlayerNames.Add(m.Groups[1].Value); continue; }
+                }
+            }
+            catch { /* ignore per-file errors */ }
+        }
+
+        Console.WriteLine($"  Collected {_knownPlayerNames.Count} unique player names");
+    }
+
+    /// <summary>
+    /// Heuristic: is this name likely a player character rather than a mob?
+    /// </summary>
+    public bool IsLikelyPlayer(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name)) return false;
+        name = name.Trim();
+
+        // Known player from pre-pass → definitely a player
+        if (_knownPlayerNames.Contains(name)) return true;
+
+        // Mobs almost always start with an article
+        var lower = name.ToLower();
+        if (lower.StartsWith("a ") || lower.StartsWith("an ") || lower.StartsWith("the "))
+            return false;
+
+        // Multi-word names without articles are typically mobs with proper names
+        // like "Arch-Bishop Merimar", "Burrow-Warden Doranginz"
+        var words = name.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        if (words.Length >= 2) return false;
+
+        // Single capitalized word with no article → likely a player name
+        // (e.g. "Malliokh", "Zhalabi", "Gohred")
+        if (words.Length == 1 && char.IsUpper(words[0][0]) && words[0].Length >= 3)
+            return true;
+
+        return false;
     }
 
     /// <summary>
     /// Process all log files in a directory (both .log and .txt).
+    /// Does a two-pass scan: first collect player names, then extract item locations
+    /// while filtering out PK corpses and donation pits.
     /// </summary>
     public Dictionary<string, ItemLocation> ProcessAllLogs(string logDirectory)
     {
         var allLocations = new Dictionary<string, ItemLocation>(StringComparer.OrdinalIgnoreCase);
+
+        // Pass 1: collect player names so we can filter PK corpses in pass 2
+        CollectPlayerNames(logDirectory);
 
         var logFiles = Directory.GetFiles(logDirectory, "*.log")
             .Concat(Directory.GetFiles(logDirectory, "*.txt"))
@@ -83,18 +165,36 @@ public class LogLocationExtractor
                 if (string.IsNullOrEmpty(itemName))
                     continue;
 
-                var location = FindRoomContext(lines, i, fileName);
-                if (location == null)
-                    location = new LocationEntry { SourceLog = fileName, LineNumber = i };
+                // Start with an empty location - we'll only populate it if we find
+                // *explicit* evidence of where this item came from.
+                var location = new LocationEntry { SourceLog = fileName, LineNumber = i };
 
-                // Extract mob/container source
-                FindItemSource(lines, i, itemName, location);
+                // Extract mob/container source. Returns true only when we found a
+                // real source (not a PK corpse or donation pit).
+                var hasSource = FindItemSource(lines, i, itemName, location);
 
-                if (location.RoomName != null || location.AreaName != null ||
-                    location.MobName != null || location.ContainerName != null)
+                // Skip PK corpses and donation pits - they don't tell us where the item is from
+                if (location.MobName == "__SKIP_PK__" || location.MobName == "__SKIP_DONATION__")
+                    continue;
+
+                // Require explicit source evidence (mob or container).
+                // Just knowing the player was standing in a room with the item is NOT evidence.
+                if (!hasSource)
+                    continue;
+
+                // Now find the room where the "get" happened - this is the most accurate
+                // room attribution, since it's the room where the mob was looted or
+                // the container was opened.
+                var roomContext = FindRoomContext(lines, i, fileName);
+                if (roomContext != null)
                 {
-                    results.Add((itemName, location));
+                    location.RoomName = roomContext.RoomName;
+                    location.AreaName = roomContext.AreaName;
+                    if (roomContext.Confidence == "high")
+                        location.Confidence = "high";
                 }
+
+                results.Add((itemName, location));
             }
         }
 
@@ -103,12 +203,13 @@ public class LogLocationExtractor
 
     /// <summary>
     /// Search near an identify block for "You get X from Y" to find mob/container source.
+    /// Returns true if a valid (non-PK, non-donation) source was found. If the source
+    /// is a player corpse or donation pit, returns false and marks the location as invalid
+    /// so the caller can discard it entirely.
     /// </summary>
-    private void FindItemSource(string[] lines, int identifyLineIndex, string itemName, LocationEntry location)
+    private bool FindItemSource(string[] lines, int identifyLineIndex, string itemName, LocationEntry location)
     {
-        // Normalize item name for matching
         var itemLower = itemName.ToLower();
-        // Also try partial match: first few significant words
         var itemWords = itemLower.Split(' ').Where(w => w.Length > 2).Take(3).ToArray();
 
         // Search backward (player looted, then identified)
@@ -116,49 +217,19 @@ public class LogLocationExtractor
         for (var i = identifyLineIndex - 1; i >= searchStart; i--)
         {
             var line = lines[i].Trim();
-            // Strip prompt prefix if present
             if (PromptRegex.IsMatch(line))
             {
                 var promptEnd = line.IndexOf("You get");
-                if (promptEnd >= 0)
-                    line = line.Substring(promptEnd);
+                if (promptEnd >= 0) line = line.Substring(promptEnd);
             }
 
-            if (!line.StartsWith("You get "))
-                continue;
+            if (!line.StartsWith("You get ")) continue;
+            if (!LineMatchesItem(line, itemLower, itemWords)) continue;
 
-            // Check if this "You get" line references our item
-            if (!LineMatchesItem(line, itemLower, itemWords))
-                continue;
-
-            // Match "You get X from the corpse of Y"
-            var corpseMatch = GetFromCorpseRegex.Match(line);
-            if (corpseMatch.Success)
-            {
-                location.MobName = corpseMatch.Groups[2].Value.Trim();
-                location.Confidence = location.Confidence == "low" ? "medium" : location.Confidence;
-                return;
-            }
-
-            // Match "You get X from Y" (container)
-            var containerMatch = GetFromContainerRegex.Match(line);
-            if (containerMatch.Success)
-            {
-                var container = containerMatch.Groups[2].Value.Trim();
-                // Filter out inventory containers (player bags)
-                if (!IsPlayerContainer(container))
-                {
-                    location.ContainerName = container;
-                    return;
-                }
-            }
-
-            // Plain "You get X." - look nearby for "is DEAD!!" to find mob
-            FindNearbyMobKill(lines, i, location);
-            return;
+            return ClassifyGetLine(line, location);
         }
 
-        // Search forward too (player identified, then looted)
+        // Search forward (player identified, then looted)
         var searchEnd = Math.Min(lines.Length, identifyLineIndex + 50);
         for (var i = identifyLineIndex + 1; i < searchEnd; i++)
         {
@@ -172,38 +243,76 @@ public class LogLocationExtractor
             if (!line.StartsWith("You get ")) continue;
             if (!LineMatchesItem(line, itemLower, itemWords)) continue;
 
-            var corpseMatch = GetFromCorpseRegex.Match(line);
-            if (corpseMatch.Success)
-            {
-                location.MobName = corpseMatch.Groups[2].Value.Trim();
-                return;
-            }
-
-            var containerMatch = GetFromContainerRegex.Match(line);
-            if (containerMatch.Success)
-            {
-                var container = containerMatch.Groups[2].Value.Trim();
-                if (!IsPlayerContainer(container))
-                {
-                    location.ContainerName = container;
-                    return;
-                }
-            }
-
-            FindNearbyMobKill(lines, i, location);
-            return;
+            return ClassifyGetLine(line, location);
         }
 
-        // Last resort: look for any "is DEAD!!" within 100 lines before identify
+        // Last resort: look for any "is DEAD!!" within 100 lines before identify.
+        // But skip player kills (deaths of known players).
         for (var i = identifyLineIndex - 1; i >= searchStart; i--)
         {
             var deadMatch = MobDeadRegex.Match(lines[i].Trim());
             if (deadMatch.Success)
             {
-                location.MobName = deadMatch.Groups[1].Value.Trim();
-                return;
+                var dead = deadMatch.Groups[1].Value.Trim();
+                if (IsLikelyPlayer(dead)) continue; // skip PK deaths
+                location.MobName = dead;
+                return true;
             }
         }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Parse a "You get X from Y." line. Returns true if location was validly populated.
+    /// Returns false (and marks the location as invalid via MobName="__SKIP__") when the
+    /// item came from a player corpse or a donation pit - we don't want those locations.
+    /// </summary>
+    private bool ClassifyGetLine(string line, LocationEntry location)
+    {
+        // "You get X from the corpse of Y"
+        var corpseMatch = GetFromCorpseRegex.Match(line);
+        if (corpseMatch.Success)
+        {
+            var source = corpseMatch.Groups[2].Value.Trim();
+            if (IsLikelyPlayer(source))
+            {
+                // PK corpse - this item was looted from a player, not killed here.
+                // Mark location for removal and return.
+                location.MobName = "__SKIP_PK__";
+                return false;
+            }
+            location.MobName = source;
+            location.Confidence = location.Confidence == "low" ? "medium" : location.Confidence;
+            return true;
+        }
+
+        // "You get X from Y" (container / furniture / ground object)
+        var containerMatch = GetFromContainerRegex.Match(line);
+        if (containerMatch.Success)
+        {
+            var container = containerMatch.Groups[2].Value.Trim();
+            if (IsPlayerContainer(container))
+                return false; // inventory container - not useful
+            if (IsDonationPit(container))
+            {
+                // Donation pit items are items donated by players, not from the area.
+                location.MobName = "__SKIP_DONATION__";
+                return false;
+            }
+            location.ContainerName = container;
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool IsDonationPit(string container)
+    {
+        var lower = container.ToLower();
+        return lower.Contains("donation pit") || lower.Contains("donation box") ||
+               lower.Contains("lost and found") || lower.Contains("altar of the fallen") ||
+               lower == "altar";
     }
 
     private bool LineMatchesItem(string line, string itemLower, string[] itemWords)

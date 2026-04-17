@@ -31,7 +31,31 @@
       "Bash(curl -sL \"http://wiki.qhcf.net/index.php?title=Special:AllPages\" -m 10)",
       "Bash(curl -sL \"http://wiki.qhcf.net/index.php?title=Special:AllPages&from=Legs\" -m 10)",
       "Bash(ls /c/source/github/CFItems/src/area/*.html)",
-      "Bash(curl -sL \"http://wiki.qhcf.net/index.php?title=WorldMap\" -m 10)"
+      "Bash(curl -sL \"http://wiki.qhcf.net/index.php?title=WorldMap\" -m 10)",
+      "Bash(curl -sL -m 10 \"http://www.qhcf.net/phorum/read.php?3,1127906,1127906\")",
+      "Bash(curl -sL -m 10 \"http://www.qhcf.net/phorum/list.php?3\")",
+      "Bash(curl -sL -m 10 \"https://forums.carrionfields.com/dcboard.php\")",
+      "Bash(curl -sL -m 5 'https://forums.carrionfields.com/dcboard.php?az=show_topics&forum=__TRACKED_VAR__')",
+      "Bash(curl -sL -m 10 \"https://forums.carrionfields.com/dcboard.php?az=show_topics&forum=3\")",
+      "Bash(curl -sL -m 10 \"https://forums.carrionfields.com/dcboard.php?az=show_mesg&forum=3&topic_id=2407&mesg_id=2407&page=\")",
+      "Bash(curl -sL -m 10 \"https://forums.carrionfields.com/dcboard.php?az=show_topic&forum=3&topic_id=2407\")",
+      "Bash(curl -sL -m 5 \"http://www.qhcf.net/premium/skills.php\")",
+      "Bash(curl -sL -m 5 http://www.qhcf.net/premium/__TRACKED_VAR__.php)",
+      "Bash(curl -sL -m 10 \"https://forums.carrionfields.com/dcboard.php?az=printer_friendly&forum=3&topic_id=2407\")",
+      "Bash(./bin-extract/CFItems.DataPipeline.exe extract-locations:*)",
+      "Bash(./bin-extract/CFItems.DataPipeline.exe reset-locations:*)",
+      "Bash(curl -sL -I -m 10 \"https://cfitems.blob.core.windows.net/cfitems/documents/qhcf-wiki-all.json\")",
+      "Bash(./bin-extract/CFItems.DataPipeline.exe consolidate-area-pages:*)",
+      "Bash(./bin-extract/CFItems.DataPipeline.exe clear-paths:*)",
+      "Bash(python3 -c ':*)",
+      "Bash(./bin-extract/CFItems.DataPipeline.exe find-paths:*)",
+      "Bash(ls /c/source/github/CFItems/src/area/*Circle*Hell*)",
+      "Bash(./bin-extract/CFItems.DataPipeline.exe generate-areas-index:*)",
+      "Bash(head -3 echo \"---Ar'atouldain html exists?---\" ls /c/source/github/CFItems/src/area/Ar*atouldain*)",
+      "Bash(./bin-extract/CFItems.DataPipeline.exe generate-area-pages:*)",
+      "Bash(grep -l 'Items Found Here \\(' /c/source/github/CFItems/src/area/*.html)",
+      "Bash(grep -l \"Items Found Here \\(\" /c/source/github/CFItems/src/area/*.html)",
+      "Bash(xargs -I{} basename {})"
     ]
   }
 }
