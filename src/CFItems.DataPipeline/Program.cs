@@ -3,10 +3,30 @@ using CFItems.DataPipeline.Extractors;
 using CFItems.DataPipeline.Models;
 using CFItems.DataPipeline.Services;
 
-// Azure Storage configuration
-const string sasToken = "sv=2025-11-05&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2030-04-15T16:21:07Z&st=2026-04-16T08:06:07Z&spr=https&sig=REDACTED_SAS_SIG%3D";
-const string tableEndpoint = "https://cfitems.table.core.windows.net/";
-const string blobEndpoint = "https://cfitems.blob.core.windows.net/";
+// Azure Storage configuration - loaded from .NET user secrets or environment.
+// Set with:  dotnet user-secrets set "CFItems:SasToken" "sv=...&sig=..."
+// Env var fallbacks: CFITEMS_SAS_TOKEN, CFITEMS_TABLE_ENDPOINT, CFITEMS_BLOB_ENDPOINT
+var configBuilder = new Microsoft.Extensions.Configuration.ConfigurationBuilder();
+Microsoft.Extensions.Configuration.UserSecretsConfigurationExtensions.AddUserSecrets<Program>(configBuilder, optional: true);
+Microsoft.Extensions.Configuration.EnvironmentVariablesExtensions.AddEnvironmentVariables(configBuilder);
+var config = configBuilder.Build();
+var sasToken = config["CFItems:SasToken"]
+    ?? Environment.GetEnvironmentVariable("CFITEMS_SAS_TOKEN");
+if (string.IsNullOrEmpty(sasToken))
+{
+    Console.WriteLine("WARNING: Azure SAS token is not configured.");
+    Console.WriteLine("Azure operations will fail. Set it with:");
+    Console.WriteLine("  dotnet user-secrets set \"CFItems:SasToken\" \"<your SAS>\"");
+    Console.WriteLine("or set the CFITEMS_SAS_TOKEN environment variable.");
+    Console.WriteLine();
+    sasToken = ""; // allow non-Azure commands (build-training-data, etc.) to run
+}
+var tableEndpoint = config["CFItems:TableEndpoint"]
+    ?? Environment.GetEnvironmentVariable("CFITEMS_TABLE_ENDPOINT")
+    ?? "https://cfitems.table.core.windows.net/";
+var blobEndpoint = config["CFItems:BlobEndpoint"]
+    ?? Environment.GetEnvironmentVariable("CFITEMS_BLOB_ENDPOINT")
+    ?? "https://cfitems.blob.core.windows.net/";
 
 // Paths
 var repoRoot = FindRepoRoot();

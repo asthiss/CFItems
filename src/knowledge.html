@@ -85,6 +85,130 @@
         <div id="statsContent"></div>
     </div>
 
+    <!-- Floating chat bot (calls localhost:5005, expects CFItems.Bot serve) -->
+    <button id="botToggle" onclick="toggleBot()" title="Ask CF Bot">
+        <span style="font-size: 22px;">&#128172;</span>
+    </button>
+    <div id="botPanel">
+        <div id="botHeader">
+            <span style="color:#dfbe6f;font-weight:bold;">&#128172; CF Bot</span>
+            <span id="botStatus" style="color:#888;font-size:12px;margin-left:8px;">checking...</span>
+            <span style="float:right;cursor:pointer;color:#888;" onclick="toggleBot()">&times;</span>
+        </div>
+        <div id="botMessages"></div>
+        <div id="botInputRow">
+            <input type="text" id="botInput" placeholder="Ask about Carrion Fields..." autocomplete="off" />
+            <button id="botSend" onclick="askBot()">Send</button>
+        </div>
+        <div id="botFooter">
+            Needs <a href="https://ollama.com" target="_blank" style="color:#dfbe6f;">Ollama</a> running locally + <code>dotnet run -- serve</code>
+        </div>
+    </div>
+    <style>
+        #botToggle {
+            position: fixed; bottom: 20px; right: 20px; z-index: 200;
+            background: #dfbe6f; color: #000; border: none; border-radius: 50%;
+            width: 56px; height: 56px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        #botToggle:hover { background: #f0d080; }
+        #botPanel {
+            position: fixed; bottom: 90px; right: 20px; width: 400px; max-width: 90vw;
+            height: 60vh; max-height: 600px; background: #0a0a0a;
+            border: 1px solid #dfbe6f; border-radius: 8px; display: none;
+            flex-direction: column; z-index: 200; box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        #botPanel.open { display: flex; }
+        #botHeader { padding: 10px 14px; border-bottom: 1px solid #333; }
+        #botMessages { flex: 1; overflow-y: auto; padding: 10px 14px; font-size: 14px; }
+        .bot-msg { margin: 8px 0; padding: 8px 10px; border-radius: 4px; line-height: 1.5; white-space: pre-wrap; }
+        .bot-msg.user { background: #1a1a1a; color: #ddd; }
+        .bot-msg.bot  { background: #1a1810; color: #fff; border-left: 2px solid #dfbe6f; }
+        .bot-msg.error { background: #2a0f0f; color: #faa; border-left: 2px solid #c44; }
+        .bot-msg .sources { color: #888; font-size: 12px; margin-top: 6px; padding-top: 6px; border-top: 1px solid #333; }
+        .bot-msg .sources b { color: #c9a45c; }
+        #botInputRow { display: flex; padding: 8px; border-top: 1px solid #333; gap: 6px; }
+        #botInput { flex: 1; background: #1a1a1a; color: #fff; border: 1px solid #333; padding: 8px; border-radius: 4px; font-size: 14px; }
+        #botInput:focus { border-color: #dfbe6f; outline: none; }
+        #botSend { background: #dfbe6f; color: #000; border: none; padding: 8px 14px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        #botSend:disabled { opacity: 0.5; cursor: not-allowed; }
+        #botFooter { padding: 6px 14px; font-size: 11px; color: #666; border-top: 1px solid #222; }
+        #botFooter code { color: #aaa; background: #1a1a1a; padding: 1px 4px; border-radius: 2px; }
+    </style>
+    <script>
+        const BOT_URL = 'http://localhost:5005';
+        let botOpen = false;
+        function toggleBot() {
+            botOpen = !botOpen;
+            document.getElementById('botPanel').classList.toggle('open', botOpen);
+            if (botOpen) { checkBotStatus(); document.getElementById('botInput').focus(); }
+        }
+        async function checkBotStatus() {
+            const status = document.getElementById('botStatus');
+            try {
+                const r = await fetch(BOT_URL + '/health');
+                if (r.ok) {
+                    const j = await r.json();
+                    status.style.color = '#7a7';
+                    status.textContent = `online (${j.chunks} chunks, ${j.model})`;
+                } else throw new Error();
+            } catch(e) {
+                status.style.color = '#c44';
+                status.textContent = 'offline (start with: dotnet run -- serve)';
+            }
+        }
+        function appendMsg(role, content, sources) {
+            const div = document.createElement('div');
+            div.className = 'bot-msg ' + role;
+            div.textContent = content;
+            if (sources && sources.length) {
+                const s = document.createElement('div');
+                s.className = 'sources';
+                s.innerHTML = '<b>Sources:</b><br>' + sources.slice(0, 5).map(src =>
+                    `${(src.score * 100).toFixed(0)}% — ${src.title} <i style="color:#666">(${src.sourceType})</i>`
+                ).join('<br>');
+                div.appendChild(s);
+            }
+            const messages = document.getElementById('botMessages');
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+        async function askBot() {
+            const input = document.getElementById('botInput');
+            const sendBtn = document.getElementById('botSend');
+            const q = input.value.trim();
+            if (!q) return;
+            input.value = '';
+            sendBtn.disabled = true;
+            appendMsg('user', q);
+            const thinking = document.createElement('div');
+            thinking.className = 'bot-msg bot';
+            thinking.textContent = 'thinking...';
+            document.getElementById('botMessages').appendChild(thinking);
+            try {
+                const r = await fetch(BOT_URL + '/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: q, topK: 6 })
+                });
+                thinking.remove();
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                const j = await r.json();
+                appendMsg('bot', j.answer || '(empty response)', j.sources);
+            } catch(e) {
+                thinking.remove();
+                appendMsg('error', 'Error: ' + e.message + '\n\nMake sure the bot server is running:\n  cd src/CFItems.Bot && dotnet run -- serve');
+            } finally {
+                sendBtn.disabled = false;
+                input.focus();
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('botInput')?.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') askBot();
+            });
+        });
+    </script>
+
     <div id="detailPanel" class="detail-panel">
         <span class="close-btn" onclick="closeDetail()">&times;</span>
         <div id="detailContent"></div>
@@ -97,17 +221,11 @@
     let wikiAreas = {};
 
     document.addEventListener("DOMContentLoaded", async () => {
-        // Load data
-        const areaUrls = [
-            'https://cfitems.blob.core.windows.net/cfitems/documents/areas.json',
-            'https://cfitems.blob.core.windows.net/cfknowledge/areas.json?sv=2025-11-05&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2030-04-15T16:21:07Z&st=2026-04-16T08:06:07Z&spr=https&sig=REDACTED_SAS_SIG%3D'
-        ];
-        for (const areaUrl of areaUrls) {
-            try {
-                const areasResp = await fetch(areaUrl);
-                if (areasResp.ok) { areas = await areasResp.json(); break; }
-            } catch(e) {}
-        }
+        // Load areas from public blob (anonymous read)
+        try {
+            const r = await fetch('https://cfitems.blob.core.windows.net/cfitems/documents/areas.json');
+            if (r.ok) areas = await r.json();
+        } catch(e) {}
 
         // Load items from existing API
         try {
@@ -115,17 +233,11 @@
             if (itemsResp.ok) items = await itemsResp.json();
         } catch(e) { console.error('Failed to load items:', e); }
 
-        // Try to load item locations
-        const locUrls = [
-            'https://cfitems.blob.core.windows.net/cfitems/documents/item-locations.json',
-            'https://cfitems.blob.core.windows.net/cfknowledge/item-locations.json?sv=2025-11-05&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2030-04-15T16:21:07Z&st=2026-04-16T08:06:07Z&spr=https&sig=REDACTED_SAS_SIG%3D'
-        ];
-        for (const locUrl of locUrls) {
-            try {
-                const locResp = await fetch(locUrl);
-                if (locResp.ok) { itemLocations = await locResp.json(); break; }
-            } catch(e) {}
-        }
+        // Load item locations from public blob
+        try {
+            const r = await fetch('https://cfitems.blob.core.windows.net/cfitems/documents/item-locations.json');
+            if (r.ok) itemLocations = await r.json();
+        } catch(e) {}
 
         // Load wiki area data (ASCII maps, room legends, links).
         // Prefer the complete scrape (758 pages) over the curated subset (139).

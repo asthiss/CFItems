@@ -399,3 +399,7 @@ FodyWeavers.xsd
 
 # Data pipeline output (logs, exports, generated knowledge)
 data/
+
+# Claude Code local settings (contains session permissions, may leak tokens)
+.claude/
+bin-extract/
