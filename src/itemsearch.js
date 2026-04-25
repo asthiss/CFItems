@@ -145,7 +145,7 @@ searchForm.addEventListener("submit", (e) => {
     
     let flags = document.getElementById("flags").value;
     console.log("flags:" + flags);
-    if(flags !== "any")
+    if(flags !== "")
     {
         itemsToSort = itemsToSort.filter(item => item.FlaggsPiped !== null && item.FlaggsPiped.indexOf(flags) !== -1);
     }
